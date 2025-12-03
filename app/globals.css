@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "@arcgis/core/assets/esri/themes/light/main.css";
+
 
 :root {
   --background: #ffffff;
@@ -13,8 +15,8 @@
 
 
   /* Colores institucionales */
-  --color-muni-azul: #0032A0;
-  --color-muni-verde: #00A859;
+  --color-muni-azul: #10069f;
+  --color-muni-verde: #97d700;
 
   /* Colores Gradiente */
   --color-muni-rosado: #F57EB6;
@@ -60,5 +62,5 @@ body {
 
 /* Clase utilitaria */
 .animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
+  animation: pulse-slow 1.5s ease-in-out infinite;
 }

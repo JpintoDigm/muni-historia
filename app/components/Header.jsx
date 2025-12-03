@@ -1,7 +1,7 @@
 // components/Header.jsx
 export default function Header() {
   return (
-    <header className="flex items-start justify-between gap-4 header-250 p-4">
+    <header className="flex items-start justify-between gap-4 header-250 p-4 ">
         {/* Bloque 250 años */}
         <div className="flex items-center gap-4">
             <div className="text-5xl font-bold leading-none">

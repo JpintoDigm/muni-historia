@@ -9,6 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
+      <script src="https://gis.muniguate.com/accessibility-widget/widget.js" id="widgetScript" data-position="bottom-right" data-offsetx="20" data-offsety="75" data-primarycolor="#10069f"></script>
       <body>{children}</body>
     </html>
   );

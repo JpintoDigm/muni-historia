@@ -35,7 +35,7 @@ export default function HomePage() {
         </section>
 
         <section className="flex-1">
-          <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+          <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
 
             <article className="relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/50 backdrop-blur-none">
 
@@ -44,23 +44,53 @@ export default function HomePage() {
                 +
               </button>
 
-              <div className="mb-3 aspect-[3/4] w-full rounded-2x" />
+
+
+              <div className="mb- aspect-[3/4] w-full rounded-2x" />
               <p className="text-center text-sm font-semibold uppercase tracking-wide">
                 Conoce más
+              </p>
+            </article>
+
+            <article className="relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60">
+
+              {/* Botón + */}
+              <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+                +
+              </button>
+
+              {/* Imagen con máscara */}
+              <div className="mt-6 mb-4 flex w-full justify-center">
+                <div className="blob-mask w-32 h-40 overflow-hidden">
+                  <Image
+                    src="/img/ciudad.png"    // la foto que estás usando
+                    alt="Vista de la ciudad"
+                    width={200}
+                    height={250}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Texto */}
+              <p className="text-center text-[13px] leading-tight text-muni-azul">
+                <span className="block font-extrabold">Conoce</span>
+                <span className="block font-semibold">más de esta</span>
+                <span className="block font-semibold">Conmemoración</span>
               </p>
             </article>
 
             {/* Grid de 6 tarjetas */}
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-              <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+              <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
                   <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
                     +
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <Image src="/img/1.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <Image src="/img/evolucion.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
                   <h3 className="text-xl font-semibold text-muni-azul leading-tight">
@@ -69,20 +99,16 @@ export default function HomePage() {
                   </h3>
               </Link>
 
-              <Link href="/patrimonio" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+              <Link href="/areas" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
-                    +
-                  </button>
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+                  +
+                </button>
 
-                  <div className="mb-3 text-3xl animate-pulse-slow">
-                    <Image src="/img/1.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Patrimonio</span>
-                    <span className="block">Vivo</span>
-                  </h3>                
+                <div className="mb-3 text-3xl animate-pulse-slow ">
+                  <Image src="/img/5.png" alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
+                </div>
+                <h3 className="text-xl font-semibold text-muni-azul">Áreas Verdes</h3>
               </Link>
 
               <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
@@ -99,18 +125,6 @@ export default function HomePage() {
                     <span className="block">Proyectos</span>
                     <span className="block">Urbanos</span>
                   </h3>  
-              </Link>
-
-              <Link href="/areas" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-
-                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
-                  +
-                </button>
-
-                <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <Image src="/img/4.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
-                </div>
-                <h3 className="text-xl font-semibold text-muni-azul">Áreas Verdes</h3>
               </Link>
 
               <Link href="/calendario" className="relative flex flex-col justify-center rounded-3xl p-4 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
