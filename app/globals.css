@@ -27,8 +27,24 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+.main-snake {
+  min-height: 70vh;
+  background-image:
+    url("/img/fondoSnake.png"),
+    linear-gradient(135deg, #F57EB6 0%, #E0E721 45%, #2CB877 90%);
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 250px, center top;
+  background-size: cover, 2500px auto;
+}
+
+
+.font-muni {
+  font-family: var(--font-muni);
+}
+
 
 /* Fondo institucional 250 Años */
 .bg-250 {
