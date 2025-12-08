@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@arcgis/core": "^4.34.8",
+    "@arcgis/map-components-react": "^4.34.9",
     "next": "16.0.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",

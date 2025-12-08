@@ -1,9 +1,15 @@
 // app/evolucion/page.jsx
 import Image from "next/image";
+
 import Header from "@/app/components/Header";
 import Titulo from "@/app/components/evolucion/Titulo";
+import TimeLineItem from "@/app/components/evolucion/TimeLineItem";
+import ExampleMap from "../components/arcgis/basemap/BaseMap"
+
+import { ListTimeLine} from "../data/ListTimeLine"
 import { MontserratMediumItalic } from "../layout";
 import { MontserratLightItalic } from "../layout";
+
 
 export default function EvolucionPage() {
   return (
@@ -109,25 +115,22 @@ export default function EvolucionPage() {
               </p>
             </div>
 
-            <div className="mt-4 p-6">
-              {/* Aquí ya va lo blanco de tu diseño */}
-              <h2 className="text-3xl font-extrabold text-muni-azul">1524</h2>
-              <p className="text-xl italic font-semibold">Fundación en Iximché</p>
-              <p className="text-slate-700 mt-2">
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-                Pedro de Alvarado establece la primera sede colonial española...
-              </p>
-            </div>  
+            <div>
+              {ListTimeLine.map((item, index) => (
+                <TimeLineItem
+                  key={index}
+                  year={item.year}
+                  title={item.title}
+                  description={item.description}
+                  webmapId={item.webmapId}
+                  imageSrc={item.imageSrc}
+                  imageAlt={item.imageAlt}
+                />
+              ))}
+            </div>
+
+
+
           </div>
         </section>
     </main>

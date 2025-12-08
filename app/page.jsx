@@ -68,7 +68,7 @@ export default function HomePage() {
             </article>
 
             {/* Grid de 6 tarjetas */}
-            <div className={`${MontserratMediumItalic.className} grid gap-4 sm:grid-cols-2 lg:grid-cols-3`}>
+            <div className={`${MontserratMediumItalic.className} grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
 
               <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
