@@ -49,7 +49,7 @@ export {MontserratBlack3};
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <script src="https://gis.muniguate.com/accessibility-widget/widget.js" id="widgetScript" data-position="bottom-right" data-offsetx="20" data-offsety="100" data-primarycolor="#10069f"></script>
+      <script src="https://gis.muniguate.com/accessibility-widget/widget.js" id="widgetScript" data-position="bottom-right" data-offsetx="20" data-offsety="20" data-primarycolor="#10069f"></script>
       <body className={`${muni.variable} font-muni`}>
         {children}
         <BackToTop />

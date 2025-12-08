@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import ExampleMap from "../arcgis/basemap/BaseMap";
+import dynamic from "next/dynamic";
+// import ExampleMap from "../arcgis/basemap/BaseMap";
+
+const ExampleMap = dynamic(() => import("../arcgis/basemap/BaseMap"), {ssr: false});
 
            
 export default function TimeLineItem ({ year, title, description, webmapId, imageSrc, imageAlt }) {
@@ -23,44 +26,39 @@ export default function TimeLineItem ({ year, title, description, webmapId, imag
             <div className="mt-4 relative w-full max-w-3xl mx-auto">
                 <div className="overflow-hidden rounded-xl border border-slate-200">
                 {activeSlide === 0 ? (
-                    // Slide 1: imagen
                     <div className="relative w-full h-64 md:h-80">
-                    <Image
-                        src={imageSrc}
-                        alt={imageAlt}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                        <img
+                            src={imageSrc}
+                            alt={imageAlt}
+                            className="object-cover w-full h-full"
+                        />
                     </div>
                 ) : (
-                    // Slide 2: mapa
                     <div className="w-full h-64 md:h-80">
-                    <ExampleMap webmapId={webmapId} />
+                        <ExampleMap webmapId={webmapId} />
                     </div>
                 )}
                 </div>
 
-                {/*  ⬅ flecha izquierda */}
                 <button
-                onClick={toggleSlide}
-                className="absolute left-3 top-1/2 -translate-y-1/2 
-                            bg-white/80 backdrop-blur px-3 py-2 rounded-full shadow 
-                            hover:bg-white text-slate-700 text-lg"
-                aria-label="imagen anterior"
+                    onClick={toggleSlide}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 
+                                bg-gradient-to-br from-pink-400 via-yellow-300 to-teal-500 text-muni-azul font-extrabold  px-3 py-2 rounded-full shadow 
+                                hover:bg-white text-slate-700 text-lg"
+                    aria-label="imagen anterior"
                 >
                 ←
                 </button>
-                {/* Flecha (toggle) */}
+
                 <button
-                onClick={toggleSlide}
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur px-3 py-2 rounded-full shadow hover:bg-white text-slate-700 text-lg"
-                aria-label="Cambiar vista"
+                    onClick={toggleSlide}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-gradient-to-br from-pink-400 via-yellow-300 to-teal-500 text-muni-azul font-extrabold
+                     px-3 py-2 rounded-full shadow hover:bg-white text-slate-700 text-lg"
+                    aria-label="Cambiar vista"
                 >
                 →
                 </button>
 
-                {/* Indicadores */}
                 <div className="mt-2 flex justify-center gap-2">
                 <button
                     onClick={() => setActiveSlide(0)}

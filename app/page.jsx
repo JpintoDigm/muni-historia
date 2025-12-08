@@ -1,10 +1,12 @@
 // app/page.jsx
 import Image from "next/image";
 import Link from "next/link";
-import { MontserratLightItalic, MontserratMediumItalic } from "./layout";
+import { MarcellusRegular, MontserratLightItalic, MontserratMediumItalic } from "./layout";
 import { MontserratBlack3 } from "./layout";
 
 import Header from "@/app/components/Header";
+import { basePath } from "@/next.config.mjs";
+import ListImage from "./components/ListImage";
 
 export default function HomePage() {
   return (
@@ -18,8 +20,8 @@ export default function HomePage() {
 
           {/* Imagen central debajo del header */}
           <div className="w-full flex justify-center py-4 opacity-100 max-h-[300px]">
-            <Image
-              src="/img/250añosHero.png"
+            <img
+              src={`${basePath}/img/250añosHero.png`}
               alt="Descripción"
               width={700}
               height={700}
@@ -27,19 +29,14 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex items-center justify-center gap-6 text-xl opacity-100">
-            <Image src="/img/10.png" alt="Logo1" width={50} height={50} className="rounded-3xl object-cover"/>
-            <span className="text-muni-azul text-3xl">•</span>
-            <Image src="/img/11.png" alt="Descripción" width={50} height={50} className="rounded-3xl object-cover"/>
-            <span className="text-muni-azul text-3xl">•</span>
-            <Image src="/img/12.png" alt="Descripción" width={50} height={50} className="rounded-3xl object-cover"/>
-          </div>
+          <ListImage />
+
         </section>
 
         <section className="flex-1">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
-            <article className={`${MontserratMediumItalic.className} relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60`}>
+            <article className={`${MarcellusRegular.className} relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60`}>
 
               {/* Botón + */}
               <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
@@ -48,9 +45,9 @@ export default function HomePage() {
 
               {/* Imagen con máscara */}
               <div className="mt-6 flex w-full justify-center">
-                <div className="blob-mask  w-[170px] h-[220px] overflow-hidden">
-                  <Image
-                    src="/img/ciudad.png"    // la foto que estás usando
+                <div className="blob-mask  w-[170px] h-[220px] overflow-hidden animate-pulse-slow">
+                  <img
+                    src={`${basePath}/img/ciudad.png`}    // la foto que estás usando
                     alt="Vista de la ciudad"
                     width={250}
                     height={350}
@@ -68,7 +65,7 @@ export default function HomePage() {
             </article>
 
             {/* Grid de 6 tarjetas */}
-            <div className={`${MontserratMediumItalic.className} grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
+            <div className={`${MarcellusRegular.className} grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
 
               <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
@@ -77,7 +74,7 @@ export default function HomePage() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <Image src="/img/evolucion.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <img src={`${basePath}/img/evolucion.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
                   <h3 className= "text-xl font-bold text-muni-azul leading-tight">
@@ -93,7 +90,7 @@ export default function HomePage() {
                 </button>
 
                 <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <Image src="/img/5.png" alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
+                  <img src={`${basePath}/img/5.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
                 <h3 className="text-xl font-semibold text-muni-azul">Áreas Verdes</h3>
               </Link>
@@ -105,7 +102,7 @@ export default function HomePage() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <Image src="/img/2.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <img src={`${basePath}/img/2.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
                   <h3 className="text-xl font-semibold text-muni-azul leading-tight">
@@ -121,7 +118,7 @@ export default function HomePage() {
                 </button>
 
                 <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <Image src="/img/3.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                 </div>
 
                 <h3 className="text-xl font-semibold text-muni-azul leading-tight">
@@ -138,7 +135,7 @@ export default function HomePage() {
                 </button>
 
                 <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <Image src="/img/4.png" alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                 </div>
                 <h3 className="text-xl font-semibold text-muni-azul leading-tight">
                   <span className="block">Descarga</span>

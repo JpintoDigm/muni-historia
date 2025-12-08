@@ -1,6 +1,4 @@
 // app/evolucion/page.jsx
-import Image from "next/image";
-
 import Header from "@/app/components/Header";
 import Titulo from "@/app/components/evolucion/Titulo";
 import TimeLineItem from "@/app/components/evolucion/TimeLineItem";
@@ -9,6 +7,8 @@ import ExampleMap from "../components/arcgis/basemap/BaseMap"
 import { ListTimeLine} from "../data/ListTimeLine"
 import { MontserratMediumItalic } from "../layout";
 import { MontserratLightItalic } from "../layout";
+import { basePath } from "@/next.config.mjs";
+import { ListCenturyCard } from "../data/ListCenturyCard";
 
 
 export default function EvolucionPage() {
@@ -21,6 +21,7 @@ export default function EvolucionPage() {
             <Titulo />
 
             {/* Linea Tiempo */}
+
 
             <div className="w-full flex flex-col items-center mt-20">
 
@@ -37,12 +38,12 @@ export default function EvolucionPage() {
                   </div>
                 </div>
 
-                <Image src="/img/flechas.png" alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80" />
+                <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
                 {/* SIGLO XVII–XVIII */}
                 <div className="flex flex-col items-center">
                   <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#EE6FAF] text-muni-azul font-bold text-sm shadow`}>
-                    SIGLO XVII–XVIII
+                    SIGLO XVII
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
                     {/* <p className="text-2xl font-extrabold text-black">XVII–XVIII</p> */}
@@ -50,7 +51,7 @@ export default function EvolucionPage() {
                   </div>
                 </div>
 
-                <Image src="/img/flechas.png" alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80" />
+                <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
                 {/* SIGLO XIX */}
                 <div className="flex flex-col items-center">
@@ -63,7 +64,7 @@ export default function EvolucionPage() {
                   </div>
                 </div>
 
-                <Image src="/img/flechas.png" alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80" />
+                <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
                 {/* SIGLO XX */}
                 <div className="flex flex-col items-center">
@@ -76,7 +77,7 @@ export default function EvolucionPage() {
                   </div>
                 </div>
 
-                <Image src="/img/flechas.png" alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80" />
+                <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
                 {/* SIGLO XXI */}
                 <div className="flex flex-col items-center">
@@ -90,14 +91,15 @@ export default function EvolucionPage() {
                 </div>
 
               </div>
+              
             </div>
 
             <div className="mt-20 flex items-center justify-center gap-6 text-xl">
-              <Image src="/img/10.png" alt="Icono 1" width={50} height={50} />
+              <img src={`${basePath}/img/10.png`} alt="Icono 1" width={50} height={50} />
               <span className="text-muni-azul text-3xl">•</span>
-              <Image src="/img/11.png" alt="Icono 2" width={50} height={50} />
+              <img src={`${basePath}/img/11.png`} alt="Icono 2" width={50} height={50} />
               <span className="text-muni-azul text-3xl">•</span>
-              <Image src="/img/12.png" alt="Icono 3" width={50} height={50} />
+              <img src={`${basePath}/img/12.png`} alt="Icono 3" width={50} height={50} />
             </div>
           </div>
           
