@@ -9,6 +9,8 @@ import { MontserratMediumItalic } from "../layout";
 import { MontserratLightItalic } from "../layout";
 import { basePath } from "@/next.config.mjs";
 import { ListCenturyCard } from "../data/ListCenturyCard";
+import Link from "next/link";
+import BottomMenu from "../components/BottomMenu";
 
 
 export default function EvolucionPage() {
@@ -27,34 +29,33 @@ export default function EvolucionPage() {
 
               <div className="flex flex-wrap items-center justify-center  gap-2 relative">
 
-                {/* SIGLO XVI */}
-                <div className="flex flex-col items-center">
+                <Link href="#1524" className="flex flex-col items-center animate-pulse-slow">
                   <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#8BC53F] text-muni-azul font-bold text-sm shadow`}>
-                    SIGLO XVI
+                    SIGLO XVI – SIGLO XVIII
                   </div>
-                  <div className="mt-[10px] bg-white px-6 py-8 rounded-xl shadow text-center w-[150px]">
+                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
                     {/* <p className="text-2xl font-extrabold text-black">XVI</p> */}
-                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1524–1527</p>
+                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1524 – 1773</p>
                   </div>
-                </div>
+                </Link>
+
 
                 <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
-                {/* SIGLO XVII–XVIII */}
-                <div className="flex flex-col items-center">
+                <Link href="#1728" className="flex flex-col items-center">
                   <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#EE6FAF] text-muni-azul font-bold text-sm shadow`}>
-                    SIGLO XVII
+                    SIGLO XVIII – SIGLO XIX
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
                     {/* <p className="text-2xl font-extrabold text-black">XVII–XVIII</p> */}
-                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1541–1776</p>
+                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1776 – 1821</p>
                   </div>
-                </div>
+                </Link>
 
                 <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
                 {/* SIGLO XIX */}
-                <div className="flex flex-col items-center">
+                <Link href="#" className="flex flex-col items-center">
                   <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#37B268] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XIX
                   </div>
@@ -62,7 +63,7 @@ export default function EvolucionPage() {
                     {/* <p className="text-2xl font-extrabold text-black">XIX</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1821–1898</p>
                   </div>
-                </div>
+                </Link>
 
                 <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
@@ -121,12 +122,14 @@ export default function EvolucionPage() {
               {ListTimeLine.map((item, index) => (
                 <TimeLineItem
                   key={index}
+                  id={item.id}
                   year={item.year}
                   title={item.title}
                   description={item.description}
                   webmapId={item.webmapId}
                   imageSrc={item.imageSrc}
                   imageAlt={item.imageAlt}
+                  insights={item.insights} 
                 />
               ))}
             </div>
@@ -135,6 +138,8 @@ export default function EvolucionPage() {
 
           </div>
         </section>
+
+        <BottomMenu />
     </main>
   );
 }

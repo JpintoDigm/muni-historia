@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 const ExampleMap = dynamic(() => import("../arcgis/basemap/BaseMap"), {ssr: false});
 
            
-export default function TimeLineItem ({ year, title, description, webmapId, imageSrc, imageAlt }) {
+export default function TimeLineItem ({ year, title, description, webmapId, imageSrc, imageAlt, id, insights }) {
 
     const [activeSlide, setActiveSlide] = useState(0); // 0 = imagen, 1 = mapa
 
@@ -18,10 +18,35 @@ export default function TimeLineItem ({ year, title, description, webmapId, imag
 
     return(
         
-        <div className="mt-4 p-6">
-            <h2 className="text-3xl font-extrabold text-muni-azul">{year}</h2>
-            <p className="text-xl italic font-semibold">{title}</p>
-            <p className="text-slate-700 mt-2">{description}</p>
+        <div id={id} className="mt-4 p-6">
+
+            <h2 className="text-3xl font-extrabold text-muni-azul">
+                {year}
+            </h2>
+
+            <p className="text-xl italic font-semibold mt-1 text-black">
+                {title}
+            </p>
+
+            <p className="mt-3 text-slate-800 leading-relaxed">
+                {description}
+            </p>
+
+            <div className="my-5  border-slate-300"></div>
+
+            {insights && insights.length > 0 && (
+            <>
+                <p className="text-muni-azul font-bold text-lg">
+                Insights clave
+                </p>
+
+                <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                {insights.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                ))}
+                </ul>
+            </>
+            )}
 
             <div className="mt-4 relative w-full max-w-3xl mx-auto">
                 <div className="overflow-hidden rounded-xl border border-slate-200">
@@ -77,6 +102,11 @@ export default function TimeLineItem ({ year, title, description, webmapId, imag
                 </div>
             </div>
         </div> 
+        
+
+
+
+
 
     );
 }       

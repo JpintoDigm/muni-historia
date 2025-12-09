@@ -7,13 +7,14 @@ import { MontserratBlack3 } from "./layout";
 import Header from "@/app/components/Header";
 import { basePath } from "@/next.config.mjs";
 import ListImage from "./components/ListImage";
+import BottomMenu from "./components/BottomMenu";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen main-snake">
       <div className="container mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6">
         {/* HERO SUPERIOR */}
-        <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-20">
+        <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-0 md:mb-20">
           {/* Logo 250 + escudo + menú */}
 
           <Header />
@@ -36,31 +37,32 @@ export default function HomePage() {
         <section className="flex-1">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
-            <article className={`${MarcellusRegular.className} relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60`}>
+            <article className={`${MarcellusRegular.className} relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60 cursor-pointer`}>
 
               {/* Botón + */}
-              <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+              <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+              cursor-pointer">
                 +
               </button>
 
               {/* Imagen con máscara */}
               <div className="mt-6 flex w-full justify-center">
-                <div className="blob-mask  w-[170px] h-[220px] overflow-hidden animate-pulse-slow">
+                <div className="blob-mask  w-[190px] h-[250px] overflow-hidden animate-pulse-slow">
                   <img
                     src={`${basePath}/img/ciudad.png`}    // la foto que estás usando
                     alt="Vista de la ciudad"
-                    width={250}
-                    height={350}
+                    width={400}
+                    height={400}
                     className="h-full w-full object-contain"
                   />
                 </div>
               </div>
 
               {/* Texto */}
-              <p className="text-center text-[13px] leading-tight text-muni-azul py-8">
-                <span className="block font-bold text-xl">Conoce</span>
-                <span className="block text-xl">más de esta</span>
-                <span className="block text-xl">Conmemoración</span>
+              <p className="text-center text-xl text-muni-azul py-8 leading-tight">
+                <span className="block font-bold text-xl leading-tight">Conoce</span>
+                <span className="block text-xl leading-tight">más de esta</span>
+                <span className="block text-xl leading-tight">Conmemoración</span>
               </p>
             </article>
 
@@ -69,7 +71,8 @@ export default function HomePage() {
 
               <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                  cursor-pointer">
                     +
                   </button>
 
@@ -79,13 +82,14 @@ export default function HomePage() {
 
                   <h3 className= "text-xl font-bold text-muni-azul leading-tight">
                     <span className="block">Historia y</span>
-                    <span className="block">Evolución</span>
+                    <span className="block">Evolución de la Ciudad</span>
                   </h3>
               </Link>
 
               <Link href="/areas" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                cursor-pointer">
                   +
                 </button>
 
@@ -97,7 +101,8 @@ export default function HomePage() {
 
               <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                  cursor-pointer">
                     +
                   </button>
 
@@ -113,7 +118,8 @@ export default function HomePage() {
 
               <Link href="/calendario" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                cursor-pointer">
                   +
                 </button>
 
@@ -128,24 +134,33 @@ export default function HomePage() {
 
               </Link>
 
-              <Link href="/descarga" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-
-                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md">
-                  +
-                </button>
-
-                <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+              <div className="relative pointer-events-none opacity-60 overflow-hidden">
+                <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
+                  Próximamente
                 </div>
-                <h3 className="text-xl font-semibold text-muni-azul leading-tight">
-                  <span className="block">Descarga</span>
-                  <span className="block">Documentos</span>
-                </h3> 
-              </Link>
+
+                <Link href="/descarga" className="relative flex flex-col col-span-2 col-start-1 md:col-span-1 md:col-start-auto justify-self-center md:justify-self-auto justify-between rounded-3xl px-8 md:px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+
+                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                  cursor-pointer">
+                    +
+                  </button>
+
+                  <div className="mb-3 text-3xl">
+                    <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  </div>
+                  <h3 className="text-xl font-semibold text-muni-azul leading-tight">
+                    <span className="block">Descarga</span>
+                    <span className="block">Documentos</span>
+                  </h3> 
+                </Link>
+              </div>
             </div>
           </div>
         </section>
       </div>
+
+      <BottomMenu />
     </main>
   );
 }

@@ -29,6 +29,10 @@ body {
   color: var(--foreground);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main-snake {
   min-height: 70vh;
   background-image:
