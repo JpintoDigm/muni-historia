@@ -119,7 +119,7 @@ export default function EvolucionPage() {
             </div>
 
             <div>
-              {ListTimeLine.map((item, index) => (
+              {/* {ListTimeLine.map((item, index) => (
                 <TimeLineItem
                   key={index}
                   id={item.id}
@@ -131,7 +131,56 @@ export default function EvolucionPage() {
                   lineVariant={item.lineVariant}
                   insights={item.insights} 
                 />
-              ))}
+              ))} */}
+              
+              <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <h2 className="text-3xl font-extrabold text-muni-azul">
+                    1524 – 1773
+                  </h2>
+
+                  <p className="text-xl italic font-semibold mt-1 text-black">
+                    ANTECEDENTES HISTÓRICOS: ORIGEN Y FUNDACIÓN DE LA CIUDAD Y POSTERIORES TRASLADOS (1524 – 1773)
+                  </p>
+
+                  <p className="mt-3 text-slate-800 leading-relaxed">
+                    El terremoto impulsa la expansión informal, impulsa políticas de planificación, crea dinámicas metropolitanas y sienta bases para procesos de revitalización del Centro Histórico.
+                  </p>
+
+                  <div className="my-5  border-slate-300"></div>
+
+                  <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                      <li>Reconfiguración del territorio por campamentos.</li>
+                      <li>Crecimiento informal acelerado.</li>
+                      <li>Nuevos planes metropolitanos.</li>
+                  </ul>                  
+                </div>
+
+                <img
+                  src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                  alt=""
+                  className="
+                    absolute
+                    top-[180px]        // ⬅ mueve arriba/abajo
+                    left-[55%]           // ⬅ mueve izquierda/derecha
+                    -translate-x-1/4   
+                    w-64 md:w-80
+                    pointer-events-none
+                  "
+                />
+
+                <div className="col-start-1 row-start-1 md:col-start-2 md:row-start-2">
+                  <div className="relative w-full h-64 md:h-80">
+                      <img
+                          src={`${basePath}/img/evolucion/dibujoMapa.png`}
+                          alt="Vista Iximché"
+                          className="object-cover w-full h-full"
+                      />
+                  </div>
+                </div>
+
+              </div>
             </div>
 
 
