@@ -127,8 +127,8 @@ export default function EvolucionPage() {
                   title={item.title}
                   description={item.description}
                   webmapId={item.webmapId}
-                  imageSrc={item.imageSrc}
-                  imageAlt={item.imageAlt}
+                  images={item.images}
+                  lineVariant={item.lineVariant}
                   insights={item.insights} 
                 />
               ))}

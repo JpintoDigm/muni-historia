@@ -7,14 +7,17 @@ export const ListTimeLine = [
     year: "1524 – 1773",
     title: 'ANTECEDENTES HISTÓRICOS: ORIGEN Y FUNDACIÓN DE LA CIUDAD Y POSTERIORES TRASLADOS (1524 – 1773)',
     description: `El terremoto impulsa la expansión informal, impulsa políticas de planificación, crea dinámicas metropolitanas y sienta bases para procesos de revitalización del Centro Histórico.`,
+    webmapId: "c5a385fcdc5e460f8e42c1f089d8e530",
     insights: [
       "Reconfiguración del territorio por campamentos.",
       "Crecimiento informal acelerado.",
       "Nuevos planes metropolitanos.",
     ],
-    webmapId: "c5a385fcdc5e460f8e42c1f089d8e530",
-    imageSrc: basePath + "/img/dibujoMapa.png",
-    imageAlt: "Iximché",
+    images: [
+      {src: basePath + "/img/evolucion/dibujoMapa.png", alt: "Vista Iximché"},
+      // {src: basePath + "/img/evolucion/dibujoMapa.png", alt: "Vista Iximché"},
+    ],
+    lineVariant: "curva-arriba",
   },
   {
     id: 1728,
@@ -30,6 +33,7 @@ export const ListTimeLine = [
     webmapId: "c5a385fcdc5e460f8e42c1f089d8e530",
     imageSrc: basePath + "/img/dibujoMapa.png",
     imageAlt: "Iximché",
+    lineVariant: "curva-derecha",
   },
   {
     id: 1800,

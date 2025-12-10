@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import DottedLine from "./DottedLine";
 // import ExampleMap from "../arcgis/basemap/BaseMap";
 
 const ExampleMap = dynamic(() => import("../arcgis/basemap/BaseMap"), {ssr: false});
 
            
-export default function TimeLineItem ({ year, title, description, webmapId, imageSrc, imageAlt, id, insights }) {
+export default function TimeLineItem ({ year, title, description, webmapId, images = [], lineVariant, id, insights }) {
 
     const [activeSlide, setActiveSlide] = useState(0); // 0 = imagen, 1 = mapa
 
@@ -36,9 +37,6 @@ export default function TimeLineItem ({ year, title, description, webmapId, imag
 
             {insights && insights.length > 0 && (
             <>
-                <p className="text-muni-azul font-bold text-lg">
-                Insights clave
-                </p>
 
                 <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                 {insights.map((item, idx) => (
@@ -49,20 +47,27 @@ export default function TimeLineItem ({ year, title, description, webmapId, imag
             )}
 
             <div className="mt-4 relative w-full max-w-3xl mx-auto">
+
+                <DottedLine variant={lineVariant} />
+
                 <div className="overflow-hidden rounded-xl border border-slate-200">
-                {activeSlide === 0 ? (
-                    <div className="relative w-full h-64 md:h-80">
-                        <img
-                            src={imageSrc}
-                            alt={imageAlt}
-                            className="object-cover w-full h-full"
-                        />
-                    </div>
-                ) : (
-                    <div className="w-full h-64 md:h-80">
-                        <ExampleMap webmapId={webmapId} />
-                    </div>
-                )}
+                    {activeSlide === 0 ? (
+                        <div className={`grid gap-4 ${images.length > 1 ? "md:grid-cols-2" : "grid-cols-1"}`}>
+                            {images.map((img, idx) => (
+                                <div key={idx} className="relative w-full h-64 md:h-80">
+                                    <img
+                                        src={img.src}
+                                        alt={img.alt}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="w-full h-64 md:h-80">
+                            <ExampleMap webmapId={webmapId} />
+                        </div>
+                    )}
                 </div>
 
                 <button
