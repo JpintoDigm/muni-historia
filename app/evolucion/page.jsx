@@ -19,8 +19,8 @@ export default function EvolucionPage() {
 
   
   return (
-    <main className="min-h-screen bg-250">
-        <section className="w-full">
+    <main className="min-h-screen">
+        <section className="w-full header-250">
           {/* <Header /> */}
           <div className="mx-auto max-w-6xl px-4 py-10">
 
@@ -167,11 +167,13 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      
                       absolute
-                      top-[180px]        // ⬅ mueve arriba/abajo
-                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      top-[630px] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%]  md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
-                      w-64 md:w-120
+                      w-40 md:w-120
+                      rotate-45 md:rotate-none
                       pointer-events-none
                     "
                   />
@@ -221,10 +223,10 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[63px]        // ⬅ mueve arriba/abajo
-                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      top-[722px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
-                      w-64 md:w-120
+                      w-40 md:w-120
                       rotate-45
                       pointer-events-none
                     "
@@ -242,7 +244,7 @@ export default function EvolucionPage() {
 
                 {/* Izquierda */}
                 <div className="relative flex flex-row my-5">
-                  <div className="basis-50">
+                  <div className="basis-0 md:basis-50">
                   </div>
 
                   {/* Linea Punteada Arriba */}
@@ -250,6 +252,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
                       -top-[210px]           /* ⬅ Ajusta según necesites */
@@ -266,6 +269,7 @@ export default function EvolucionPage() {
                       src={`${basePath}/img/evolucion/lineaPunteada.png`}
                       alt="Línea punteada derecha"
                       className="
+                        hidden md:block
                         absolute
                         z-0
                         top-1/1
@@ -288,13 +292,14 @@ export default function EvolucionPage() {
 
                 {/* Derecha */}
                 <div className="flex flex-row my-5">
-                  <div className="basis-125">
+                  <div className="basis-0 md:basis-125">
                   </div>
                     
                   <img
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       top-[180px]        // ⬅ mueve arriba/abajo
                       left-[55%]           // ⬅ mueve izquierda/derecha
@@ -316,7 +321,7 @@ export default function EvolucionPage() {
 
                 {/* Izquierda */}
                 <div className="relative flex flex-row my-5">
-                  <div className="basis-50">
+                  <div className="basis-0 md:basis-50">
                   </div>
 
                   {/* Linea Punteada Arriba */}
@@ -324,6 +329,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
                       -top-[230px]           /* ⬅ Ajusta según necesites */
@@ -340,6 +346,7 @@ export default function EvolucionPage() {
                       src={`${basePath}/img/evolucion/lineaPunteada.png`}
                       alt="Línea punteada derecha"
                       className="
+                        hidden md:block
                         absolute
                         z-0
                         top-1/1
@@ -362,13 +369,14 @@ export default function EvolucionPage() {
 
                 {/* Derecha */}
                 <div className="flex flex-row my-5">
-                  <div className="basis-125">
+                  <div className="basis-0 md:basis-125">
                   </div>
                     
                   <img
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       top-[180px]        // ⬅ mueve arriba/abajo
                       left-[55%]           // ⬅ mueve izquierda/derecha
@@ -390,7 +398,7 @@ export default function EvolucionPage() {
 
                 {/* Izquierda */}
                 <div className="relative flex flex-row my-5">
-                  <div className="basis-50">
+                  <div className="basis-0 md:basis-50">
                   </div>
 
                   {/* Linea Punteada Arriba */}
@@ -398,6 +406,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
                       -top-[230px]           /* ⬅ Ajusta según necesites */
@@ -450,6 +459,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       top-[63px]        // ⬅ mueve arriba/abajo
                       left-[55%]           // ⬅ mueve izquierda/derecha
@@ -472,7 +482,7 @@ export default function EvolucionPage() {
 
                 {/* Izquierda */}
                 <div className="relative flex flex-row my-5">
-                  <div className="basis-50">
+                  <div className="basis-0 md:basis-50">
                   </div>
 
                   {/* Linea Punteada Arriba */}
@@ -480,6 +490,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
                       -top-[210px]           /* ⬅ Ajusta según necesites */
@@ -496,6 +507,7 @@ export default function EvolucionPage() {
                       src={`${basePath}/img/evolucion/lineaPunteada.png`}
                       alt="Línea punteada derecha"
                       className="
+                        hidden md:block
                         absolute
                         z-0
                         top-1/1
@@ -518,13 +530,14 @@ export default function EvolucionPage() {
 
                 {/* Derecha */}
                 <div className="flex flex-row my-5">
-                  <div className="basis-125">
+                  <div className="basis-0 md:basis-125">
                   </div>
                     
                   <img
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       top-[180px]        // ⬅ mueve arriba/abajo
                       left-[55%]           // ⬅ mueve izquierda/derecha
@@ -546,7 +559,7 @@ export default function EvolucionPage() {
 
                 {/* Izquierda */}
                 <div className="relative flex flex-row my-5">
-                  <div className="basis-50">
+                  <div className="basis-0 md:basis-50">
                   </div>
 
                   {/* Linea Punteada Arriba */}
@@ -554,6 +567,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
+                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
                       -top-[230px]           /* ⬅ Ajusta según necesites */
