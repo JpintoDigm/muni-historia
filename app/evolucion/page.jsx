@@ -9,9 +9,10 @@ import { MontserratMediumItalic } from "../layout";
 import { MontserratLightItalic } from "../layout";
 import { basePath } from "@/next.config.mjs";
 import { ListCenturyCard } from "../data/ListCenturyCard";
-import Link from "next/link";
+
 import BottomMenu from "../components/BottomMenu";
 import ImageMapCarousel from "../components/evolucion/ImageMapCarousel";
+import Link from "next/link";
 
 
 export default function EvolucionPage() {
@@ -71,29 +72,55 @@ export default function EvolucionPage() {
 
                 <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
-                {/* SIGLO XX */}
-                <div className="flex flex-col items-center">
+                {/* SIGLO XIX – SIGLO XX */}
+                <Link href="#1871–1918" className="flex flex-col items-center">
                   <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#8BCFD9] text-muni-azul font-bold text-sm shadow`}>
-                    SIGLO XX
+                    SIGLO XIX – SIGLO XX
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
                     {/* <p className="text-2xl font-extrabold text-black">XX</p> */}
-                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1917–2000</p>
+                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1871 – 1918</p>
                   </div>
-                </div>
+                </Link>
 
                 <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
 
-                {/* SIGLO XXI */}
-                <div className="flex flex-col items-center">
+                {/* SIGLO XX */}
+                <Link href="#1917-1931" className="flex flex-col items-center">
+                  <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#D4DE52] text-muni-azul font-bold text-sm shadow`}>
+                    SIGLO XX
+                  </div>
+                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
+                    {/* <p className="text-2xl font-extrabold text-black">XXI</p> */}
+                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1917 – 1931</p>
+                  </div>
+                </Link>
+
+                <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
+
+                {/* SIGLO XX – SIGLO XXI*/}
+                <Link href="#1976–2000" className="flex flex-col items-center">
+                  <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#D4DE52] text-muni-azul font-bold text-sm shadow`}>
+                    SIGLO XX – SIGLO XXI
+                  </div>
+                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
+                    {/* <p className="text-2xl font-extrabold text-black">XXI</p> */}
+                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1976 – 2000</p>
+                  </div>
+                </Link>
+
+                <img src={`${basePath}/img/flechas.png`} alt="Flecha" width={65} height={40} className="hidden md:inline-block h-10 opacity-80 mt-11" />
+
+                {/* SIGLO XXI*/}
+                <Link href="#2000-2017" className="flex flex-col items-center">
                   <div className={`${MontserratMediumItalic.className} w-[150px] text-center px-6 py-2 rounded-full bg-[#D4DE52] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XXI
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-[150px]">
                     {/* <p className="text-2xl font-extrabold text-black">XXI</p> */}
-                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>2004–2024</p>
+                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>2000 - 2017</p>
                   </div>
-                </div>
+                </Link>
 
               </div>
               
@@ -223,7 +250,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[722px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[685px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -243,7 +270,7 @@ export default function EvolucionPage() {
                 </div>
 
                 {/* Izquierda */}
-                <div className="relative flex flex-row my-5">
+                <div className="relative flex flex-row my-[-18] md:my-5">
                   <div className="basis-0 md:basis-50">
                   </div>
 
@@ -252,31 +279,29 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
-                      -top-[210px]           /* ⬅ Ajusta según necesites */
-                      left-[43%]
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
                       -translate-x-1/2
-                      w-64 md:w-120
-                      -rotate-82
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
                       pointer-events-none
                       "
-                    />
+                  />
 
                     {/* Línea punteada derecha */}
                     <img
                       src={`${basePath}/img/evolucion/lineaPunteada.png`}
                       alt="Línea punteada derecha"
                       className="
-                        hidden md:block
                         absolute
                         z-0
-                        top-1/1
-                        right-[80px]         /* Ajusta según el diseño */
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
                         -translate-y-1/2
-                        rotate-[-98]             /* La giramos verticalmente */
-                        w-64 md:w-120
+                        rotate-70 md:rotate-6            /* La giramos verticalmente */
+                        w-40 md:w-120
                         pointer-events-none
                       "
                     />
@@ -299,17 +324,16 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
-                      absolute
-                      top-[180px]        // ⬅ mueve arriba/abajo
-                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      hidden
+                      top-[3675px] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
-                      w-64 md:w-80
+                      w-40 md:w-80
                       pointer-events-none
                     "
                   />
 
-                  <div className="w-full h-64 md:h-80 basis-138">
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Pueblo de Jocotenango, Nueva Guatemala, 1800.png`}
                       imageAlt="Vista de Kaminaljuyu"
@@ -320,7 +344,7 @@ export default function EvolucionPage() {
                 </div>     
 
                 {/* Izquierda */}
-                <div className="relative flex flex-row my-5">
+                <div className="relative flex flex-row my-[-18] md:my-5">
                   <div className="basis-0 md:basis-50">
                   </div>
 
@@ -329,14 +353,13 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
-                      -top-[230px]           /* ⬅ Ajusta según necesites */
-                      left-[42%]
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
                       -translate-x-1/2
-                      w-64 md:w-120
-                      -rotate-82
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
                       pointer-events-none
                       "
                     />
@@ -346,19 +369,18 @@ export default function EvolucionPage() {
                       src={`${basePath}/img/evolucion/lineaPunteada.png`}
                       alt="Línea punteada derecha"
                       className="
-                        hidden md:block
                         absolute
                         z-0
-                        top-1/1
-                        right-[80px]         /* Ajusta según el diseño */
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
                         -translate-y-1/2
-                        rotate-[-98]             /* La giramos verticalmente */
-                        w-64 md:w-120
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
                         pointer-events-none
                       "
                     />
 
-                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-35 md:mb-0">
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Proyecto para la traza de la ciudad de Guatemala en el Valle de la Ermita. Luis Díez de Navarro, 1775.png`}
                       imageAlt="Vista de Kaminaljuyu"
@@ -367,7 +389,7 @@ export default function EvolucionPage() {
                   </div>
                 </div>         
 
-                {/* Derecha */}
+                {/* Derecha esta de mas */}
                 <div className="flex flex-row my-5">
                   <div className="basis-0 md:basis-125">
                   </div>
@@ -376,17 +398,17 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
-                      absolute
-                      top-[180px]        // ⬅ mueve arriba/abajo
-                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
-                      w-64 md:w-80
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
                       pointer-events-none
                     "
                   />
 
-                  <div className="w-full h-64 md:h-80 basis-138">
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Traza de la ciudad de Guatemala y sus pueblos aledaños. Arq. Marcos Ibáñez, 1782.png`}
                       imageAlt="Vista de Kaminaljuyu"
@@ -405,20 +427,19 @@ export default function EvolucionPage() {
                   <img
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
-                    className="
-                      hidden md:block
+                    className="                  
                       absolute
                       z-0                /* ⬅ Importante: al frente */
-                      -top-[230px]           /* ⬅ Ajusta según necesites */
-                      left-[42%]
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
                       -translate-x-1/2
-                      w-64 md:w-120
-                      -rotate-82
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
                       pointer-events-none
                       "
                     />
 
-                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/La ciudad de Guatemala en construcción en la década de 1800.png`}
                       imageAlt="Vista de Kaminaljuyu"
@@ -435,7 +456,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
                     <h2 className="text-3xl font-extrabold text-muni-azul">
-                      1821-1871
+                      1821 - 1871
                     </h2>
 
                     <p className="text-xl italic font-semibold mt-1 text-black">
@@ -459,12 +480,11 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
                       absolute
-                      top-[63px]        // ⬅ mueve arriba/abajo
-                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      top-[685px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
-                      w-64 md:w-120
+                      w-40 md:w-120
                       rotate-45
                       pointer-events-none
                     "
@@ -481,7 +501,7 @@ export default function EvolucionPage() {
                 </div>
 
                 {/* Izquierda */}
-                <div className="relative flex flex-row my-5">
+                <div className="relative flex flex-row my-[-18] md:my-5">
                   <div className="basis-0 md:basis-50">
                   </div>
 
@@ -490,14 +510,13 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
                       absolute
                       z-0                /* ⬅ Importante: al frente */
-                      -top-[210px]           /* ⬅ Ajusta según necesites */
-                      left-[43%]
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
                       -translate-x-1/2
-                      w-64 md:w-120
-                      -rotate-82
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
                       pointer-events-none
                       "
                     />
@@ -507,14 +526,13 @@ export default function EvolucionPage() {
                       src={`${basePath}/img/evolucion/lineaPunteada.png`}
                       alt="Línea punteada derecha"
                       className="
-                        hidden md:block
                         absolute
                         z-0
-                        top-1/1
-                        right-[80px]         /* Ajusta según el diseño */
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
                         -translate-y-1/2
-                        rotate-[-98]             /* La giramos verticalmente */
-                        w-64 md:w-120
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
                         pointer-events-none
                       "
                     />
@@ -537,7 +555,7 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
+                      hidden
                       absolute
                       top-[180px]        // ⬅ mueve arriba/abajo
                       left-[55%]           // ⬅ mueve izquierda/derecha
@@ -547,7 +565,7 @@ export default function EvolucionPage() {
                     "
                   />
 
-                  <div className="w-full h-64 md:h-80 basis-138">
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1860.png`}
                       imageAlt="Vista de Kaminaljuyu"
@@ -567,21 +585,21 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      hidden md:block
+          
                       absolute
                       z-0                /* ⬅ Importante: al frente */
-                      -top-[230px]           /* ⬅ Ajusta según necesites */
-                      left-[42%]
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
                       -translate-x-1/2
-                      w-64 md:w-120
-                      -rotate-82
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
                       pointer-events-none
                       "
                     />
 
-                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
                     <ImageMapCarousel
-                      imageSrc={`${basePath}/img/evolucion/Plaza Mayor en 1870. Al oriente de la Catedral, se encuentra el Mercado Central, comenzado a construir en la década anterior. Dibujo de la colección particular del Arq. Guillermo Aguirre.png`}
+                      imageSrc={`${basePath}/img/evolucion/Plaza Mayor en 1870. Al oriente de la Catedral.png`}
                       imageAlt="Vista de Kaminaljuyu"
                       webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
                     />
@@ -590,10 +608,1434 @@ export default function EvolucionPage() {
 
               </div>
 
+              {/* 1871 – 1918 */}
+              <div id="1871–1918">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      1871 – 1918
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      PERIODO LIBERAL A PARTIR DE 1871 
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      Transformaciones urbanas clave: llegada del ferrocarril, nuevos suburbios, modelos de vivienda norteamericanos y bulevares que configuran la expansión al sur.
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Modernización de infraestructura.</li>
+                        <li>Formación de cantones y barrios residenciales.</li>
+                        <li>Desplazamiento de élites a Tívoli, Santa Clara y Guadalupe.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[610px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Crecimiento de la ciudad de Guatemala, época independiente hasta 1871.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row mt-25 md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                  />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6            /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de Ingenieros Claudio Urrutia y Emilio Gómez Flores. 1894.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[3675px] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista aérea del proyecto de los Ingenieros Urrutia y Gómez Flores, 1894.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-[-18] md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Mapa sin descripción 1.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>         
+
+                {/* Derecha esta de mas */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Elaboración Dirección de Planificación Urbana basado en el mapa del libro_ Monografía del Departamento de Guatemala, J. Antonio Villacorta, Tipografía Nacional, 1926.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div> 
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="                  
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista aérea de la Estación Central de Ferrocarriles.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>    
+
+                {/* Derecha esta de mas */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista aérea del Teatro Colón, 1900.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>                              
+
+              </div>
+
+              {/* XX 1917 - 1931 */}
+              <div id="1917-1931">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      1917 - 1931
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      TERREMOTOS DE 1917 Y 1918 Y LA RECONSTRUCCIÓN POSTERIOR DEL TERRITORIO
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      El terremoto destruye infraestructura clave, provoca campamentos temporales y acelera nuevas trazas viales, barrios y reglamentos de construcción.
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Destrucción generalizada y reorganización urbana.</li>
+                        <li>Primer Reglamento Municipal de Construcción.</li>
+                        <li>Expansión hacia áreas planas fuera del damero original.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[685px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en 1920.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-[-18] md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Reconstrucción de la ciudad de Guatemala en 1922.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      absolute
+                      top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-64 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de la Nueva Guatemala de Asunción de la década de los años veinte del siglo XX.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+                   
+              </div>
+              
+              {/* XX 1931 – 1944 */}
+              <div id="">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      1931 – 1944
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      PERIODO DE UBICO IMPULSO A LA CONSTRUCCIÓN DE OBRA PÚBLICA
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      Período caracterizado por arquitectura monumental, obras públicas, expansión vial y nuevos proyectos institucionales.
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Obras estatales emblemáticas</li>
+                        <li>Avance del aeropuerto y nuevas vías.</li>
+                        <li>Primeros proyectos de vivienda popular.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[590px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Expansión del territorio hacia el sur_ hoy zona 9 y aeropuerto en 1932.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row mt-30 md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[755px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Colonia Ubico.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      absolute
+                      top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-64 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Mapa sin descripción 2.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+          
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Palacio Nacional, 1942.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>  
+                   
+              </div>
+
+              {/* XX 1944 – 1954 */}
+              <div id="">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      1944 – 1954
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      REVOLUCIÓN DE 1944 Y LA PLANIFICACIÓN DE GRANDES PROYECTOS URBANOS
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      Cambios normativos clave: creación de zonas, institucionalización de la planificación y crecimiento hacia periferias.
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Nacimiento del concepto de zonificación.</li>
+                        <li>Migraciones internas y nuevos asentamientos.</li>
+                        <li>Proyectos urbanos de gran escala.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[615px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1950.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row mt-30 md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                  />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6            /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1930.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[3675px] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Esquema de definición de zonas urbanas de la ciudad de Guatemala.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-[-18] md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Colonia Centroamérica, 1953.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>         
+
+                {/* Derecha esta de mas */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/El Trébol, 1954.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div> 
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="                  
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Universidad de San Carlos de Guatemala.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>                 
+
+              </div>
+
+              {/* XX 1954 – 1976 */}
+              <div id="">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      1954 – 1976
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      NUEVAS CONEXIONES Y LA EXPANSIÓN URBANA
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      Auge de carreteras hacia Atlántico y El Salvador, surgimiento de barrios periféricos, crecimiento del EDOM y urbanización metropolitana.
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Expansión vial como factor decisivo.</li>
+                        <li>Transformación metropolitana.</li>
+                        <li>Asentamientos precarios en crecimiento.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[590px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1970.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row mt-30 md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1970, previo terremoto.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      absolute
+                      top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-64 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista del Palacio Municipal y del IGSS en la década de 1950.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+                   
+              </div>
+
+              {/* 1976 – 2000 */}
+              <div id="1976–2000">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      1976 – 2000
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      TERREMOTO DE 1976 Y EL POSTERIOR DESARROLLO DEL TERRITORIO
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      El terremoto impulsa la expansión informal, impulsa políticas de planificación, crea dinámicas metropolitanas y sienta bases para procesos de revitalización del Centro Histórico
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Reconfiguración del territorio por campamentos.</li>
+                        <li>Crecimiento informal acelerado.</li>
+                        <li>Nuevos planes metropolitanos.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[615px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Mapa sin descripción 3.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row mt-20 md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                  />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6            /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Nimajuyú, 1984.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[3675px] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1990.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-[-18] md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1990.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>         
+
+                {/* Derecha esta de mas */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plaza El Obelisco, 1990.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>              
+
+              </div>
+
+              {/* 2000 - 2017 */}
+              <div id="2000-2017">
+                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                      2000 - 2017
+                    </h2>
+
+                    <p className="text-xl italic font-semibold mt-1 text-black">
+                      UNA NUEVA ÉPOCA DEL INICIO DEL SIGLO XXI A LA ACTUALIDAD
+                    </p>
+
+                    <p className="mt-3 text-slate-800 leading-relaxed">
+                      Inicio del desarrollo vertical, implementación del POT, creación del Transmetro, recuperación del espacio público y proyectos estratégicos para consolidación urbana.
+                    </p>
+
+                    <div className="my-5  border-slate-300"></div>
+
+                    <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
+                        <li>Ordenamiento Territorial como eje rector</li>
+                        <li>Movilidad masiva</li>
+                        <li>Proyectos metropolitanos estratégicos.</li>
+                    </ul>                  
+                  </div>
+
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      top-[610px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-120
+                      rotate-45
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Conjunto actual – ciudad de Guatemala, década 2000 a la actualidad.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row mt-25 md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[210px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[43%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                  />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6            /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala con municipios aledaños entre el año 2000 y 2017.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>       
+
+                {/* Derecha */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[3675px] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 my-35 md:my-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Mapa del municipio de Guatemala con la anterior delimitación de zonas.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div>     
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-[-18] md:my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Mapa del municipio de Guatemala con la actual delimitación de zonas.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>         
+
+                {/* Derecha esta de mas */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Paseo de la Sexta, contemporáneo.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div> 
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="                  
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                    {/* Línea punteada derecha */}
+                    <img
+                      src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                      alt="Línea punteada derecha"
+                      className="
+                        absolute
+                        z-0
+                        top-[730px] md:top-1/1
+                        right-[130px] md:right-[80px]         /* Ajusta según el diseño */
+                        -translate-y-1/2
+                        rotate-70 md:rotate-6             /* La giramos verticalmente */
+                        w-40 md:w-120
+                        pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Estaciones de Transmetro en la 18 calle y su vinculación con el Centro Cívico.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>    
+
+                {/* Derecha esta de mas */}
+                <div className="flex flex-row my-5">
+                  <div className="basis-0 md:basis-125">
+                  </div>
+                    
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="
+                      hidden
+                      top-[495%] md:top-[180px]        // ⬅ mueve arriba/abajo
+                      left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      -translate-x-1/4   
+                      w-40 md:w-80
+                      rotate-70 md:rotate-none
+                      pointer-events-none
+                    "
+                  />
+
+                  <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/Avenida Reforma y zona 10, 2017.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+
+                </div> 
+
+                {/* Izquierda */}
+                <div className="relative flex flex-row my-5">
+                  <div className="basis-0 md:basis-50">
+                  </div>
+
+                  {/* Linea Punteada Arriba */}
+                  <img
+                    src={`${basePath}/img/evolucion/lineaPunteada.png`}
+                    alt=""
+                    className="                  
+                      absolute
+                      z-0                /* ⬅ Importante: al frente */
+                      top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */
+                      left-[55%] md:left-[42%]
+                      -translate-x-1/2
+                      w-40 md:w-120
+                      -rotate-115 md:-rotate-82
+                      pointer-events-none
+                      "
+                    />
+
+                  <div className="w-full h-64 md:h-80 basis-138 relative z-10 mb-30 md:mb-0">
+                    <ImageMapCarousel
+                      imageSrc={`${basePath}/img/evolucion/7ª avenida, zona 4, 2015.png`}
+                      imageAlt="Vista de Kaminaljuyu"
+                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                    />
+                  </div>
+                </div>                             
+
+              </div>
+
             </div>
-
-
-
           </div>
         </section>
 
