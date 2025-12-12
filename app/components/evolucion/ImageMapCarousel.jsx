@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 const ExampleMap = dynamic(() => import("../arcgis/basemap/BaseMap"), {ssr: false});
 
-export default function ImageMapCarousel({ imageSrc, imageAlt, webmapId }) {
+export default function ImageMapCarousel({ imageSrc, imageAlt, webmapId, caption }) {
   const [slide, setSlide] = useState(0); // 0 = imagen | 1 = mapa
 
   return (
@@ -15,21 +15,34 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, webmapId }) {
       {/* Carrusel */}
       <div className="overflow-hidden rounded-xl border border-slate-200">
         {slide === 0 ? (
-          // 🖼 Imagen
-          <div className="relative w-full h-64 md:h-80">
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-              className="object-cover w-full h-full"
-            />
-          </div>
+          <>
+            {/* Imagen */}
+            <div className="relative w-full h-64 md:h-80">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="object-cover w-full h-full"
+              />
+            </div>
+
+            {/* Caption / pie de imagen */}
+            {caption && (
+              <div className="px-4 py-1 bg-white border-t border-slate-200">
+                <p className="text-sm text-slate-600 italic">
+                  {caption}
+                </p>
+              </div>
+            )}
+          </>
         ) : (
-          // 🗺 Mapa Web
+          // Mapa Web
           <div className="w-full h-64 md:h-80">
             <ExampleMap webmapId={webmapId} />
           </div>
         )}
       </div>
+
+
 
       {/* Flecha izquierda */}
       <button

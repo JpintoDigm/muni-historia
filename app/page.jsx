@@ -80,59 +80,80 @@ export default function HomePage() {
                     <img src={`${basePath}/img/evolucion.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
-                  <h3 className= "text-xl font-bold text-muni-azul leading-tight">
-                    <span className="block">Historia y</span>
-                    <span className="block">Evolución de la Ciudad</span>
+                  <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
+                    <span className="block">Historia</span>
+                    <span className="block">de la Ciudad</span>
                   </h3>
               </Link>
 
-              <Link href="/areas" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+              <div className="relative pointer-events-none opacity-60 overflow-hidden">
 
-                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                cursor-pointer">
-                  +
-                </button>
-
-                <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <img src={`${basePath}/img/5.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
+                <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
+                  Próximamente
                 </div>
-                <h3 className="text-xl font-semibold text-muni-azul">Áreas Verdes</h3>
-              </Link>
 
-              <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+                <Link href="/areas" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
                   <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
                   cursor-pointer">
                     +
                   </button>
 
-                  <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/2.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  <div className="mb-3 text-3xl">
+                    <img src={`${basePath}/img/5.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
+                  </div>
+                  <h3 className="text-xl font-semibold text-muni-azul"></h3>
+                  
+                  <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                    <span className="block">Areas</span>
+                    <span className="block">Verdes</span>
+                  </h3> 
+                </Link>
+              </div>  
+
+              <div className="relative pointer-events-none opacity-60 overflow-hidden">
+
+                <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
+                  Próximamente
+                </div>
+                <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+
+                    <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                    cursor-pointer">
+                      +
+                    </button>
+
+                    <div className="mb-3 text-3xl">
+                      <img src={`${basePath}/img/2.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
+                    </div>
+
+                    <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                      <span className="block">Proyectos</span>
+                      <span className="block">Urbanos</span>
+                    </h3>  
+                </Link>
+              </div>  
+
+
+
+                <Link href="/calendario" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+
+                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                  cursor-pointer">
+                    +
+                  </button>
+
+                  <div className="mb-3 text-3xl">
+                    <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Proyectos</span>
-                    <span className="block">Urbanos</span>
+                  <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                    <span className="block">Calendario</span>
+                    <span className="block">de eventos</span>
                   </h3>  
-              </Link>
 
-              <Link href="/calendario" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-
-                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                cursor-pointer">
-                  +
-                </button>
-
-                <div className="mb-3 text-3xl animate-pulse-slow ">
-                  <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
-                </div>
-
-                <h3 className="text-xl font-semibold text-muni-azul leading-tight">
-                  <span className="block">Calendario</span>
-                  <span className="block">de eventos</span>
-                </h3>  
-
-              </Link>
+                </Link>
+ 
 
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
                 <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
@@ -149,7 +170,7 @@ export default function HomePage() {
                   <div className="mb-3 text-3xl">
                     <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
-                  <h3 className="text-xl font-semibold text-muni-azul leading-tight">
+                  <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
                     <span className="block">Descarga</span>
                     <span className="block">Documentos</span>
                   </h3> 

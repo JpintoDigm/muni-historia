@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-export const basePath = "/prueba/jpinto/muniHistoria";
+export const basePath = "/prueba/sralda/muniHistoria";
 
 const nextConfig = {
   transpilePackages: ["@arcgis/core"],
