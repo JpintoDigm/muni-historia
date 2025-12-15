@@ -196,11 +196,13 @@ export default function EvolucionPage() {
                       ANTECEDENTES HISTÓRICOS: ORIGEN Y FUNDACIÓN DE LA CIUDAD Y POSTERIORES TRASLADOS
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       El terremoto impulsa la expansión informal, impulsa políticas de planificación, crea dinámicas metropolitanas y sienta bases para procesos de revitalización del Centro Histórico.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Reconfiguración del territorio por campamentos.</li>
@@ -229,7 +231,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de Kaminaljuyu en el siglo III D.C.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista aérea de Kaminaljuyu en el siglo III D.C."
                       caption="Vista aérea de Kaminaljuyu en el siglo III D.C."
                     />
                   </div>
@@ -244,19 +246,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1776 – 1821
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       TRASLADO EN 1776 AL VALLE DE LA ERMITA
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       El valle fue seleccionado por sus condiciones topográficas y disponibilidad de agua. La ciudad se diseñó desde cero con una cuadrícula regular, siguiendo lineamientos hispanoamericanos. Se consolidan cuarteles y primeras divisiones administrativas.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Elección estratégica del sitio.</li>
@@ -283,7 +287,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de Kaminaljuyu en el siglo III D.C.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista aérea de Kaminaljuyu en el siglo III D.C"
                       caption="Vista aérea de Kaminaljuyu en el siglo III D.C."
                     />
                   </div>
@@ -329,10 +333,10 @@ export default function EvolucionPage() {
 
                   <div className="w-full h-64 md:h-80 basis-138 relative z-10">
                     <ImageMapCarousel
-                      imageSrc={`${basePath}/img/evolucion/Vista del Valle de la Ermita hacia 1770-min.png`}
+                      imageSrc={`${basePath}/img/evolucion/Vista del Valle de la Ermita hacia 1770.png`}
                       imageAlt="Vista de Kaminaljuyu"
                       caption="Vista del Valle de la Ermita hacia 1770"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista del Valle de la Ermita hacia 1770"
                     />
                   </div>
                 </div>       
@@ -359,7 +363,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Pueblo de Jocotenango, Nueva Guatemala, 1800.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Pueblo de Jocotenango, Nueva Guatemala, 1800"
                       caption="Pueblo de Jocotenango, Nueva Guatemala, 1800"
                     />
                   </div>
@@ -481,19 +485,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1821 - 1871
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       INDEPENDENCIA DE GUATEMALA EN 1821
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       La independencia provoca cambios políticos moderados. Surge la división en cantones, crece el territorio urbano y se asientan estructuras de control territorial. La ciudad mantiene rasgos coloniales mientras avanza hacia el nordeste y sur.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Reconfiguración administrativa (creación del departamento).</li>
@@ -643,19 +649,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1871 – 1918
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       PERIODO LIBERAL A PARTIR DE 1871 
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       Transformaciones urbanas clave: llegada del ferrocarril, nuevos suburbios, modelos de vivienda norteamericanos y bulevares que configuran la expansión al sur.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Modernización de infraestructura.</li>
@@ -926,19 +934,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1917 - 1931
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       TERREMOTOS DE 1917 Y 1918 Y LA RECONSTRUCCIÓN POSTERIOR DEL TERRITORIO
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       El terremoto destruye infraestructura clave, provoca campamentos temporales y acelera nuevas trazas viales, barrios y reglamentos de construcción.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Destrucción generalizada y reorganización urbana.</li>
@@ -1056,19 +1066,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1931 – 1944
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       PERIODO DE UBICO IMPULSO A LA CONSTRUCCIÓN DE OBRA PÚBLICA
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       Período caracterizado por arquitectura monumental, obras públicas, expansión vial y nuevos proyectos institucionales.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Obras estatales emblemáticas</li>
@@ -1219,19 +1231,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1944 – 1954
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       REVOLUCIÓN DE 1944 Y LA PLANIFICACIÓN DE GRANDES PROYECTOS URBANOS
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       Cambios normativos clave: creación de zonas, institucionalización de la planificación y crecimiento hacia periferias.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+                
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Nacimiento del concepto de zonificación.</li>
@@ -1456,19 +1470,22 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1954 – 1976
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       NUEVAS CONEXIONES Y LA EXPANSIÓN URBANA
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       Auge de carreteras hacia Atlántico y El Salvador, surgimiento de barrios periféricos, crecimiento del EDOM y urbanización metropolitana.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
+                   
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Expansión vial como factor decisivo.</li>
@@ -1586,19 +1603,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1976 – 2000
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       TERREMOTO DE 1976 Y EL POSTERIOR DESARROLLO DEL TERRITORIO
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       El terremoto impulsa la expansión informal, impulsa políticas de planificación, crea dinámicas metropolitanas y sienta bases para procesos de revitalización del Centro Histórico
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Reconfiguración del territorio por campamentos.</li>
@@ -1792,19 +1811,21 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       2000 - 2017
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       UNA NUEVA ÉPOCA DEL INICIO DEL SIGLO XXI A LA ACTUALIDAD
                     </p>
 
-                    <p className="mt-3 text-slate-800 leading-relaxed">
+                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
                       Inicio del desarrollo vertical, implementación del POT, creación del Transmetro, recuperación del espacio público y proyectos estratégicos para consolidación urbana.
                     </p>
 
                     <div className="my-5  border-slate-300"></div>
+
+                    <p className="font-bold">Acontecimientos Relevantes</p>
 
                     <ul className="mt-2 space-y-1 list-disc ml-6 text-slate-700 leading-relaxed">
                         <li>Ordenamiento Territorial como eje rector</li>
