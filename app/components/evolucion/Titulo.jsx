@@ -4,7 +4,7 @@ import { MontserratLightItalic } from "../../layout";
 // components/Header.jsx
 export default function Titulo() {
   return (
-    <div className="mt-4 p-6">
+    <div className="mt-0 md:mt-4 p-6">
         <h1 className={`${MontserratMediumItalic.className} text-2xl md:text-3xl font-extrabold text-muni-azul`}>
         EVOLUCIÓN HISTÓRICA
         </h1>

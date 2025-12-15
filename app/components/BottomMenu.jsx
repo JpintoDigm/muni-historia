@@ -16,10 +16,10 @@ export default function BottomMenu() {
     <nav
       className="
         bg-gradient-to-br bg-muni-azul/10 text-muni-azul 
-        sticky bottom-0 mx-auto w-full max-w-sm
+        sticky bottom-0 mx-auto w-full max-w-3xs max-h-3xs
         rounded-t-[50px] backdrop-blur-xl
         flex justify-around items-center 
-        py-3 shadow-xl
+        py-0 shadow-xl
         z-50
       "
     >

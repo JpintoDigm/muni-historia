@@ -30,7 +30,7 @@ export default function EvolucionPage() {
             {/* Linea Tiempo */}
 
 
-            <div className="w-full flex flex-col items-center mt-20">
+            <div className="w-full flex flex-col items-center mt-6 md:mt-20">
 
               <div className="w-full flex flex-wrap justify-center gap-2 relative">
 
@@ -87,7 +87,7 @@ export default function EvolucionPage() {
 
                 {/* SIGLO XX */}
                 <Link href="#1917-1931" className="flex flex-col items-center justify-between animate-pulse-slow mt-1 md:mt-auto w-35">
-                  <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#D4DE52] text-muni-azul font-bold text-sm shadow`}>
+                  <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#8BC53F] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XX
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
@@ -118,7 +118,7 @@ export default function EvolucionPage() {
 
                 {/* SIGLO XXI */}
                 <Link href="#2000-2017" className="flex flex-col items-end justify-end animate-pulse-slow mt-1 md:mt-2 w-35">
-                  <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#D4DE52] text-muni-azul font-bold text-sm shadow`}>
+                  <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#37B268] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XXI
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
@@ -131,7 +131,7 @@ export default function EvolucionPage() {
 
                 {/* SIGLO XX – SIGLO XXI*/}
                 <Link href="#1976–2000" className="flex flex-col items-end animate-pulse-slow mt-1 md:mt-2 w-35">
-                  <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#D4DE52] text-muni-azul font-bold text-sm shadow`}>
+                  <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#EE6FAF] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XX – SIGLO XXI
                   </div>
                   <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
@@ -188,11 +188,11 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
-                    <h2 className="text-3xl font-extrabold text-muni-azul">
+                    <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1524 – 1773
                     </h2>
 
-                    <p className="text-xl italic font-semibold mt-1 text-black">
+                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
                       ANTECEDENTES HISTÓRICOS: ORIGEN Y FUNDACIÓN DE LA CIUDAD Y POSTERIORES TRASLADOS
                     </p>
 

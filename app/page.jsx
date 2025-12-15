@@ -14,13 +14,13 @@ export default function HomePage() {
     <main className="min-h-screen main-snake">
       <div className="container mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6">
         {/* HERO SUPERIOR */}
-        <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-0 md:mb-20">
+        <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-0 md:mb-10">
           {/* Logo 250 + escudo + menú */}
 
           <Header />
 
           {/* Imagen central debajo del header */}
-          <div className="w-full flex justify-center py-4 opacity-100 max-h-[300px]">
+          <div className="w-full flex justify-center pt-4 pb-0 opacity-100 max-h-50">
             <img
               src={`${basePath}/img/250añosHero.png`}
               alt="Descripción"
@@ -37,7 +37,7 @@ export default function HomePage() {
         <section className="flex-1">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
-            <article className={`${MarcellusRegular.className} relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60 cursor-pointer`}>
+            <article className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60 cursor-pointer`}>
 
               {/* Botón + */}
               <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
@@ -67,7 +67,7 @@ export default function HomePage() {
             </article>
 
             {/* Grid de 6 tarjetas */}
-            <div className={`${MarcellusRegular.className} grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
+            <div className={`${MarcellusRegular.className} order-1 md:order-2 grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
 
               <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
@@ -86,9 +86,27 @@ export default function HomePage() {
                   </h3>
               </Link>
 
+              <Link href="/calendario" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                cursor-pointer">
+                  +
+                </button>
+
+                <div className="mb-3 text-3xl animate-pulse-slow">
+                  <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                </div>
+
+                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                  <span className="block">Calendario</span>
+                  <span className="block">de eventos</span>
+                </h3>  
+
+              </Link>              
+
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
 
-                <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
+                <div className="absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2 rounded-b-3xl">
                   Próximamente
                 </div>
 
@@ -113,7 +131,7 @@ export default function HomePage() {
 
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
 
-                <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
+                <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
                   Próximamente
                 </div>
                 <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
@@ -133,30 +151,9 @@ export default function HomePage() {
                     </h3>  
                 </Link>
               </div>  
-
-
-
-                <Link href="/calendario" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                  cursor-pointer">
-                    +
-                  </button>
-
-                  <div className="mb-3 text-3xl">
-                    <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
-                  </div>
-
-                  <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Calendario</span>
-                    <span className="block">de eventos</span>
-                  </h3>  
-
-                </Link>
  
-
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
-                <div className="absolute inset-x-0 top-[60%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
+                <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
                   Próximamente
                 </div>
 
