@@ -8,6 +8,8 @@ import Header from "@/app/components/Header";
 import { basePath } from "@/next.config.mjs";
 import ListImage from "./components/ListImage";
 import BottomMenu from "./components/BottomMenu";
+import TrustedCompanies from "./components/TrustedCompanies";
+import { CompaniesLogo } from "./data/CompaniesLogo";
 
 export default function HomePage() {
   return (
@@ -176,6 +178,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <section className="">
+          <hr class="border-t border-gray-400 mt-10 w-full"/>
+          <TrustedCompanies companies={CompaniesLogo} />
+        </section>
+
       </div>
 
       <BottomMenu />

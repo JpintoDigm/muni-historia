@@ -184,10 +184,19 @@ export default function EvolucionPage() {
               ))} */}
               
               {/* 1524-1773 */}
-              <div id="1524-1773">
+              <div id="1524-1773" className="relative">
+
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-164 w-45 bg-[#8bc53f] flex items-center justify-center">
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XVI – SIGLO XVIII</p>
+                        <p>1524 – 1773</p>
+                      </div>
+                    </div>
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1524 – 1773
                     </h2>
@@ -245,7 +254,10 @@ export default function EvolucionPage() {
               <div id="1776-1821">
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-593 w-45 bg-[#EE6FAF] text-muni-azul" />
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1776 – 1821
                     </h2>
@@ -484,7 +496,10 @@ export default function EvolucionPage() {
               <div id="1821-1871">
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-423 w-45 bg-[#37B268] text-muni-azul" />
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1821 - 1871
                     </h2>
@@ -648,7 +663,10 @@ export default function EvolucionPage() {
               <div id="1871–1918">
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-665 w-45 bg-[#8BCFD9] text-muni-azul" />
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1871 – 1918
                     </h2>
@@ -933,7 +951,10 @@ export default function EvolucionPage() {
               <div id="1917-1931">
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-1656 w-45 bg-[#8BC53F] text-muni-azul" />
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1917 - 1931
                     </h2>
@@ -1066,6 +1087,7 @@ export default function EvolucionPage() {
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1931 – 1944
                     </h2>
@@ -1602,7 +1624,12 @@ export default function EvolucionPage() {
               <div id="1976–2000">
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-509 w-45 bg-[#EE6FAF] text-muni-azul">
+                      <p></p>
+                    </div>
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1976 – 2000
                     </h2>
@@ -1810,7 +1837,10 @@ export default function EvolucionPage() {
               <div id="2000-2017">
                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1">
+                  <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
+
+                    <div className="absolute left-[-200] top-0 bottom-0 h-791 w-45 bg-[#37B268] text-muni-azul" />
+
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       2000 - 2017
                     </h2>
