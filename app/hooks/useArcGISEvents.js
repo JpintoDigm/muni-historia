@@ -23,43 +23,59 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
         setLoading(true);
         setError("");
 
-        // ⚠️ Ajusta nombres de campos según tu capa
-        const DATE_FIELD = "fecha";      // ej: "fecha_evento"
-        const TITLE_FIELD = "titulo";    // ej: "nombre"
-        const TYPE_FIELD = "tipo";       // ej: "categoria"
-        const TIME_FIELD = "hora";       // opcional
-        const PLACE_FIELD = "lugar";     // opcional
+        const DATE_FIELD = "fecha_inicio";
+        const TITLE_FIELD = "descripcion";
+        const TIME_FIELD = "horario";
+        const EJE_FIELD = "eje";
 
-        // ArcGIS usa epoch ms para fechas si el campo es tipo Date
-        const where = `${DATE_FIELD} >= ${start.getTime()} AND ${DATE_FIELD} < ${end.getTime()}`;
+        const outFields = [DATE_FIELD, TITLE_FIELD, TIME_FIELD, EJE_FIELD].join(",");
+        const time = `${start.getTime()},${end.getTime() - 1}`;
 
-        const url =
-          `${featureLayerUrl}/query` +
-          `?where=${encodeURIComponent(where)}` +
-          `&outFields=${encodeURIComponent([DATE_FIELD, TITLE_FIELD, TYPE_FIELD, TIME_FIELD, PLACE_FIELD].join(","))}` +
-          `&returnGeometry=false&f=json`;
+        let all = [];
+        let offset = 0;
+        const pageSize = 2000;
 
-        const res = await fetch(url);
-        const json = await res.json();
+        while (true) {
+            const url =
+              `${featureLayerUrl}/query` +
+              `?where=${encodeURIComponent("1=1")}` +
+              `&time=${encodeURIComponent(time)}` +
+              `&outFields=${encodeURIComponent(outFields)}` +
+              `&orderByFields=${encodeURIComponent(`${DATE_FIELD} ASC`)}` +
+              `&resultRecordCount=${pageSize}` +
+              `&resultOffset=${offset}` +
+              `&returnGeometry=false&f=json`;
 
-        if (!res.ok || json.error) {
-          throw new Error(json?.error?.message || "No se pudo consultar ArcGIS.");
+          const res = await fetch(url);
+          const json = await res.json();
+
+          if (!res.ok || json.error) {
+            throw new Error(json?.error?.message || "No se pudo consultar ArcGIS.");
+          }
+
+          const page = (json.features || []).map((f) => {
+            const a = f.attributes || {};
+            return {
+              id: a.objectid,
+              date: new Date(a[DATE_FIELD]),
+              title: a[TITLE_FIELD] ?? "Evento",
+              time: a[TIME_FIELD] ?? "",
+              eje: Number(a[EJE_FIELD]),
+            };
+          });
+
+          all = all.concat(page);
+
+          // si ya no hay más páginas
+          if (!json.exceededTransferLimit || page.length === 0) break;
+
+          offset += pageSize;
         }
 
-        const mapped = (json.features || []).map((f) => {
-          const a = f.attributes || {};
-          const d = new Date(a[DATE_FIELD]);
-          return {
-            id: a.OBJECTID ?? `${a[TITLE_FIELD]}-${a[DATE_FIELD]}`,
-            date: d, // Date object
-            type: a[TYPE_FIELD] ?? "actividad",
-            title: a[TITLE_FIELD] ?? "Evento",
-            time: a[TIME_FIELD] ?? "",
-            place: a[PLACE_FIELD] ?? "",
-          };
-        });
+        
+        setEvents(all);
 
-        if (!cancelled) setEvents(mapped);
+        if (!cancelled) setEvents(all);
       } catch (e) {
         if (!cancelled) setError(e?.message || "Error desconocido");
       } finally {

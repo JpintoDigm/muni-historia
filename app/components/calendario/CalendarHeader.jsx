@@ -59,14 +59,14 @@ export default function CalendarHeader({
 
         {/* TABS (OCUPA TODO EL RESTO DEL ANCHO) */}
         <div className="min-w-0 overflow-x-auto">
-          <div className="flex w-max rounded-full bg-white/10 p-1 gap-1 whitespace-nowrap">
+          <div className="flex w-max  bg-white/10 p-1 whitespace-nowrap">
             {/** botones de ejes */}
             {/* Eje 1 */}
             <button
               onClick={() => setTab("Eje1")}
-              className={`flex flex-col items-center rounded-full transition text-muni-azul
+              className="flex flex-col items-center  transition text-muni-azul
                 px-3 py-2 text-xs sm:px-4 sm:text-sm
-                ${tab === "Eje1" ? "bg-white/20" : "hover:bg-white/10"}`}
+               bg-white/10"
             >
               <img src={`${basePath}/img/calendario/10.png`} className="w-8 sm:w-10" />
               <span>Impulsando</span>
@@ -76,9 +76,9 @@ export default function CalendarHeader({
             {/* Eje 2 */}
             <button
               onClick={() => setTab("Eje2")}
-              className={`flex flex-col items-center rounded-full transition text-muni-azul
+              className="flex flex-col items-center  transition text-muni-azul
                 px-3 py-2 text-xs sm:px-4 sm:text-sm
-                ${tab === "Eje2" ? "bg-white/20" : "hover:bg-white/10"}`}
+                bg-white/10"
             >
               <img src={`${basePath}/img/calendario/11.png`} className="w-8 sm:w-10" />
               <span>Inspirando</span>
@@ -88,9 +88,9 @@ export default function CalendarHeader({
             {/* Eje 3 */}
             <button
               onClick={() => setTab("Eje3")}
-              className={`flex flex-col items-center rounded-full transition text-muni-azul
+              className="flex flex-col items-center  transition text-muni-azul
                 px-3 py-2 text-xs sm:px-4 sm:text-sm
-                ${tab === "Eje3" ? "bg-white/20" : "hover:bg-white/10"}`}
+                bg-white/10"
             >
               <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-10" />
               <span>Conectando</span>

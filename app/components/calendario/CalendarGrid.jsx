@@ -1,3 +1,18 @@
+import { basePath } from "@/next.config.mjs";
+
+
+const EJE_ICON = {
+  1: basePath + "/img/calendario/10.png",
+  2: basePath + "/img/calendario/11.png",
+  3: basePath + "/img/calendario/12.png",
+};
+
+const EJE_COLOR = {
+  1: "bg-pink-400", // Impulsando oportunidades
+  2: "bg-yellow-400",   // Inspirando sueños
+  3: "bg-green-400",  // Conectando metas
+};
+
 export default function CalendarGrid({
   month,
   events,
@@ -22,8 +37,8 @@ export default function CalendarGrid({
     <div className="mt-6 rounded-2xl bg-white/20 p-4">
       {/* Header días */}
       <div className="grid grid-cols-7 text-center text-sm font-extrabold text-muni-azul/80">
-        {days.map((d) => (
-          <div key={d}>{d}</div>
+        {days.map((d, i) => (
+          <div key={`${d}-${i}`}>{d}</div>
         ))}
       </div>
 
@@ -31,35 +46,60 @@ export default function CalendarGrid({
       <div className="mt-2 grid grid-cols-7 gap-1 md:gap-2">
         {cells.map((date, idx) => {
           if (!date)
-            return <div key={idx} className="h-5 md:h-24" />;
+            return <div key={idx} className="h-5 md:h-35" />;
 
           const isSelected =
             selectedDay?.toDateString() === date.toDateString();
 
           const dayEvents = events.filter(
-            (e) =>
-              e.date.toDateString() === date.toDateString() &&
-              e.type === tab
+            (e) => e.date?.toDateString() === date.toDateString()
           );
+
+          const ejesDelDia = [...new Set(dayEvents.map(e => e.eje))];
+
 
           return (
             <button
               key={idx}
               onClick={() => onSelectDay(date)}
               className={`
-                h-15 md:h-24 rounded-xl border p-2 text-left transition
+                h-15 md:h-35 rounded-xl border p-2 text-left transition
                 ${isSelected ? "border-pink-400 ring-2 ring-yellow-300/30" : "border-white/80"}
                 hover:bg-white/10
               `}
             >
               <div className="text-sm font-bold">{date.getDate()}</div>
 
-              {dayEvents.slice(0, 2).map((e, i) => (
-                <div key={i} className="mt-1 flex items-center gap-1 text-xs">
-                  <span className="h-1.5 w-1.5 rounded-full bg-yellow-300" />
-                  <span className="truncate">{e.title}</span>
+              {/* Iconos por eje */}
+              {ejesDelDia.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {ejesDelDia.slice(0, 3).map((eje) => (
+                    EJE_ICON[eje] && (
+                      <img
+                        key={eje}
+                        src={EJE_ICON[eje]}
+                        alt={`Eje ${eje}`}
+                        className="h-4 w-4 object-contain"
+                      />
+                    )
+                  ))}
                 </div>
-              ))}
+              )}
+
+
+              <div className="hidden md:block">
+                {dayEvents.slice(0, 2).map((e, i) => (
+                  <div key={i} className="mt-1 flex items-center gap-1 text-xs">
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        EJE_COLOR[e.eje] || "bg-gray-300"
+                      }`}
+                    />
+                    <span className="truncate">{e.title}</span>
+                  </div>
+                ))}
+              </div>
+
             </button>
           );
         })}

@@ -16,6 +16,9 @@ export default function CalendarioEventos({ featureLayerUrl }) {
     monthDate: month,
   });
 
+console.log("month", month, "events", events.length);
+
+
   return (
     <div className="mx-auto max-w-6xl text-white">
       <CalendarHeader
@@ -45,6 +48,8 @@ export default function CalendarioEventos({ featureLayerUrl }) {
         events={events}
         tab={tab}
       />
+
     </div>
   );
+  
 }
