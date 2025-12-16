@@ -180,7 +180,7 @@ export default function HomePage() {
         </section>
 
         <section className="">
-          <hr class="border-t border-gray-400 mt-10 w-full"/>
+          <hr class="border-t border-muni-azul/20 mt-10 w-full"/>
           <TrustedCompanies companies={CompaniesLogo} />
         </section>
 

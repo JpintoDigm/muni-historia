@@ -36,7 +36,7 @@ html {
 .main-snake {
   min-height: 70vh;
   background-image:
-    url("/250CiudadDeGuatemala/img/fondoSnake.png"),
+    url("/prueba/jpinto/muniHistoria/img/fondoSnake.png"),
     linear-gradient(135deg, #F57EB6 0%, #E0E721 45%, #2CB877 90%);
 
   background-repeat: no-repeat, no-repeat;
@@ -56,6 +56,15 @@ html {
     135deg,
     #F57EB6 0%,
     #E0E721 45%,
+    #2CB877 90%
+  );
+}
+
+.bg-calendar {
+  background: linear-gradient(
+    135deg,
+    #F57EB6 0%,
+    #ffbf7f 45%,
     #2CB877 90%
   );
 }

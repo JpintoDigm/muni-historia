@@ -19,19 +19,19 @@ export default function CalendarGrid({
   }
 
   return (
-    <div className="mt-6 rounded-2xl bg-white/10 p-4">
+    <div className="mt-6 rounded-2xl bg-white/20 p-4">
       {/* Header días */}
-      <div className="grid grid-cols-7 text-center text-sm font-semibold text-white/80">
+      <div className="grid grid-cols-7 text-center text-sm font-extrabold text-muni-azul/80">
         {days.map((d) => (
           <div key={d}>{d}</div>
         ))}
       </div>
 
       {/* Grid */}
-      <div className="mt-2 grid grid-cols-7 gap-2">
+      <div className="mt-2 grid grid-cols-7 gap-1 md:gap-2">
         {cells.map((date, idx) => {
           if (!date)
-            return <div key={idx} className="h-24" />;
+            return <div key={idx} className="h-5 md:h-24" />;
 
           const isSelected =
             selectedDay?.toDateString() === date.toDateString();
@@ -47,8 +47,8 @@ export default function CalendarGrid({
               key={idx}
               onClick={() => onSelectDay(date)}
               className={`
-                h-24 rounded-xl border p-2 text-left transition
-                ${isSelected ? "border-pink-400 ring-2 ring-yellow-300/30" : "border-white/30"}
+                h-15 md:h-24 rounded-xl border p-2 text-left transition
+                ${isSelected ? "border-pink-400 ring-2 ring-yellow-300/30" : "border-white/80"}
                 hover:bg-white/10
               `}
             >

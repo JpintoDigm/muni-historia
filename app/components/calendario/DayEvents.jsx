@@ -4,13 +4,13 @@ export default function DayEvents({ day, events, tab }) {
   );
 
   return (
-    <div className="mt-8 border-t border-white/20 pt-6">
-      <h3 className="text-lg font-bold">
+    <div className="my-15 border-t border-white/20 pt-6">
+      <h3 className="text-lg font-bold text-shadow-lg/30">
         Eventos del {day.toLocaleDateString("es-GT")}
       </h3>
 
       {list.length === 0 && (
-        <p className="mt-2 text-white/70">No hay eventos.</p>
+        <p className="mt-2 text-muni-azul/70">No hay eventos.</p>
       )}
 
       <div className="mt-4 grid gap-3 md:grid-cols-2">
