@@ -125,8 +125,8 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-muni-azul"></h3>
                   
                   <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Areas</span>
-                    <span className="block">Verdes</span>
+                    <span className="block">Parques</span>
+                    <span className="block">Conmemorativos</span>
                   </h3> 
                 </Link>
               </div>  
@@ -149,7 +149,7 @@ export default function HomePage() {
 
                     <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
                       <span className="block">Proyectos</span>
-                      <span className="block">Urbanos</span>
+                      <span className="block">Conmemorativos</span>
                     </h3>  
                 </Link>
               </div>  

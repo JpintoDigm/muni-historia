@@ -184,9 +184,9 @@ export default function EvolucionPage() {
               ))} */}
               
               {/* 1524-1773 */}
-              <div id="1524-1773" className="relative">
+              <div id="1524-1773" className="relative mb-20 md:mb-0">
 
-                <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
+                <div className="relative grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
@@ -224,27 +224,16 @@ export default function EvolucionPage() {
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
                     className="
-                      
+                      hidden md:block
                       absolute
-                      top-[630px] md:top-[180px]        // ⬅ mueve arriba/abajo
-                      left-[38%]  md:left-[55%]           // ⬅ mueve izquierda/derecha
+                      top-[630px] md:top-[278px]        // ⬅ mueve arriba/abajo
+                      left-[38%]  md:left-[39%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
-                      w-40 md:w-120
-                      rotate-45 md:rotate-none
+                      w-40 md:w-110
+                      rotate-45 md:rotate-20
                       pointer-events-none
                     "
                   />
-
-
-                  <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
-                    <ImageMapCarousel
-                      imageSrc={`${basePath}/img/evolucion/Vista aérea de Kaminaljuyu en el siglo III D.C.png`}
-                      imageAlt="Vista de Kaminaljuyu"
-                      nombre="Vista aérea de Kaminaljuyu en el siglo III D.C."
-                      caption="Vista aérea de Kaminaljuyu en el siglo III D.C."
-                    />
-                  </div>
-
 
                 </div>     
               
@@ -256,7 +245,12 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-593 w-45 bg-[#EE6FAF] text-muni-azul" />
+                    <div className="absolute left-[-200] top-0 bottom-0 h-593 w-45 bg-[#EE6FAF] text-muni-azul flex items-center justify-center">
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XVIII – SIGLO XIX</p>
+                        <p>1776 – 1821</p>
+                      </div>                
+                    </div>
 
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1776 – 1821
@@ -423,7 +417,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Proyecto para la traza de la ciudad de Guatemala en el Valle de la Ermita. Luis Díez de Navarro, 1775.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Proyecto para la traza de la ciudad de Guatemala en el Valle de la Ermita. Luis Díez de Navarro, 1775"
                       caption="Proyecto para la traza de la ciudad de Guatemala en el Valle de la Ermita. Luis Díez de Navarro, 1775"
                     />
                   </div>
@@ -452,7 +446,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Traza de la ciudad de Guatemala y sus pueblos aledaños. Arq. Marcos Ibáñez, 1782.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Traza de la ciudad de Guatemala y sus pueblos aledaños. Arq. Marcos Ibáñez, 1782"
                       caption="Traza de la ciudad de Guatemala y sus pueblos aledaños. Arq. Marcos Ibáñez, 1782"
                     />
                   </div>
@@ -484,8 +478,8 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/La ciudad de Guatemala en construcción en la década de 1800.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
-                      caption="La ciudad d e Guatemala en construcción en la década de 1800"
+                      nombre="La ciudad de Guatemala en construcción en la década de 1800"
+                      caption="La ciudad de Guatemala en construcción en la década de 1800"
                     />
                   </div>
                 </div>                 
@@ -498,7 +492,12 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-423 w-45 bg-[#37B268] text-muni-azul" />
+                    <div className="absolute left-[-200] top-0 bottom-0 h-423 w-45 bg-[#37B268] text-muni-azul flex items-center justify-center">
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XIX</p>
+                        <p>1821 – 1871</p>
+                      </div>                
+                    </div>
 
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1821 - 1871
@@ -541,7 +540,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/La Plaza Mayor de la ciudad de Guatemala en 1821 Dibujo de la colección particular del Arq. Guillermo Aguirre.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="La Plaza Mayor de la ciudad de Guatemala en 1821 Dibujo de la colección particular del Arq. Guillermo Aguirre"
                       caption="La Plaza Mayor de la ciudad de Guatemala en 1821 Dibujo de la colección particular del Arq. Guillermo Aguirre."
                     />
                   </div>
@@ -589,7 +588,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1860.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista aérea de la ciudad de Guatemala en la década de 1860"
                       caption="Vista aérea de la ciudad de Guatemala en la década de 1860"
                     />
                   </div>
@@ -618,7 +617,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1860.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de la ciudad de Guatemala en la década de 1860"
                       caption="Plano de la ciudad de Guatemala en la década de 1860"
                     />
                   </div>
@@ -651,7 +650,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plaza Mayor en 1870. Al oriente de la Catedral.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plaza Mayor en 1870. Al oriente de la Catedral, se encuentra el Mercado Central, comenzado a construir en la década anterior. Dibujo de la colección particular del Arq. Guillermo Aguirre."
                       caption="Plaza Mayor en 1870. Al oriente de la Catedral, se encuentra el Mercado Central, comenzado a construir en la década anterior."
                     />
                   </div>
@@ -665,7 +664,12 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-665 w-45 bg-[#8BCFD9] text-muni-azul" />
+                    <div className="absolute left-[-200] top-0 bottom-0 h-665 w-45 bg-[#8BCFD9] text-muni-azul flex items-center justify-center">
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XIX - SIGLO XX</p>
+                        <p>1871 – 1918</p>
+                      </div>                
+                    </div>
 
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1871 – 1918
@@ -708,7 +712,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Crecimiento de la ciudad de Guatemala, época independiente hasta 1871.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Crecimiento de la ciudad de Guatemala, época independiente hasta 1871"
                       caption="Crecimiento de la ciudad de Guatemala, época independiente hasta 1871"
                     />
                   </div>
@@ -756,7 +760,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de Ingenieros Claudio Urrutia y Emilio Gómez Flores. 1894.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de Ingenieros Claudio Urrutia y Emilio Gómez Flores. 1894"
                       caption="Plano de Ingenieros Claudio Urrutia y Emilio Gómez Flores. 1894"
                     />
                   </div>
@@ -832,7 +836,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Mapa Ciudad de Guatemala Inicio Siglo XX.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Mapa Ciudad de Guatemala Inicio Siglo XX"
                       caption="Mapa Ciudad de Guatemala Inicio Siglo XX"
                     />
                   </div>
@@ -859,9 +863,9 @@ export default function EvolucionPage() {
 
                   <div className="w-full h-64 md:h-80 basis-138 mb-35 md:mb-0">
                     <ImageMapCarousel
-                      imageSrc={`${basePath}/img/evolucion/Elaboración Dirección de Planificación Urbana basado en el mapa del libro_ Monografía del Departamento de Guatemala, J. Antonio Villacorta, Tipografía Nacional, 1926.png`}
+                      imageSrc={`${basePath}/img/evolucion/Elaboración Dirección de Planificación Urbana 1926.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Elaboración Dirección de Planificación Urbana basado en el mapa del libro: Monografía del Departamento de Guatemala, J. Antonio Villacorta, 1926"
                     />
                   </div>
@@ -909,7 +913,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de la Estación Central de Ferrocarriles.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista aérea de la Estación Central de Ferrocarriles"
                       caption="Vista aérea de la Estación Central de Ferrocarriles"
                     />
                   </div>
@@ -938,7 +942,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea del Teatro Colón, 1900.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista aérea del Teatro Colón, 1900 "
                       caption="Vista aérea del Teatro Colón, 1900"
                     />
                   </div>
@@ -953,7 +957,12 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-1656 w-45 bg-[#8BC53F] text-muni-azul" />
+                    <div className="absolute left-[-200] top-0 bottom-0 h-1656 w-45 bg-[#8BC53F] text-muni-azul flex items-center justify-center" >
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XX</p>
+                        <p>1917 - 1931</p>
+                      </div>
+                    </div>
 
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       1917 - 1931
@@ -996,7 +1005,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en 1920.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de la ciudad de Guatemala en 1920"
                       caption="Plano de la ciudad de Guatemala en 1920"
                     />
                   </div>
@@ -1044,7 +1053,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Reconstrucción de la ciudad de Guatemala en 1922.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Reconstrucción de la ciudad de Guatemala en 1922"
                       caption="Reconstrucción de la ciudad de Guatemala en 1922"
                     />
                   </div>
@@ -1073,7 +1082,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la Nueva Guatemala de Asunción de la década de los años veinte del siglo XX.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Plano de la Nueva Guatemala de Asunción de la década de los años veinte del siglo XX"
                     />
                   </div>
@@ -1129,7 +1138,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Expansión del territorio hacia el sur_ hoy zona 9 y aeropuerto en 1932.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Expansión del territorio hacia el sur: hoy zona 9 y aeropuerto en 1932"
                     />
                   </div>
@@ -1177,7 +1186,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Colonia Ubico.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Colonia Ubico"
                       caption="Colonia Ubico"
                     />
                   </div>
@@ -1206,7 +1215,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Mapa Ciudad de Guatemala Siglo XX.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Mapa Ciudad de Guatemala Siglo XX"
                       caption="Mapa Ciudad de Guatemala Siglo XX"
                     />
                   </div>
@@ -1240,7 +1249,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Palacio Nacional, 1942.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Palacio Nacional, 1942"
                     />
                   </div>
@@ -1294,7 +1303,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1950.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Vista aérea de la ciudad de Guatemala en la década de 1950"
                     />
                   </div>
@@ -1342,7 +1351,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1930.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de la ciudad de Guatemala en la década de 1930"
                       caption="Plano de la ciudad de Guatemala en la década de 1930"
                     />
                   </div>
@@ -1370,7 +1379,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Esquema de definición de zonas urbanas de la ciudad de Guatemala.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Esquema de definición de zonas urbanas de la ciudad de Guatemala"
                     />
                   </div>
@@ -1418,7 +1427,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Colonia Centroamérica, 1953.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Colonia Centroamérica, 1953"
                       caption="Colonia Centroamérica, 1953"
                     />
                   </div>
@@ -1447,7 +1456,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/El Trébol, 1954.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="El Trébol, 1954"
                       caption="El Trébol, 1954"
                     />
                   </div>
@@ -1479,7 +1488,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Universidad de San Carlos de Guatemala.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Universidad de San Carlos de Guatemala"
                       caption="Universidad de San Carlos de Guatemala"
                     />
                   </div>
@@ -1534,7 +1543,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1970.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de la ciudad de Guatemala en la década de 1970"
                       caption="Plano de la ciudad de Guatemala en la década de 1970"
                     />
                   </div>
@@ -1582,7 +1591,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1970, previo terremoto.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Vista aérea de la ciudad de Guatemala en la década de 1970, previo terremoto"
                     />
                   </div>
@@ -1611,7 +1620,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista del Palacio Municipal y del IGSS en la década de 1950.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Vista del Palacio Municipal y del IGSS en la década de 1950"
                       caption="Vista del Palacio Municipal y del IGSS en la década de 1950"
                     />
                   </div>
@@ -1626,8 +1635,11 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-509 w-45 bg-[#EE6FAF] text-muni-azul">
-                      <p></p>
+                    <div className="absolute left-[-200] top-0 bottom-0 h-509 w-45 bg-[#EE6FAF] text-muni-azul flex justify-center items-center">
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XX - SIGLO XXI</p>
+                        <p>1976 – 2000</p>
+                      </div>
                     </div>
 
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
@@ -1671,7 +1683,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Mapa Ciudad de Guatemala Inicio Siglo XXI.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Mapa Ciudad de Guatemala Inicio Siglo XXI"
                       caption="Mapa Ciudad de Guatemala Inicio Siglo XXI"
                     />
                   </div>
@@ -1719,7 +1731,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Nimajuyú, 1984.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Nimajuyú, 1984"
                       caption="Nimajuyú, 1984"
                     />
                   </div>
@@ -1747,7 +1759,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala en la década de 1990.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de la ciudad de Guatemala en la década de 1990"
                       caption="Plano de la ciudad de Guatemala en la década de 1990"
                     />
                   </div>
@@ -1795,7 +1807,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Vista aérea de la ciudad de Guatemala en la década de 1990.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Vista aérea de la ciudad de Guatemala en la década de 1990"
                     />
                   </div>
@@ -1824,7 +1836,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plaza El Obelisco, 1990.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Plaza El Obelisco, 1990"
                     />
                   </div>
@@ -1839,7 +1851,12 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-791 w-45 bg-[#37B268] text-muni-azul" />
+                    <div className="absolute left-[-200] top-0 bottom-0 h-791 w-45 bg-[#37B268] text-muni-azul flex items-center justify-center">
+                      <div className="text-center text-white font-extrabold">
+                        <p>SIGLO XXI</p>
+                        <p>2000 - 2017</p>
+                      </div>
+                    </div>                      
 
                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                       2000 - 2017
@@ -1882,7 +1899,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Conjunto actual – ciudad de Guatemala, década 2000 a la actualidad.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Conjunto actual – ciudad de Guatemala, década 2000 a la actualidad"
                     />
                   </div>
@@ -1930,7 +1947,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Plano de la ciudad de Guatemala con municipios aledaños entre el año 2000 y 2017.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Plano de la ciudad de Guatemala con municipios aledaños entre el año 2000 y 2017"
                       caption="Plano de la ciudad de Guatemala con municipios aledaños entre el año 2000 y 2017"
                     />
                   </div>
@@ -1958,7 +1975,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Mapa del municipio de Guatemala con la anterior delimitación de zonas.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Mapa del municipio de Guatemala con la actual delimitación de zonas"
                       caption="Mapa del municipio de Guatemala con la anterior delimitación de zonas"
                     />
                   </div>
@@ -2006,7 +2023,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Mapa del municipio de Guatemala con la actual delimitación de zonas.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="Mapa del municipio de Guatemala con la actual delimitación de zonas"
                     />
                   </div>
@@ -2035,7 +2052,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Paseo de la Sexta, contemporáneo.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Paseo de la Sexta, contemporáneo"
                       caption="Paseo de la Sexta, contemporáneo"
                     />
                   </div>
@@ -2083,7 +2100,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Estaciones de Transmetro en la 18 calle y su vinculación con el Centro Cívico.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Estaciones de Transmetro en la 18 calle y su vinculación con el Centro Cívico"
                       caption="Estaciones de Transmetro en la 18 calle y su vinculación con el Centro Cívico"
                     />
                   </div>
@@ -2112,7 +2129,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/Avenida Reforma y zona 10, 2017.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre="Avenida Reforma y zona 10, 2017"
                       caption="Avenida Reforma y zona 10, 2017"
                     />
                   </div>
@@ -2144,7 +2161,7 @@ export default function EvolucionPage() {
                     <ImageMapCarousel
                       imageSrc={`${basePath}/img/evolucion/7ª avenida, zona 4, 2015.png`}
                       imageAlt="Vista de Kaminaljuyu"
-                      webmapId="c5a385fcdc5e460f8e42c1f089d8e530"
+                      nombre=""
                       caption="7ª avenida, zona 4, 2015"
                     />
                   </div>

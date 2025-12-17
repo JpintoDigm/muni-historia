@@ -12,10 +12,8 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
   const [slide, setSlide] = useState(0);
 
   return (
-    // 🔹 Wrapper general
     <div className="relative w-full max-w-3xl mx-auto">
 
-      {/* 🔹 Carrusel (solo contenido visual) */}
       <div className="relative z-10 bg-white overflow-hidden rounded-xl border border-slate-200">
         {slide === 0 ? (
           <>
@@ -29,7 +27,7 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
 
             {caption && (
               <div className="px-4 py-1 bg-white border-t border-slate-200">
-                <p className="text-sm text-slate-600 italic">
+                <p className="text-sm text-black font-medium italic">
                   {caption}
                 </p>
               </div>
@@ -42,7 +40,6 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
         )}
       </div>
 
-      {/* 🔹 Botón izquierdo (FUERA del carrusel) */}
       <button
         onClick={() => setSlide(0)}
         className="
@@ -55,7 +52,6 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
         ←
       </button>
 
-      {/* 🔹 Botón derecho (FUERA del carrusel) */}
       <button
         onClick={() => setSlide(1)}
         className="
