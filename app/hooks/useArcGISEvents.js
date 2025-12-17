@@ -27,8 +27,9 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
         const TITLE_FIELD = "descripcion";
         const TIME_FIELD = "horario";
         const EJE_FIELD = "eje";
+        const ADDRESS = "direccion";
 
-        const outFields = [DATE_FIELD, TITLE_FIELD, TIME_FIELD, EJE_FIELD].join(",");
+        const outFields = [DATE_FIELD, TITLE_FIELD, TIME_FIELD, EJE_FIELD, ADDRESS].join(",");
         const time = `${start.getTime()},${end.getTime() - 1}`;
 
         let all = [];
@@ -61,6 +62,7 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
               title: a[TITLE_FIELD] ?? "Evento",
               time: a[TIME_FIELD] ?? "",
               eje: Number(a[EJE_FIELD]),
+              address: a[ADDRESS] ?? "",
             };
           });
 
