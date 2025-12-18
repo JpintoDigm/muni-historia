@@ -64,7 +64,7 @@ export default function CalendarHeader({
 
           {/* TABS (OCUPA TODO EL RESTO DEL ANCHO) */}
           <div className="min-w-0 overflow-hidden md:overflow-visible  md:ml-0">
-            <div className="flex w-full p-0 md:p-1 items-center justify-start md:justify-end gap-2">
+            <div className="flex w-full p-0 md:p-1 items-center justify-center md:justify-end gap-2">
               {/** botones de ejes */}
               {/* Eje 1 */}
               <button

@@ -190,7 +190,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-164 w-45 bg-[#8bc53f] flex items-center justify-center">
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-164 w-45 bg-[#8bc53f] flex items-center justify-center">
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XVI – SIGLO XVIII</p>
                         <p>1524 – 1773</p>
@@ -226,7 +226,7 @@ export default function EvolucionPage() {
                     className="
                       hidden md:block
                       absolute
-                      top-[630px] md:top-[278px]        // ⬅ mueve arriba/abajo
+                      top-[640px] md:top-[278px]        // ⬅ mueve arriba/abajo
                       left-[38%]  md:left-[39%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-110
@@ -245,7 +245,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-593 w-45 bg-[#EE6FAF] text-muni-azul flex items-center justify-center">
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-726 md:h-593 w-45 bg-[#EE6FAF] text-muni-azul flex items-center justify-center">
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XVIII – SIGLO XIX</p>
                         <p>1776 – 1821</p>
@@ -280,7 +280,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[685px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[750px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -492,7 +492,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-423 w-45 bg-[#37B268] text-muni-azul flex items-center justify-center">
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-527 md:h-423 w-45 bg-[#37B268] text-muni-azul flex items-center justify-center">
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XIX</p>
                         <p>1821 – 1871</p>
@@ -527,7 +527,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[685px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[745px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -664,7 +664,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-665 w-45 bg-[#8BCFD9] text-muni-azul flex items-center justify-center">
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-824 md:h-665 w-45 bg-[#8BCFD9] text-muni-azul flex items-center justify-center">
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XIX - SIGLO XX</p>
                         <p>1871 – 1918</p>
@@ -699,7 +699,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[610px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[710px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -957,7 +957,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-1656 w-45 bg-[#8BC53F] text-muni-azul flex items-center justify-center" >
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-2072 md:h-1656 w-45 bg-[#8BC53F] text-muni-azul flex items-center justify-center" >
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XX</p>
                         <p>1917 - 1931</p>
@@ -992,7 +992,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[685px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[755px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -1125,7 +1125,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[590px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[625px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -1290,7 +1290,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[615px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[729px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -1530,7 +1530,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[590px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[680px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -1635,7 +1635,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-509 w-45 bg-[#EE6FAF] text-muni-azul flex justify-center items-center">
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-631 md:h-509 w-45 bg-[#EE6FAF] text-muni-azul flex justify-center items-center">
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XX - SIGLO XXI</p>
                         <p>1976 – 2000</p>
@@ -1670,7 +1670,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[615px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[733px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -1851,7 +1851,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">
 
-                    <div className="absolute left-[-200] top-0 bottom-0 h-791 w-45 bg-[#37B268] text-muni-azul flex items-center justify-center">
+                    <div className="absolute left-[-190] md:px-2 top-0 bottom-0 h-938 md:h-791 w-45 bg-[#37B268] text-muni-azul flex items-center justify-center">
                       <div className="text-center text-white font-extrabold">
                         <p>SIGLO XXI</p>
                         <p>2000 - 2017</p>
@@ -1886,7 +1886,7 @@ export default function EvolucionPage() {
                     alt=""
                     className="
                       absolute
-                      top-[610px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                      top-[690px] md:top-[63px]        // ⬅ mueve arriba/abajo
                       left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                       -translate-x-1/4   
                       w-40 md:w-120
@@ -2145,7 +2145,8 @@ export default function EvolucionPage() {
                   <img
                     src={`${basePath}/img/evolucion/lineaPunteada.png`}
                     alt=""
-                    className="                  
+                    className="     
+                      hidden md:block             
                       absolute
                       z-0                /* ⬅ Importante: al frente */
                       top-[250px] md:-top-[230px]           /* ⬅ Ajusta según necesites */

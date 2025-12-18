@@ -8,9 +8,9 @@ const EJE_ICON = {
 };
 
 const EJE_COLOR = {
-  1: "bg-pink-400", // Impulsando oportunidades
-  2: "bg-yellow-400",   // Inspirando sueños
-  3: "bg-green-400",  // Conectando metas
+  1: "bg-[#FF9E9E]", // Impulsando oportunidades
+  2: "bg-[#E8F216]",   // Inspirando sueños
+  3: "bg-[#23C9A7]",  // Conectando metas
 };
 
 export default function CalendarGrid({

@@ -173,7 +173,7 @@ export default function BaseMap({ nombre }) {
       {/* BOTON "LEYENDA" */}
       <button
         onClick={() => setLegendOpen((v) => !v)}
-        className="absolute w-8 left-4 bottom-5 z-50 rounded-full bg-white text-white font-extrabold shadow-lg"
+        className="absolute w-8 left-4 bottom-5 z-50 rounded-full text-white font-extrabold shadow-lg"
       >
         <img src={`${basePath}/img/leyenda.png`} alt=""/>
       </button>

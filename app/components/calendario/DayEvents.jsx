@@ -29,9 +29,9 @@ const EJE_LABEL = {
 };
 
 const EJE_BG = {
-  1: "bg-pink-400/20 text-white", // Impulsando oportunidades
-  2: "bg-yellow-400/20 text-white",     // Inspirando sueños
-  3: "bg-green-400/20 text-white",   // Conectando metas
+  1: "bg-[#FF9E9E]  text-muni-azul", // Impulsando oportunidades
+  2: "bg-[#E8F216] text-muni-azul",     // Inspirando sueños
+  3: "bg-[#23C9A7] text-muni-azul",   // Conectando metas
 };
 
 export default function DayEvents({ day, events, tab }) {
@@ -40,7 +40,7 @@ export default function DayEvents({ day, events, tab }) {
   return (
     <div className="mt-8 border-t border-white/20 pt-6 text-white">
       <div className="flex items-center justify-between gap-4">
-        <h3 className="text-lg font-bold capitalize">Eventos del {fmtDayES(day)}</h3>
+        <h3 className="text-lg font-bold capitalize text-muni-azul">Eventos del {fmtDayES(day)}</h3>
         <p className="text-sm text-white/70">{list.length} evento(s)</p>
       </div>
 
@@ -56,7 +56,7 @@ export default function DayEvents({ day, events, tab }) {
 
                 {EJE_LABEL[e.eje] && (
                   <div
-                    className={`inline-flex rounded-full px-3 py-1 text-xs font-bold border-1 border-solid
+                    className={`inline-flex rounded-full px-3 py-1 text-xs font-bold border-1 border-solid text-muni-azul
                       ${EJE_BG[e.eje] || "bg-white/10 text-white"}
                     `}
                   >
