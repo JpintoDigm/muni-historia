@@ -100,11 +100,29 @@ export default function HomePage() {
                 </div>
 
                 <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                  <span className="block">Calendario</span>
-                  <span className="block">de eventos</span>
+                  <span className="block">Agenda</span>
+                  <span className="block">Eventos</span>
                 </h3>  
 
               </Link>              
+
+              <Link href="/aleados" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm aleados-250 backdrop-blur-none text-center items-center ">
+                  {/* Botón + */}
+                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                  cursor-pointer">
+                    +
+                  </button>
+
+                  <div className="mb-3 text-3xl animate-pulse-slow ">
+                    <img src={`${basePath}/img/aleados.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  </div>
+
+                  <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
+                    <span className="block">Aleados</span>
+                    <span className="block">Estratégicos </span>
+                  </h3>
+              </Link>
+
 
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
 
@@ -125,8 +143,8 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-muni-azul"></h3>
                   
                   <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Parques</span>
-                    <span className="block">Conmemorativos</span>
+                    <span className="block">Acciones</span>
+                    <span className="block">Verdes</span>
                   </h3> 
                 </Link>
               </div>  
@@ -148,33 +166,35 @@ export default function HomePage() {
                     </div>
 
                     <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                      <span className="block">Proyectos</span>
-                      <span className="block">Conmemorativos</span>
+                      <span className="block">Acciones</span>
+                      <span className="block">250 años</span>
                     </h3>  
                 </Link>
               </div>  
  
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
+
                 <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
                   Próximamente
                 </div>
+                <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                <Link href="/descarga" className="relative flex flex-col col-span-2 col-start-1 md:col-span-1 md:col-start-auto justify-self-center md:justify-self-auto justify-between rounded-3xl px-8 md:px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+                    <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                    cursor-pointer">
+                      +
+                    </button>
 
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                  cursor-pointer">
-                    +
-                  </button>
+                    <div className="mb-3 text-3xl">
+                      <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
+                    </div>
 
-                  <div className="mb-3 text-3xl">
-                    <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Descarga</span>
-                    <span className="block">Documentos</span>
-                  </h3> 
+                    <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                      <span className="block">Descarga</span>
+                      <span className="block">Documentos</span>
+                    </h3>  
                 </Link>
-              </div>
+              </div>  
+              
             </div>
           </div>
         </section>

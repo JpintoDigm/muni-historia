@@ -1,6 +1,9 @@
+
 import "./globals.css";
 import localFont from "next/font/local";
 import BackToTop from "./components/BackToTop";
+import { Providers } from "@/app/components/aleados/providers"
+
 
 export const metadata = {
   title: "250 años ciudad de Guatemala",
@@ -50,7 +53,10 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <script src="https://gis.muniguate.com/accessibility-widget/widget.js" id="widgetScript" data-position="bottom-right" data-offsetx="20" data-offsety="105" data-primarycolor="#10069f"></script>
       <body className={`${muni.variable} font-muni`}>
-        {children}
+
+        <Providers>
+          {children} 
+        </Providers>
         <BackToTop />
       </body>
     </html>

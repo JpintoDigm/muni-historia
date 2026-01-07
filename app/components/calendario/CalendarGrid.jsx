@@ -65,7 +65,7 @@ export default function CalendarGrid({
               className={`
                 relative
                 h-15 md:h-35 rounded-xl border p-2 text-left transition
-                ${isSelected ? "border-pink-400 ring-2 ring-yellow-300/30" : "border-white/80"}
+                ${isSelected ? "border-muni-azul ring-2 ring-yellow-300/30" : "border-white/80"}
                 hover:bg-white/10
               `}
             >
@@ -92,11 +92,11 @@ export default function CalendarGrid({
                 {dayEvents.slice(0, 2).map((e, i) => (
                   <div key={i} className="mt-1 flex items-center gap-1 text-xs">
                     <span
-                      className={`h-1.5 w-1.5 rounded-full border-1 border-solid ${
+                      className={`h-1.5 w-1.5 rounded-full border-1 border-muni-azul border-solid ${
                         EJE_COLOR[e.eje] || "bg-gray-300"
                       }`}
                     />
-                    <span className="truncate">{e.title}</span>
+                    <span className="truncate text-muni-azul">{e.title}</span>
                   </div>
                 ))}
               </div>
@@ -107,7 +107,7 @@ export default function CalendarGrid({
       </div>
 
       {loading && (
-        <div className="mt-4 text-center text-white/70">
+        <div className="mt-4 text-center text-muni-azul/70">
           Cargando eventos…
         </div>
       )}

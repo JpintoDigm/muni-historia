@@ -1,3 +1,5 @@
+@config "../tailwind.config.js"; /* ajusta la ruta según dónde esté tu CSS */
+
 @import "tailwindcss";
 @import "@arcgis/core/assets/esri/themes/light/main.css";
 
@@ -77,6 +79,21 @@ html {
     #ffbf7f 60%,
     #ffe96d 100%
   );
+}
+
+/* Gradiente boton Aleados Estrategicos */
+.aleados-250 {
+  background: linear-gradient(
+    135deg,
+
+    /* rgba(245, 126, 182, 0.4) 0%,  */
+    rgba(224, 231, 33, 0.4) 90%, 
+    rgba(44, 184, 119, 0.4) 99%  
+    /* #F57EB6 0%,
+    #E0E721 45%,
+    #2CB877 90% */
+  );
+
 }
 
 /* Animaciónd acercarse y alejarse */

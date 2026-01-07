@@ -21,10 +21,10 @@ export default function CalendarHeader({
       <div>
         <div className="mt-0 mb-4">
           <h1 className="text-2xl md:text-3xl font-extrabold text-muni-azul">
-          CALENDARIO
+          Calendario
           </h1>
-          <p className="font-extrabold text-sm md:text-2xl tracking-[0.12em] uppercase text-muni-azul">
-          de<span className=" text-muni-azul font-extrabold"> EVENTOS</span>
+          <p className="font-extrabold text-sm md:text-2xl tracking-[0.12em] text-muni-azul">
+          de<span className=" text-muni-azul font-extrabold"> eventos</span>
           </p>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function CalendarHeader({
         <div className="grid grid-cols-1 grid-rows-1 lg:grid-rows-1 md:grid-cols-[1fr_160px_1fr] items-center gap-4 lg:gap-43 w-full">
 
           {/* MES */}
-          <h1 className="text-3xl font-extrabold capitalize text-white md:min-w-0 md:truncate md:max-w-[420px] lg:max-w-[420px] text-shadow-lg/20">
+          <h1 className="text-3xl font-extrabold capitalize text-muni-azul md:min-w-0 md:truncate md:max-w-[420px] lg:max-w-[420px] text-shadow-lg/20">
             {fmtMonthES(month)}
           </h1>
 
@@ -41,28 +41,27 @@ export default function CalendarHeader({
           <div className="flex items-center gap-2">
             <button
               onClick={onPrev}
-              className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/15 transition"
+              className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
             >
               ‹
             </button>
 
             <button
               onClick={onToday}
-              className="h-9 px-3 rounded-lg bg-white/15 hover:bg-white/20 transition text-sm font-semibold"
+              className="h-9 px-3 rounded-lg bg-white/15 hover:bg-white/20 transition text-sm font-semibold text-muni-azul"
             >
               Hoy
             </button>
 
             <button
               onClick={onNext}
-              className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/15 transition"
+              className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
             >
               ›
             </button>
 
           </div>
 
-          {/* TABS (OCUPA TODO EL RESTO DEL ANCHO) */}
           <div className="min-w-0 overflow-hidden md:overflow-visible  md:ml-0">
             <div className="flex w-full p-0 md:p-1 items-center justify-center md:justify-end gap-2">
               {/** botones de ejes */}

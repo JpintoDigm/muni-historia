@@ -41,12 +41,12 @@ export default function DayEvents({ day, events, tab }) {
     <div className="mt-8 border-t border-white/20 pt-6 text-white">
       <div className="flex items-center justify-between gap-4">
         <h3 className="text-lg font-bold capitalize text-muni-azul">Eventos del {fmtDayES(day)}</h3>
-        <p className="text-sm text-white/70">{list.length} evento(s)</p>
+        <p className="text-sm text-muni-azul/70">{list.length} evento(s)</p>
       </div>
 
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         {list.length === 0 ? (
-          <div className="rounded-2xl bg-white/10 p-4 border border-white/10 text-white/80">
+          <div className="rounded-2xl bg-white/10 p-4 border border-white/10 text-muni-azul/80">
             No hay eventos para este día.
           </div>
         ) : (
@@ -73,21 +73,21 @@ export default function DayEvents({ day, events, tab }) {
                 )}
               </div>
 
-              <div className=" text-muni-azul text-base font-bold text-shadow-lg/5">{e.title}</div>
+              <div className=" text-muni-azul text-base font-extrabold text-shadow-lg/5">{e.title}</div>
 
 
               {/* Día + Hora */}
-              <div className="mt-2 text-sm text-white">
-                <span className="font-extrabold">Dirección:</span> {(e.address)}
+              <div className="mt-2 text-sm text-muni-azul">
+                <span className="font-bold">Dirección:</span> {(e.address)}
               </div>
 
               {/* Día + Hora */}
-              <div className="mt-2 text-sm text-white/80">
-                <span className="font-extrabold">Fecha:</span> {fmtDayES(e.date)}
+              <div className="mt-2 text-sm text-muni-azul/80">
+                <span className="font-bold">Fecha:</span> {fmtDayES(e.date)}
               </div>
 
-              <div className="mt-2 text-sm text-white/80">
-                <span className="font-extrabold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
+              <div className="mt-2 text-sm text-muni-azul/80">
+                <span className="font-bold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
               </div>
             </div>
           ))
