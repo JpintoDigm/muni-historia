@@ -1,37 +1,46 @@
 import { companiesLogo } from "../data/CompaniesLogo";
 
 export default function TrustedCompanies({ companies = [] }) {
-  const duplicated = [...companies, ...companies];
-
   return (
     <div className="w-full py-8">
-
-      {/* Ventana del marquee */}
-      <div className=" overflow-hidden group">
-        {/* Track que se mueve */}
-        <div
-          className="
-            flex
-            w-max
-            items-center
-            gap-10
-            animate-[marquee_18s_linear_infinite]
-            group-hover:[animation-play-state:paused]
-          "
-        >
-          {duplicated.map((company, index) => (
+      <div
+        className="
+          grid
+          grid-cols-2
+          sm:grid-cols-3
+          md:grid-cols-4
+          lg:grid-cols-6
+          gap-6
+        "
+      >
+        {companies.map((company, index) => (
+          <div
+            key={`${company.name}-${index}`}
+            className="
+              w-full
+              aspect-square
+              flex
+              items-center
+              justify-center
+              bg-white
+              rounded-xl
+              shadow-sm
+              p-3
+              border-1
+              border-muni-azul
+            "
+          >
             <img
-              key={`${company.name}-${index}`}
-              className="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition"
               src={company.logo}
               alt={company.name}
-              width={120}
+              className="w-full h-full object-contain"
               loading="lazy"
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
+
 

@@ -7,10 +7,10 @@ const customTheme = {
     styles: {
       base: {
         backdrop: {
-          // todo el overlay del modal
-          backgroundColor: "bg-transparent", // sin color
-          backgroundOpacity: "bg-opacity-0", // sin opacidad
-          backdropFilter: "",                // sin blur
+          //modal
+          backgroundColor: "bg-transparent", 
+          backgroundOpacity: "bg-opacity-10", 
+          backdropFilter: "",          
         },
       },
     },

@@ -1,5 +1,5 @@
 
-import { MontserratLightItalic, MontserratMediumItalic } from "@/app/layout";
+import { MontserratLightItalic, MontserratMediumItalic } from "@/app/fonts/fonts";
 
 export default function CenturyCard( {century, year, imageSrc, imageAlt} ) {
 

@@ -7,51 +7,54 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
-import { basePath } from "@/next.config.mjs";
 import { CompaniesLogo } from "../../data/CompaniesLogo";
 import TrustedCompanies from "../TrustedCompanies";
+import { useRouter } from "next/navigation";
+import { basePath } from "@/next.config.mjs";
  
-export default function Modal() {
+export default function Modal({openFromQuery=false}) {
   const [size, setSize] = React.useState(null);
+  const router = useRouter();
  
-  const handleOpen = (value) => setSize(value);
- 
+  React.useEffect(() => {
+    if(openFromQuery){
+      setSize("lg");
+    }
+  }, [openFromQuery]);
+
+  const handleClose = () => {
+    setSize(null);
+    router.push("/", { scroll: false }); // limpia ?modal=aleados
+  };
+
   return (
     <>
-      <div className="mb-3 flex gap-3">
-        <Button onClick={() => handleOpen("lg")} variant="gradient">
-          Open Modal LG
-        </Button>
-      </div>
       <Dialog
         open={ size === "lg" }
         size={size || "lg"}
-        handler={handleOpen}
-        className="bg-white shadow-none"
+        handler={handleClose}
+        className="bg-white/30 backdrop-blur-md shadow-none"
 
       >
         <DialogHeader>
             <Button
                 variant="text"
-                color="red"
-                onClick={() => handleOpen(null)}
-                className="p-2"
+                onClick={handleClose}
+                className="p-2 text-red-600"
             >
-                <span>X</span>
+             <img src={`${basePath}/img/closeModal.png`} alt="Cerrar Modal" />
             </Button>
         </DialogHeader>
-        <DialogBody>
-            <div className="grid grid-cols-5 gap-4">
-                <div class="">
-                    <TrustedCompanies companies={CompaniesLogo} />                
-                </div>
-            </div>
+        <DialogBody className="max-h-[70vh]">
+          <div className="">
+            <TrustedCompanies companies={CompaniesLogo} />                
+          </div>
         </DialogBody>
         <DialogFooter>
           <Button
             variant="text"
             color="red"
-            onClick={() => handleOpen(null)}
+            onClick={handleClose}
             className="mr-1"
           >
             <span>Cerrar</span>

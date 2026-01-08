@@ -43,7 +43,7 @@ html {
 
   background-repeat: no-repeat, no-repeat;
   background-position: center 250px, center top;
-  background-size: cover, 2500px auto;
+  background-size: cover, cover;
 }
 
 
@@ -84,14 +84,11 @@ html {
 /* Gradiente boton Aleados Estrategicos */
 .aleados-250 {
   background: linear-gradient(
-    135deg,
+    90deg,
 
-    /* rgba(245, 126, 182, 0.4) 0%,  */
-    rgba(224, 231, 33, 0.4) 90%, 
-    rgba(44, 184, 119, 0.4) 99%  
-    /* #F57EB6 0%,
-    #E0E721 45%,
-    #2CB877 90% */
+    #E7C85A 0%,
+    #E6DE53 60%,
+    #DFF138 100%
   );
 
 }

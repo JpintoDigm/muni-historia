@@ -1,8 +1,10 @@
 // app/page.jsx
+'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { MarcellusRegular, MontserratLightItalic, MontserratMediumItalic } from "./layout";
-import { MontserratBlack3 } from "./layout";
+import { useSearchParams } from "next/navigation";
+import { MarcellusRegular, MontserratLightItalic, MontserratMediumItalic } from "./fonts/fonts";
+import { MontserratBlack3 } from "./fonts/fonts";
 
 import Header from "@/app/components/Header";
 import { basePath } from "@/next.config.mjs";
@@ -10,10 +12,17 @@ import ListImage from "./components/ListImage";
 import BottomMenu from "./components/BottomMenu";
 import TrustedCompanies from "./components/TrustedCompanies";
 import { CompaniesLogo } from "./data/CompaniesLogo";
+import Modal from "@/app/components/aleados/Modal";
+
 
 export default function HomePage() {
+
+  const searchParams = useSearchParams();
+  const showModal = searchParams.get("modal") == "aleados";
+
+
   return (
-    <main className="min-h-screen main-snake">
+    <main className="w-full min-h-screen main-snake">
       <div className="container mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6">
         {/* HERO SUPERIOR */}
         <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-0 md:mb-10">
@@ -39,7 +48,7 @@ export default function HomePage() {
         <section className="flex-1">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
-            <article className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60 cursor-pointer`}>
+            <Link href="/conmemoracion" className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60 cursor-pointer`}>
 
               {/* Botón + */}
               <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
@@ -66,7 +75,7 @@ export default function HomePage() {
                 <span className="block text-xl leading-tight">más de esta</span>
                 <span className="block text-xl leading-tight">Conmemoración</span>
               </p>
-            </article>
+            </Link>
 
             {/* Grid de 6 tarjetas */}
             <div className={`${MarcellusRegular.className} order-1 md:order-2 grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
@@ -106,7 +115,7 @@ export default function HomePage() {
 
               </Link>              
 
-              <Link href="/aleados" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm aleados-250 backdrop-blur-none text-center items-center ">
+              <Link href="/?modal=aleados" scroll={false} className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm aleados-250 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
                   <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
                   cursor-pointer">
@@ -122,6 +131,7 @@ export default function HomePage() {
                     <span className="block">Estratégicos </span>
                   </h3>
               </Link>
+              <Modal openFromQuery={showModal} />
 
 
               <div className="relative pointer-events-none opacity-60 overflow-hidden">
@@ -194,14 +204,11 @@ export default function HomePage() {
                     </h3>  
                 </Link>
               </div>  
+
+
               
             </div>
           </div>
-        </section>
-
-        <section className="">
-          <hr class="border-t border-muni-azul/20 mt-10 w-full"/>
-          <TrustedCompanies companies={CompaniesLogo} />
         </section>
 
       </div>

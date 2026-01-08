@@ -5,8 +5,8 @@ import TimeLineItem from "@/app/components/evolucion/TimeLineItem";
 import ExampleMap from "../components/arcgis/basemap/BaseMap"
 
 import { ListTimeLine} from "../data/ListTimeLine"
-import { MontserratMediumItalic } from "../layout";
-import { MontserratLightItalic } from "../layout";
+import { MontserratMediumItalic } from "../fonts/fonts";
+import { MontserratLightItalic } from "../fonts/fonts";
 import { basePath } from "@/next.config.mjs";
 import { ListCenturyCard } from "../data/ListCenturyCard";
 
@@ -38,9 +38,9 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#8BC53F] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XVI – SIGLO XVIII
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#8BC53F]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XVI</p> */}
-                    <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1524 – 1773</p>
+                    <p className={`${MontserratLightItalic.className} text-xl`}>1524 – 1773</p>
                   </div>
                 </Link>
 
@@ -51,7 +51,7 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#EE6FAF] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XVIII – SIGLO XIX
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#EE6FAF]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XVII–XVIII</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1776 – 1821</p>
                   </div>
@@ -64,7 +64,7 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#37B268] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XIX
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#37B268]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XIX</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1821-1871</p>
                   </div>
@@ -77,7 +77,7 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#8BCFD9] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XIX – SIGLO XX
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#8BCFD9]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XX</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1871 – 1918</p>
                   </div>
@@ -90,7 +90,7 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#8BC53F] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XX
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#8BC53F]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XXI</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1917 – 1931</p>
                   </div>
@@ -121,7 +121,7 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#37B268] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XXI
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#37B268]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XXI</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>2000 - 2017</p>
                   </div>
@@ -134,7 +134,7 @@ export default function EvolucionPage() {
                   <div className={`${MontserratMediumItalic.className} flex items-center justify-center h-15 w-full text-center px-6 py-2 rounded-full bg-[#EE6FAF] text-muni-azul font-bold text-sm shadow`}>
                     SIGLO XX – SIGLO XXI
                   </div>
-                  <div className="mt-[10px] bg-white px-2 py-8 rounded-xl shadow text-center w-full">
+                  <div className="mt-[10px] bg-[#EE6FAF]/70 text-muni-azul px-2 py-8 rounded-xl shadow text-center w-full backdrop-blur-3xl">
                     {/* <p className="text-2xl font-extrabold text-black">XXI</p> */}
                     <p className={`${MontserratLightItalic.className} text-xl text-slate-900`}>1976 – 2000</p>
                   </div>
