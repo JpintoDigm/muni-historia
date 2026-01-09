@@ -51,7 +51,7 @@ export default function DayEvents({ day, events, tab }) {
           </div>
         ) : (
           list.map((e) => (
-            <div key={e.id} className="rounded-2xl bg-white/10 p-4 border border-white/10">
+            <div key={e.id} className="rounded-2xl bg-white/10 p-4 border border-white/10 hover:border-white/40 hover:bg-white/20">
               <div className="flex items-center justify-between gap-3">
 
                 {EJE_LABEL[e.eje] && (

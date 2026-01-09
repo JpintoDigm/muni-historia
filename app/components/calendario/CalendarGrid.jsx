@@ -64,32 +64,31 @@ export default function CalendarGrid({
               onClick={() => onSelectDay(date)}
               className={`
                 relative
-                h-15 md:h-35 rounded-xl border p-2 text-left transition
+                h-15 md:h-35 rounded-xl border p-1 sm:p-2 text-left transition
                 ${isSelected ? "border-muni-azul ring-2 ring-yellow-300/30" : "border-white/80"}
                 hover:bg-white/10
               `}
             >
-              <div className="absolute top-2 left-2 text-sm font-bold">{date.getDate()}</div>
+              <div className="absolute top-1 left-1 sm:top-2 sm:left-2 text-xs sm:text-sm font-bold">{date.getDate()}</div>
 
               {/* Iconos por eje */}
               {ejesDelDia.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-1">
                   {ejesDelDia.slice(0, 3).map((eje) => (
                     EJE_ICON[eje] && (
-                      <img
+                      <img  
                         key={eje}
                         src={EJE_ICON[eje]}
                         alt={`Eje ${eje}`}
-                        className="h-4 w-4 object-contain"
+                        className="h-3 w-3 sm:h-4 sm:w-4 object-contain"
                       />
                     )
                   ))}
                 </div>
               )}
 
-
               <div className="hidden md:block">
-                {dayEvents.slice(0, 2).map((e, i) => (
+                {dayEvents.slice(0, 3).map((e, i) => (
                   <div key={i} className="mt-1 flex items-center gap-1 text-xs">
                     <span
                       className={`h-1.5 w-1.5 rounded-full border-1 border-muni-azul border-solid ${

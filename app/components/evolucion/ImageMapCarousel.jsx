@@ -14,7 +14,7 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
   return (
     <div className="relative w-full max-w-3xl mx-auto">
 
-      <div className="relative z-10 bg-white overflow-hidden rounded-xl border border-slate-200">
+      <div className="relative z-10 bg-white overflow-hidden rounded-xl">
         {slide === 0 ? (
           <>
             <div className="w-full h-64 md:h-65">
@@ -26,8 +26,8 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
             </div>
 
             {caption && (
-              <div className="px-4 py-1 bg-white border-t border-slate-200">
-                <p className="text-sm text-black font-medium italic">
+              <div className="px-4 py-1 bg-white">
+                <p className="text-sm text-muni-azul font-semibold italic text-center">
                   {caption}
                 </p>
               </div>

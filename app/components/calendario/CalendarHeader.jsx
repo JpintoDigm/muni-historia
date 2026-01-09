@@ -63,16 +63,16 @@ export default function CalendarHeader({
           </div>
 
           <div className="min-w-0 overflow-hidden md:overflow-visible  md:ml-0">
-            <div className="flex w-full p-0 md:p-1 items-center justify-center md:justify-end gap-2">
+            <div className="flex w-full p-0 md:p-1 items-center justify-center md:justify-end gap-1">
               {/** botones de ejes */}
               {/* Eje 1 */}
               <button
                 onClick={() => setTab("Eje1")}
                 className="flex flex-col items-center transition text-muni-azul
-                  px-0 py-0 md:py-2 text-xs sm:px-4 sm:text-sm
+                  px-0 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
                 "
               >
-                <img src={`${basePath}/img/calendario/10.png`} className="w-8 sm:w-10" />
+                <img src={`${basePath}/img/calendario/10.png`} className="w-8 w-5 sm:w-15" />
                 <span>Impulsando</span>
                 <span>oportunidades</span>
               </button>
@@ -81,10 +81,10 @@ export default function CalendarHeader({
               <button
                 onClick={() => setTab("Eje2")}
                 className="flex flex-col items-center  transition text-muni-azul
-                  px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm
+                  px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
                   "
               >
-                <img src={`${basePath}/img/calendario/11.png`} className="w-8 sm:w-10" />
+                <img src={`${basePath}/img/calendario/11.png`} className="w-8 w-5 sm:w-10" />
                 <span>Inspirando</span>
                 <span>sueños</span>
               </button>
@@ -93,10 +93,10 @@ export default function CalendarHeader({
               <button
                 onClick={() => setTab("Eje3")}
                 className="flex flex-col items-center  transition text-muni-azul
-                  px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm
+                  px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
                   "
               >
-                <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-10" />
+                <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-11" />
                 <span>Conectando</span>
                 <span>metas</span>
               </button>

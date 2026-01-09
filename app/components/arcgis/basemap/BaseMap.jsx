@@ -166,7 +166,7 @@ export default function BaseMap({ nombre }) {
   }, [nombre]);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-64 sm:h-65">
       {/* MAPA */}
       <div ref={mapDiv} className="w-full h-full" />
 
