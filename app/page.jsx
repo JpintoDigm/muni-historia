@@ -1,5 +1,5 @@
 // app/page.jsx
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -13,15 +13,23 @@ import BottomMenu from "./components/BottomMenu";
 import TrustedCompanies from "./components/TrustedCompanies";
 import { CompaniesLogo } from "./data/CompaniesLogo";
 import Modal from "@/app/components/aleados/Modal";
-
+import { Suspense } from "react";
 
 export default function HomePage() {
+  return (
+    <Suspense fallback={null}>
+      <HomePageContent />
+    </Suspense>
+  );
+}
+
+function HomePageContent() {
 
   const searchParams = useSearchParams();
   const showModal = searchParams.get("modal") == "aleados";
 
-
   return (
+
     <main className="w-full min-h-screen main-snake">
       <div className="container mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6">
         {/* HERO SUPERIOR */}
@@ -92,8 +100,8 @@ export default function HomePage() {
                   </div>
 
                   <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
-                    <span className="block">Historia</span>
-                    <span className="block">de la Ciudad</span>
+                    <span className="block">Historia de la</span>
+                    <span className="block">Ciudad de Guatemala</span>
                   </h3>
               </Link>
 

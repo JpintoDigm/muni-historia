@@ -34,7 +34,7 @@ const EJE_BG = {
   3: "bg-[#23C9A7] text-muni-azul",   // Conectando metas
 };
 
-export default function DayEvents({ day, events, tab }) {
+export default function DayEvents({ day, events, tab, onSelectEvent }) {
   const list = events.filter((e) => e.date?.toDateString() === day.toDateString());
 
   return (
@@ -51,7 +51,7 @@ export default function DayEvents({ day, events, tab }) {
           </div>
         ) : (
           list.map((e) => (
-            <div key={e.id} className="rounded-2xl bg-white/10 p-4 border border-white/10 hover:border-white/40 hover:bg-white/20">
+            <button key={e.id} type="button" onClick={() => onSelectEvent?.(e)} className="text-start rounded-2xl bg-white/10 p-4 border border-white/10 hover:border-white/40 hover:bg-white/20" >
               <div className="flex items-center justify-between gap-3">
 
                 {EJE_LABEL[e.eje] && (
@@ -78,18 +78,18 @@ export default function DayEvents({ day, events, tab }) {
 
               {/* Día + Hora */}
               <div className="mt-2 text-sm text-muni-azul">
-                <span className="font-bold">Dirección:</span> {(e.address)}
+                <span className="font-extrabold">Dirección:</span> {(e.address)}
               </div>
 
               {/* Día + Hora */}
               <div className="mt-2 text-sm text-muni-azul/80">
-                <span className="font-bold">Fecha:</span> {fmtDayES(e.date)}
+                <span className="font-extrabold">Fecha:</span> {fmtDayES(e.date)}
               </div>
 
               <div className="mt-2 text-sm text-muni-azul/80">
-                <span className="font-bold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
+                <span className="font-extrabold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
               </div>
-            </div>
+            </button>
           ))
         )}
       </div>

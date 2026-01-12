@@ -23,13 +23,14 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
         setLoading(true);
         setError("");
 
+        const OBJECTID_FIELD = "OBJECTID";
         const DATE_FIELD = "fecha_inicio";
         const TITLE_FIELD = "descripcion";
         const TIME_FIELD = "horario";
         const EJE_FIELD = "eje";
         const ADDRESS = "direccion";
 
-        const outFields = [DATE_FIELD, TITLE_FIELD, TIME_FIELD, EJE_FIELD, ADDRESS].join(",");
+        const outFields = [OBJECTID_FIELD, DATE_FIELD, TITLE_FIELD, TIME_FIELD, EJE_FIELD, ADDRESS].join(",");
         const time = `${start.getTime()},${end.getTime() - 1}`;
 
         let all = [];
@@ -57,12 +58,13 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
           const page = (json.features || []).map((f) => {
             const a = f.attributes || {};
             return {
-              id: a.objectid,
+              id: a[OBJECTID_FIELD],
               date: new Date(a[DATE_FIELD]),
               title: a[TITLE_FIELD] ?? "Evento",
               time: a[TIME_FIELD] ?? "",
               eje: Number(a[EJE_FIELD]),
               address: a[ADDRESS] ?? "",
+              descripcion: a[TITLE_FIELD] ?? "",
             };
           });
 

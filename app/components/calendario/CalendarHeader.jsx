@@ -72,7 +72,7 @@ export default function CalendarHeader({
                   px-0 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
                 "
               >
-                <img src={`${basePath}/img/calendario/10.png`} className="w-8 w-5 sm:w-15" />
+                <img src={`${basePath}/img/calendario/10.png`} className="w-8 sm:w-10" />
                 <span>Impulsando</span>
                 <span>oportunidades</span>
               </button>
@@ -84,7 +84,7 @@ export default function CalendarHeader({
                   px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
                   "
               >
-                <img src={`${basePath}/img/calendario/11.png`} className="w-8 w-5 sm:w-10" />
+                <img src={`${basePath}/img/calendario/11.png`} className="w-8 sm:w-10" />
                 <span>Inspirando</span>
                 <span>sueños</span>
               </button>
@@ -96,7 +96,7 @@ export default function CalendarHeader({
                   px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
                   "
               >
-                <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-11" />
+                <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-10" />
                 <span>Conectando</span>
                 <span>metas</span>
               </button>

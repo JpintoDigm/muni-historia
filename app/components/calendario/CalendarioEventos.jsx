@@ -5,16 +5,26 @@ import { useArcGISEvents } from "@/app/hooks/useArcGISEvents";
 import CalendarHeader from "./CalendarHeader";
 import CalendarGrid from "./CalendarGrid";
 import DayEvents from "./DayEvents";
+import EventMapModal from "./EventMapModal";
 
 export default function CalendarioEventos({ featureLayerUrl }) {
   const [month, setMonth] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
   const [tab, setTab] = useState("actividad");
 
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isMapOpen, setIsMapOpen] = useState(false);
+
+
   const { events, loading } = useArcGISEvents({
     featureLayerUrl,
     monthDate: month,
   });
+
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    setIsMapOpen(true);
+  };
 
 console.log("month", month, "events", events.length);
 
@@ -47,7 +57,15 @@ console.log("month", month, "events", events.length);
         day={selectedDay}
         events={events}
         tab={tab}
+        onSelectEvent={handleSelectEvent}
       />
+
+      <EventMapModal
+        open={isMapOpen}
+        onClose={() => setIsMapOpen(false)}
+        event={selectedEvent}
+        eventLayerUrl={featureLayerUrl}
+      />      
 
     </div>
   );
