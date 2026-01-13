@@ -1897,7 +1897,7 @@ export default function EvolucionPage() {
 
                   <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-2">
                     <ImageMapCarousel
-                      imageSrc={`${basePath}/img/evolucion/Conjunto actual – ciudad de Guatemala, década 2000 a la actualidad.png`}
+                      imageSrc={`${basePath}/img/evolucion/Conjuntodecada2000.png`}
                       imageAlt="Vista de Kaminaljuyu"
                       nombre=""
                       caption="Conjunto actual – ciudad de Guatemala, década 2000 a la actualidad"

@@ -23,7 +23,7 @@ export default function EventMapModal({
         onClick={onClose}
       />
 
-      <div className="relative z-10 w-[95%] max-w-5xl h-[80vh] rounded-3xl bg-white/10 border border-white/30 shadow-2xl overflow-hidden flex flex-col">
+      <div className="relative z-10 w-[95%] max-w-5xl h-[80vh] rounded-3xl bg-white/10 shadow-2xl overflow-hidden flex flex-col">
         {/* Header */}
         <header className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
           <div>
