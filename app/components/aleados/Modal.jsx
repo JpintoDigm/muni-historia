@@ -33,16 +33,23 @@ export default function Modal({openFromQuery=false}) {
         open={ size === "lg" }
         size={size || "lg"}
         handler={handleClose}
-        className="bg-white/30 backdrop-blur-md shadow-none"
+        className="bg-white/30 backdrop-blur-md shadow-none rounded-3xl"
 
       >
-        <DialogHeader>
+        <DialogHeader className="flex items-center rounded-t-3xl justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] font-semibold text-center">
+                ALEADOS ESTRATÉGICOS
+              </p>
+            </div>
+
             <Button
                 variant="text"
                 onClick={handleClose}
-                className="p-2 text-red-600"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-muni-azul text-lg font-bold shadow-md hover:bg-white/30"
             >
-             <img src={`${basePath}/img/closeModal.png`} alt="Cerrar Modal" />
+              ✕
             </Button>
         </DialogHeader>
         <DialogBody className="max-h-[70vh]">
@@ -50,23 +57,6 @@ export default function Modal({openFromQuery=false}) {
             <TrustedCompanies companies={CompaniesLogo} />                
           </div>
         </DialogBody>
-        <DialogFooter>
-          <Button
-            variant="text"
-            color="red"
-            onClick={handleClose}
-            className="mr-1"
-          >
-            <span>Cerrar</span>
-          </Button>
-          {/* <Button
-            variant="gradient"
-            color="green"
-            onClick={() => handleOpen(null)}
-          >
-            <span>Confirm</span>
-          </Button> */}
-        </DialogFooter>
       </Dialog>
     </>
   );

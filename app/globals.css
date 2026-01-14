@@ -85,10 +85,19 @@ html {
 .aleados-250 {
   background: linear-gradient(
     90deg,
-
     #E7C85A 0%,
     #E6DE53 60%,
     #DFF138 100%
+  );
+
+}
+
+/* Gradiente boton Conoce mas esta conmemoración */
+.conmemoracion-250 {
+  background: linear-gradient(
+    135deg,
+    #F57EB6 0%,
+    #ffbf7f 90%  
   );
 
 }

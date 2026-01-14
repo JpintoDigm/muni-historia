@@ -18,46 +18,69 @@ export default function CalendarHeader({
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <div>
-        <div className="mt-0 mb-4">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-muni-azul">
-          Calendario
-          </h1>
-          <p className="font-extrabold text-sm md:text-2xl tracking-[0.12em] text-muni-azul">
-          de<span className=" text-muni-azul font-extrabold"> eventos</span>
-          </p>
+      <div className="flex justify-between">
+        <div className="flex items-center mt-0 mb-4 gap-3">
+          <div>
+            <img src={`${basePath}/img/calendario/calendario.svg`} alt="Icono Calendario" className="w-20 sm:w-30" />
+          </div>
+
+          <div>
+            <h1 className="text-2xl md:text-3xl text-muni-azul">
+            Calendario
+            </h1>
+            <p className=" text-2xl md:text-3xl tracking-[0.12em] text-muni-azul">
+            de<span className="text-muni-azul font-black"> Eventos</span>
+            </p>
+          </div>
         </div>
+
+        <div className="flex items-center">
+          <img src={`${basePath}/img/logo250.svg`} alt="Icono Calendario" className="w-30 sm:w-100" />
+        </div>
+
+      </div>
+
+      <div className="w-full sm:w-2/3">
+        <p className="text-muni-azul text-justify text-sm sm:text-xl">
+          Las actividades que se realizan a lo largo del año conectan a los vecinos con su ciudad, sus espacios públicos y su vida cultural, fortaleciendo la convivencia y el sentido de pertenencia.
+        </p>
       </div>
 
       <div className="w-full rounded-2xl px-4 py-4 md:px-8 md:py-5 bg-white/10">
         <div className="grid grid-cols-1 grid-rows-1 lg:grid-rows-1 md:grid-cols-[1fr_160px_1fr] items-center gap-4 lg:gap-43 w-full">
 
           {/* MES */}
-          <h1 className="text-3xl font-extrabold capitalize text-muni-azul md:min-w-0 md:truncate md:max-w-[420px] lg:max-w-[420px] text-shadow-lg/20">
-            {fmtMonthES(month)}
-          </h1>
+          
+          <div className="flex items-center justify-center gap-2 md:min-w-0 md:truncate md:max-w-105 lg:max-w-105">
 
-          {/* NAVEGACIÓN */}
-          <div className="flex items-center gap-2">
             <button
               onClick={onPrev}
-              className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
+              className="flex justify-center items-center h-12 w-12 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
             >
-              ‹
+              <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 -rotate-90" />
             </button>
 
-            <button
-              onClick={onToday}
-              className="h-9 px-3 rounded-lg bg-white/15 hover:bg-white/20 transition text-sm font-semibold text-muni-azul"
-            >
-              Hoy
-            </button>
+            <h1 className="text-3xl font-extrabold capitalize text-muni-azul">
+              {fmtMonthES(month)}
+            </h1>
 
             <button
               onClick={onNext}
-              className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
+              className="flex justify-center items-center h-12 w-12 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
             >
-              ›
+              <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 rotate-90" />
+            </button> 
+
+          </div>
+
+          {/* NAVEGACIÓN */}
+          <div className="flex items-center justify-center gap-2">
+
+            <button
+              onClick={onToday}
+              className="py-3 px-8 rounded-xl bg-muni-azul hover:bg-muni-azul/80 transition text-xl sm:text-2xl font-semibold text-muni-verde"
+            >
+              Hoy
             </button>
 
           </div>
@@ -74,7 +97,7 @@ export default function CalendarHeader({
               >
                 <img src={`${basePath}/img/calendario/10.png`} className="w-8 sm:w-10" />
                 <span>Impulsando</span>
-                <span>oportunidades</span>
+                <span className="font-bold">Oportunidades</span>
               </button>
 
               {/* Eje 2 */}
@@ -86,7 +109,7 @@ export default function CalendarHeader({
               >
                 <img src={`${basePath}/img/calendario/11.png`} className="w-8 sm:w-10" />
                 <span>Inspirando</span>
-                <span>sueños</span>
+                <span className="font-bold">Sueños</span>
               </button>
 
               {/* Eje 3 */}
@@ -98,7 +121,7 @@ export default function CalendarHeader({
               >
                 <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-10" />
                 <span>Conectando</span>
-                <span>metas</span>
+                <span className="font-bold">Metas</span>
               </button>
             </div>
           </div>

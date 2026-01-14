@@ -26,8 +26,6 @@ export default function TrustedCompanies({ companies = [] }) {
               rounded-xl
               shadow-sm
               p-3
-              border-1
-              border-muni-azul
             "
           >
             <img

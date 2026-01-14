@@ -56,7 +56,7 @@ function HomePageContent() {
         <section className="flex-1">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
-            <Link href="/conmemoracion" className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm bg-[#F57EB6]/60 cursor-pointer`}>
+            <Link href="/conmemoracion" className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm conmemoracion-250 cursor-pointer`}>
 
               {/* Botón + */}
               <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
@@ -113,7 +113,7 @@ function HomePageContent() {
                 </button>
 
                 <div className="mb-3 text-3xl animate-pulse-slow">
-                  <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
 
                 <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
@@ -121,53 +121,27 @@ function HomePageContent() {
                   <span className="block">Eventos</span>
                 </h3>  
 
-              </Link>              
+              </Link>         
 
-              <Link href="/?modal=aleados" scroll={false} className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm aleados-250 backdrop-blur-none text-center items-center ">
-                  {/* Botón + */}
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                  cursor-pointer">
-                    +
-                  </button>
+              <Link href="https://grandistritoverde.com.gt/parques-y-areas-verdes/" target="_blank" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                  <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/aleados.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
-                  </div>
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                cursor-pointer">
+                  +
+                </button>
 
-                  <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
-                    <span className="block">Aleados</span>
-                    <span className="block">Estratégicos </span>
-                  </h3>
-              </Link>
-              <Modal openFromQuery={showModal} />
-
-
-              <div className="relative pointer-events-none opacity-60 overflow-hidden">
-
-                <div className="absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2 rounded-b-3xl">
-                  Próximamente
+                <div className="mb-3 text-3xl animate-pulse-slow">
+                  <img src={`${basePath}/img/5.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
 
-                <Link href="/areas" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                  <span className="block">Acciones</span>
+                  <span className="block">Verdes</span>
+                </h3>  
 
-                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                  cursor-pointer">
-                    +
-                  </button>
+              </Link>                                  
 
-                  <div className="mb-3 text-3xl">
-                    <img src={`${basePath}/img/5.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
-                  </div>
-                  <h3 className="text-xl font-semibold text-muni-azul"></h3>
-                  
-                  <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                    <span className="block">Acciones</span>
-                    <span className="block">Verdes</span>
-                  </h3> 
-                </Link>
-              </div>  
-
-              <div className="relative pointer-events-none opacity-60 overflow-hidden">
+              <div className="relative pointer-events-none overflow-hidden">
 
                 <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
                   Próximamente
@@ -190,7 +164,7 @@ function HomePageContent() {
                 </Link>
               </div>  
  
-              <div className="relative pointer-events-none opacity-60 overflow-hidden">
+              <div className="relative pointer-events-none overflow-hidden">
 
                 <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
                   Próximamente
@@ -213,10 +187,34 @@ function HomePageContent() {
                 </Link>
               </div>  
 
+              <Link href="/?modal=aleados" scroll={false} className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm aleados-250 backdrop-blur-none text-center items-center ">
+                  {/* Botón + */}
+                  <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                  cursor-pointer">
+                    +
+                  </button>
+
+                  <div className="mb-3 text-3xl animate-pulse-slow ">
+                    <img src={`${basePath}/img/aleados.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                  </div>
+
+                  <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
+                    <span className="block">Aleados</span>
+                    <span className="block">Estratégicos </span>
+                  </h3>
+              </Link>
+              <Modal openFromQuery={showModal} />
+
 
               
             </div>
           </div>
+        </section>
+
+        <section className="bg-white rounded-2xl text-muni-azul font-bold p-4 text-center opacity-80">
+          <p>
+            “La historia de la Ciudad de Guatemala ha sido una constante transformación a 250 años de su asentamiento en el Valle de la Ermita, esa historia inspira la ciudad que seguimos construyendo”
+          </p>
         </section>
 
       </div>

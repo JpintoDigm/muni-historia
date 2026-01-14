@@ -40,11 +40,11 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
   return (
     <div className="mt-8 border-t border-white/20 pt-6 text-white">
       <div className="flex items-center justify-between gap-4">
-        <h3 className="text-lg font-bold capitalize text-muni-azul">Eventos del {fmtDayES(day)}</h3>
-        <p className="text-sm text-muni-azul/70">{list.length} evento(s)</p>
+        <h3 className="text-lg font-bold capitalize text-muni-azul">Eventos <span className="font-normal">del</span> {fmtDayES(day)}</h3>
+        <p className="text-sm text-muni-azul/70 font-normal">{list.length} evento(s)</p>
       </div>
 
-      <div className="mt-4 grid gap-3 md:grid-cols-2">
+      <div className="mt-4 grid gap-3 md:grid-cols-3">
         {list.length === 0 ? (
           <div className="rounded-2xl bg-white/10 p-4 border border-white/10 text-muni-azul/80">
             No hay eventos para este día.
@@ -52,17 +52,7 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
         ) : (
           list.map((e) => (
             <button key={e.id} type="button" onClick={() => onSelectEvent?.(e)} className="text-start rounded-2xl bg-white/10 p-4 border border-white/10 hover:border-white/40 hover:bg-white/20" >
-              <div className="flex items-center justify-between gap-3">
-
-                {EJE_LABEL[e.eje] && (
-                  <div
-                    className={`inline-flex rounded-full px-3 py-1 text-xs font-bold border-1 border-solid text-muni-azul
-                      ${EJE_BG[e.eje] || "bg-white/10 text-white"}
-                    `}
-                  >
-                    {EJE_LABEL[e.eje]}
-                  </div>
-                )}
+              <div className="flex items-center justify-start gap-3 mb-2">
 
                 {EJE_ICON[e.eje] && (
                   <img
@@ -71,6 +61,17 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
                     className="h-10 w-10 object-contain"
                   />
                 )}
+
+                {EJE_LABEL[e.eje] && (
+                  <div
+                    className={`inline-flex rounded-full px-5 py-1 text-base font-bold border-1 border-solid text-muni-azul
+                      ${EJE_BG[e.eje] || "bg-white/10 text-white"}
+                    `}
+                  >
+                    {EJE_LABEL[e.eje]}
+                  </div>
+                )}
+
               </div>
 
               <div className=" text-muni-azul text-base font-extrabold text-shadow-lg/5">{e.title}</div>

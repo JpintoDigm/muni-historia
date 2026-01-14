@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { basePath } from "@/next.config.mjs";
+
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -29,7 +31,7 @@ export default function BackToTop() {
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"}
       `}
     >
-      ↑
+      <img src={`${basePath}/img/backtotop.svg`} className="my-3" width={15} />
     </button>
   );
 }

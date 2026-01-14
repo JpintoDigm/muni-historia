@@ -33,6 +33,12 @@ export default function EventMapModal({
             <h2 className="text-lg md:text-xl font-extrabold line-clamp-1">
               {event.title}
             </h2>
+            {/* <p className="text-lg md:text-xl font-extrabold line-clamp-1">
+              {event.address}
+            </p>
+            <p className="text-lg md:text-xl font-extrabold line-clamp-1">
+              {event.date}
+            </p> */}
           </div>
 
           <button
