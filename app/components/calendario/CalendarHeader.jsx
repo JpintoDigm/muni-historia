@@ -13,6 +13,8 @@ export default function CalendarHeader({
   onPrev,
   onNext,
   onToday,
+  selectedEjes,
+  onToggleEje,  
   tab,
   setTab,
 }) {
@@ -41,7 +43,7 @@ export default function CalendarHeader({
       </div>
 
       <div className="w-full sm:w-2/3">
-        <p className="text-muni-azul text-justify text-sm sm:text-xl">
+        <p className="text-muni-azul text-justify text-sm sm:text-xl mb-4">
           Las actividades que se realizan a lo largo del año conectan a los vecinos con su ciudad, sus espacios públicos y su vida cultural, fortaleciendo la convivencia y el sentido de pertenencia.
         </p>
       </div>
@@ -60,7 +62,7 @@ export default function CalendarHeader({
               <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 -rotate-90" />
             </button>
 
-            <h1 className="text-3xl font-extrabold capitalize text-muni-azul">
+            <h1 className="text-2xl md:text-3xl font-extrabold capitalize text-muni-azul">
               {fmtMonthES(month)}
             </h1>
 
@@ -90,10 +92,16 @@ export default function CalendarHeader({
               {/** botones de ejes */}
               {/* Eje 1 */}
               <button
-                onClick={() => setTab("Eje1")}
-                className="flex flex-col items-center transition text-muni-azul
-                  px-0 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
-                "
+                onClick={() => onToggleEje(1)}              
+                className={`flex flex-col items-center transition text-muni-azul
+                  px-3 py-1 md:py-2 text-xs sm:px-4 sm:text-base hover:bg-white/20 rounded-3xl
+                    ${
+                      selectedEjes.includes(1)
+                        ? "bg-white/50 shadow-md"
+                        : "bg-transparent"
+                    }
+
+                `}
               >
                 <img src={`${basePath}/img/calendario/10.png`} className="w-8 sm:w-10" />
                 <span>Impulsando</span>
@@ -102,10 +110,16 @@ export default function CalendarHeader({
 
               {/* Eje 2 */}
               <button
-                onClick={() => setTab("Eje2")}
-                className="flex flex-col items-center  transition text-muni-azul
-                  px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
-                  "
+                onClick={() => onToggleEje(2)}
+                className={`flex flex-col items-center  transition text-muni-azul
+                  px-3 py-1 md:py-2 text-xs sm:px-4 sm:text-base hover:bg-white/20 rounded-3xl
+                  
+                    ${
+                      selectedEjes.includes(2)
+                        ? "bg-white/50 shadow-md"
+                        : "bg-transparent"
+                    }                  
+                  `}
               >
                 <img src={`${basePath}/img/calendario/11.png`} className="w-8 sm:w-10" />
                 <span>Inspirando</span>
@@ -114,11 +128,17 @@ export default function CalendarHeader({
 
               {/* Eje 3 */}
               <button
-                onClick={() => setTab("Eje3")}
-                className="flex flex-col items-center  transition text-muni-azul
-                  px-3 py-0 md:py-2 text-xs sm:px-4 sm:text-sm hover:bg-white/20 rounded-3xl
-                  "
-              >
+                onClick={() => onToggleEje(3)}
+                className={`flex flex-col items-center transition text-muni-azul
+                  px-3 py-1 md:py-2 text-xs sm:px-4 sm:text-base rounded-3xl
+                  hover:bg-white/20
+                  ${
+                    selectedEjes.includes(3)
+                      ? "bg-white/50 shadow-md"
+                      : "bg-transparent"
+                  }
+                `}
+              >              
                 <img src={`${basePath}/img/calendario/12.png`} className="w-8 sm:w-10" />
                 <span>Conectando</span>
                 <span className="font-bold">Metas</span>

@@ -8,7 +8,7 @@ import { MontserratBlack3 } from "./fonts/fonts";
 
 import Header from "@/app/components/Header";
 import { basePath } from "@/next.config.mjs";
-import ListImage from "./components/ListImage";
+import ListImageMain from "./components/ListImageMain";
 import BottomMenu from "./components/BottomMenu";
 import TrustedCompanies from "./components/TrustedCompanies";
 import { CompaniesLogo } from "./data/CompaniesLogo";
@@ -49,7 +49,8 @@ function HomePageContent() {
             />
           </div>
 
-          <ListImage />
+          <ListImageMain
+          />
 
         </section>
 
@@ -139,30 +140,25 @@ function HomePageContent() {
                   <span className="block">Verdes</span>
                 </h3>  
 
-              </Link>                                  
+              </Link>      
 
-              <div className="relative pointer-events-none overflow-hidden">
+              <Link href="/acciones" target="_blank" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
-                  Próximamente
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                cursor-pointer">
+                  +
+                </button>
+
+                <div className="mb-3 text-3xl animate-pulse-slow">
+                  <img src={`${basePath}/img/2.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
-                <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                    <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                    cursor-pointer">
-                      +
-                    </button>
+                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                  <span className="block">Acciones</span>
+                  <span className="block">250 años</span>
+                </h3>  
 
-                    <div className="mb-3 text-3xl">
-                      <img src={`${basePath}/img/2.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
-                    </div>
-
-                    <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                      <span className="block">Acciones</span>
-                      <span className="block">250 años</span>
-                    </h3>  
-                </Link>
-              </div>  
+              </Link>                                                
  
               <div className="relative pointer-events-none overflow-hidden">
 
@@ -211,7 +207,7 @@ function HomePageContent() {
           </div>
         </section>
 
-        <section className="bg-white rounded-2xl text-muni-azul font-bold p-4 text-center opacity-80">
+        <section className=" text-muni-azul font-bold rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
           <p>
             “La historia de la Ciudad de Guatemala ha sido una constante transformación a 250 años de su asentamiento en el Valle de la Ermita, esa historia inspira la ciudad que seguimos construyendo”
           </p>

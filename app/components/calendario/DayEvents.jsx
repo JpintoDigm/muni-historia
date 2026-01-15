@@ -1,12 +1,12 @@
 import { basePath } from "@/next.config.mjs";
 
 function fmtDayES(d) {
-  return d.toLocaleDateString("es-GT", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const weekday = d.toLocaleDateString("es-GT", { weekday: "long" });
+  const day = d.getDate();
+  const month = d.toLocaleDateString("es-GT", { month: "long" });
+  const year = d.getFullYear();
+
+  return `${weekday} ${day} de ${month} ${year}`;
 }
 
 function fmtHourES(d) {
@@ -40,7 +40,7 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
   return (
     <div className="mt-8 border-t border-white/20 pt-6 text-white">
       <div className="flex items-center justify-between gap-4">
-        <h3 className="text-lg font-bold capitalize text-muni-azul">Eventos <span className="font-normal">del</span> {fmtDayES(day)}</h3>
+        <h3 className="text-lg font-bold normal-case text-muni-azul">Eventos <span className="font-normal">del {fmtDayES(day)}</span> </h3>
         <p className="text-sm text-muni-azul/70 font-normal">{list.length} evento(s)</p>
       </div>
 
@@ -68,7 +68,17 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
                       ${EJE_BG[e.eje] || "bg-white/10 text-white"}
                     `}
                   >
-                    {EJE_LABEL[e.eje]}
+                    {(() => {
+                      const [firstWord, ...rest] = EJE_LABEL[e.eje].split(" ");
+                      return (
+                        <>
+                          <span className="font-normal capitalize ">{firstWord}</span>
+                          {rest.length > 0 && (
+                            <span className="font-black ml-1 capitalize ">{rest.join(" ")}</span>
+                          )}
+                        </>
+                      );
+                    })()}
                   </div>
                 )}
 

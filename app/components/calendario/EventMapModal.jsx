@@ -1,11 +1,28 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { basePath } from "@/next.config.mjs";
 
 // Import dinámico del mapa de eventos
 const EventMap = dynamic(() => import("@/app/components/arcgis/basemap/EventMap"), {
   ssr: false,
 });
+
+function fmtHourES(d) {
+  return d.toLocaleTimeString("es-GT", {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
+function fmtDayES(d) {
+  const weekday = d.toLocaleDateString("es-GT", { weekday: "long" });
+  const day = d.getDate();
+  const month = d.toLocaleDateString("es-GT", { month: "long" });
+  const year = d.getFullYear();
+
+  return `${weekday} ${day} de ${month} ${year}`;
+}
 
 export default function EventMapModal({
   open,
@@ -25,7 +42,7 @@ export default function EventMapModal({
 
       <div className="relative z-10 w-[95%] max-w-5xl h-[80vh] rounded-3xl bg-white/10 shadow-2xl overflow-hidden flex flex-col">
         {/* Header */}
-        <header className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
+        <header className="flex items-start justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] font-semibold">
               Mapa del evento
@@ -33,12 +50,22 @@ export default function EventMapModal({
             <h2 className="text-lg md:text-xl font-extrabold line-clamp-1">
               {event.title}
             </h2>
-            {/* <p className="text-lg md:text-xl font-extrabold line-clamp-1">
-              {event.address}
+            <p className="text-xs md:text-base line-clamp-1 flex items-center justify-start gap-1">
+              <img src={`${basePath}/img/calendario/ubicacion.svg`} alt="Direccion" className="max-w-5 max-h-5"/>
+              
+              {event.address}            
             </p>
-            <p className="text-lg md:text-xl font-extrabold line-clamp-1">
-              {event.date}
-            </p> */}
+            <p className="text-xs md:text-base  line-clamp-1 flex items-center justify-start gap-1">
+              <img src={`${basePath}/img/calendario/calendario.svg`} alt="Fecha" className="max-w-5 max-h-5" />
+
+              {fmtDayES(event.date)}           
+            </p>
+
+            <p className="text-xs md:text-base  line-clamp-1 flex items-center justify-start gap-1">
+              <img src={`${basePath}/img/calendario/reloj.svg`} alt="Fecha" className="max-w-5 max-h-5" />
+              
+              {fmtHourES(event.date)}      
+            </p>
           </div>
 
           <button

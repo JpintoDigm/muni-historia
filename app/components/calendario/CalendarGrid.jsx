@@ -80,7 +80,7 @@ export default function CalendarGrid({
                         key={eje}
                         src={EJE_ICON[eje]}
                         alt={`Eje ${eje}`}
-                        className="h-3 w-3 sm:h-4 sm:w-4 object-contain"
+                        className="h-3 w-3 sm:h-6 sm:w-6 object-contain"
                       />
                     )
                   ))}
@@ -89,7 +89,7 @@ export default function CalendarGrid({
 
               <div className="hidden md:block">
                 {dayEvents.slice(0, 4).map((e, i) => (
-                  <div key={i} className="mt-1 flex items-center gap-1 text-xs">
+                  <div key={i} className="mt-1 flex items-center gap-1 text-xs sm:text-sm">
                     <span
                       className={`h-1.5 w-1.5 rounded-full border-1 border-muni-azul border-solid ${
                         EJE_COLOR[e.eje] || "bg-gray-300"

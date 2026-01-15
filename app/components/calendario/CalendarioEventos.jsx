@@ -7,13 +7,23 @@ import CalendarGrid from "./CalendarGrid";
 import DayEvents from "./DayEvents";
 import EventMapModal from "./EventMapModal";
 
+const TAB_EJE_MAP = {
+  Eje1: 1,
+  Eje2: 2,
+  Eje3: 3,
+};
+
+
 export default function CalendarioEventos({ featureLayerUrl }) {
   const [month, setMonth] = useState(new Date());
+  
   const [selectedDay, setSelectedDay] = useState(new Date());
   const [tab, setTab] = useState("actividad");
 
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isMapOpen, setIsMapOpen] = useState(false);
+
+  const [selectedEjes, setSelectedEjes] = useState([]);
 
 
   const { events, loading } = useArcGISEvents({
@@ -26,7 +36,29 @@ export default function CalendarioEventos({ featureLayerUrl }) {
     setIsMapOpen(true);
   };
 
-console.log("month", month, "events", events.length);
+const handleToggleEje = (eje) => {
+  setSelectedEjes((prev) => {
+    // Si ya está activo
+    if (prev.includes(eje)) {
+      // Si es el único activo → limpiar todo
+      if (prev.length === 1) return [];
+
+      // Si hay más de uno → remover solo este
+      return prev.filter((id) => id !== eje);
+    }
+
+    // Si NO está activo → agregarlo
+    return [...prev, eje];
+  });
+};
+
+
+  const filteredEvents =
+    selectedEjes.length > 0
+      ? events.filter((e) => selectedEjes.includes(e.eje))
+      : events;
+
+  console.log("month", month, "events", events.length);
 
 
   return (
@@ -40,13 +72,15 @@ console.log("month", month, "events", events.length);
           setMonth(new Date(t.getFullYear(), t.getMonth(), 1));
           setSelectedDay(t);
         }}
+        selectedEjes={selectedEjes}
+        onToggleEje={handleToggleEje}
         tab={tab}
         setTab={setTab}
       />
 
       <CalendarGrid
         month={month}
-        events={events}
+        events={filteredEvents}
         selectedDay={selectedDay}
         onSelectDay={setSelectedDay}
         tab={tab}
@@ -55,7 +89,7 @@ console.log("month", month, "events", events.length);
 
       <DayEvents
         day={selectedDay}
-        events={events}
+        events={filteredEvents}
         tab={tab}
         onSelectEvent={handleSelectEvent}
       />

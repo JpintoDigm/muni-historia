@@ -4,13 +4,36 @@ import { basePath } from "@/next.config.mjs";
 export default function ListImage
 (
 {
-    width,
-    height,
-    dotSize = "base"
+    widthSize,
+    widthSizeMobil,
+    heightSize,
+    heightSizeMobil,
+    dotSize = "base",
+    dotSizeMobil = "base"
 }   
 ) {
 
-    const dotSizes = {
+    const widthMobil = {
+        mobilMain: "w-13",
+        mobil: "w-25"
+    }
+
+    const widthDesktop = {
+        sm: "sm:w-40",
+        md: "md:w-175"
+    }
+
+    const heightMobil = {
+        mobilMain: "w-13",
+        mobil: "w-25"
+    }
+
+    const heightDesktop = {
+        sm: "sm:w-40",
+        md: "md:w-175"
+    }
+
+    const dotMobil = {
         sm: "text-sm",
         base: "text-base",
         lg: "text-lg",
@@ -20,14 +43,23 @@ export default function ListImage
         "9xl": "text-9xl",
     };
 
+    const dotDesktop = {
+        sm: "sm:text-sm",
+        base: "sm:text-base",
+        lg: "sm:text-lg",
+        xl: "sm:text-xl",
+        "2xl": "sm:text-2xl",
+        "6xl": "sm:text-6xl",
+        "9xl": "sm:text-9xl",
+    };
 
     return (
-        <div className="flex items-center justify-center  text-xl opacity-100">
-            <img src={`${basePath}/img/10.png`} alt="Logo1" width={width} height={height} className="rounded-3xl object-cover"/>
-            <span className={`text-muni-azul ${dotSizes[dotSize] || "text-base"}`}>•</span>
-            <img src={`${basePath}/img/11.png`} alt="Descripción" width={width} height={height} className="rounded-3xl object-cover"/>
-            <span className={`text-muni-azul ${dotSizes[dotSize] || "text-base"}`}>•</span>
-            <img src={`${basePath}/img/12.png`} alt="Descripción" width={width} height={height} className="rounded-3xl object-cover"/>
+        <div className="flex items-center justify-center text-xl opacity-100">
+            <img src={`${basePath}/img/10.png`} alt="Descripción" className={`rounded-3xl object-cover ${widthDesktop[widthSize]} ${heightDesktop[heightSize]} ${widthMobil[widthSizeMobil]} ${heightMobil[heightSizeMobil]}`}/>
+            <span className={`text-muni-azul ${dotDesktop[dotSize]} ${dotMobil[dotSizeMobil]}`}>•</span>
+            <img src={`${basePath}/img/11.png`} alt="Descripción" className={`rounded-3xl object-cover ${widthDesktop[widthSize]} ${heightDesktop[heightSize]} ${widthMobil[widthSizeMobil]} ${heightMobil[heightSizeMobil]}`}/>
+            <span className={`text-muni-azul ${dotDesktop[dotSize]} ${dotMobil[dotSizeMobil]}`}>•</span>
+            <img src={`${basePath}/img/12.png`} alt="Descripción" className={`rounded-3xl object-cover ${widthDesktop[widthSize]} ${heightDesktop[heightSize]} ${widthMobil[widthSizeMobil]} ${heightMobil[heightSizeMobil]}`}/>
         </div>
     );
 

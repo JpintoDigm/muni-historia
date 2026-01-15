@@ -2174,6 +2174,14 @@ export default function EvolucionPage() {
           </div>
         </section>
 
+        <section className="w-full mx-auto bg-white text-center text-base sm:text-2xl  text-muni-azul">
+          <p className="mx-15 md:mx-25">“La historia de la <b>Ciudad de Guatemala</b> ha sido una </p> 
+          <p className="mx-15 md:mx-25">constante transformación a 250 años de su asentamiento en</p> 
+          <p className="mx-15 md:mx-25">el Valle de la Ermita, esa historia inspira la ciudad que</p>
+          <p className="mx-15 md:mx-25">seguimos construyendo”</p>
+        </section>
+
+
         <BottomMenu />
     </main>
   );
