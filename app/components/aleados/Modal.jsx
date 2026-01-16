@@ -33,7 +33,7 @@ export default function Modal({openFromQuery=false}) {
         open={ size === "lg" }
         size={size || "lg"}
         handler={handleClose}
-        className="bg-white/30 backdrop-blur-md shadow-none rounded-3xl"
+        className="bg-white/30 backdrop-blur-md shadow-none rounded-3xl "
       >
         <DialogHeader className="flex items-center rounded-t-3xl justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
 
@@ -51,7 +51,7 @@ export default function Modal({openFromQuery=false}) {
               ✕
             </Button>
         </DialogHeader>
-        <DialogBody className="max-h-[70vh]">
+        <DialogBody className="max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
           <div className="">
             <TrustedCompanies companies={CompaniesLogo} />                
           </div>

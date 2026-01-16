@@ -111,7 +111,7 @@ export default function BaseMap({ nombre }) {
 
     // Widgets
     const homeWidget = new Home({ view });
-    view.ui.add(new BasemapToggle({ view, nextBasemap: "hybrid" }), "top-right");
+    view.ui.add(new BasemapToggle({ view, nextBasemap: "hybrid" }), "top-left");
     view.ui.add(homeWidget, "top-right");
     view.ui.add(new Fullscreen({ view }), "bottom-right");
 
@@ -167,10 +167,10 @@ export default function BaseMap({ nombre }) {
 
   return (
     <div className="relative w-full h-64 sm:h-65">
-      {/* MAPA */}
+      {/* mapa */}
       <div ref={mapDiv} className="w-full h-full" />
 
-      {/* BOTON "LEYENDA" */}
+      {/* Leyenda */}
       <button
         onClick={() => setLegendOpen((v) => !v)}
         className="absolute w-8 left-4 bottom-5 z-50 rounded-full text-white font-extrabold shadow-lg"
@@ -178,7 +178,7 @@ export default function BaseMap({ nombre }) {
         <img src={`${basePath}/img/leyenda.png`} alt=""/>
       </button>
 
-      {/* PANEL CUSTOM */}
+      {/* PANEL */}
       {legendOpen && (
         <div className="absolute left-4 bottom-16 z-50 w-[280px] rounded-2xl bg-muni-azul/60 shadow-2xl overflow-hidden backdrop-blur-md">
           {/* Header */}
