@@ -14,6 +14,7 @@ import TrustedCompanies from "./components/TrustedCompanies";
 import { CompaniesLogo } from "./data/CompaniesLogo";
 import Modal from "@/app/components/aleados/Modal";
 import { Suspense } from "react";
+import Footer from "./components/Footer";
 
 export default function HomePage() {
   return (
@@ -29,11 +30,10 @@ function HomePageContent() {
   const showModal = searchParams.get("modal") == "aleados";
 
   return (
-
     <main className="w-full min-h-screen main-snake">
       <div className="container mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6">
         {/* HERO SUPERIOR */}
-        <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-0 md:mb-10">
+        <section className="flex flex-col gap-6 bg-white/20 backdrop-blur-xl shadow-sm mb-0 md:mb-8">
           {/* Logo 250 + escudo + menú */}
 
           <Header />
@@ -54,7 +54,7 @@ function HomePageContent() {
 
         </section>
 
-        <section className="flex-1">
+        <section className="flex-1 ">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
             <Link href="/conmemoracion" className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm conmemoracion-250 cursor-pointer`}>
@@ -204,12 +204,13 @@ function HomePageContent() {
 
               
             </div>
-          </div>
-        </section>
 
-        <section className=" text-muni-azul font-bold rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-          <p>
-            “La historia de la Ciudad de Guatemala ha sido una constante transformación a 250 años de su asentamiento en el Valle de la Ermita, esa historia inspira la ciudad que seguimos construyendo”
+            
+          </div>
+
+          <p className="text-muni-azul font-bold rounded-3xl px-4 py-8 mt-6 md:mt-15 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+            “250 años de historia. Una ciudad que
+            conecta, inspira y genera oportunidades.”
           </p>
         </section>
 
@@ -217,5 +218,7 @@ function HomePageContent() {
 
       <BottomMenu />
     </main>
+
+  
   );
 }
