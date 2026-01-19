@@ -13,8 +13,8 @@ export default function Conmemoracion() {
         </section>
 
         {/* Seccion Ejes */}
-        <section className="container mx-auto w-full bg-white">
-          <div className="mx-auto max-w-6xl flex gap-10 px-10 py-16 bg-white">
+        <section className=" mx-auto w-full bg-white">
+          <div className="mx-auto max-w-6xl flex gap-10 px-10 md:px-0 py-16 bg-white">
 
             {/* COLUMNA IZQUIERDA: TEXTOS */}
             <div className="flex-1 w-4/5 flex flex-col gap-10 ">
@@ -33,8 +33,8 @@ export default function Conmemoracion() {
                     <span className="italic font-light">Impulsando </span>
                     <span className="font-extrabold not-italic">Oportunidades</span>
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muni-azul text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.                  
+                  <p className="mt-2 text-sm md:text-base leading-relaxed text-muni-azul text-justify">
+                    Genera oportunidades, con proyectos urbanos que impulsan el desarrollo, el empleo y el bienestar.                 
                   </p>
                 </div>
               </div>
@@ -54,15 +54,15 @@ export default function Conmemoracion() {
                     <span className="italic font-light">Inspirando </span>
                     <span className="font-extrabold not-italic">Sueños</span>
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muni-azul text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.      
+                  <p className="mt-2 text-sm md:text-base leading-relaxed text-muni-azul text-justify">
+                    Inspira, mediante acciones verdes que cuidan el entorno y promueven una ciudad más habitable.      
                   </p>
                 </div>
               </div>
 
               {/* 3. Conectando Metas */}
               <div className="flex flex-row gap-5 items-start">
-                <div className="bg-muni-verde p-5 shrink-0">
+                <div className="bg-muni-pantone p-5 shrink-0">
                   <img
                     src={`${basePath}/img/conmemoracion/ejeConectando.png`}
                     alt="Eje Conectando Metas"
@@ -75,23 +75,67 @@ export default function Conmemoracion() {
                     <span className="italic font-light">Conectando </span>
                     <span className="font-extrabold not-italic">Metas</span>
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muni-azul text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu
+                  <p className="mt-2 text-sm md:text-base leading-relaxed text-muni-azul text-justify">
+                    Conecta, a través de actividades y espacios que unen a las personas y fortalecen la vida en comunidad. 
                   </p>
                 </div>
               </div>
-            </div>
 
-            {/* COLUMNA DERECHA: 250 ROTADO AL LADO */}
-            <div className="w-1/5 flex items-center justify-center">
-              <img
-                src={`${basePath}/img/conmemoracion/250cremalg.svg`}
-                alt="250 años"
-                className="-rotate-90 w-100 opacity-60"
-              />
+              {/* Conectando Metas */}
+              <div className="flex flex-row gap-2 items-center">
+                <div className="bg-muni-verde py-5 px-4 shrink-0">
+                  <img
+                    src={`${basePath}/img/conmemoracion/iconoCelular.svg`}
+                    alt="Eje Conectando Metas"
+                    className="w-12 h-12 ml-2"
+                  />
+                </div>
+
+                <div className="border-y-2 border-r-2 rounded-r-4xl md:rounded-r-full border-muni-verde">
+                  <p className="text-sm md:text-base leading-relaxed text-muni-azul text-justify px-5 py-3">
+                    Cada sección de esta plataforma refleja ese camino hacia <b>la ciudad 
+                    que seguimos construyendo</b> para las próximas generaciones.                 
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
+
+          {/* COLUMNA DERECHA – IMAGEN (con corte abajo) */}
+          <div className="hidden md:block relative">
+            <img
+              src={`${basePath}/img/conmemoracion/250cremalg.svg`}
+              alt="250 años"
+              className="
+                absolute
+                right-[-90px]
+                bottom-[-40px]
+                -rotate-90
+                w-[520px]
+                opacity-60
+                pointer-events-none
+                select-none
+              "
+            />
+          </div>          
+
+          <div className="my-10">
+            <p className="text-center text-base md:text-2xl text-muni-azul px-0 md:px-80">250 años de historia. Una ciudad que <b>conecta, inspira y genera oportunidades.</b></p>
+          </div>
+
+
         </section>
+
+        <div className="flex items-center justify-between bottom-0">
+            <div className="bg-muni-verde flex-1 h-5"></div>
+            <div className="bg-muni-pantone flex-1 h-5"></div>
+            <div className="bg-muni-amarillo flex-1 h-5"></div>
+            <div className="bg-muni-rosado flex-1 h-5"></div>
+            <div className="bg-muni-azul flex-1 h-5"></div>
+            <div className="bg-muni-verde flex-1 h-5"></div>
+            <div className="bg-muni-pantone flex-1 h-5"></div>
+        </div>  
 
         <BottomMenu 
         />

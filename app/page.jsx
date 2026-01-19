@@ -13,6 +13,7 @@ import BottomMenu from "./components/BottomMenu";
 import TrustedCompanies from "./components/TrustedCompanies";
 import { CompaniesLogo } from "./data/CompaniesLogo";
 import Modal from "@/app/components/aleados/Modal";
+import ModalDescarga from "@/app/components/descarga/ModalDescarga";
 import { Suspense } from "react";
 import Footer from "./components/Footer";
 
@@ -26,8 +27,13 @@ export default function HomePage() {
 
 function HomePageContent() {
 
+  // modal Aleados Estrategicos
   const searchParams = useSearchParams();
   const showModal = searchParams.get("modal") == "aleados";
+
+  // modal Aleados Estrategicos
+  const searchParamsDescarga = useSearchParams();
+  const showModalDescarga = searchParamsDescarga.get("modalD") == "descarga";
 
   return (
     <main className="w-full min-h-screen main-snake">
@@ -97,7 +103,7 @@ function HomePageContent() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/evolucion.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <img src={`${basePath}/img/evolucion2.svg`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
                   <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
@@ -159,29 +165,26 @@ function HomePageContent() {
                 </h3>  
 
               </Link>                                                
- 
-              <div className="relative pointer-events-none overflow-hidden">
 
-                <div className="rounded-b-3xl absolute inset-x-0 top-[94%] -translate-y-1/2 bg-muni-azul text-white text-center font-bold py-1 text-sm z-10 p-2">
-                  Próximamente
+              <Link href="/?modalD=descarga" scroll={false} className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+
+                <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
+                cursor-pointer">
+                  +
+                </button>
+
+                <div className="mb-3 text-3xl animate-pulse-slow">
+                  <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
-                <Link href="/proyectos" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
-                    <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
-                    cursor-pointer">
-                      +
-                    </button>
+                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                  <span className="block">Descarga</span>
+                  <span className="block">Documentos</span>
+                </h3>  
 
-                    <div className="mb-3 text-3xl">
-                      <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
-                    </div>
+              </Link>      
 
-                    <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
-                      <span className="block">Descarga</span>
-                      <span className="block">Documentos</span>
-                    </h3>  
-                </Link>
-              </div>  
+              <ModalDescarga openFromQuery={showModalDescarga} />                                          
 
               <Link href="/?modal=aleados" scroll={false} className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm aleados-250 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
@@ -191,7 +194,7 @@ function HomePageContent() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/aleados.png`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <img src={`${basePath}/img/aleados.svg`} alt="Logo1" width={400} height={400} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
                   <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
