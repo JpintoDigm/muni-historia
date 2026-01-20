@@ -35,7 +35,11 @@ export default function BaseMap({ nombre }) {
   const layerUrl3D =
     "https://gis.muniguate.com/server/rest/services/gerencia_planificacion/250anios/FeatureServer/1";
 
-  // cuando cambian los toggles, aplica visibilidad a las capas
+  const [viewReady, setViewReady] = useState(false);
+
+  const viewRef = useRef(null);
+
+
   useEffect(() => {
     if (layer0Ref.current) layer0Ref.current.visible = vis0;
   }, [vis0]);
@@ -47,91 +51,71 @@ export default function BaseMap({ nombre }) {
   useEffect(() => {
     if (!mapDiv.current) return;
 
+    setViewReady(false);
+
+    if (viewRef.current) {
+      try {
+        viewRef.current.destroy();
+      } catch {}
+      viewRef.current = null;
+    }
+
+    let cancelled = false;
+
     const where = `Nombre = '${esc(nombre)}'`;
-
-    const layer0 = new FeatureLayer({
-      url: layerUrlPoligonos,
-      title: "Polígonos (2D)",
-      outFields: ["*"],
-      popupEnabled: true,
-      definitionExpression: where,
-      elevationInfo: { mode: "on-the-ground" },
-      visible: vis0,
-    });
-
-    layer0.renderer = {
-      type: "simple",
-      symbol: {
-        type: "simple-fill",
-        color: [60, 180, 140, 0.30],
-        outline: { color: [20, 120, 90, 0.9], width: 1.5 },
-      },
-    };
-
-    const layer1 = new FeatureLayer({
-      url: layerUrl3D,
-      title: "Elementos (3D)",
-      outFields: ["*"],
-      popupEnabled: true,
-      definitionExpression: where,
-      elevationInfo: { mode: "on-the-ground" },
-      visible: vis1,
-    });
-
-    layer1.renderer = {
-      type: "simple",
-      symbol: {
-        type: "polygon-3d",
-        symbolLayers: [
-          {
-            type: "extrude",
-            size: 40,
-            material: { color: [122, 167, 255, 0.9] },
-            edges: { type: "solid", color: [255, 255, 255, 0.9], size: 1 },
-          },
-        ],
-      },
-    };
-
-    // guarda refs para el panel
-    layer0Ref.current = layer0;
-    layer1Ref.current = layer1;
-
-    const map = new Map({
-      basemap: "gray-vector",
-      ground: "world-elevation",
-      layers: [layer0, layer1],
-    });
-
-    const view = new SceneView({
-      container: mapDiv.current,
-      map,
-      qualityProfile: "high",
-    });
-
-    // Widgets
-    const homeWidget = new Home({ view });
-    view.ui.add(new BasemapToggle({ view, nextBasemap: "hybrid" }), "top-left");
-    view.ui.add(homeWidget, "top-right");
-    view.ui.add(new Fullscreen({ view }), "bottom-right");
-
-    view.when(() => {
-      view.environment = {
-        starsEnabled: false,
-        atmosphere: { quality: "high" },
-        weather: { type: "sunny" },
-        lighting: {
-          type: "virtual",
-          date: new Date("2025-01-01T18:00:00Z"), // 12:00 GT
-          directShadowsEnabled: true,
-          ambientOcclusionEnabled: true,
-        },
-      };
-    });
 
     (async () => {
       try {
+        const layer0 = new FeatureLayer({
+          url: layerUrlPoligonos,
+          title: "Polígonos (2D)",
+          outFields: ["*"],
+          popupEnabled: true,
+          definitionExpression: where,
+          elevationInfo: { mode: "on-the-ground" },
+          visible: vis0,
+        });
+
+        layer0.renderer = {
+          type: "simple",
+          symbol: {
+            type: "simple-fill",
+            color: [60, 180, 140, 0.3],
+            outline: { color: [20, 120, 90, 0.9], width: 1.5 },
+          },
+        };
+
+        const layer1 = new FeatureLayer({
+          url: layerUrl3D,
+          title: "Elementos (3D)",
+          outFields: ["*"],
+          popupEnabled: true,
+          definitionExpression: where,
+          elevationInfo: { mode: "on-the-ground" },
+          visible: vis1,
+        });
+
+        layer1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 40,
+                material: { color: [122, 167, 255, 0.9] },
+                edges: { type: "solid", color: [255, 255, 255, 0.9], size: 1 },
+              },
+            ],
+          },
+        };
+
+        layer0Ref.current = layer0;
+        layer1Ref.current = layer1;
+
+        // calcular extent antes
         await Promise.all([layer0.load(), layer1.load()]);
+
         const [e0, e1] = await Promise.all([
           layer0.queryExtent({ where }),
           layer1.queryExtent({ where }),
@@ -144,31 +128,89 @@ export default function BaseMap({ nombre }) {
         if (ex0 && ex1) target = ex0.union(ex1);
         else target = ex0 || ex1;
 
+        const map = new Map({
+          basemap: "hybrid",
+          ground: "world-elevation",
+          layers: [layer0, layer1],
+        });
+
+        const view = new SceneView({
+          container: mapDiv.current,
+          map,
+          qualityProfile: "high",
+        });
+
+        viewRef.current = view;
+
+        const homeWidget = new Home({ view });
+        view.ui.add(new BasemapToggle({ view, nextBasemap: "gray-vector" }), "top-left");
+        view.ui.add(homeWidget, "top-right");
+        view.ui.add(new Fullscreen({ view }), "bottom-right");
+
+        await view.when();
+
+        view.resize();
+
+        if (cancelled) return;
+
+        view.environment = {
+          starsEnabled: false,
+          atmosphere: { quality: "high" },
+          weather: { type: "sunny" },
+          lighting: {
+            type: "virtual",
+            date: new Date("2025-01-01T18:00:00Z"),
+            directShadowsEnabled: true,
+            ambientOcclusionEnabled: true,
+          },
+        };
+
         if (target) {
-          await view.goTo({ target: target.expand(0.7), tilt: 70 }, { duration: 900 });
+          await view.goTo({ target: target.expand(0.7), tilt: 70 }, { duration: 0 });
+
+          
 
           homeWidget.viewpoint = new Viewpoint({
             targetGeometry: target.expand(1.6),
             camera: view.camera.clone(),
           });
+
+          view.resize();
         }
+
+        setViewReady(true);
+
+        // otro resize “post paint” (muy efectivo en sliders/carousels)
+        requestAnimationFrame(() => view.resize());
+        setTimeout(() => view.resize(), 50);
+        setTimeout(() => view.resize(), 200);
+
+
       } catch (e) {
-        console.warn("Error enfocando:", e);
+        console.warn("Error inicializando mapa:", e);
+        setViewReady(true); // evita quedar invisible
       }
     })();
 
     return () => {
-      view.destroy();
+      cancelled = true;
+      if (viewRef.current) {
+        try {
+          viewRef.current.destroy();
+        } catch {}
+        viewRef.current = null;
+      }
       layer0Ref.current = null;
       layer1Ref.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nombre]);
 
+
   return (
-    <div className="relative w-full h-64 sm:h-65">
+    <div className="relative w-full h-64 sm:h-65 overflow-hidden">
       {/* mapa */}
-      <div ref={mapDiv} className="w-full h-full" />
+      <div ref={mapDiv} className="absolute inset-0" />
 
       {/* Leyenda */}
       <button
@@ -222,31 +264,6 @@ export default function BaseMap({ nombre }) {
               </span>
             </label>
           </div>
-
-          {/* Footer buttons */}
-          {/* <div className="px-3 pb-3 flex gap-2 justify-end">
-            <button
-              onClick={() => {
-                setVis0(true);
-                setVis1(true);
-              }}
-              className="rounded-lg bg-white/10 border border-white/20 text-white font-bold px-4 py-2 hover:bg-white/15"
-            >
-              Todos
-            </button>
-
-            <button
-              onClick={() => {
-                setVis0(false);
-                setVis1(false);
-              }}
-              className="rounded-lg bg-white/10 border border-white/20 text-white font-bold px-4 py-2 hover:bg-white/15"
-            >
-              Ninguno
-            </button>
-          </div> */}
-
-
 
         </div>
       )}

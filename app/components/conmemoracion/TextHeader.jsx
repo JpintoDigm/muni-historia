@@ -2,11 +2,12 @@
 import ListImage from "@/app/components/ListImage";
 import { basePath } from "@/next.config.mjs";
 
+
 export default function TextHeader() {
 
     return(
           <div className="container mx-auto ">
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-center md:justify-end">
               <img src={`${basePath}/img/logo250.svg`} alt="Icono Calendario" className="w-50 sm:w-100" />
             </div>
 
@@ -29,7 +30,7 @@ export default function TextHeader() {
 
               {/* Texto */}
               <div className="p-0 md:p-10 text-justify">
-                <p className="text-muni-azul">
+                <p className="text-muni-azul --font-muni">
                   Celebrar <b>250 años</b> de la Ciudad de Guatemala es reconocer su historia y, al mismo tiempo, mirar hacia el futuro. A lo largo de estos siglos, la ciudad ha sido un espacio de encuentro, transformación y crecimiento. 
                 </p>
                 <p className="mt-4 text-muni-azul">

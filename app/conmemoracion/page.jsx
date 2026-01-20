@@ -110,7 +110,7 @@ export default function Conmemoracion() {
               className="
                 absolute
                 right-[-90px]
-                bottom-[-40px]
+                bottom-[150]
                 -rotate-90
                 w-[520px]
                 opacity-60
@@ -127,6 +127,7 @@ export default function Conmemoracion() {
 
         </section>
 
+        
         <div className="flex items-center justify-between bottom-0">
             <div className="bg-muni-verde flex-1 h-5"></div>
             <div className="bg-muni-pantone flex-1 h-5"></div>

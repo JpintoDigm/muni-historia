@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import { basePath } from "@/next.config.mjs";
+
 
 const ExampleMap = dynamic(
   () => import("../arcgis/basemap/BaseMap"),
@@ -36,6 +38,7 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
         ) : (
           <div className="w-full h-64 md:h-80">
             <ExampleMap nombre={nombre} />
+            <p className="text-center text-muni-azul text-sm italic">Año 2026 - Actual</p>
           </div>
         )}
       </div>
@@ -44,24 +47,24 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
         onClick={() => setSlide(0)}
         className="
           absolute left-[-1rem] top-1/2 -translate-y-1/2
-          bg-gradient-to-br from-pink-400 via-yellow-300 to-teal-500
+          bg-transparent
           text-muni-azul font-extrabold px-3 py-2 rounded-full shadow
-          hover:bg-white z-20 md:left-[-2rem]
+          hover:bg-white z-20 md:left-[-2rem] 
         "
       >
-        ←
+        <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-8 -rotate-90" />
       </button>
 
       <button
         onClick={() => setSlide(1)}
         className="
           absolute right-[-1rem] top-1/2 -translate-y-1/2
-          bg-gradient-to-br from-pink-400 via-yellow-300 to-teal-500
+          bg-transparent
           text-muni-azul font-extrabold px-3 py-2 rounded-full shadow
           hover:bg-white z-20 md:right-[-2rem]
         "
       >
-        →
+        <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-8 rotate-90" />
       </button>
     </div>
   );

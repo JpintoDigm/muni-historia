@@ -20,9 +20,9 @@ export default function CalendarHeader({
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-between">
+      <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-3">
         <div className="flex items-center mt-0 mb-4 gap-3">
-          <div>
+          <div className="">
             <img src={`${basePath}/img/calendario/calendario.svg`} alt="Icono Calendario" className="w-20 sm:w-30" />
           </div>
 
@@ -37,7 +37,7 @@ export default function CalendarHeader({
         </div>
 
         <div className="flex items-center">
-          <img src={`${basePath}/img/logo250.svg`} alt="Icono Calendario" className="w-30 sm:w-100" />
+          <img src={`${basePath}/img/logo250.svg`} alt="Icono Calendario" className="w-50 sm:w-100" />
         </div>
 
       </div>
