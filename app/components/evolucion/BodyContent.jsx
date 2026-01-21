@@ -1493,7 +1493,7 @@ export default function BodyContent(){
 
                         {/* Linea Horizontal */}
                         <div className="w-full bg-muni-rosado h-20 flex items-center justify-center">
-                            <p className="text-center text-muni-azul font-extrabold">Siglo XX</p>
+                            <p className="text-center text-muni-azul font-extrabold">Siglo XX al XXI</p>
                         </div>                          
 
                         <div className="pl-2 pt-2">
@@ -1713,7 +1713,7 @@ export default function BodyContent(){
 
                             {/* Linea Horizontal */}
                             <div className="w-full bg-muni-pantone h-20 flex items-center justify-center">
-                            <p className="text-center text-muni-azul font-extrabold">Siglo XX</p>
+                            <p className="text-center text-muni-azul font-extrabold">Siglo XXI</p>
                             </div>                          
 
                             <div className="pl-2 pt-2">                    

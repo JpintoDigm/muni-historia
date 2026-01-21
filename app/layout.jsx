@@ -21,6 +21,8 @@ export default function RootLayout({ children }) {
         <Providers>
           {children} 
         </Providers>
+        
+        
         <BackToTop />
       </body>
     </html>

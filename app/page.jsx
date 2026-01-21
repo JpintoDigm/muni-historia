@@ -103,7 +103,7 @@ function HomePageContent() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/evolucion2.svg`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <img src={`${basePath}/img/reloj.svg`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[130px]"/>
                   </div>
 
                   <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
@@ -194,11 +194,11 @@ function HomePageContent() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/aleados.svg`} alt="Logo1" width={400} height={400} className="rounded-3xl object-cover max-w-[100px]"/>
+                    <img src={`${basePath}/img/aliados.svg`} alt="Logo1" width={400} height={400} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
                   <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
-                    <span className="block">Aleados</span>
+                    <span className="block">Aliados</span>
                     <span className="block">Estratégicos </span>
                   </h3>
               </Link>
