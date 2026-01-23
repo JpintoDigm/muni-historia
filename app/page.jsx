@@ -212,8 +212,7 @@ function HomePageContent() {
           </div>
 
           <p className="text-muni-azul font-bold rounded-3xl px-4 py-8 mt-6 md:mt-15 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-            “250 años de historia. Una ciudad que
-            conecta, inspira y genera oportunidades.”
+            “ El punto de encuentro de los caminos ”
           </p>
         </section>
 

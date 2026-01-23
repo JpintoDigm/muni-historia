@@ -100,6 +100,11 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
               <div className="mt-2 text-sm text-muni-azul/80">
                 <span className="font-extrabold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
               </div>
+
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-center">Ver mas</p>
+                <img src={`${basePath}/img/calendario/flechaBlanca.svg`} alt="" className="max-w-5 rotate-90"/>
+              </div>
             </button>
           ))
         )}

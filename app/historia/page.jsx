@@ -1,6 +1,6 @@
 import Titulo from "../components/evolucion/Titulo"
 import Link from "next/link";
-import { MontserratLightItalic, MontserratMediumItalic, MontserratBlack3 } from "../fonts/fonts";
+import { MontserratLightItalic, MontserratMediumItalic, MontserratBlack3, muni } from "../fonts/fonts";
 import { basePath } from "@/next.config.mjs";
 import ImageMapCarousel from "../components/evolucion/ImageMapCarousel";
 import BodyContent from "../components/evolucion/BodyContent";
@@ -173,13 +173,9 @@ export default function Areas() {
 
         <BodyContent />           
 
-        <section className="w-full mx-auto bg-white text-center text-base sm:text-2xl  text-muni-azul">
-          <p className="mx-15 md:mx-25">“La historia de la <b>Ciudad de Guatemala</b> ha sido una </p> 
-          <p className="mx-15 md:mx-25">constante transformación a 250 años de su asentamiento en</p> 
-          <p className="mx-15 md:mx-25">el Valle de la Ermita, esa historia inspira la ciudad que</p>
-          <p className="mx-15 md:mx-25">seguimos construyendo”</p>
-        </section>
-
+        <div className="bg-250 my-10 py-10">
+            <p className={`text-center text-base md:text-2xl text-muni-azul px-0 md:px-80 italic ${muni.className}`}>“El punto de encuentro de los caminos”.</p>
+        </div>
 
         <BottomMenu />               
 

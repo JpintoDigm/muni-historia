@@ -57,7 +57,7 @@ export default function CalendarHeader({
 
             <button
               onClick={onPrev}
-              className="flex justify-center items-center h-12 w-12 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
+              className="flex justify-center items-center h-12 w-12 rounded-lg  hover:bg-white/20 transition text-muni-azul"
             >
               <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 -rotate-90" />
             </button>
@@ -68,7 +68,7 @@ export default function CalendarHeader({
 
             <button
               onClick={onNext}
-              className="flex justify-center items-center h-12 w-12 rounded-lg bg-white/10 hover:bg-white/15 transition text-muni-azul"
+              className="flex justify-center items-center h-12 w-12 rounded-lg  hover:bg-white/20 transition text-muni-azul"
             >
               <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 rotate-90" />
             </button> 
@@ -80,7 +80,7 @@ export default function CalendarHeader({
 
             <button
               onClick={onToday}
-              className="py-3 px-8 rounded-xl bg-muni-azul hover:bg-muni-azul/80 transition text-xl sm:text-2xl font-semibold text-muni-verde"
+              className="py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20  text-xl sm:text-2xl font-semibold text-muni-azul"
             >
               Hoy
             </button>
