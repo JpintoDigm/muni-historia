@@ -9,15 +9,26 @@ export default function Filters({
   onSelectTipo,
 }) {
   return (
-    <>
-      {/* Filtros */}
-      <div className="w-auto grid md:flex md:flex-row items-center justify-between">
-        <div className="flex justify-center order-2 md:order-1">
+    <div className="w-full">
+      {/* Contenedor general */}
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        {/* Select Zona */}
+        <div className="w-full md:w-auto">
           <div className="relative">
             <select
               value={selectedZona}
               onChange={(event) => onSelectZona(event.target.value)}
-              className="appearance-none flex justify-center py-2 pl-3 pr-10 bg-white/20 rounded-2xl cursor-pointer gap-2 mt-2 md:mt-0 text-muni-azul font-extrabold"
+              className="
+                w-full md:w-auto
+                appearance-none
+                rounded-2xl
+                bg-white/20
+                px-4 py-3 md:py-2
+                pr-10
+                text-muni-azul font-extrabold
+                outline-none
+                focus-visible:ring-2 focus-visible:ring-white/50
+              "
             >
               <option value="all">Todas las zonas</option>
               {zonas.map((zona) => (
@@ -26,50 +37,71 @@ export default function Filters({
                 </option>
               ))}
             </select>
+
             <img
               src={`${basePath}/img/accionesVerdes/backtotop.svg`}
               alt=""
-              className="pointer-events-none rotate-180 max-w-5 absolute right-3 top-1/2 -translate-y-1/2"
+              className="pointer-events-none rotate-180 w-5 h-5 absolute right-3 top-1/2 -translate-y-1/2 opacity-90"
             />
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-2 order-1 md:order-2">
-          <button
-            type="button"
+        {/* Chips / Botones tipo */}
+        <div
+          className="
+            w-full
+            flex gap-2
+            overflow-x-auto
+            pb-1
+            md:overflow-visible md:flex-wrap md:justify-end
+            [-ms-overflow-style:none] [scrollbar-width:none]
+            [&::-webkit-scrollbar]:hidden
+          "
+        >
+          <FilterChip
+            label="Todos los parques"
+            active={selectedTipo === "all"}
             onClick={() => onSelectTipo("all")}
-            className={`flex items-center justify-start md:justify-center gap-1 rounded-2xl py-2 px-3 cursor-pointer ${
-              selectedTipo === "all" ? "bg-white/40" : "bg-white/20"
-            }`}
-          >
-            <img
-              src={`${basePath}/img/accionesVerdes/iconoFiltros.svg`}
-              alt=""
-              className="max-w-10"
-            />
-            <p className="text-muni-azul font-extrabold">Todos los parques</p>
-          </button>
+            iconSrc={`${basePath}/img/accionesVerdes/iconoFiltros.svg`}
+          />
+
           {tipos.map((tipo) => (
-            <button
+            <FilterChip
               key={tipo}
-              type="button"
+              label={tipo}
+              active={selectedTipo === tipo}
               onClick={() => onSelectTipo(tipo)}
-              className={`flex items-center justify-start md:justify-center gap-1 rounded-2xl py-2 px-3 cursor-pointer ${
-                selectedTipo === tipo ? "bg-white/40" : "bg-white/20"
-              }`}
-            >
-              <img
-                src={`${basePath}/img/accionesVerdes/iconoFiltros.svg`}
-                alt=""
-                className="max-w-10"
-              />
-              <p className="text-muni-azul font-extrabold text-start">
-                {tipo}
-              </p>
-            </button>
+              iconSrc={`${basePath}/img/accionesVerdes/iconoFiltros.svg`}
+            />
           ))}
         </div>
       </div>
-    </>
+    </div>
+  );
+}
+
+function FilterChip({ label, active, onClick, iconSrc }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`
+        shrink-0
+        inline-flex items-center gap-2
+        rounded-2xl
+        px-3 py-2
+        md:px-4
+        bg-white/20
+        ${active ? "bg-white/45" : "hover:bg-white/30"}
+        transition
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50
+      `}
+      aria-pressed={active}
+    >
+      <img src={iconSrc} alt="" className="w-8 h-8 md:w-9 md:h-9" />
+      <span className="text-muni-azul font-extrabold text-sm md:text-base whitespace-nowrap">
+        {label}
+      </span>
+    </button>
   );
 }
