@@ -11,6 +11,8 @@ import { CompaniesLogo } from "../../data/CompaniesLogo";
 import TrustedCompanies from "../TrustedCompanies";
 import { useRouter } from "next/navigation";
 import { basePath } from "@/next.config.mjs";
+import { MontserratBlack3, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
+
  
 export default function ModalDescarga({openFromQuery=false}) {
   const [size, setSize] = React.useState(null);
@@ -41,8 +43,8 @@ export default function ModalDescarga({openFromQuery=false}) {
 
             <div className="flex flex-row items-center gap-5">
                 <img src={`${basePath}/img/4.png`} alt="" className="max-w-10" />                
-                <p className="text-xs md:text-base  tracking-[0.18em] font-semibold text-center">
-                Descarga Documentos
+                <p className={`${MontserratMediumItalic.className} text-xs md:text-base  tracking-[0.18em] font-semibold text-center`}>
+                  Descarga Documentos
                 </p>
             </div>
 

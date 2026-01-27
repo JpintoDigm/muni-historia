@@ -7,6 +7,8 @@ import Filters from "../components/accionesVerdes/Filters";
 import BottomMenu from "../components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
 import { PARQUES } from "../components/accionesVerdes/data";
+import { MontserratBlack3, MontserratLightItalic, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
+
 
 export default function Acciones() {
     const [selectedZona, setSelectedZona] = useState("all");
@@ -46,10 +48,10 @@ export default function Acciones() {
                     </div>
 
                     <div>
-                        <h1 className="text-2xl md:text-3xl text-muni-azul">
+                        <h1 className={` ${MontserratLightItalic.className}text-2xl md:text-3xl text-muni-azul italic`}>
                         Acciones
                         </h1>
-                        <p className=" text-2xl md:text-3xl tracking-[0.12em] text-muni-azul font-extrabold">
+                        <p className={` ${MontserratMediumItalic.className} text-2xl md:text-3xl tracking-[0.12em] text-muni-azul font-extrabold italic`}>
                         Verdes
                         </p>
                     </div>
@@ -62,7 +64,7 @@ export default function Acciones() {
                 </div>
 
                 <div className="w-full sm:w-2/3">
-                    <p className="text-muni-azul text-justify text-sm sm:text-xl mb-4">
+                    <p className={` ${muni.className} text-muni-azul text-justify text-sm sm:text-xl mb-4`}>
                         Las acciones verdes reflejan una ciudad que inspira bienestar, cuida su entorno y apuesta por una mejor calidad de vida para las generaciones de hoy y del futuro.
                     </p>
                 </div>

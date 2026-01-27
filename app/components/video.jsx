@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { basePath } from "@/next.config.mjs";
 
 export default function StickyVideo({
   src,
@@ -160,6 +161,8 @@ export default function StickyVideo({
             <video
               controls
               playsInline
+              preload="metadata"   // o "none"
+              poster={`${basePath}/img/posters/video.jpg`}
               src={src}
               style={{ width: "100%", display: "block" }}
             />

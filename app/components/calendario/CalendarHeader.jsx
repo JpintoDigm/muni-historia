@@ -1,5 +1,5 @@
 
-import { MontserratBlack3, MontserratLightItalic, MontserratMediumItalic } from "@/app/fonts/fonts";
+import { MontserratBlack3, MontserratLightItalic, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
 import { basePath } from "@/next.config.mjs";
 
 
@@ -44,7 +44,7 @@ export default function CalendarHeader({
       </div>
 
       <div className="w-full sm:w-2/3">
-        <p className="text-muni-azul text-justify text-sm sm:text-xl mb-4">
+        <p className={` ${muni.className} text-muni-azul text-justify text-sm sm:text-xl mb-4`}>
           Las actividades que se realizan a lo largo del año conectan a los vecinos con su ciudad, sus espacios públicos y su vida cultural, fortaleciendo la convivencia y el sentido de pertenencia.
         </p>
       </div>
