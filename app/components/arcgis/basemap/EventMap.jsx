@@ -10,6 +10,9 @@ import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import Fullscreen from "@arcgis/core/widgets/Fullscreen";
 import BasemapToggle from "@arcgis/core/widgets/BasemapToggle";
 import Home from "@arcgis/core/widgets/Home";
+import Basemap from "@arcgis/core/Basemap";
+import VectorTileLayer from "@arcgis/core/layers/VectorTileLayer";
+
 
 const SERVICIOS = [
   {
@@ -65,7 +68,7 @@ const SERVICIOS = [
 
 
 function esc(v = "") {
-  // Escapa comillas simples para usar en el WHERE
+
   return String(v).replace(/'/g, "''");
 }
 
@@ -75,20 +78,31 @@ export default function EventMap({ event, eventLayerUrl }) {
   const eventoLayerRef = useRef(null);
   const serviciosLayersRef = useRef({});
 
+  const [legendOpen, setLegendOpen] = useState(false);
+
   const [servicesVisibility, setServicesVisibility] = useState(() =>
-    Object.fromEntries(SERVICIOS.map((s) => [s.id, false])) //apagados al inicio
-  );  
+    Object.fromEntries(SERVICIOS.map((s) => [s.id, false]))
+  );
+
 
   const urlEventos =
     eventLayerUrl ||
     "https://gis.muniguate.com/server/rest/services/gerencia_planificacion/250anios/FeatureServer/2";
 
-  // Crear mapa + capa + widgets (solo una vez por URL)
+
   useEffect(() => {
     if (!mapDiv.current) return;
 
+    const mapaBase2021 = new VectorTileLayer({
+      url: "https://vectortileservices9.arcgis.com/KpHXbQVRsuq80m4J/arcgis/rest/services/Mapabase2021General/VectorTileServer",
+    });
+
     const map = new Map({
-      basemap: "gray-vector",
+      basemap: new Basemap({
+        baseLayers: [mapaBase2021],
+        title: "Mapa base 2021",
+        id: "mapaBase2021",
+      }),
     });
 
     const eventosLayer = new FeatureLayer({
@@ -118,11 +132,23 @@ export default function EventMap({ event, eventLayerUrl }) {
             height: "24px",
           },
         },
+
+        popupEnabled: true,
+        popupTemplate: {
+          title: `{${"direccion" /* si no existe, igual no afecta */}}`,
+          content: (feature) => {
+            const a = feature?.graphic?.attributes || {};
+            const dir = a.direccion ?? a.DIRECCION ?? a.Direccion ?? "";
+            if (!dir) return "<b>Dirección:</b> (sin dato)";
+            return `<b>Dirección:</b> ${String(dir)}`;
+          },
+        },
       });
 
       map.add(fl);
       serviciosLayersObj[srv.id] = fl;
     });
+
 
     serviciosLayersRef.current = serviciosLayersObj;
 
@@ -205,10 +231,10 @@ export default function EventMap({ event, eventLayerUrl }) {
           geometry: feature.geometry,
           symbol: {
             type: "simple-marker",
-            color: [0, 122, 255, 0.95],
+            color: [44, 184, 119],
             size: 12,
             outline: {
-              color: [255, 255, 255],
+              color: [151, 215, 255],
               width: 2,
             },
           },
@@ -217,7 +243,7 @@ export default function EventMap({ event, eventLayerUrl }) {
 
         v.goTo({
           target: feature.geometry,
-          zoom: 17,
+          zoom: 50,
         });
       } catch (err) {
         if (!cancelled) {
@@ -251,23 +277,94 @@ export default function EventMap({ event, eventLayerUrl }) {
       {/* Mapa */}
       <div className="w-full h-full" ref={mapDiv} />
 
-      {/* Leyenda / panel de servicios */}
-      <div className="absolute mx-auto bottom-0 rounded-xl bg-white/90 shadow px-3 py-2 text-xs max-w-50">
+      {/* Overlay para cerrar al dar click afuera */}
+      {legendOpen && (
+        <button
+          aria-label="Cerrar leyenda"
+          onClick={() => setLegendOpen(false)}
+          className="absolute inset-0 z-40 cursor-default"
+          style={{ background: "transparent" }}
+        />
+      )}
 
+      {/* Leyenda / panel de servicios */}
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-3 z-50">
+        {/* Popup */}
+        {legendOpen && (
+          <div className="mb-2 w-[260px] rounded-xl bg-white/95 shadow-lg border border-gray-200 p-2 backdrop-blur">
+            <p className="text-xs font-bold text-gray-700 px-2 py-1">
+              Servicios
+            </p>
+
+            <div className="max-h-56 overflow-auto">
+              {SERVICIOS.map((srv) => {
+                const checked = !!servicesVisibility[srv.id];
+
+                return (
+                  <label
+                    key={srv.id}
+                    className="flex items-center justify-between gap-2 px-2 py-2 rounded-lg hover:bg-gray-100 cursor-pointer"
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <img
+                        src={srv.iconUrl}
+                        alt=""
+                        className="w-5 h-5 shrink-0"
+                      />
+                      <span className="text-xs font-medium text-gray-800 truncate">
+                        {srv.title}
+                      </span>
+                    </div>
+
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={handleToggleService(srv.id)}
+                      className="w-4 h-4 bg-muni-verde"
+                    />
+                  </label>
+                );
+              })}
+            </div>
+
+            <div className="flex gap-2 mt-2 px-2">
+              <button
+                onClick={() => {
+                  // apaga todo
+                  setServicesVisibility((prev) => {
+                    const next = { ...prev };
+                    for (const k of Object.keys(next)) next[k] = false;
+                    return next;
+                  });
+                  // apaga capas
+                  Object.values(serviciosLayersRef.current).forEach((l) => {
+                    if (l) l.visible = false;
+                  });
+                }}
+                className="flex-1 text-xs font-bold py-2 rounded-lg bg-gray-100 hover:bg-gray-200"
+              >
+                Apagar todo
+              </button>
+
+              <button
+                onClick={() => setLegendOpen(false)}
+                className="flex-1 text-xs font-bold py-2 rounded-lg bg-muni-verde hover:bg-muni-verde/90 text-white"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Botón */}
         <button
           onClick={() => setLegendOpen((v) => !v)}
-          className="mx-auto w-full bottom-0 py-4 text-white font-extrabold shadow-lg bg-amber-300"
-        > 
-          {/* <img src={`${basePath}/img/leyenda.png`} alt=""/> */}
-
-          Leyenda
+          className="w-[260px] py-3 rounded-xl text-white font-extrabold shadow-lg bg-muni-azul hover:bg-muni-azul/90"
+        >
+          Servicios
         </button>
-        
-
-
-
-        
       </div>
     </div>
   );
+
 }

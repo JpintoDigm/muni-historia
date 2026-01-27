@@ -44,9 +44,6 @@ export default function EventMapModal({
         {/* Header */}
         <header className="flex items-start justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] font-semibold">
-              Mapa del evento
-            </p>
             <h2 className="text-lg md:text-xl font-extrabold line-clamp-1">
               {event.title}
             </h2>

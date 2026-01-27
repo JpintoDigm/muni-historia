@@ -35,7 +35,7 @@ function ParkCard({ item }) {
       </div>
 
       {/* Contenido */}
-      <div className="p-4 sm:p-5">
+      <div className="p-4 sm:p-5 text-muni-azul">
         <header className="flex items-start gap-3">
           <img
             src={`${basePath}/img/accionesVerdes/iconoFiltros.svg`}
@@ -48,13 +48,13 @@ function ParkCard({ item }) {
               {item.parque}
             </h3>
             <p className="mt-1 font-semibold text-sm sm:text-base opacity-95 line-clamp-1">
-              {item.tipo}
+              {item.direccion}
             </p>
           </div>
         </header>
 
         <p className="mt-2 text-sm sm:text-base opacity-85 line-clamp-2">
-          {item.direccion}
+          {item.tipo}
         </p>
 
         {/* Footer */}

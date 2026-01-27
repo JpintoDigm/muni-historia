@@ -6,7 +6,7 @@ export default function StickyVideo({
   threshold = 0.25,
   stickyWidth = 320,
   hideAfterPx = 999999,
-  side = "left",        // "left" | "right"
+  side = "left", // "left" | "right"
 }) {
   const wrapRef = useRef(null);
   const boxRef = useRef(null);
@@ -17,7 +17,7 @@ export default function StickyVideo({
   const [placeholderH, setPlaceholderH] = useState(0);
   const [dismissed, setDismissed] = useState(false);
 
-  // 1) Reserva el espacio del video para que no colapse el layout
+  // 1) Mide alto del video cuando está en la sección (modo normal)
   useLayoutEffect(() => {
     const el = boxRef.current;
     if (!el) return;
@@ -35,23 +35,29 @@ export default function StickyVideo({
     };
   }, []);
 
-  // 2) Detecta cuando sale de la vista
+  // 2) Detecta si el video salió/entró de la vista
   useEffect(() => {
-    if (!wrapRef.current || dismissed) return;
+    if (!wrapRef.current) return;
 
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (dismissed) return;
-        setIsSticky(!entry.isIntersecting);
+        if (entry.isIntersecting) {
+          // Volvió a su sección: muestra normal y re-habilita sticky
+          setIsSticky(false);
+          setDismissed(false);
+        } else {
+          // Se fue de la vista: entra sticky (si no está "cerrado")
+          setIsSticky(true);
+        }
       },
       { threshold }
     );
 
     obs.observe(wrapRef.current);
     return () => obs.disconnect();
-  }, [threshold, dismissed]);
+  }, [threshold]);
 
-  // 3) Oculta después de X pixeles
+  // 3) Oculta después de X pixeles (esto sí puede desmontar todo)
   useEffect(() => {
     const onScroll = () => setHiddenByScroll(window.scrollY > hideAfterPx);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -62,7 +68,7 @@ export default function StickyVideo({
   // 4) Fix scroll cuando el mouse está sobre el video sticky
   useEffect(() => {
     const el = stickyRef.current;
-    if (!el || !isSticky) return;
+    if (!el || !isSticky || dismissed) return;
 
     const onWheel = (e) => {
       window.scrollBy({ top: e.deltaY, left: 0 });
@@ -71,38 +77,59 @@ export default function StickyVideo({
 
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => el.removeEventListener("wheel", onWheel);
-  }, [isSticky]);
+  }, [isSticky, dismissed]);
 
-  // ✅ Si se oculta por scroll o por X, no renderiza nada
-  if (hiddenByScroll || dismissed) return null;
+  if (hiddenByScroll) return null;
 
   const fixedPos =
-    side === "left"
-      ? { left: 16, right: "auto" }
-      : { right: 16, left: "auto" };
+    side === "left" ? { left: 16, right: "auto" } : { right: 16, left: "auto" };
+
+  const showFloating = isSticky && !dismissed;
 
   return (
     <>
+      {/* Placeholder SOLO cuando está sticky (aunque el floating esté cerrado) */}
       <div ref={wrapRef} style={{ height: isSticky ? placeholderH : "auto" }} />
 
-      <div
-        ref={boxRef}
-        style={{
-          position: isSticky ? "fixed" : "relative",
-          ...(isSticky ? fixedPos : {}),
-          bottom: isSticky ? 16 : "auto",
-          width: isSticky ? stickyWidth : "100%",
-          maxWidth: isSticky ? "calc(100vw - 32px)" : "100%",
-          borderRadius: 16,
-          overflow: "hidden",
-          zIndex: isSticky ? 9999 : "auto",
-          backgroundColor: "#fff",
-          opacity: 1,
-          transform: "translateZ(0)",
-          boxShadow: isSticky ? "0 12px 30px rgba(0,0,0,.25)" : "none",
-        }}
-      >
-        {/* {isSticky && (
+      {/* Video NORMAL en la sección */}
+      {!isSticky && (
+        <div
+          ref={boxRef}
+          style={{
+            position: "relative",
+            width: "100%",
+            borderRadius: 16,
+            overflow: "hidden",
+            backgroundColor: "#fff",
+          }}
+        >
+          <video
+            controls
+            playsInline
+            src={src}
+            style={{ width: "100%", display: "block" }}
+          />
+        </div>
+      )}
+
+      {/* Video STICKY flotante */}
+      {showFloating && (
+        <div
+          style={{
+            position: "fixed",
+            ...(fixedPos || {}),
+            bottom: 16,
+            width: stickyWidth,
+            maxWidth: "calc(100vw - 32px)",
+            borderRadius: 16,
+            overflow: "hidden",
+            zIndex: 9999,
+            backgroundColor: "#fff",
+            opacity: 1,
+            transform: "translateZ(0)",
+            boxShadow: "0 12px 30px rgba(0,0,0,.25)",
+          }}
+        >
           <button
             onClick={() => setDismissed(true)}
             aria-label="Cerrar mini reproductor"
@@ -124,22 +151,21 @@ export default function StickyVideo({
               placeItems: "center",
               lineHeight: 1,
               fontSize: 16,
-              
             }}
           >
             ✕
           </button>
-        )} */}
 
-        <div ref={stickyRef} style={{ pointerEvents: "auto" }}>
-          <video
-            controls
-            playsInline
-            src={src}
-            style={{ width: "100%", display: "block" }}
-          />
+          <div ref={stickyRef} style={{ pointerEvents: "auto" }}>
+            <video
+              controls
+              playsInline
+              src={src}
+              style={{ width: "100%", display: "block" }}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

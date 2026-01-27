@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-export const basePath = "/prueba/jpinto/muniHistoria";
+export const basePath = "/250CiudadDeGuatemala";
 
 const nextConfig = {
   transpilePackages: ["@arcgis/core"],

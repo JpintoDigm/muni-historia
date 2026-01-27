@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
       <script src="https://gis.muniguate.com/accessibility-widget/widget.js" id="widgetScript" data-position="bottom-right" data-offsetx="20" data-offsety="105" data-primarycolor="#10069f"></script>
       <body className={`${muni.variable} font-muni`}>
 
+
         <Providers>
           {children} 
         </Providers>

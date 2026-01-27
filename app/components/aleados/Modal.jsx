@@ -40,7 +40,7 @@ export default function Modal({openFromQuery=false}) {
 
             <div>
               <p className={`${MontserratMediumItalic.className} text-lg md:text-2xl font-semibold text-center`}>
-                Aleados Estratégicos
+                Aliados Estratégicos
               </p>
             </div>
 
