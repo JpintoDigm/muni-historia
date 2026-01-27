@@ -12,7 +12,7 @@ function ParkCard({ item }) {
   return (
     <article
       className="
-        group w-full max-w-sm overflow-hidden rounded-2xl
+        group w-full overflow-hidden rounded-2xl sm:max-w-sm
         bg-white/20 backdrop-blur
         ring-1 ring-white/10
         shadow-lg shadow-black/10
