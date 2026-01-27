@@ -1,10 +1,39 @@
 
+"use client";
+
+import { useMemo, useState } from "react";
 import Cards from "../components/accionesVerdes/Cards";
 import Filters from "../components/accionesVerdes/Filters";
 import BottomMenu from "../components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
+import { PARQUES } from "../components/accionesVerdes/data";
 
 export default function Acciones() {
+    const [selectedZona, setSelectedZona] = useState("all");
+    const [selectedTipo, setSelectedTipo] = useState("all");
+
+    const zonas = useMemo(() => {
+        return Array.from(new Set(PARQUES.map((item) => item.zona))).sort(
+            (a, b) => a - b
+        );
+    }, []);
+
+    const tipos = useMemo(() => {
+        return Array.from(
+            new Set(PARQUES.map((item) => item.tipo).filter(Boolean))
+        ).sort((a, b) => a.localeCompare(b));
+    }, []);
+
+    const filteredParques = useMemo(() => {
+        return PARQUES.filter((item) => {
+            const matchesZona =
+                selectedZona === "all" || item.zona === Number(selectedZona);
+            const matchesTipo =
+                selectedTipo === "all" || item.tipo === selectedTipo;
+            return matchesZona && matchesTipo;
+        });
+    }, [selectedZona, selectedTipo]);
+
     return (
     <main className="min-h-screen bg-250">
         <section className="w-full container mx-auto px-4 py-8">
@@ -42,9 +71,16 @@ export default function Acciones() {
         </section>
 
         <section className="container mx-auto p-5">
-            <Filters />
+            <Filters
+                zonas={zonas}
+                tipos={tipos}
+                selectedZona={selectedZona}
+                selectedTipo={selectedTipo}
+                onSelectZona={setSelectedZona}
+                onSelectTipo={setSelectedTipo}
+            />
 
-            <Cards />
+            <Cards items={filteredParques} />
         </section>
 
 
