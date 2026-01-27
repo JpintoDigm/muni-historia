@@ -1,4 +1,5 @@
 
+import { MontserratBlack3, MontserratLightItalic, MontserratMediumItalic } from "@/app/fonts/fonts";
 import { basePath } from "@/next.config.mjs";
 
 
@@ -27,11 +28,11 @@ export default function CalendarHeader({
           </div>
 
           <div>
-            <h1 className="text-2xl md:text-3xl text-muni-azul">
+            <h1 className={` ${MontserratLightItalic.className} text-2xl md:text-3xl text-muni-azul`}>
             Calendario
             </h1>
-            <p className=" text-2xl md:text-3xl tracking-[0.12em] text-muni-azul">
-            de<span className="text-muni-azul font-black"> Eventos</span>
+            <p className={` ${MontserratLightItalic.className} text-2xl md:text-3xl tracking-[0.12em] text-muni-azul`}>
+            de<span className={` ${MontserratMediumItalic.className}text-muni-azul font-black`}> Eventos</span>
             </p>
           </div>
         </div>

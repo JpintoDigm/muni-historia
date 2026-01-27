@@ -26,7 +26,7 @@ export default function Filters () {
                 </button>
                 <button className="flex items-center justify-start md:justify-center gap-1 bg-white/20 rounded-2xl py-2 px-3 cursor-pointer">
                     <img src={`${basePath}/img/accionesVerdes/iconoFiltros.svg`} alt="" className="max-w-10" />
-                    <p className="text-muni-azul font-extrabold">Sistemas de parques y áreas verdes</p>
+                    <p className="text-muni-azul font-extrabold text-start">Sistemas de parques y áreas verdes</p>
                 </button>
             </div>
         </div>

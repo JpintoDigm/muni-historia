@@ -1,7 +1,7 @@
 import BottomMenu from "@/app/components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
 import TextHeader from "../components/conmemoracion/TextHeader";
-import { MontserratBlack3, MontserratSemiBoldItalic, muni } from "../fonts/fonts";
+import { MarcellusRegular, MontserratBlack3, MontserratSemiBoldItalic, muni } from "../fonts/fonts";
 
 
 export default function Conmemoracion() {
@@ -30,11 +30,11 @@ export default function Conmemoracion() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl text-muni-azul">
+                  <h3 className="text-2xl md:text-3xl text-muni-azul">
                     <span className={`italic ${muni.className}`}>Impulsando </span>
                     <span className={`italic ${MontserratSemiBoldItalic.className}`}>Oportunidades</span>
                   </h3>
-                  <p className={`mt-2 text-sm md:text-base leading-relaxed text-muni-azul text-justify ${muni.className}`}>
+                  <p className={`mt-2 text-base md:text-lg leading-relaxed text-muni-azul text-justify ${muni.className}`}>
                     Genera oportunidades, con proyectos urbanos que impulsan el desarrollo, el empleo y el bienestar.                 
                   </p>
                 </div>
@@ -51,11 +51,11 @@ export default function Conmemoracion() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl text-muni-azul">
+                  <h3 className="text-2xl md:text-3xl text-muni-azul">
                     <span className={`italic ${muni.className}`}>Inspirando </span>
                     <span className={`italic ${MontserratSemiBoldItalic.className}`}>Sueños</span>
                   </h3>
-                  <p className={`mt-2 text-sm md:text-base leading-relaxed text-muni-azul text-justify ${muni.className}`}>
+                  <p className={`mt-2 text-base md:text-lg leading-relaxed text-muni-azul text-justify ${muni.className}`}>
                     Inspira, mediante acciones verdes que cuidan el entorno y promueven una ciudad más habitable.      
                   </p>
                 </div>
@@ -72,33 +72,12 @@ export default function Conmemoracion() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl text-muni-azul">
+                  <h3 className="text-2xl md:text-3xl text-muni-azul">
                     <span className={`italic ${muni.className}`}>Conectando </span>
                     <span className={`italic ${MontserratSemiBoldItalic.className}`}>Metas</span>
                   </h3>
-                  <p className={`mt-2 text-sm md:text-base leading-relaxed text-muni-azul text-justify ${muni.className}`}>
+                  <p className={`mt-2 text-base md:text-lg leading-relaxed text-muni-azul text-justify ${muni.className}`}>
                     Conecta, a través de actividades y espacios que unen a las personas y fortalecen la vida en comunidad. 
-                  </p>
-                </div>
-              </div>
-
-              {/* Conectando Metas */}
-              <div className="flex flex-row gap-2 items-center">
-                <div className="bg-muni-verde py-5 px-4 shrink-0">
-                  <img
-                    src={`${basePath}/img/conmemoracion/iconoCelular.svg`}
-                    alt="Eje Conectando Metas"
-                    className="w-12 h-12 ml-2"
-                  />
-                </div>
-
-                <div className="border-y-2 border-r-2 rounded-r-4xl md:rounded-r-full border-muni-verde">
-                  <p className={`text-sm md:text-base leading-relaxed text-muni-azul text-justify px-5 pt-3 italic ${muni.className}`}>
-                    Cada sección de esta plataforma refleja ese camino hacia <b>la ciudad 
-                    que seguimos construyendo</b>                 
-                  </p>
-                  <p className={`text-sm md:text-base leading-relaxed text-muni-azul text-justify px-5 pb-3 italic ${muni.className}`}>
-                    para las próximas generaciones. 
                   </p>
                 </div>
               </div>
@@ -113,19 +92,43 @@ export default function Conmemoracion() {
               alt="250 años"
               className="
                 absolute
-                right-[-90px] md:right-[-140]
-                bottom-[350] md:bottom-[150]
+                right-[-80px] md:right-[-153]
+                bottom-[350] md:bottom-[-100]
                 -rotate-90
-                w-[520px]
+                md:w-[700px]
                 opacity-60
                 pointer-events-none
                 select-none
               "
             />
-          </div>          
+          </div>    
+
+          <div className="w-sm md:w-2xl mx-auto p-2 md:px-0">
+            {/* Conectando Metas */}
+            <div className="flex flex-row gap-2 items-center justify-center mt-15">
+              <div className="bg-muni-azul py-5 px-4 shrink-0 w-40 h-40">
+                <img
+                  src={`${basePath}/img/conmemoracion/iconoCelular.svg`}
+                  alt="Eje Conectando Metas"
+                  className="w-30 h-30 ml-2"
+                />
+              </div>
+
+              <div className="border-y-2 border-r-2 rounded-r-4xl md:rounded-r-full border-muni-verde">
+                <p className={`text-base md:text-lg leading-relaxed text-muni-azul text-justify px-5 pt-3 italic ${muni.className}`}>
+                  Cada sección de esta plataforma refleja ese camino hacia <b>la ciudad 
+                  que seguimos construyendo</b>                 
+                </p>
+                <p className={`text-base md:text-lg leading-relaxed text-muni-azul text-justify px-5 pb-3 italic ${muni.className}`}>
+                  para las próximas generaciones. 
+                </p>
+              </div>
+            </div>                
+
+          </div>
 
           <div className="my-10">
-            <p className={`text-center text-base md:text-2xl text-muni-azul px-0 md:px-80 italic ${muni.className}`}>“El punto de encuentro de los caminos”.</p>
+            <p className={`text-center font-bold mt-15 text-xl md:text-4xl text-muni-azul px-0 md:px-80 italic ${MarcellusRegular.className}`}>“El punto de encuentro de los caminos”</p>
           </div>
 
 

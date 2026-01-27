@@ -16,6 +16,8 @@ import Modal from "@/app/components/aleados/Modal";
 import ModalDescarga from "@/app/components/descarga/ModalDescarga";
 import { Suspense } from "react";
 import Footer from "./components/Footer";
+import VideoPiP from "./components/video";
+import StickyVideo from "./components/video";
 
 export default function HomePage() {
   return (
@@ -60,6 +62,12 @@ function HomePageContent() {
 
         </section>
 
+        <div className="md:mb-8">
+          <p className={`${MarcellusRegular.className} italic text-muni-azul text-xl md:text-4xl font-bold rounded-3xl px-4 py-8 md:mb- shadow-sm bg-white/20 backdrop-blur-xl text-center items-center`}>
+            “El punto de encuentro de los caminos”
+          </p>
+        </div>
+
         <section className="flex-1 ">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
@@ -85,10 +93,10 @@ function HomePageContent() {
               </div>
 
               {/* Texto */}
-              <p className="text-center text-xl text-muni-azul py-8 leading-tight">
-                <span className="block font-bold text-xl leading-tight">Conoce</span>
-                <span className="block text-xl leading-tight">más de esta</span>
-                <span className="block text-xl leading-tight">Conmemoración</span>
+              <p className="text-center text-muni-azul py-8 leading-tight">
+                <span className="block font-extrabold text-xl md:text-[22px] leading-tight">Conoce</span>
+                <span className="block text-xl md:text-[22px] leading-tight">más de esta</span>
+                <span className="block text-xl md:text-[22px] leading-tight">Conmemoración</span>
               </p>
             </Link>
 
@@ -103,10 +111,10 @@ function HomePageContent() {
                   </button>
 
                   <div className="mb-3 text-3xl animate-pulse-slow ">
-                    <img src={`${basePath}/img/reloj.svg`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[130px]"/>
+                    <img src={`${basePath}/img/historiaCiudad.svg`} alt="Logo1" width={300} height={300} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
-                  <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
+                  <h3 className= "text-lg md:text-[22px] font-bold text-muni-azul leading-tight">
                     <span className="block">Historia de la</span>
                     <span className="block">Ciudad de Guatemala</span>
                   </h3>
@@ -119,11 +127,11 @@ function HomePageContent() {
                   +
                 </button>
 
-                <div className="mb-3 text-3xl animate-pulse-slow">
+                <div className="mb-3 text-3xl animate-pulse-slow flex items-center justify-center">
                   <img src={`${basePath}/img/3.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                <h3 className="text-lg md:text-[22px] font-semibold text-muni-azul leading-tight">
                   <span className="block">Agenda</span>
                   <span className="block">Eventos</span>
                 </h3>  
@@ -141,7 +149,7 @@ function HomePageContent() {
                   <img src={`${basePath}/img/5.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                <h3 className="text-lg md:text-[22px] font-semibold text-muni-azul leading-tight">
                   <span className="block">Acciones</span>
                   <span className="block">Verdes</span>
                 </h3>  
@@ -159,7 +167,7 @@ function HomePageContent() {
                   <img src={`${basePath}/img/2.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                <h3 className="text-lg md:text-[22px] font-semibold text-muni-azul leading-tight">
                   <span className="block">Acciones</span>
                   <span className="block">250 años</span>
                 </h3>  
@@ -177,7 +185,7 @@ function HomePageContent() {
                   <img src={`${basePath}/img/4.png`} alt="Logo1" width={300} height={300} className="object-cover max-w-[100px]"/>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-muni-azul leading-tight">
+                <h3 className="text-lg md:text-[22px] font-semibold text-muni-azul leading-tight">
                   <span className="block">Descarga</span>
                   <span className="block">Documentos</span>
                 </h3>  
@@ -197,7 +205,7 @@ function HomePageContent() {
                     <img src={`${basePath}/img/aliados.svg`} alt="Logo1" width={400} height={400} className="rounded-3xl object-cover max-w-[100px]"/>
                   </div>
 
-                  <h3 className= "text-lg md:text-xl font-bold text-muni-azul leading-tight">
+                  <h3 className= "text-lg md:text-[22px] font-bold text-muni-azul leading-tight">
                     <span className="block">Aliados</span>
                     <span className="block">Estratégicos </span>
                   </h3>
@@ -210,12 +218,11 @@ function HomePageContent() {
 
             
           </div>
-
-          <p className="text-muni-azul font-bold rounded-3xl px-4 py-8 mt-6 md:mt-15 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
-            “ El punto de encuentro de los caminos ”
-          </p>
         </section>
 
+        <div className="container md:px-8 md:py-8 bg-white/50 backdrop-blur-none rounded-3xl">
+          <StickyVideo src={`${basePath}/video/VideoConmemorativo.mp4`}/> 
+        </div>
       </div>
 
       <BottomMenu />

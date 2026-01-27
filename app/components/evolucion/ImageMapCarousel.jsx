@@ -4,20 +4,23 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import { basePath } from "@/next.config.mjs";
 
+const ExampleMap = dynamic(() => import("../arcgis/basemap/BaseMap"), {
+  ssr: false,
+});
 
-const ExampleMap = dynamic(
-  () => import("../arcgis/basemap/BaseMap"),
-  { ssr: false }
-);
+// animación simple de “parpadeo”
+const pulseClass = "arrow-blink";
 
 export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }) {
   const [slide, setSlide] = useState(0);
 
+  const isImage = slide === 0;
+  const isMap = slide === 1;
+
   return (
     <div className="relative w-full max-w-3xl mx-auto">
-
       <div className="relative z-10 bg-white overflow-hidden rounded-xl">
-        {slide === 0 ? (
+        {isImage ? (
           <>
             <div className="w-full h-64 md:h-65">
               <img
@@ -38,34 +41,50 @@ export default function ImageMapCarousel({ imageSrc, imageAlt, nombre, caption }
         ) : (
           <div className="w-full h-64 md:h-80">
             <ExampleMap nombre={nombre} />
-            <p className="text-center text-muni-azul text-sm italic">Año 2026 - Actual</p>
+            <p className="text-center text-muni-azul text-sm italic">
+              Vista actual año 2026
+            </p>
           </div>
         )}
       </div>
 
-      <button
-        onClick={() => setSlide(0)}
-        className="
-          absolute left-[-1rem] top-1/2 -translate-y-1/2
-          bg-transparent
-          text-muni-azul font-extrabold px-3 py-2 rounded-full shadow
-          hover:bg-white z-20 md:left-[-2rem] 
-        "
-      >
-        <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-8 -rotate-90" />
-      </button>
+      {/* ✅ Flecha IZQUIERDA: solo en el mapa */}
+      {isMap && (
+        <button
+          onClick={() => setSlide(0)}
+          aria-label="Volver a la imagen"
+          className={`
+            absolute left-[-1rem] top-1/2 -translate-y-1/2 z-20
+            md:left-[-2rem]
+            ${pulseClass}
+          `}
+        >
+          <img
+            src={`${basePath}/img/backtotop.svg`}
+            alt="Anterior"
+            className="w-12 md:w-14 -rotate-90"   // ✅ más grande
+          />
+        </button>
+      )}
 
-      <button
-        onClick={() => setSlide(1)}
-        className="
-          absolute right-[-1rem] top-1/2 -translate-y-1/2
-          bg-transparent
-          text-muni-azul font-extrabold px-3 py-2 rounded-full shadow
-          hover:bg-white z-20 md:right-[-2rem]
-        "
-      >
-        <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-8 rotate-90" />
-      </button>
+      {/* ✅ Flecha DERECHA: solo en la imagen */}
+      {isImage && (
+        <button
+          onClick={() => setSlide(1)}
+          aria-label="Ver mapa"
+          className={`
+            absolute right-[-1rem] top-1/2 -translate-y-1/2 z-20
+            md:right-[-2rem]
+            ${pulseClass}
+          `}
+        >
+          <img
+            src={`${basePath}/img/backtotop.svg`}
+            alt="Siguiente"
+            className="w-12 md:w-14 rotate-90"    // ✅ más grande
+          />
+        </button>
+      )}
     </div>
   );
 }

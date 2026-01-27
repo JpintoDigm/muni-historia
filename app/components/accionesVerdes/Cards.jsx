@@ -8,13 +8,13 @@ export default function Cards () {
     <>
         {/* Cards */}
         <div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-5 mt-10">
-            <div className="flex flex-col bg-white/20 rounded-2xl p max-w-80">
+            <div className="flex flex-col bg-white/20 rounded-2xl p-3 max-w-80">
 
                 <div className="w-full h-full">
                     <img src={`${basePath}/img/accionesVerdes/parques/DJI_0624.jpg`} alt=""  className="w-full h-full object-cover rounded-t-2xl m-0"/>
                 </div>
                 
-                <div className="mt-2 p-3">
+                <div className="mt-2">
                     <div className="flex gap-2 items-center justify-start">
                         <img src={`${basePath}/img/accionesVerdes/iconoFiltros.svg`} alt="" className="max-w-8" />
                         <p className="text-muni-azul font-extrabold">Sistema de parque y áreas verdes</p>

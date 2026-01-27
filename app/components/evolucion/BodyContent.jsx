@@ -1,4 +1,4 @@
-import { MontserratLightItalic, MontserratMediumItalic, MontserratBlack3 } from "@/app/fonts/fonts";
+import { MontserratLightItalic, MontserratMediumItalic, MontserratBlack3, muni } from "@/app/fonts/fonts";
 import { basePath } from "@/next.config.mjs";
 import ImageMapCarousel from "./ImageMapCarousel";
 
@@ -11,24 +11,24 @@ export default function BodyContent(){
                 <div className="mx-auto max-w-6xl px-4 py-10">
 
                     <div className="mt-4 px-0 py-6">
-                    <h1 className={`${MontserratMediumItalic.className} text-2xl md:text-3xl font-extrabold text-muni-verde`}>
-                    EVOLUCIÓN HISTÓRICA
-                    </h1>
-                    <p className={`${MontserratMediumItalic.className} font-extrabold text-sm md:text-3xl tracking-[0.12em] uppercase text-muni-verde`}>
-                    de la <span className={`${MontserratMediumItalic.className} text-muni-azul font-extrabold`}>CIUDAD DE GUATEMALA</span>
-                    </p>
+                        <h1 className={`${MontserratMediumItalic.className} text-2xl md:text-3xl font-extrabold text-muni-verde`}>
+                        Evolución histórica
+                        </h1>
+                        <p className={`${MontserratMediumItalic.className} font-extrabold text-lg md:text-3xl tracking-[0.12em]  text-muni-verde`}>
+                        de la <span className={`${MontserratMediumItalic.className} text-muni-azul font-extrabold`}>ciudad de Guatemala</span>
+                        </p>
                     </div>
 
                     <div>
                     
                     {/* 1524-1773 */}
-                    <div id="1524-1773" className="relative mb-20 md:mb-0 ">
+                    <div id="1524-1773" className={`${muni.className} relative mb-20 md:mb-0 `}>
 
                         {/* Linea Horizontal */}
 
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-10">
                             <div className="w-full  bg-muni-verde h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XVI al XVIII</p>
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Fundación y traslado de la ciudad</p>
                             </div>
                         </div>
 
@@ -42,16 +42,16 @@ export default function BodyContent(){
                                     <p className="text-center text-muni-azul font-extrabold">Siglo XVI al XVIII</p>
                                 </div> */}
 
-                                <div className="pl-2 pt-2">
+                                <div className="pl-2 pt-2 text-muni-azul">
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                         1524 – 1773
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                        ANTECEDENTES HISTÓRICOS: ORIGEN Y FUNDACIÓN DE LA CIUDAD Y POSTERIORES TRASLADOS
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                        Antecedentes Históricos: Origen y fundación de la ciudad y posteriores traslados
                                     </p>
 
-                                    <p className="mt-3 text-slate-800 leading-relaxed text-justify">
+                                    <p className="mt-3 text-slate-800 leading-relaxed text-justify text-muni-azul">
                                         El terremoto impulsa la expansión informal, impulsa políticas de planificación, crea dinámicas metropolitanas y sienta bases para procesos de revitalización del Centro Histórico.
                                     </p>
 
@@ -73,7 +73,7 @@ export default function BodyContent(){
                                 className="
                                 hidden md:block
                                 absolute
-                                top-[640px] md:top-[450px]        // ⬅ mueve arriba/abajo
+                                top-[640px] md:top-[385px]        // ⬅ mueve arriba/abajo
                                 left-[38%]  md:left-[39%]           // ⬅ mueve izquierda/derecha
                                 -translate-x-1/4   
                                 w-40 md:w-110
@@ -87,11 +87,11 @@ export default function BodyContent(){
                     </div>
 
                     {/* 1776 – 1821 */}
-                    <div id="1776-1821">
+                    <div id="1776-1821" className={`${muni.className} `}>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
                             <div className="w-full bg-muni-rosado h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XVIII al XIX</p>
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Traslado al Valle de la Ermita</p>
                             </div>  
                         </div>
 
@@ -105,13 +105,13 @@ export default function BodyContent(){
                                     <p className="text-center text-muni-azul font-extrabold">Siglo XVIII al XIX</p>
                                 </div>   */}
 
-                                <div className="pl-2 pt-2">
+                                <div className="pl-2 pt-2 text-muni-azul">
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                     1776 – 1821
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                    TRASLADO EN 1776 AL VALLE DE LA ERMITA
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                    Traslado en 1776 al valle de la Ermita
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -136,7 +136,7 @@ export default function BodyContent(){
                                 alt=""
                                 className="
                                     absolute
-                                    top-[750px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[835px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -344,11 +344,11 @@ export default function BodyContent(){
                     </div>
 
                     {/* 1821-1871 */}
-                    <div id="1821-1871">
+                    <div id="1821-1871" className={`${muni.className} `}>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
                             <div className="w-full bg-muni-pantone h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XIX</p>
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Independencia y nuevas divisiones territoriales</p>
                             </div>       
                         </div>                 
 
@@ -362,13 +362,13 @@ export default function BodyContent(){
                                     <p className="text-center text-muni-azul font-extrabold">Siglo XIX</p>
                                 </div> */}
 
-                                <div className="pl-2 pt-2">
+                                <div className="pl-2 pt-2 text-muni-azul">
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                     1821 - 1871
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                    INDEPENDENCIA DE GUATEMALA EN 1821
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                    Independencia de Guatemala en 1821
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -392,7 +392,7 @@ export default function BodyContent(){
                                 alt=""
                                 className="
                                     absolute
-                                    top-[745px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[790px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -525,10 +525,10 @@ export default function BodyContent(){
                     </div>
 
                     {/* 1871 – 1918 */}
-                    <div id="1871-1918">
+                    <div id="1871-1917" className={`${muni.className} `}>
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
                             <div className="w-full bg-[#8BCFD9] h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XIX al XX</p>
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Período Liberal: ensanches urbanos y modernización</p>
                             </div>       
                         </div>         
 
@@ -542,13 +542,13 @@ export default function BodyContent(){
                                     <p className="text-center text-muni-azul font-extrabold">Siglo XIX al XX</p>
                                 </div>                       */}
 
-                                <div className="pl-2 pt-2">
+                                <div className="pl-2 pt-2 text-muni-azul">
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
-                                    1871 – 1918
+                                    1871 – 1917
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                    PERIODO LIBERAL A PARTIR DE 1871 
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                    Periodo liberal a partir de 1871
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -572,7 +572,7 @@ export default function BodyContent(){
                                 alt=""
                                 className="
                                     absolute
-                                    top-[710px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[780px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -826,11 +826,11 @@ export default function BodyContent(){
                     </div>
 
                     {/* XX 1917 - 1931 */}
-                    <div id="1917-1931">
+                    <div id="1917-1931" className={`${muni.className} `}>
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
                             {/* Linea Horizontal */}
                             <div className="w-full bg-muni-verde h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XX</p>
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Terremotos de 1917-1918 y la reconstrucción</p>
                             </div>                               
                         </div>
 
@@ -839,13 +839,13 @@ export default function BodyContent(){
 
                                 <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">                  
 
-                                    <div className="pl-2 pt-2">
+                                    <div className="pl-2 pt-2 text-muni-azul">
                                         <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                         1917 - 1931
                                         </h2>
 
-                                        <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                        TERREMOTOS DE 1917 Y 1918 Y LA RECONSTRUCCIÓN POSTERIOR DEL TERRITORIO
+                                        <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                        Terremotos de 1917 y 1918 y la reconstrucción posterior del territorio
                                         </p>
 
                                         <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -869,7 +869,7 @@ export default function BodyContent(){
                                 alt=""
                                 className="
                                     absolute
-                                    top-[755px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[780px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -966,18 +966,29 @@ export default function BodyContent(){
 
                             </div>    
 
-                            {/* XX 1931 – 1944 */}
-                            <div id="">
+                        </div>
+
+                        {/* XX 1931 – 1944 */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
+                            {/* Linea Horizontal */}
+                            <div className="w-full bg-muni-rosado h-20 flex items-center justify-center">
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Consolidación de la imagen urbana</p>
+                            </div>                               
+                        </div>
+
+                        <div className="border-l-4 border-muni-rosado">
+
+                            <div id="1931-1944">
                                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 pl-2">
+                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 pl-2 text-muni-azul">
 
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                     1931 – 1944
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                    PERIODO DE UBICO IMPULSO A LA CONSTRUCCIÓN DE OBRA PÚBLICA
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                    Periodo de Ubico impulso a la construcción de obra pública
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -1000,7 +1011,7 @@ export default function BodyContent(){
                                     alt=""
                                     className="
                                     absolute
-                                    top-[625px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[710px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -1132,17 +1143,27 @@ export default function BodyContent(){
                                 
                             </div>
 
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
+                            {/* Linea Horizontal */}
+                            <div className="w-full bg-muni-pantone h-20 flex items-center justify-center">
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>La llegada de la modernidad</p>
+                            </div>                               
+                        </div>             
+                        
+                        <div className="border-l-4 border-muni-pantone">                                  
                             {/* XX 1944 – 1954 */}
-                            <div id="">
+                            <div id="1944-1954">
                                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 pl-2">
+                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 pl-2 text-muni-azul">
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                     1944 – 1954
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                    REVOLUCIÓN DE 1944 Y LA PLANIFICACIÓN DE GRANDES PROYECTOS URBANOS
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                    Revolución de 1944 y la planificación de grandes proyectos urbanos
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -1165,7 +1186,7 @@ export default function BodyContent(){
                                     alt=""
                                     className="
                                     absolute
-                                    top-[729px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[780px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -1370,18 +1391,27 @@ export default function BodyContent(){
                                 </div>                 
 
                             </div>
+                        </div> 
 
+                        <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
+                            {/* Linea Horizontal */}
+                            <div className="w-full bg-[#8BCFD9] h-20 flex items-center justify-center">
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Conexiones y expansión hacia el norte y occidente</p>
+                            </div>                               
+                        </div>                           
+
+                        <div className="border-l-4 border-[#8BCFD9]">    
                             {/* XX 1954 – 1976 */}
-                            <div id="">
+                            <div id="1954-1976">
                                 <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 pl-2">
+                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 pl-2 text-muni-azul">
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                     1954 – 1976
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                    NUEVAS CONEXIONES Y LA EXPANSIÓN URBANA
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                    Nuevas conexiones y la expansión urbana
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -1405,7 +1435,7 @@ export default function BodyContent(){
                                     alt=""
                                     className="
                                     absolute
-                                    top-[680px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[730px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -1503,31 +1533,31 @@ export default function BodyContent(){
                                 </div>     
                                 
                             </div>  
-
                         </div>
+
                         
                     </div>
                     
                     {/* 1976 – 2000 */}
-                    <div id="1976-2000">
+                    <div id="1976-2000" className={`${muni.className} `}>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
-                            <div className="w-full bg-muni-rosado h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XX al XXI</p>
+                            <div className="w-full bg-muni-verde h-20 flex items-center justify-center">
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Terremotos de 1976 y nuevo desarrollo</p>
                             </div>     
                         </div>
 
-                        <div className="border-l-4 border-muni-rosado">
+                        <div className="border-l-4 border-muni-verde">
                             <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
-                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">                     
+                                <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative text-muni-azul">                     
                                     <div className="pl-2 pt-2">
                                         <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                         1976 – 2000
                                         </h2>
 
-                                        <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                        TERREMOTO DE 1976 Y EL POSTERIOR DESARROLLO DEL TERRITORIO
+                                        <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                        Terremoto de 1976 y el posterior desarrollo del territorio
                                         </p>
 
                                         <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -1551,7 +1581,7 @@ export default function BodyContent(){
                                 alt=""
                                 className="
                                     absolute
-                                    top-[733px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[790px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120
@@ -1728,29 +1758,29 @@ export default function BodyContent(){
                     </div>
 
                     {/* 2000 - 2017 */}
-                    <div id="2000-2017">
+                    <div id="2000-2017" className={`${muni.className} `}>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 sticky top-0 z-40">
                             {/* Linea Horizontal */}
-                            <div className="w-full bg-muni-pantone h-20 flex items-center justify-center">
-                                <p className="text-center text-muni-azul font-extrabold">Siglo XXI</p>
+                            <div className="w-full bg-muni-rosado h-20 flex items-center justify-center">
+                                <p className={`${MontserratMediumItalic.className} text-center text-muni-azul font-bold text-2xl italic`}>Siglo XXI: Expansión Metropolitana</p>
                             </div>                                    
                         </div>                        
 
-                        <div className="border-l-4 border-muni-pantone">
+                        <div className="border-l-4 border-muni-rosado">
 
                             <div className="relative grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-2">
 
                                 <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 relative">                        
 
-                                    <div className="pl-2 pt-2">                    
+                                    <div className="pl-2 pt-2 text-muni-azul">                    
 
                                     <h2 className={`${MontserratMediumItalic.className} text-3xl font-extrabold text-muni-azul`}>
                                         2000 - 2017
                                     </h2>
 
-                                    <p className={`${MontserratMediumItalic.className} text-xl italic font-semibold mt-1 text-black`}>
-                                        UNA NUEVA ÉPOCA DEL INICIO DEL SIGLO XXI A LA ACTUALIDAD
+                                    <p className={`${MontserratMediumItalic.className} text-2xl italic font-semibold mt-1 text-muni-azul`}>
+                                        Una nueva época del inicio del siglo XXI a la actualidad
                                     </p>
 
                                     <p className="mt-3 text-slate-800 leading-relaxed text-justify">
@@ -1774,7 +1804,7 @@ export default function BodyContent(){
                                     alt=""
                                     className="
                                     absolute
-                                    top-[690px] md:top-[63px]        // ⬅ mueve arriba/abajo
+                                    top-[770px] md:top-[63px]        // ⬅ mueve arriba/abajo
                                     left-[38%] md:left-[55%]           // ⬅ mueve izquierda/derecha
                                     -translate-x-1/4   
                                     w-40 md:w-120

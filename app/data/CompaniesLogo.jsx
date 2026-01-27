@@ -1,4 +1,5 @@
 import { basePath } from "@/next.config.mjs"
+import { initAccordion } from "@material-tailwind/html"
 
 export const CompaniesLogo = [
     {
@@ -75,3 +76,11 @@ export const CompaniesLogo = [
     },
 
 ]
+
+// 1917-1976
+
+// 2018-2016
+
+// simbolgia
+// orto inicio 
+// mapa procesiones

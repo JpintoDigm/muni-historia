@@ -29,8 +29,12 @@ export default function TextHeader() {
               </div>
 
               {/* Texto */}
-              <div className="p-0 md:p-10 text-justify">
-                <p className={`text-muni-azul ${muni.className}`}>
+              <div className="p-0 md:p-10 text-justify text-base md:text-xl">
+                <p className={`text-muni-azul text-4xl ${MontserratSemiBoldItalic.className}`}>
+                  El punto de encuentro 
+                  de los caminos
+                </p>
+                <p className={`text-muni-azul mt-6 ${muni.className}`}>
                   Celebrar <b className={`${MontserratSemiBoldItalic.className}`}>250 años</b> de la Ciudad de Guatemala es reconocer su historia y, al mismo tiempo, mirar hacia el futuro. A lo largo de estos siglos, la ciudad ha sido un espacio de encuentro, transformación y crecimiento. 
                 </p>
                 <p className={`text-muni-azul mt-4 ${muni.className}`}>

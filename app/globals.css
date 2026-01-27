@@ -84,8 +84,8 @@ html {
 /* Gradiente boton Aleados Estrategicos */
 .aleados-250 {
   background: linear-gradient(
-    90deg,
-    #E7C85A 0%,
+    130deg,
+    #F57EB6 0%,
     #E6DE53 60%,
     #DFF138 100%
   );
@@ -123,4 +123,14 @@ html {
   100% {
     transform: translateX(-50%);
   }
+}
+
+@keyframes blinkArrow {
+  0%, 100% { opacity: 1; transform: translateZ(0) scale(1); }
+  50% { opacity: .55; transform: translateZ(0) scale(1.08); }
+}
+
+.arrow-blink {
+  animation: blinkArrow 1.2s ease-in-out infinite !important;
+  will-change: transform, opacity;
 }

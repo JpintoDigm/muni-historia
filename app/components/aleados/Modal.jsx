@@ -11,6 +11,7 @@ import { CompaniesLogo } from "../../data/CompaniesLogo";
 import TrustedCompanies from "../TrustedCompanies";
 import { useRouter } from "next/navigation";
 import { basePath } from "@/next.config.mjs";
+import { MontserratBlack3, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
  
 export default function Modal({openFromQuery=false}) {
   const [size, setSize] = React.useState(null);
@@ -18,7 +19,7 @@ export default function Modal({openFromQuery=false}) {
  
   React.useEffect(() => {
     if(openFromQuery){
-      setSize("lg");
+      setSize("xl");
     }
   }, [openFromQuery]);
 
@@ -30,16 +31,16 @@ export default function Modal({openFromQuery=false}) {
   return (
     <>
       <Dialog
-        open={ size === "lg" }
-        size={size || "lg"}
+        open={ size === "xl" }
+        size={size || "xl"}
         handler={handleClose}
-        className="bg-white/30 backdrop-blur-md shadow-none rounded-3xl "
+        className="bg-white/30 backdrop-blur-xl shadow-none rounded-3xl "
       >
         <DialogHeader className="flex items-center rounded-t-3xl justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
 
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] font-semibold text-center">
-                ALEADOS ESTRATÉGICOS
+              <p className={`${MontserratMediumItalic.className} text-lg md:text-2xl font-semibold text-center`}>
+                Aleados Estratégicos
               </p>
             </div>
 
@@ -53,7 +54,9 @@ export default function Modal({openFromQuery=false}) {
         </DialogHeader>
         <DialogBody className="max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
           <div className="">
-            <TrustedCompanies companies={CompaniesLogo} />                
+            {/* <TrustedCompanies companies={CompaniesLogo} /> */}
+
+            <img src={`${basePath}/img/companiesLogo/logosExpo.svg`}  alt="" />
           </div>
         </DialogBody>
       </Dialog>
