@@ -43,7 +43,7 @@ export default function ModalDescarga({openFromQuery=false}) {
 
             <div className="flex flex-row items-center gap-5">
                 <img src={`${basePath}/img/4.png`} alt="" className="max-w-10" />                
-                <p className={`${MontserratMediumItalic.className} text-xs md:text-base  tracking-[0.18em] font-semibold text-center`}>
+                <p className={`${MontserratMediumItalic.className} text-xs md:text-2xl font-semibold text-center`}>
                   Descarga Documentos
                 </p>
             </div>

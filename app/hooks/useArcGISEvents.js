@@ -23,7 +23,7 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
         setLoading(true);
         setError("");
 
-        const OBJECTID_FIELD = "OBJECTID";
+        const OBJECTID_FIELD = "objectid";
         const DATE_FIELD = "fecha_inicio";
         const TITLE_FIELD = "descripcion";
         const TIME_FIELD = "horario";

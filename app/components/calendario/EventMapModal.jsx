@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { basePath } from "@/next.config.mjs";
+import { MarcellusRegular, MontserratBlack3, MontserratLightItalic, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
 
 // Import dinámico del mapa de eventos
 const EventMap = dynamic(() => import("@/app/components/arcgis/basemap/EventMap"), {
@@ -44,10 +45,10 @@ export default function EventMapModal({
         {/* Header */}
         <header className="flex items-start justify-between px-6 py-4 bg-gradient-to-r from-[#F57EB6]/90 via-[#E8F216]/80 to-[#23C9A7]/90 text-muni-azul">
           <div>
-            <h2 className="text-lg md:text-xl font-extrabold line-clamp-1">
+            <h2 className={` ${MontserratMediumItalic.className} text-lg md:text-xl font-semibold`}>
               {event.title}
             </h2>
-            <p className="text-xs md:text-base line-clamp-1 flex items-center justify-start gap-1">
+            <p className={` ${muni.className} text-xs md:text-base line-clamp-1 flex items-center justify-start gap-1`}>
               <img src={`${basePath}/img/calendario/ubicacion.svg`} alt="Direccion" className="max-w-5 max-h-5"/>
               
               {event.address}            
@@ -61,7 +62,7 @@ export default function EventMapModal({
             <p className="text-xs md:text-base  line-clamp-1 flex items-center justify-start gap-1">
               <img src={`${basePath}/img/calendario/reloj.svg`} alt="Fecha" className="max-w-5 max-h-5" />
               
-              {fmtHourES(event.date)}      
+              {event.time ? event.time : fmtHourES(event.date)}    
             </p>
           </div>
 

@@ -65,7 +65,7 @@ function ParkCard({ item }) {
               target="_blank"
               className="
                 inline-flex items-center gap-2
-                rounded-xl bg-muni-verde/35 px-3 py-2
+                rounded-xl bg-muni-verde/90 px-3 py-2
                 text-muni-azul font-extrabold text-sm sm:text-base
                 transition hover:bg-muni-verde/45
                 focus:outline-none focus-visible:ring-2 focus-visible:ring-muni-verde/70

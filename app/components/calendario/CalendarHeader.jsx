@@ -55,25 +55,25 @@ export default function CalendarHeader({
           {/* MES */}
           
           <div className="flex items-center justify-center gap-2 md:min-w-0 md:truncate md:max-w-105 lg:max-w-105">
-
             <button
               onClick={onPrev}
-              className="flex justify-center items-center h-12 w-12 rounded-lg  hover:bg-white/20 transition text-muni-azul"
+              disabled
+              className="flex justify-center items-center h-12 w-12 rounded-lg text-muni-azul opacity-40 cursor-not-allowed"
             >
               <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 -rotate-90" />
             </button>
 
             <h1 className="text-2xl md:text-3xl font-extrabold capitalize text-muni-azul">
-              {fmtMonthES(month)}
+              {fmtMonthES(new Date())}
             </h1>
 
             <button
               onClick={onNext}
-              className="flex justify-center items-center h-12 w-12 rounded-lg  hover:bg-white/20 transition text-muni-azul"
+              disabled
+              className="flex justify-center items-center h-12 w-12 rounded-lg text-muni-azul opacity-40 cursor-not-allowed"
             >
-              <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes anterior" className="w-10 rotate-90" />
-            </button> 
-
+              <img src={`${basePath}/img/backtotop.svg`} alt="Icono mes siguiente" className="w-10 rotate-90" />
+            </button>
           </div>
 
           {/* NAVEGACIÓN */}

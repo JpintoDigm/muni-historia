@@ -19,49 +19,49 @@ const SERVICIOS = [
     id: "comercios",
     title: "Comercios",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/0",
-    iconUrl: basePath + "/img/calendario/comercio.svg",
+    iconUrl: basePath + "/img/calendario/services/comercio.svg",
   },
   {
     id: "restaurantes",
     title: "Restaurantes",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/1",
-    iconUrl: basePath + "/img/calendario/restaurant.svg",
+    iconUrl: basePath + "/img/calendario/services/restaurant.svg",
   },
   {
     id: "hoteles",
     title: "Hoteles",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/2",
-    iconUrl: basePath + "/img/calendario/hotel.svg",
+    iconUrl: basePath + "/img/calendario/services/hotel.svg",
   },
   {
     id: "parqueos",
     title: "Parqueos",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/3",
-    iconUrl: basePath + "/img/calendario/park.svg",
+    iconUrl: basePath + "/img/calendario/services/park.svg",
   },
   {
     id: "bancos",
     title: "Bancos",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/4",
-    iconUrl: basePath + "/img/calendario/banco.svg",
+    iconUrl: basePath + "/img/calendario/services/banco.svg",
   },
   {
     id: "cajeros",
     title: "Cajeros",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/8",
-    iconUrl: basePath + "/img/calendario/atm.svg",
+    iconUrl: basePath + "/img/calendario/services/atm.svg",
   },
   {
     id: "asisMedica",
     title: "Asistencia médica",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/6",
-    iconUrl: basePath + "/img/calendario/asistenciaMedica.svg",
+    iconUrl: basePath + "/img/calendario/services/asistenciaMedica.svg",
   },
   {
     id: "cuerSocorro",
     title: "Cuerpos de socorro",
     url: "https://services9.arcgis.com/KpHXbQVRsuq80m4J/ArcGIS/rest/services/Servicios_procesiones_2024/FeatureServer/7",
-    iconUrl: basePath + "/img/calendario/asistenciaMedica.svg",
+    iconUrl: basePath + "/img/calendario/services/asistenciaMedica.svg",
   },
 ];
 
@@ -71,6 +71,7 @@ function esc(v = "") {
 
   return String(v).replace(/'/g, "''");
 }
+
 
 export default function EventMap({ event, eventLayerUrl }) {
   const mapDiv = useRef(null);
@@ -109,7 +110,21 @@ export default function EventMap({ event, eventLayerUrl }) {
       url: urlEventos,
       outFields: ["*"],
       popupEnabled: true,
-      title: "Eventos",      
+      title: "Eventos",
+      popupTemplate: {
+        title: "{descripcion}",
+        content: [
+          {
+            type: "fields",
+            fieldInfos: [
+              { fieldName: "direccion", label: "Dirección" },
+              { fieldName: "horario", label: "Horario" },
+              { fieldName: "fecha_inicio", label: "Fecha inicio" },
+              { fieldName: "fecha_fin", label: "Fecha fin" },
+            ],
+          },
+        ],
+      },
     });
 
     map.add(eventosLayer);
@@ -136,6 +151,7 @@ export default function EventMap({ event, eventLayerUrl }) {
         popupEnabled: true,
         popupTemplate: {
           title: `{${"direccion" /* si no existe, igual no afecta */}}`,
+          lastEditInfoEnabled: false, 
           content: (feature) => {
             const a = feature?.graphic?.attributes || {};
             const dir = a.direccion ?? a.DIRECCION ?? a.Direccion ?? "";
@@ -156,7 +172,7 @@ export default function EventMap({ event, eventLayerUrl }) {
       container: mapDiv.current,
       map,
       center: [-90.52, 14.64],
-      zoom: 11,
+      zoom: 16,
     });
 
     viewRef.current = view;
@@ -176,84 +192,84 @@ export default function EventMap({ event, eventLayerUrl }) {
     };
   }, [urlEventos]);
 
-  // Cuando cambia el evento -> filtrar capa + enfocar
   useEffect(() => {
     if (!event || !viewRef.current || !eventoLayerRef.current) return;
 
     const view = viewRef.current;
     const layer = eventoLayerRef.current;
+
     let cancelled = false;
 
     (async () => {
       try {
+        await view.when();
         await layer.load();
 
+        // construir WHERE
+        const oid = Number(event.id);
         let where = "";
 
-        if (event.id != null) {
-          // con OBJECTID es suficiente normalmente
-          where = `OBJECTID = ${event.id}`;
+        if (Number.isFinite(oid)) {
+          where = `objectid = ${oid}`;
         } else if (event.descripcion) {
           where = `descripcion = '${esc(event.descripcion)}'`;
+        } else if (event.title) {
+          where = `descripcion = '${esc(event.title)}'`;
         } else {
-          console.warn("Evento sin id ni descripcion, no se puede localizar");
+          console.warn("Evento sin id/descripcion/title para filtrar:", event);
           return;
         }
 
-        console.log("WHERE usado en mapa:", where);
-
+        // ✅ FILTRAR para que SOLO se vea el seleccionado
         layer.definitionExpression = where;
 
+        // Esperar a que el filtro se aplique visualmente
+        await layer.when();
+
+        // Traer el feature con geometría para enfocar
         const result = await layer.queryFeatures({
           where,
           outFields: ["*"],
           returnGeometry: true,
+          outSpatialReference: view.spatialReference,
         });
 
         if (cancelled) return;
 
-        if (!result.features.length) {
-          console.warn("No se encontró feature para:", where);
+        const feature = result?.features?.[0];
+        if (!feature?.geometry) {
+          console.warn("No se encontró geometría para:", where);
           return;
         }
 
-        const feature = result.features[0];
-        if (!feature.geometry) {
-          console.warn("El feature no tiene geometría");
-          return;
-        }
-
-        const v = viewRef.current;
-        if (!v || v.destroyed) return;
-
-        v.graphics.removeAll();
-        v.graphics.add({
+        // resaltar seleccionado
+        view.graphics.removeAll();
+        view.graphics.add({
           geometry: feature.geometry,
           symbol: {
             type: "simple-marker",
             color: [44, 184, 119],
             size: 12,
-            outline: {
-              color: [151, 215, 255],
-              width: 2,
-            },
+            outline: { color: [151, 215, 255], width: 2 },
           },
-          attributes: feature.attributes,
         });
 
-        v.goTo({
-          target: feature.geometry,
-          zoom: 50,
-        });
+        await view.goTo({ target: feature.geometry, zoom: 18 }, { duration: 800 });
       } catch (err) {
-        if (!cancelled) {
-          console.error("Error enfocando evento en el mapa:", err);
-        }
+        if (!cancelled) console.error("Error enfocando evento:", err);
       }
     })();
 
     return () => {
       cancelled = true;
+
+      // ✅ limpiar resaltado (opcional)
+      const v = viewRef.current;
+      if (v && !v.destroyed) v.graphics.removeAll();
+
+      // ✅ IMPORTANTÍSIMO: quitar filtro si se cambia o se cierra modal
+      const l = eventoLayerRef.current;
+      if (l) l.definitionExpression = "1=1";
     };
   }, [event]);
 
@@ -341,16 +357,9 @@ export default function EventMap({ event, eventLayerUrl }) {
                     if (l) l.visible = false;
                   });
                 }}
-                className="flex-1 text-xs font-bold py-2 rounded-lg bg-gray-100 hover:bg-gray-200"
-              >
-                Apagar todo
-              </button>
-
-              <button
-                onClick={() => setLegendOpen(false)}
                 className="flex-1 text-xs font-bold py-2 rounded-lg bg-muni-verde hover:bg-muni-verde/90 text-white"
               >
-                Cerrar
+                Apagar todo
               </button>
             </div>
           </div>
