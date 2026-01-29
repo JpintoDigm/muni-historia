@@ -125,7 +125,7 @@ export default function StickyVideo({
             borderRadius: 16,
             overflow: "hidden",
             zIndex: 9999,
-            backgroundColor: "#fff",
+            backgroundColor: "#000",
             opacity: 1,
             transform: "translateZ(0)",
             boxShadow: "0 12px 30px rgba(0,0,0,.25)",
@@ -159,12 +159,18 @@ export default function StickyVideo({
 
           <div ref={stickyRef} style={{ pointerEvents: "auto" }}>
             <video
+              src={src}
               controls
               playsInline
-              preload="metadata"   // o "none"
-              poster={`${basePath}/img/posters/video.jpg`}
-              src={src}
-              style={{ width: "100%", display: "block" }}
+              autoPlay
+              muted
+              preload="auto"
+              style={{
+                width: "100%",
+                display: "block",
+                backgroundColor: "transparent",
+                objectFit: "cover",
+              }}
             />
           </div>
         </div>
