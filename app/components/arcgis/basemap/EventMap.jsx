@@ -13,7 +13,6 @@ import Home from "@arcgis/core/widgets/Home";
 import Basemap from "@arcgis/core/Basemap";
 import VectorTileLayer from "@arcgis/core/layers/VectorTileLayer";
 
-
 const SERVICIOS = [
   {
     id: "comercios",
@@ -65,13 +64,10 @@ const SERVICIOS = [
   },
 ];
 
-
-
 function esc(v = "") {
 
   return String(v).replace(/'/g, "''");
 }
-
 
 export default function EventMap({ event, eventLayerUrl }) {
   const mapDiv = useRef(null);
@@ -84,7 +80,6 @@ export default function EventMap({ event, eventLayerUrl }) {
   const [servicesVisibility, setServicesVisibility] = useState(() =>
     Object.fromEntries(SERVICIOS.map((s) => [s.id, false]))
   );
-
 
   const urlEventos =
     eventLayerUrl ||
@@ -165,7 +160,6 @@ export default function EventMap({ event, eventLayerUrl }) {
       serviciosLayersObj[srv.id] = fl;
     });
 
-
     serviciosLayersRef.current = serviciosLayersObj;
 
     const view = new MapView({
@@ -206,17 +200,13 @@ export default function EventMap({ event, eventLayerUrl }) {
         await layer.load();
 
         // construir WHERE
-        const oid = Number(event.id);
+        const oid = Number(event.baseId ?? event.id);
         let where = "";
-
+        
         if (Number.isFinite(oid)) {
           where = `objectid = ${oid}`;
-        } else if (event.descripcion) {
-          where = `descripcion = '${esc(event.descripcion)}'`;
-        } else if (event.title) {
-          where = `descripcion = '${esc(event.title)}'`;
         } else {
-          console.warn("Evento sin id/descripcion/title para filtrar:", event);
+          console.warn("Evento sin baseId/objectid:", event);
           return;
         }
 

@@ -164,7 +164,7 @@ export default function StickyVideo({
               playsInline
               autoPlay
               muted
-              preload="auto"
+              preload="none"
               style={{
                 width: "100%",
                 display: "block",

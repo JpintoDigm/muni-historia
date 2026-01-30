@@ -62,19 +62,46 @@ export default function AerometroMap() {
     },
       labelsVisible: true,
       labelingInfo: [
+
+        // número dentro del punto
         {
-          deconflictionStrategy: "none",
           labelExpressionInfo: { expression: "$feature.OBJECTID" },
           labelPlacement: "center-center",
           symbol: {
             type: "text",
             color: "white",
-            haloColor: [0, 92, 230, 1],
+            haloColor: [0,92,230,1],
             haloSize: 1,
-            font: { family: "Arial", size: 12, weight: "bold" }
+            font: { family: "Arial", size: 11, weight: "bold" }
+          }
+        },
+
+        // nombre arriba
+        {
+          where: "1=1",
+          
+          labelExpressionInfo: {
+
+            expression: `
+              var n = Trim($feature.nombre);
+              IIf(IsEmpty(n), Text($feature.OBJECTID), Replace(n, ' ', TextFormatting.NewLine))
+            `
+          },
+          
+          labelPlacement: "above-center",
+          deconflictionStrategy: "none", //
+          priority: 9999, 
+          
+          symbol: {
+            type: "text",
+            color: "#0B4AA2",
+            haloColor: "white",
+            haloSize: 1.5,
+            font: { family: "Arial", size: 10, weight: "bold" }
           }
         }
       ]
+
     });
 
     const lineLayerGreen = new FeatureLayer({
@@ -115,8 +142,10 @@ export default function AerometroMap() {
     },
       labelsVisible: true,
       labelingInfo: [
+            // (opcional) Filtra solo los que tienen geometría válida
+
+        // número dentro del punto
         {
-            deconflictionStrategy: "none",
           labelExpressionInfo: { expression: "$feature.OBJECTID" },
           labelPlacement: "center-center",
           symbol: {
@@ -124,10 +153,36 @@ export default function AerometroMap() {
             color: "white",
             haloColor: [69, 117, 110, 0.8],
             haloSize: 1,
-            font: { family: "Arial", size: 12, weight: "bold" }
+            font: { family: "Arial", size: 11, weight: "bold" }
+          }
+        },
+
+        // nombre arriba
+        {
+          where: "1=1",
+          
+          labelExpressionInfo: {
+
+            expression: `
+              var n = Trim($feature.nombre);
+              IIf(IsEmpty(n), Text($feature.OBJECTID), Replace(n, ' ', TextFormatting.NewLine))
+            `
+          },
+          
+          labelPlacement: "above-center",
+          deconflictionStrategy: "none", //
+          priority: 9999,           
+
+          symbol: {
+            type: "text",
+            color: "#45756ecc",
+            haloColor: "white",
+            haloSize: 1.5,
+            font: { family: "Arial", size: 10, weight: "bold" }
           }
         }
       ]
+
     });
 
     const pointsLayerCentral = new FeatureLayer({
@@ -280,13 +335,13 @@ export default function AerometroMap() {
             {/* ITEM */}
             <div className="flex items-start gap-3 md:gap-4 py-2">
             <img
-                src={`${basePath}/img/acciones/estacionCentral.svg`}
+                src={`${basePath}/img/acciones/21.svg`}
                 alt="Línea 1"
                 className="h-9 w-12 md:h-10 md:w-16 shrink-0"
             />
             <div className="leading-tight">
-                <p className="text-muni-azul font-bold text-base md:text-lg">Línea 1</p>
-                <p className="text-muni-azul font-semibold text-sm md:text-base">
+                <p className="text-[#005ce6] font-bold text-base md:text-lg">Línea 1</p>
+                <p className="text-[#005ce6] font-semibold text-sm md:text-base">
                 Plaza España - Trébol
                 </p>
             </div>
@@ -294,7 +349,7 @@ export default function AerometroMap() {
 
             <div className="flex items-start gap-3 md:gap-4 py-2">
             <img
-                src={`${basePath}/img/acciones/estacionCentral.svg`}
+                src={`${basePath}/img/acciones/20.svg`}
                 alt="Línea 2"
                 className="h-9 w-12 md:h-10 md:w-16 shrink-0"
             />

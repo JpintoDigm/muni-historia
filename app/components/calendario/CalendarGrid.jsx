@@ -88,10 +88,10 @@ export default function CalendarGrid({
               )}
 
               <div className="hidden md:block">
-                {dayEvents.slice(0, 4).map((e, i) => (
+                {dayEvents.slice(0, 3).map((e, i) => (
                   <div key={i} className="mt-1 flex items-center gap-1 text-xs sm:text-sm">
                     <span
-                      className={`h-1.5 w-1.5 rounded-full border-1 border-muni-azul border-solid ${
+                      className={`inline-block aspect-square h-2 rounded-full border border-muni-azul ${
                         EJE_COLOR[e.eje] || "bg-gray-300"
                       }`}
                     />

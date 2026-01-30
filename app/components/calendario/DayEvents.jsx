@@ -51,7 +51,7 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
           </div>
         ) : (
           list.map((e) => (
-            <button key={e.id} type="button" onClick={() => onSelectEvent?.(e)} className="text-start rounded-2xl bg-white/10 p-4 border border-white/10 hover:border-white/40 hover:bg-white/20" >
+            <button key={e.id} type="button" onClick={() => onSelectEvent?.(e)} className="text-start rounded-2xl bg-white/10 p-4 border border-white/10 hover:border-white/40 hover:bg-white/20 flex flex-col h-full" >
               <div className="flex items-center justify-start gap-3 mb-2">
 
                 {EJE_ICON[e.eje] && (
@@ -84,7 +84,7 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
 
               </div>
 
-              <div className=" text-muni-azul text-base font-extrabold text-shadow-lg/5">{e.title}</div>
+              <div className=" text-muni-azul text-base font-extrabold">{e.title}</div>
 
 
               {/* Día + Hora */}
@@ -101,7 +101,7 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
                 <span className="font-extrabold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
               </div>
 
-              <div className="flex items-center justify-end">
+              <div className="flex items-center justify-end mt-auto pt-3">
                 <div 
                   className="flex items-center justify-end gap-2 px-3 py-2 bg-muni-verde/35 hover:bg-muni-verde/45 text-sm sm:text-base rounded-xl"
                 >

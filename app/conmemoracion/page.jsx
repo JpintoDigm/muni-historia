@@ -1,6 +1,5 @@
 import BottomMenu from "@/app/components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
-import TextHeader from "../components/conmemoracion/TextHeader";
 import { MarcellusRegular, MontserratBlack3, MontserratSemiBoldItalic, muni } from "../fonts/fonts";
 
 

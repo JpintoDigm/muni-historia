@@ -156,7 +156,7 @@ function HomePageContent() {
 
               </Link>      
 
-              <Link href="/acciones" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
+              <Link href="/acciones250" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center">
 
                 <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
                 cursor-pointer">

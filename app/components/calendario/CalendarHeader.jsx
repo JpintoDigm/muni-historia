@@ -64,7 +64,7 @@ export default function CalendarHeader({
             </button>
 
             <h1 className="text-2xl md:text-3xl font-extrabold capitalize text-muni-azul">
-              {fmtMonthES(new Date())}
+              {fmtMonthES(month)}
             </h1>
 
             <button
