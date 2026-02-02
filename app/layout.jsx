@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import BackToTop from "./components/BackToTop";
 import { Providers } from "@/app/components/aleados/providers"
 import { muni } from "./fonts/fonts";
+import BottomMenu from "./components/BottomMenu";
 
 
 
@@ -20,11 +21,14 @@ export default function RootLayout({ children }) {
 
 
         <Providers>
+          
           {children} 
         </Providers>
         
         
         <BackToTop />
+        
+        <BottomMenu />
       </body>
     </html>
   );

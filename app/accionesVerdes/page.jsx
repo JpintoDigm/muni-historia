@@ -86,7 +86,7 @@ export default function Acciones() {
         </section>
 
 
-      <BottomMenu />
+      {/* <BottomMenu /> */}
     </main>
     );
 }

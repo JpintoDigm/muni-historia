@@ -12,6 +12,9 @@ import TrustedCompanies from "../TrustedCompanies";
 import { useRouter } from "next/navigation";
 import { basePath } from "@/next.config.mjs";
 import { MontserratBlack3, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
+import LogosApoyo from "./LogosApoyo";
+import LogosColaboracion from "./LogosColaboracion";
+import LogosAlianza from "./LogosAlianza";
  
 export default function Modal({openFromQuery=false}) {
   const [size, setSize] = React.useState(null);
@@ -53,11 +56,9 @@ export default function Modal({openFromQuery=false}) {
             </Button>
         </DialogHeader>
         <DialogBody className="max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
-          <div className="">
-            {/* <TrustedCompanies companies={CompaniesLogo} /> */}
-
-            <img src={`${basePath}/img/companiesLogo/logosExpo.svg`}  alt="" />
-          </div>
+          <LogosApoyo titulo={'Con el apoyo de:'} />
+          <LogosColaboracion titulo={'Con colaboración de:'} />
+          <LogosAlianza titulo={'En alianza con:'} />
         </DialogBody>
       </Dialog>
     </>

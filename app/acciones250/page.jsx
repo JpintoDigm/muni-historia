@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import BottomMenu from "@/app/components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
-import TextHeader from "../components/conmemoracion/TextHeader";
 import {
   MarcellusRegular,
   MontserratBlack3,
@@ -349,7 +348,7 @@ export default function Acciones() {
               className={`
                 bg-white/60 rounded-2xl flex items-center justify-center text-muni-azul
                 px-6 py-15 lg:p-8
-                order-first lg:order-none
+                
                 lg:row-span-2 lg:max-h-152 lg:mt-22
                 w-full
                 transition-all duration-700

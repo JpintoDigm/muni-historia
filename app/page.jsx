@@ -71,7 +71,7 @@ function HomePageContent() {
         <section className="flex-1 ">
           <div className="grid gap-3 md:grid-cols-[0.7fr_2.3fr]">
 
-            <Link href="/conmemoracion" className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm conmemoracion-250 cursor-pointer`}>
+            <Link href="/visionCiudad" className={`${MarcellusRegular.className} order-2 md:order-1 relative flex flex-col justify-between rounded-3xl p-4 shadow-sm conmemoracion-250 cursor-pointer`}>
 
               {/* Botón + */}
               <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
@@ -225,7 +225,7 @@ function HomePageContent() {
         </div>
       </div>
 
-      <BottomMenu />
+      {/* <BottomMenu /> */}
     </main>
 
   

@@ -10,7 +10,7 @@ export default function Calendario() {
         />
       </section>
 
-      <BottomMenu />
+      {/* <BottomMenu /> */}
     </main>
   );
 }
