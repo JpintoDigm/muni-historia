@@ -178,8 +178,21 @@ export default function AerometroMap() {
             color: "#45756ecc",
             haloColor: "white",
             haloSize: 1.5,
-            font: { family: "Arial", size: 10, weight: "bold" }
-          }
+            font: { family: "Arial", size: 10, weight: "bold" } // base
+          },
+          visualVariables: [
+            {
+              type: "size",
+              valueExpression: "$view.scale",
+              stops: [
+                { value: 60000, size: 6 },
+                { value: 25000, size: 10 },
+                { value: 12000, size: 13 },
+                { value: 6000,  size: 16 }
+              ]
+            }
+          ]
+
         }
       ]
 

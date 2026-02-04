@@ -102,8 +102,8 @@ export default function VisionCiudad() {
                     </div>
 
                     <p className="text-muni-azul italic text-sm md:text-xl leading-10 text-justify md:w-3/4">
-                        <b>Donde los <span className={` ${MontserratMediumItalic.className} italic `}>sueños se pueden cumplir.</span></b> El corazón de esta ciudad, y su activo más importante,
-                        son los vecinos y sus familias. Para todos disponemos de una importante oferta educativa,
+                        <b>Donde los <span className={` ${MontserratMediumItalic.className} italic font-bold`}>sueños se pueden cumplir.</span></b> El corazón de esta ciudad, y <span className={` ${MontserratMediumItalic.className} italic font-bold`}>su activo más importante,
+                        son los vecinos y sus familias.</span> Para todos disponemos de una importante oferta educativa,
                         artística, cultural, deportiva, técnica y tecnológica.
                     </p>
                 </div>
@@ -135,10 +135,10 @@ export default function VisionCiudad() {
 
                     <div className="text-justify">
                         <p className="text-muni-azul italic text-sm md:text-xl leading-10 text-justify md:w-3/4 ">
-                            Ciudad de Guatemala es una ciudad viva, dinámica y diversa. 
-                            Es una ciudad que se mejora y transforma con espacios para vivir, estudiar y trabajar. 
-                            Con espacios de sana convivencia, cultura y recreación.                     
-                            El mejor lugar para vivir nuestras tradiciones, celebrar nuestra historia y disfrutar la gastronomía
+                            Ciudad de Guatemala es una <span className={` ${MontserratMediumItalic.className} italic font-bold`}>ciudad viva, dinámica y diversa. </span>
+                            Es una ciudad que se <span className={` ${MontserratMediumItalic.className} italic font-bold`}>mejora y transforma</span> con espacios para vivir, estudiar y trabajar. 
+                            Con espacios de <span className={` ${MontserratMediumItalic.className} italic font-bold`}>sana convivencia, cultura y recreación.</span>               
+                            <span className={` ${MontserratMediumItalic.className} italic font-bold`}> El mejor lugar para vivir</span> nuestras tradiciones, celebrar nuestra historia y disfrutar la gastronomía
                         </p>
                     </div>
                 </div>
@@ -169,9 +169,11 @@ export default function VisionCiudad() {
                     </div>
 
                     <p className="text-muni-azul italic text-sm md:text-xl leading-10 text-justify md:w-3/4">
-                        <b>Donde los sueños se pueden cumplir.</b> El corazón de esta ciudad, y su activo más importante,
-                        son los vecinos y sus familias. Para todos disponemos de una importante oferta educativa,
-                        artística, cultural, deportiva, técnica y tecnológica.
+                    <span className={` ${MontserratMediumItalic.className} font-extrabold not-italic`}>Llegas más rápido. </span><br /> 
+                    Te mueves mejor. <br />
+                    Los servicios <span className={` ${MontserratMediumItalic.className} font-extrabold not-italic`}>cumplen y responden. </span><br />
+
+                    <span className={` ${MontserratMediumItalic.className} font-extrabold not-italic`}>La ciudad conecta</span> tu día a día con lo que quieres lograr.
                     </p>
                 </div>
             </div>

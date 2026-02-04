@@ -15,7 +15,6 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-
   /* Colores institucionales */
   --color-muni-azul: #10069f;
   --color-muni-verde: #97d700;
@@ -38,7 +37,7 @@ html {
 .main-snake {
   min-height: 70vh;
   background-image:
-    url("/prueba/jpinto/muniHistoria/img/fondoSnake.png"),
+    url("/250CiudadDeGuatemala/img/fondoSnake.png"),
     linear-gradient(135deg, #F57EB6 0%, #E0E721 45%, #2CB877 90%);
 
   background-repeat: no-repeat, no-repeat;
@@ -125,7 +124,7 @@ html {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.02); /* ligeramente más grande */
+    transform: scale(1.0); /* ligeramente más grande */
   }
 }
 
@@ -166,15 +165,15 @@ html {
 
 @keyframes rotate-alternate {
   from {
-    transform: rotate(4deg);
+    transform: rotate(2deg);
   }
   to {
-    transform: rotate(-4deg);
+    transform: rotate(-2deg);
   }
 }
 
 .animate-rotate-alternate {
-  animation: rotate-alternate 2s ease-in-out infinite alternate;
+  animation: rotate-alternate 1s ease-in-out infinite alternate;
   transform-origin: center center;
 }
 

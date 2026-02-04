@@ -115,7 +115,7 @@ export default function Acciones() {
                 <img
                     src={`${basePath}/img/acciones/aerometroRecorte.svg`}
                     alt="Icono 250"
-                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-rotate-alternate  "
+                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-pulse-smooth"
                 />
 
             </div>

@@ -16,7 +16,7 @@ export default function Cards() {
                     </p>
 
                     <div className="flex justify-center py-5">
-                        <img src={`${basePath}/img/visionCiudad/11.svg`} alt="" className="h-14 w-14 lg:h-20 lg:w-20" />
+                        <img src={`${basePath}/img/visionCiudad/11.svg`} alt="" className="h-20 w-20 lg:h-30 lg:w-30" />
                     </div>
 
                     <p className={` ${MontserratMediumItalic.className} text-center font-extrabold text-5xl italic`}>80%</p>
@@ -32,7 +32,7 @@ export default function Cards() {
                     </p>
 
                     <div className="flex justify-center py-5">
-                        <img src={`${basePath}/img/visionCiudad/12.svg`} alt="" className="h-14 w-14 lg:h-20 lg:w-20" />
+                        <img src={`${basePath}/img/visionCiudad/12.svg`} alt="" className="h-20 w-20 lg:h-30 lg:w-30" />
                     </div>
 
                     <p className={` ${MontserratMediumItalic.className} text-center font-extrabold text-4xl italic`}>39% +Altos</p>
@@ -50,7 +50,7 @@ export default function Cards() {
                     </p>
 
                     <div className="flex justify-center py-5">
-                        <img src={`${basePath}/img/visionCiudad/13.svg`} alt="" className="h-14 w-14 lg:h-20 lg:w-20" />
+                        <img src={`${basePath}/img/visionCiudad/13.svg`} alt="" className="h-20 w-20 lg:h-30 lg:w-30" />
                     </div>
 
                     <div className="mt-1 grid grid-cols-2 gap-4 items-end">
@@ -72,18 +72,18 @@ export default function Cards() {
                     </p>
 
                     <div className="flex justify-center py-5">
-                        <img src={`${basePath}/img/visionCiudad/14.svg`} alt="" className="h-14 w-14 lg:h-20 lg:w-20" />
+                        <img src={`${basePath}/img/visionCiudad/14.svg`} alt="" className="h-20 w-20 lg:h-30 lg:w-30" />
                     </div>
 
-                    <div className="mt-1 grid grid-cols-2 gap-4 items-end">
-                    <div className="text-center">
-                        <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>50%</p>
-                        <p className="italic text-sm">PIB del país</p>
-                    </div>
-                    <div className="text-center">
-                        <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>77%</p>
-                        <p className="italic text-sm">Recaudación de impuestos (SAT)</p>
-                    </div>
+                    <div className="mt-1 grid grid-cols-2 gap-4 items-start">
+                        <div className="text-center flex flex-col gap-2">
+                            <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>50%</p>
+                            <p className="italic text-sm">PIB del país</p>
+                        </div>
+                        <div className="text-center flex flex-col gap-2">
+                            <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>77%</p>
+                            <p className="italic text-sm">Recaudación de impuestos (SAT)</p>
+                        </div>
                     </div>
                 </div>
 
@@ -95,22 +95,22 @@ export default function Cards() {
 
 
                     <div className="flex justify-center py-5">
-                        <img src={`${basePath}/img/visionCiudad/15.svg`} alt="" className="h-14 w-14 lg:h-20 lg:w-20" />
+                        <img src={`${basePath}/img/visionCiudad/15.svg`} alt="" className="h-20 w-20 lg:h-30 lg:w-30" />
                     </div>
 
-                    <div className="mt-1 grid grid-cols-2 gap-4 items-end">
-                    <div className="text-center">
-                        <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>304</p>
-                        <p className={` ${muni.className} italic text-sm`}>
-                        Proyectos en ejecución y <br /> trámite a la fecha
-                        </p>
-                    </div>
-                    <div className="text-center">
-                        <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>
-                        6.37<span className={` ${muni.className} text-base align-super font-bold`}>miles</span>
-                        </p>
-                        <p className={` ${muni.className} italic text-sm`}>Metros Cuadrados</p>
-                    </div>
+                    <div className="mt-1 grid grid-cols-2 gap-4 items-start">
+                        <div className="text-center flex flex-col gap-2">
+                            <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>304</p>
+                            <p className={` ${muni.className} italic text-sm`}>
+                            Proyectos en ejecución y <br /> trámite a la fecha
+                            </p>
+                        </div>
+                        <div className="text-center flex flex-col gap-2">
+                            <p className={` ${MontserratMediumItalic.className} font-extrabold text-4xl`}>
+                            6.37<span className={` ${muni.className} text-base align-super font-bold`}>Millones</span>
+                            </p>
+                            <p className={` ${muni.className} italic text-sm`}>Metros Cuadrados</p>
+                        </div>
                     </div>
                 </div>
 
@@ -122,7 +122,7 @@ export default function Cards() {
 
 
                     <div className="flex justify-center py-5">
-                        <img src={`${basePath}/img/visionCiudad/16.svg`} alt="" className="h-14 w-14 lg:h-20 lg:w-20" />
+                        <img src={`${basePath}/img/visionCiudad/16.svg`} alt="" className="h-20 w-20 lg:h-30 lg:w-30" />
                     </div>
 
                     <p className={` ${MontserratMediumItalic.className} text-center font-extrabold text-5xl`}>80.82</p>
