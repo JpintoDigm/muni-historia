@@ -7,15 +7,16 @@ import BottomMenu from "../components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
 import { PARQUES } from "../components/accionesVerdes/data";
 import { MontserratBlack3, MontserratLightItalic, MontserratMediumItalic, muni, MarcellusRegular } from "@/app/fonts/fonts";
+import DesafiosCiudad from "../components/visionCiudad/DesafiosCiudad";
 
 
 export default function VisionCiudad() {
 
     return (
     <main className="min-h-screen">
-        <section className="w-full px-4 py-8 bg-muni-azul">
+        <section className="w-full px-4 py-0 md:py-8 bg-muni-azul">
 
-            <div className="w-full container mx-auto flex flex-col gap-4 mb-10 p-6 md:p-0">
+            <div className="w-full container mx-auto flex flex-col gap-4 p-6 md:p-0">
                 <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-3">
 
                     <div className="flex items-center">
@@ -33,7 +34,7 @@ export default function VisionCiudad() {
                     <p className="text-white text-sm lg:text-xl text-justify mt-10">
                         La Visión de Ciudad define cómo <span className={` ${MontserratMediumItalic.className} text-muni-verde font-bold`}>la Ciudad de Guatemala avanza día a día.</span> Es el plan de acción del alcalde Ricardo Quiñónez, que organiza el trabajo municipal, da continuidad a los proyectos y asegura <span className={` ${MontserratMediumItalic.className} text-muni-verde font-bold`}> avances con resultados.</span>
                     </p>
-                    <p className="text-white text-sm lg:text-xl mt-10 text-justify">
+                    <p className="text-white text-sm lg:text-xl mt-5 md:mt-10 text-justify">
                         Este plan se desarrolla a través de ejes estratégicos que orientan cada acción: <span className={` ${MontserratMediumItalic.className} text-muni-rosado font-bold`}>un lugar de oportunidades</span>, que impulsa el talento, el aprendizaje y el emprendimiento; <span className={` ${MontserratMediumItalic.className} text-muni-amarillo font-bold`}>un lugar que inspira</span>, generando orgullo y sentido de pertenencia; y <span className={` ${MontserratMediumItalic.className} text-muni-pantone font-bold`}>un lugar que conecta</span>, fortaleciendo la movilidad y los servicios para facilitar la vida diaria de las personas
                     </p>
                 </div>
@@ -42,14 +43,14 @@ export default function VisionCiudad() {
         </section>
 
 
-        <section className="w-full px-4 py-8 bg-muni-azul">
+        <section className="w-full px-4 bg-muni-azul">
             {/* Fondo azul de la sección */}
             <div className="w-full container mx-auto p-6 md:p-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center mb-7 md:mb-0">
                         <img src={`${basePath}/img/visionCiudad/people.svg`} alt="Alcalde y personas" className="w-300 rounded-2xl" />
                     </div>
-                    <div className={` ${muni.className} flex flex-col items-center justify-center text-white gap-5 text-justify text-sm lg:text-xl italic`}>
+                    <div className={` ${muni.className} flex flex-col items-center justify-center text-white gap-5 text-justify text-sm lg:text-xl `}>
                         <p>La Ciudad de Guatemala cumple 250 años desde que se tomó una decisión estratégica que marcó el rumbo del país. Nació como el punto de encuentro de los caminos, donde todo pasa y donde convergen personas, ideas y oportunidades. </p>
                         <p>
                             Hoy esa vocación sigue viva. Somos la ciudad que conecta al país, la que recibe a miles de guatemaltecos cada día y la que asume con responsabilidad los retos que ese crecimiento implica. 
@@ -62,109 +63,18 @@ export default function VisionCiudad() {
             </div>
         </section>        
 
-        <section className="w-full px-4 py-12 bg-muni-azul">
-            <div className="container mx-auto p-6 lg:px-0 lg:py-6 text-white">
+        <DesafiosCiudad />
 
-                {/* Título */}
-                <h2 className={` ${MontserratMediumItalic.className} text-4xl md:text-5xl font-bold text-muni-verde mb-10`}>
-                    Desafíos Ciudad
-                </h2>
-
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-y-10 gap-x-12">
-
-                    {/* Item 1 */}
-                    <div className="flex items-center gap-6">
-                        <img src={`${basePath}/img/visionCiudad/16.svg`} alt="Icono 250" className="w-20 md:w-40" />
-                        <div className="flex flex-col justify-center">
-                            <p className={` ${MontserratMediumItalic.className} text-lime-400 text-3xl font-bold text-muni-verde`}>+40 km</p>
-                            <p className="text-sm md:text-xl italic">
-                                Crecimiento de la ciudad y del área metropolitana en su mancha urbana
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Item 2 */}
-                    <div className="flex items-center gap-6">
-                        <img src={`${basePath}/img/visionCiudad/11.svg`} alt="Icono 250" className="w-20 md:w-40" />
-                        <div>
-                            <p className={` ${MontserratMediumItalic.className} text-lime-400 text-3xl font-bold text-muni-verde`}>60%</p>
-                            <p className="text-sm md:text-xl italic">
-                                Población trabajadora concentrada en el Corredor Central
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Item 3 */}
-                    <div className="flex items-center gap-6">
-                        <img src={`${basePath}/img/visionCiudad/17.svg`} alt="Icono 250" className="w-20 md:w-40" />
-                        <div>
-                        <p className={` ${MontserratMediumItalic.className} text-lime-400 text-3xl font-bold text-muni-verde`}>62%</p>
-                        <p className="text-sm md:text-xl italic">
-                            Empresas en el Corredor Central
-                        </p>
-                        </div>
-                    </div>
-
-                    {/* Item 4 */}
-                    <div className="flex items-center gap-6">
-                        <img src={`${basePath}/img/visionCiudad/18.svg`} alt="Icono 250" className="w-20 md:w-40" />
-                        <div>
-                        <p className={` ${MontserratMediumItalic.className} text-lime-400 text-3xl font-bold text-muni-verde`}>48.5%</p>
-                        <p className="text-sm md:text-xl italic">
-                            Población flotante que ingresa diariamente a la ciudad (1.7 millones)
-                        </p>
-                        </div>
-                    </div>
-
-                    {/* Item 5 */}
-                    <div className="flex items-center gap-6">
-                        <img src={`${basePath}/img/visionCiudad/19.svg`} alt="Icono 250" className="w-20 md:w-40" />
-                        <div>
-                        <p className={` ${MontserratMediumItalic.className} text-lime-400 text-3xl font-bold text-muni-verde`}>800 mil</p>
-                        <p className="text-sm md:text-xl italic">
-                            Vehículos ingresan diariamente a la ciudad
-                        </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-
-        <section className="w-full px-4 py-8 bg-muni-azul">
+        <section className="w-full px-4 py-0 bg-muni-azul">
             {/* Fondo azul de la sección */}
             <div className="w-full container mx-auto p-6 lg:px-0 lg:py-6">
                 <Cards />
             </div>
 
-            <div className="my-10">
-                <p className={`text-center font-bold mt-15 md:mb-100 text-xl md:text-4xl text-muni-verde px-0 md:px-80 italic ${MarcellusRegular.className}`}>“El punto de encuentro de los caminos”</p>
-            </div>
-
-
-            <div className="block relative">
-                <img
-                    src={`${basePath}/img/conmemoracion/250cremalg.svg`}
-                    alt="250 años"
-                    className="
-                    absolute
-                    left-1/2
-                    -translate-x-1/2
-                    bottom-[-250px]
-                    xl:w-[800px] 2xl:w-[1000px]
-                    opacity-60
-                    pointer-events-none
-                    select-none
-                    "
-                />
-            </div>
-
         </section>
 
 
-        <section className="relative w-full px-4 py-12 bg-muni-azul overflow-hidden">
+        <section className="relative w-full px-4 py-6 bg-muni-azul overflow-hidden">
 
 
             {/* Card rosada (encima del 250) */}
@@ -266,12 +176,34 @@ export default function VisionCiudad() {
                 </div>
             </div>
 
+            <div className="my-10">
+                <p className={`text-center font-bold mt-15 md:mb-100 text-xl md:text-4xl text-muni-verde px-0 md:px-80 italic ${MarcellusRegular.className}`}>“El punto de encuentro de los caminos”</p>
+            </div>
+
+            <div className="block relative">
+                <img
+                    src={`${basePath}/img/conmemoracion/250cremalg.svg`}
+                    alt="250 años"
+                    className="
+                    absolute
+                    left-1/2
+                    -translate-x-1/2
+                    bottom-[-250px]
+                    xl:w-[800px] 2xl:w-[1000px]
+                    opacity-60
+                    pointer-events-none
+                    select-none
+                    "
+                />
+            </div>
+
         </section>
 
 
 
 
-        {/* <BottomMenu /> */}
+        <BottomMenu textColor="text-muni-verde" activeColor="text-muni-azul" />
+
     </main>
     );
 }

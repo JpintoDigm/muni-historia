@@ -116,6 +116,25 @@ html {
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
+
+
+
+/* Animaciónd acercarse y alejarse SMOOTH */
+@keyframes pulse-smooth {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02); /* ligeramente más grande */
+  }
+}
+
+.animate-pulse-smooth {
+  animation: pulse-smooth 3s ease-in-out infinite;
+}
+
+
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -143,3 +162,20 @@ html {
 .animate-fade-up {
   animation: fadeUp 700ms ease-out forwards;
 }
+
+
+@keyframes rotate-alternate {
+  from {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(-4deg);
+  }
+}
+
+.animate-rotate-alternate {
+  animation: rotate-alternate 2s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+

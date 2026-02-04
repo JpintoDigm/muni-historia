@@ -95,8 +95,8 @@ function HomePageContent() {
               {/* Texto */}
               <p className="text-center text-muni-azul py-8 leading-tight">
                 <span className="block font-extrabold text-xl md:text-[22px] leading-tight">Conoce</span>
-                <span className="block text-xl md:text-[22px] leading-tight">más de esta</span>
-                <span className="block text-xl md:text-[22px] leading-tight">Conmemoración</span>
+                <span className="block text-xl md:text-[22px] leading-tight">la visión</span>
+                <span className="block text-xl md:text-[22px] leading-tight">de la ciudad</span>
               </p>
             </Link>
 

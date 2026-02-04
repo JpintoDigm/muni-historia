@@ -1,6 +1,6 @@
 
 "use client";
-
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import Cards from "../components/accionesVerdes/Cards";
 import Filters from "../components/accionesVerdes/Filters";
@@ -82,7 +82,30 @@ export default function Acciones() {
                 onSelectTipo={setSelectedTipo}
             />
 
-            <Cards items={filteredParques} />
+            {/* <Cards items={filteredParques} /> */}
+
+            <div className="flex justify-center relative mt-10 md:mt-20">
+                <img src={`${basePath}/img/accionesVerdes/redBird.svg`} alt="Icono 250" className="w-85 md:w-200 relative z-0" />
+
+                <Link
+                href="https://grandistritoverde.com.gt/"
+                target="_blank"
+                className="
+                    inline-flex items-center gap-2 w-30 md:w-35
+                    rounded-xl bg-muni-verde/90 px-3 py-2
+                    text-muni-azul font-extrabold text-sm sm:text-base
+                    transition hover:bg-muni-verde/45
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-muni-verde/70 absolute bottom-4 left-10 md:bottom-15 md:left-70 z-10
+                "
+                >
+                    Ver más
+                    <img
+                        src={`${basePath}/img/accionesVerdes/backtotop.svg`}
+                        alt=""
+                        className="h-4 w-4 rotate-90 opacity-90"
+                    />
+                </Link>
+            </div>
         </section>
 
 

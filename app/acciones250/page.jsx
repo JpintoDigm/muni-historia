@@ -115,7 +115,7 @@ export default function Acciones() {
                 <img
                     src={`${basePath}/img/acciones/aerometroRecorte.svg`}
                     alt="Icono 250"
-                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none"
+                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-rotate-alternate  "
                 />
 
             </div>
@@ -383,9 +383,13 @@ export default function Acciones() {
 
           </div>
         </div>
+
+        <div className="mb-15 md:mt-10 md:mb-20">
+          <p className={`text-center font-bold  text-xl md:text-4xl text-muni-azul px-0  italic ${MarcellusRegular.className}`}>“El punto de encuentro de los caminos”</p>
+        </div>
       </section>
 
-      <BottomMenu />
+      {/* <BottomMenu /> */}
     </main>
   );
 }

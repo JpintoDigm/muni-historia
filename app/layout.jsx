@@ -21,14 +21,13 @@ export default function RootLayout({ children }) {
 
 
         <Providers>
-          
           {children} 
         </Providers>
         
         
         <BackToTop />
         
-        <BottomMenu />
+        <BottomMenu textColor="text-muni-azul" activeColor="text-muni-azul" />
       </body>
     </html>
   );

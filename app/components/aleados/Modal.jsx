@@ -56,6 +56,10 @@ export default function Modal({openFromQuery=false}) {
             </Button>
         </DialogHeader>
         <DialogBody className="max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
+
+          <div className="flex justify-center">
+            <img src={`${basePath}/img/aleados/alcaldeDesktop.svg`} alt="Icono parque" className="w-100 md:w-250 rounded-2xl" /> 
+          </div>
           <LogosApoyo titulo={'Con el apoyo de:'} />
           <LogosColaboracion titulo={'Con colaboración de:'} />
           <LogosAlianza titulo={'En alianza con:'} />

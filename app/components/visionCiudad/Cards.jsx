@@ -10,7 +10,7 @@ export default function Cards() {
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
                 {/* CARD 1 */}
-                <div className="flex flex-col items-center justify-between rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde gap-2">
+                <div className="animate-pulse-smooth flex flex-col items-center justify-between rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde gap-2">
                     <p className={` ${MontserratMediumItalic.className} text-center font-bold italic text-lg md:text-2xl leading-tight`}>
                     Oportunidades <br /> de Empleo
                     </p>
@@ -26,7 +26,7 @@ export default function Cards() {
                 </div>
 
                 {/* CARD 2 */}
-                <div className="flex flex-col items-center justify-between rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde gap-2">
+                <div className="animate-pulse-smooth flex flex-col items-center justify-between rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde gap-2">
                     <p className={` ${MontserratMediumItalic.className} text-center font-bold italic text-lg md:text-2xl leading-tight`}>
                     Mejores <br /> Salarios
                     </p>
@@ -44,7 +44,7 @@ export default function Cards() {
                 </div>
 
                 {/* CARD 3 */}
-                <div className="flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde gap-2">
+                <div className="animate-pulse-smooth flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde gap-2">
                     <p className={` ${MontserratMediumItalic.className} text-center font-bold italic text-lg md:text-2xl leading-tight`}>
                     Ofertas de <br />Servicios
                     </p>
@@ -66,7 +66,7 @@ export default function Cards() {
                 </div>
 
                 {/* CARD 4 */}
-                <div className="flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde">
+                <div className="animate-pulse-smooth flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde">
                     <p className={` ${MontserratMediumItalic.className} text-center font-bold italic text-lg md:text-2xl leading-tight`}>
                     Desarrollo <br />Económico
                     </p>
@@ -88,7 +88,7 @@ export default function Cards() {
                 </div>
 
                 {/* CARD 5 */}
-                <div className="flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde">
+                <div className="animate-pulse-smooth flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde">
                     <p className={` ${MontserratMediumItalic.className} text-center font-bold italic text-lg md:text-2xl leading-tight`}>
                     Desarrollo <br />Inmobiliario
                     </p>
@@ -115,7 +115,7 @@ export default function Cards() {
                 </div>
 
                 {/* CARD 6 */}
-                <div className="flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde">
+                <div className="animate-pulse-smooth flex flex-col rounded-3xl p-7 text-white shadow-lg bg-gradient-to-br from-[#0A0E9A] to-muni-verde">
                     <p className={` ${MontserratMediumItalic.className} text-center font-bold italic text-lg md:text-2xl leading-tight`}>
                     Desarrollo <br />Inmobiliario
                     </p>
