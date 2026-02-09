@@ -79,13 +79,16 @@ export default function VisionCiudad() {
 
             {/* Card rosada (encima del 250) */}
             <div className="relative z-10 w-full container mx-auto p-6 lg:px-0 lg:py-6">
+
+                <img src={`${basePath}/img/conmemoracion/ejeO.svg`} alt="Icono 250" className="w-full object-contain rounded-t-3xl" />
+
                 <div
                 className="
                     w-full
-                    rounded-3xl
+                    rounded-b-3xl
                     px-10 md:px-14
                     py-10 md:py-14
-                    bg-gradient-to-r
+                    bg-gradient-to-t
                     from-muni-rosado
                     via-[#f3c5da]
                      via-90% md:via-65%
@@ -111,13 +114,15 @@ export default function VisionCiudad() {
 
             {/* Card rosada (encima del 250) */}
             <div className="relative z-10 w-full container mx-auto p-6 lg:px-0 lg:py-6">
+
+                <img src={`${basePath}/img/conmemoracion/ejeI.svg`} alt="Icono 250" className="w-full object-contain rounded-t-3xl" />
                 <div
                 className="
                     w-full
-                    rounded-3xl
+                    rounded-b-3xl
                     px-10 md:px-14
                     py-10 md:py-14
-                    bg-gradient-to-r
+                    bg-gradient-to-t
                 from-muni-amarillo
                 via-[#F3F6A6]
                 via-90% md:via-65%
@@ -146,13 +151,14 @@ export default function VisionCiudad() {
 
             {/* Card rosada (encima del 250) */}
             <div className="relative z-10 w-full container mx-auto p-6 lg:px-0 lg:py-6">
+                <img src={`${basePath}/img/conmemoracion/ejeC.svg`} alt="Icono 250" className="w-full object-contain rounded-t-3xl" />
                 <div
                 className="
                     w-full
-                    rounded-3xl
+                    rounded-b-3xl
                     px-10 md:px-14
                     py-10 md:py-14
-                    bg-gradient-to-r
+                    bg-gradient-to-t
                     from-muni-pantone
                     via-[#7EDBB0]
                     via-90% md:via-65%

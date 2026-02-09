@@ -124,7 +124,7 @@ html {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.0); /* ligeramente más grande */
+    transform: scale(1.01); /* ligeramente más grande */
   }
 }
 
