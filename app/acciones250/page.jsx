@@ -13,6 +13,7 @@ import {
 } from "../fonts/fonts";
 
 import { useEffect, useRef, useState } from "react";
+import AerometroCards from "../components/acciones250/AerometroCards";
 
 // Import dinámico del mapa de eventos
 const AerometroMap = dynamic(() => import("@/app/components/arcgis/basemap/AerometroMap"), {
@@ -115,7 +116,7 @@ export default function Acciones() {
                 <img
                     src={`${basePath}/img/acciones/aerometroRecorte.svg`}
                     alt="Icono 250"
-                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-pulse-smooth"
+                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-rotate-alternate"
                 />
 
             </div>
@@ -133,6 +134,135 @@ export default function Acciones() {
       </section>
 
       <section className="w-full px-4 mt-10">
+        <div className="w-full container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+            {/* BLOQUE IZQUIERDO GRANDE */}
+            <div className="lg:col-span-3 flex flex-col justify-end bg-white/60 rounded-3xl px-6 pt-6 pb-0  overflow-hidden">
+
+              {/* LOGO */}
+              <img
+                src={`${basePath}/img/acciones/TubusTitle.svg`}
+                className="w-100 mb-6"
+              />
+
+      
+              <div className="flex">
+                {/* IMAGEN PERSONA */}
+                <img
+                  src={`${basePath}/img/acciones/TubusPerson.svg`}
+                  className="w-100 object-contain"
+                />
+
+                <div className="flex flex-col justify-end flex-1">
+                  {/* BUS */}
+                  <img
+                    src={`${basePath}/img/acciones/Tubus.svg`}
+                    className="mx-auto w-96 opacity-70"
+                  />
+
+                  {/* TARJETAS INFERIORES */}
+                  <div className="grid grid-cols-3 gap-4 mt-10">
+                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center">
+                      <h2 className="text-3xl font-bold text-blue-900">7</h2>
+                      <p>rutas en operación</p>
+                    </div>
+
+                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center">
+                      <h2 className="text-3xl font-bold text-blue-900">105</h2>
+                      <p>rutas proyectadas</p>
+                    </div>
+
+                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center">
+                      <h2 className="text-3xl font-bold text-blue-900">16,849</h2>
+                      <p>Usuarios al día</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* PANEL DERECHO */}
+            <div className="bg-white/60 rounded-3xl p-6 flex flex-col justify-between">
+
+              <div>
+                <h3 className="text-blue-900 font-bold mb-4">MiniBuses Eléctricos</h3>
+
+                <div className="bg-white/60 rounded-2xl p-6 text-center mb-4">
+                  <h2 className="text-4xl font-bold text-blue-900">3</h2>
+                  <p>Rutas</p>
+                </div>
+
+                <div className="bg-white/60 rounded-2xl p-6 text-center">
+                  <h2 className="text-2xl font-bold text-blue-900">13.33km</h2>
+                  <p>Recorridos</p>
+                </div>
+              </div>
+
+              <img
+                src={`${basePath}/img/acciones/TubusUncle.svg`}
+                className="rounded-2xl mt-6"
+              />
+            </div>
+
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+ {/* BLOQUE IZQUIERDO GRANDE */}
+<div className="lg:col-span-3 bg-white/60 rounded-3xl p-6 overflow-hidden">
+
+  {/* LOGO */}
+  <img
+    src={`${basePath}/img/acciones/TransmetroTitle.svg`}
+    className="w-100 mb-6"
+  />
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+
+    {/* CARD GRANDE IZQUIERDA */}
+    <div className="bg-white/60 rounded-3xl p-10 text-center flex flex-col justify-center">
+      <h2 className="text-6xl font-bold text-blue-900">130</h2>
+      <p className="text-xl">km Recorrido</p>
+    </div>
+
+    {/* BLOQUE DERECHO (BUS + CARDS) */}
+    <div className="md:col-span-2 flex flex-col justify-end">
+
+      <img
+        src={`${basePath}/img/acciones/TransmetroBus.svg`}
+        className="mx-auto w-full max-w-xl opacity-70"
+      />
+
+      <div className="grid grid-cols-3 gap-4 mt-6">
+        <div className="bg-white/60 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold text-blue-900">7</h2>
+          <p>líneas en operación</p>
+        </div>
+
+        <div className="bg-white/60 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold text-blue-900">+400</h2>
+          <p>mil usuarios</p>
+        </div>
+
+        <div className="bg-white/60 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold text-blue-900">—</h2>
+          <p>otro dato</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+           
+          </div>
+
+
+        </div>
+      </section>     
+
+      <section className="w-full px-4 mt-10">
          <div className="w-full container mx-auto px-6 ">
             <AerometroMap />
          </div>
@@ -140,248 +270,7 @@ export default function Acciones() {
 
       <section className="w-full px-4 py-8">
         <div className="w-full container mx-auto p-6 sm:p-10">
-          {/* De 1 columna en mobile, 3 columnas en lg */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-            {/* BLOQUE IZQUIERDO (Lineas) */}
-            <div className="lg:col-span-2">
-              {/* Línea 1 */}
-              <h3
-                className={`${MontserratMediumItalic.className} text-muni-azul font-bold italic text-2xl sm:text-3xl lg:text-4xl`}
-              >
-                Línea 1
-              </h3>
-              <p
-                className={`${MontserratLightItalic.className} text-muni-azul italic mb-4 text-lg sm:text-xl lg:text-2xl`}
-              >
-                Plaza España - Trébol
-              </p>
-
-              <div className="mb-6">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div
-                    ref={r11}
-                    style={revealStyle(0)}
-                    className={`bg-white/60 rounded-xl p-4 text-muni-azul flex flex-col items-center justify-start transition-all duration-700 ${revealClass(
-                      s11
-                    )}`}
-                  >
-                    <img
-                      src={`${basePath}/img/acciones/10.svg`}
-                      alt=""
-                      className="max-w-10 md:max-w-25"
-                    />
-                    <p
-                      className={`${MontserratMediumItalic.className} text-5xl sm:text-6xl font-bold`}
-                    >
-                      18
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Meses de
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Ejecución
-                    </p>
-                  </div>
-
-                  <div
-                    ref={r12}
-                    style={revealStyle(120)}
-                    className={`bg-white/60 rounded-xl p-4 text-muni-azul flex flex-col items-center justify-start transition-all duration-700 ${revealClass(
-                      s12
-                    )}`}
-                  >
-                    <img
-                      src={`${basePath}/img/acciones/ubi.svg`}
-                      alt=""
-                      className="max-w-10 md:max-w-25"
-                    />
-                    <p
-                      className={`${MontserratMediumItalic.className} text-5xl sm:text-6xl font-bold`}
-                    >
-                      2.1 <span className="text-xl sm:text-2xl">Km</span>
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Recorrido
-                    </p>
-                  </div>
-
-                  <div
-                    ref={r12a}
-                    style={revealStyle(240)}
-                    className={`bg-white/60 rounded-xl p-4 text-muni-azul flex flex-col items-center justify-start transition-all duration-700 ${revealClass(
-                      s12a
-                    )}`}
-                  >
-                    <img
-                      src={`${basePath}/img/acciones/12.svg`}
-                      alt=""
-                      className="max-w-10 md:max-w-25"
-                    />
-                    <p
-                      className={`${MontserratMediumItalic.className} text-5xl sm:text-6xl font-bold`}
-                    >
-                      187 <span className="text-xl sm:text-2xl">Mil</span>
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Usuarios al
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      día en <span className="font-bold">linea 1</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Línea 2 */}
-              <div>
-                <h3
-                  className={`${MontserratMediumItalic.className} text-muni-azul font-bold italic text-2xl sm:text-3xl lg:text-4xl`}
-                >
-                  Línea 2
-                </h3>
-                <p
-                  className={`${MontserratLightItalic.className} text-muni-azul italic mb-4 text-lg sm:text-xl lg:text-2xl`}
-                >
-                  Trébol - Molino de las Flores (Mixco)
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div
-                    ref={r21}
-                    style={revealStyle(60)}
-                    className={`bg-white/60 rounded-xl p-4 text-muni-azul flex flex-col items-center justify-start transition-all duration-700 ${revealClass(
-                      s21
-                    )}`}
-                  >
-                    <img
-                      src={`${basePath}/img/acciones/10.svg`}
-                      alt=""
-                      className="max-w-10 md:max-w-25"
-                    />
-                    <p
-                      className={`${MontserratMediumItalic.className} text-5xl sm:text-6xl font-bold`}
-                    >
-                      24
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Meses de
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Ejecución
-                    </p>
-                  </div>
-
-                  <div
-                    ref={r22}
-                    style={revealStyle(180)}
-                    className={`bg-white/60 rounded-xl p-4 text-muni-azul flex flex-col items-center justify-start transition-all duration-700 ${revealClass(
-                      s22
-                    )}`}
-                  >
-                    <img
-                      src={`${basePath}/img/acciones/ubi.svg`}
-                      alt=""
-                      className="max-w-10 md:max-w-25"
-                    />
-                    <p
-                      className={`${MontserratMediumItalic.className} text-5xl sm:text-6xl font-bold`}
-                    >
-                      6.8 <span className="text-xl sm:text-2xl">Km</span>
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Recorrido
-                    </p>
-                  </div>
-
-                  <div
-                    ref={r23}
-                    style={revealStyle(300)}
-                    className={`bg-white/60 rounded-xl p-4 text-muni-azul flex flex-col items-center justify-start transition-all duration-700 ${revealClass(
-                      s23
-                    )}`}
-                  >
-                    <img
-                      src={`${basePath}/img/acciones/12.svg`}
-                      alt=""
-                      className="max-w-10 md:max-w-25"
-                    />
-                    <p
-                      className={`${MontserratMediumItalic.className} text-5xl sm:text-6xl font-bold`}
-                    >
-                      187 <span className="text-xl sm:text-2xl">Mil</span>
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      Usuarios al
-                    </p>
-                    <p
-                      className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}
-                    >
-                      día en <span className="font-bold">linea 2</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* BLOQUE DERECHO */}
-            <div
-              ref={rBig}
-              style={revealStyle(120)}
-              className={`
-                bg-white/60 rounded-2xl flex items-center justify-center text-muni-azul
-                px-6 py-15 lg:p-8
-                
-                lg:row-span-2 lg:max-h-152 lg:mt-22
-                w-full
-                transition-all duration-700
-                ${revealClass(sBig)}
-              `}
-            >
-              <div className="flex items-center gap-4 sm:gap-6">
-                <p
-                  className={`${MontserratMediumItalic.className} font-extrabold leading-none text-[72px] sm:text-[120px] lg:text-[200px]`}
-                >
-                  12
-                </p>
-
-                <div className="flex flex-col items-start">
-                  <img
-                    src={`${basePath}/img/acciones/iconoAerometro.svg`}
-                    alt=""
-                    className="max-w-10 sm:max-w-10 lg:max-w-25"
-                  />
-                  <p className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}>
-                    Pasajeros
-                  </p>
-                  <p className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}>
-                    Por
-                  </p>
-                  <p className={`${MontserratLightItalic.className} text-lg sm:text-xl lg:text-xl`}>
-                    Cabina
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <AerometroCards />
         </div>
 
         <div className="mb-15 md:mt-10 md:mb-20">

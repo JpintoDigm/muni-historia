@@ -165,10 +165,10 @@ html {
 
 @keyframes rotate-alternate {
   from {
-    transform: rotate(2deg);
+    transform: rotate(1deg);
   }
   to {
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
   }
 }
 
