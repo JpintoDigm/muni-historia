@@ -69,69 +69,59 @@ export default function Acciones() {
 
   return (
     <main className="w-full min-h-screen bg-gradient-to-r from-muni-verde via-[#DFF7B0] via-90% md:via-65% to-white">
-      {/* Header */}
-      <section className="w-full p-6 lg:px-4 lg:py-8  ">
-        <div className="w-full container mx-auto flex flex-col gap-4">
-          <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-3">
-            <div className="flex items-center justify-center">
-              <img
-                src={`${basePath}/img/acciones/aerometrotitulo.svg`}
-                alt="Icono parque"
-                className="w-60 sm:w-100"
-              />
-            </div>
 
-            <div className="flex items-center">
-              <img
-                src={`${basePath}/img/logo250.svg`}
-                alt="Icono 250"
-                className="w-50 sm:w-100"
-              />
-            </div>
+      <section className="w-full px-4 py-0 md:py-0">
+
+          <div className="w-full container mx-auto flex flex-col gap-4 p-6 lg:p-0">
+              <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-3">
+
+                  <div className="flex items-center">
+                      <img src={`${basePath}/img/logo250.svg`} alt="Icono 250" className="w-50 sm:w-100" />
+                  </div>
+
+              </div>
+
+              <h1 className={` ${MontserratMediumItalic.className} text-muni-azul text-justify text-4xl sm:text-7xl mb-4 font-bold`}>
+                  Estrategias
+                  <p>de <span className="text-white">Movilidad</span></p>
+              </h1>              
+
+
+
+              <div className="flex flex-col-reverse lg:flex-col">
+                <div className="w-full sm:w-2/3">
+                    <p className="text-muni-azul text-sm lg:text-xl text-justify mt-10">
+                      Estrategia de Movilidad e Infraestructura Vial que se orienta a alcanzar el modelo de ciudad compacta mediante el impulso a la movilidad sostenible para lograr una red multimodal de transporte. La movilidad conecta oportunidades, empleo y servicios
+                    </p>
+                </div>
+
+                <div className="flex items-center mx-auto lg:mt-10">
+                    <img src={`${basePath}/img/acciones/ImagenPrincipal.svg`} alt="Icono 250" className="w-100 lg:w-200 rounded-3xl mx-auto" />
+                </div>
+              </div>
           </div>
 
-          <div className="w-full sm:w-2/3">
-            <p
-              className={` ${muni.className} text-muni-azul text-justify text-sm sm:text-xl lg:text-xl mt-5 mb-10 lg:my-10`}
-            >
-              La Ciudad de Guatemala mostrará a todo el continente un transporte
-              público moderno, limpio, seguro y eficiente. Un proyecto que,
-              sumando al TransMetro, a TuBus, a los buses eléctricos y las nuevas
-              iniciativas de ciclovías y corredores peatonales, simboliza la
-              ciudad que queremos para las siguientes generaciones
-            </p>
+          
+          <div className="w-full container mx-auto px-6">
+
           </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <div className="relative bg-white/60 rounded-2xl px-3 lg:px-6 py-0">
+          {/* Fondo azul de la sección */}
+          <div className="w-full container mx-auto py-6 px-0 md:py-0 lg:mt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-5 px-6">
+                  <div className="flex items-center justify-center mb-7 md:mb-0 bg-white/60 rounded-3xl relative">
+                      <img src={`${basePath}/img/acciones/TransmetroHero.svg`} alt="Alcalde y personas" className="w-300 object-contain abolsute left-0" />
+                  </div>
+                  <div className={` ${MontserratMediumItalic.className} flex flex-col items-center justify-center text-muni-azul gap-5 text-center text-sm lg:text-2xl `}>
+                      <p>“Ciudad pensada para las personas.  </p>
+                      <p>
+                        Con movilidad eficiente, transporte público multimodal y moderno”
+                      </p>
+                  </div>
+              </div>
+          </div>          
 
-                {/* Imagen base */}
-                <img
-                    src={`${basePath}/img/acciones/aerometro.svg`}
-                    alt="Icono 250"
-                    className="w-100 sm:w-225"
-                />
-
-                {/* Imagen encima */}
-                <img
-                    src={`${basePath}/img/acciones/aerometroRecorte.svg`}
-                    alt="Icono 250"
-                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-rotate-alternate"
-                />
-
-            </div>
-
-
-            {/* texto alineado al borde izquierdo de la imagen */}
-            <div className="flex flex-col items-end w-100 sm:w-225">
-              <p className={`${muni.className} text-center text-muni-azul text-sm sm:text-xl lg:text-xl px-10 md:px-0`}>
-                Imagen de referencia AeroMetro 2025, Fuente Municipalidad de
-                Guatemala
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section>    
 
       <section className="w-full px-4 mt-10">
         <div className="w-full container mx-auto px-6">
@@ -147,7 +137,7 @@ export default function Acciones() {
               />
 
       
-              <div className="flex flex-col md:flex-row">
+              <div className="flex flex-col-reverse md:flex-row">
                 {/* IMAGEN PERSONA */}
                 <img
                   src={`${basePath}/img/acciones/TubusPerson.svg`}
@@ -221,7 +211,7 @@ export default function Acciones() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end text-muni-azul">
 
                 {/* CARD GRANDE IZQUIERDA */}
-                <div className="bg-white/60 rounded-t-3xl p-10 text-center flex flex-col justify-center items-center">
+                <div className="bg-white/60 rounded-t-3xl p-10 text-center flex flex-col justify-center items-center order-2 lg:order-1">
                   <img
                     src={`${basePath}/img/acciones/TransmetroLocate.svg`}
                     className="w-40 object-contain mb-6"
@@ -231,7 +221,7 @@ export default function Acciones() {
                 </div>
 
                 {/* BLOQUE DERECHO (BUS + CARDS) */}
-                <div className="md:col-span-2 flex flex-col justify-end">
+                <div className="md:col-span-2 flex flex-col justify-end order-1 lg:order-2">
 
                   <img
                     src={`${basePath}/img/acciones/Transmetro.svg`}
@@ -298,8 +288,64 @@ export default function Acciones() {
           </div>
 
         </div>
-      </section>     
+      </section>  
 
+      {/* Header */}
+      <section className="w-full p-6 lg:px-6 lg:py-8  ">
+        <div className="w-full container mx-auto flex flex-col gap-4">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-3">
+            <div className="flex items-center justify-center">
+              <img
+                src={`${basePath}/img/acciones/aerometrotitulo.svg`}
+                alt="Icono parque"
+                className="w-60 sm:w-100"
+              />
+            </div>
+          </div>
+
+          <div className="w-full sm:w-2/3">
+            <p
+              className={` ${muni.className} text-muni-azul text-justify text-sm sm:text-xl lg:text-xl mt-5 mb-10 lg:my-10 px-6`}
+            >
+              La Ciudad de Guatemala mostrará a todo el continente un transporte
+              público moderno, limpio, seguro y eficiente. Un proyecto que,
+              sumando al TransMetro, a TuBus, a los buses eléctricos y las nuevas
+              iniciativas de ciclovías y corredores peatonales, simboliza la
+              ciudad que queremos para las siguientes generaciones
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center justify-center px-6">
+            <div className="relative bg-white/60 rounded-2xl px-3 lg:px-6 py-0">
+
+                {/* Imagen base */}
+                <img
+                    src={`${basePath}/img/acciones/aerometro.svg`}
+                    alt="Icono 250"
+                    className="w-100 sm:w-225"
+                />
+
+                {/* Imagen encima */}
+                <img
+                    src={`${basePath}/img/acciones/aerometroRecorte.svg`}
+                    alt="Icono 250"
+                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-rotate-alternate"
+                />
+
+            </div>
+
+
+            {/* texto alineado al borde izquierdo de la imagen */}
+            <div className="flex flex-col items-end w-100 sm:w-225">
+              <p className={`${muni.className} text-center text-muni-azul text-sm sm:text-xl lg:text-xl px-10 md:px-0`}>
+                Imagen de referencia AeroMetro 2025, Fuente Municipalidad de
+                Guatemala
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+   
       <section className="w-full px-4 mt-10">
          <div className="w-full container mx-auto px-6 ">
             <AerometroMap />
@@ -307,7 +353,7 @@ export default function Acciones() {
       </section>
 
       <section className="w-full px-4 py-8">
-        <div className="w-full container mx-auto p-6 sm:p-10">
+        <div className="w-full container mx-auto p-6 sm:p-6">
           <AerometroCards />
         </div>
 

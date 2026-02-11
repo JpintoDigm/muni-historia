@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRef} from "react";
 import { useArcGISEvents } from "@/app/hooks/useArcGISEvents";
 import CalendarHeader from "./CalendarHeader";
 import CalendarGrid from "./CalendarGrid";
@@ -20,6 +21,9 @@ export default function CalendarioEventos({ featureLayerUrl }) {
   const [selectedDay, setSelectedDay] = useState(new Date());
   const [tab, setTab] = useState("actividad");
 
+
+    const dayEventsRef = useRef(null);
+
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isMapOpen, setIsMapOpen] = useState(false);
 
@@ -30,6 +34,18 @@ export default function CalendarioEventos({ featureLayerUrl }) {
     featureLayerUrl,
     monthDate: month,
   });
+
+
+  const handleSelectDay = (date) => {
+    setSelectedDay(date);
+
+    requestAnimationFrame(() => {
+      dayEventsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
 
   const handleSelectEvent = (event) => {
     setSelectedEvent(event);
@@ -82,10 +98,12 @@ const handleToggleEje = (eje) => {
         month={month}
         events={filteredEvents}
         selectedDay={selectedDay}
-        onSelectDay={setSelectedDay}
+        onSelectDay={handleSelectDay}
         tab={tab}
         loading={loading}
       />
+
+      <div ref={dayEventsRef} />
 
       <DayEvents
         day={selectedDay}

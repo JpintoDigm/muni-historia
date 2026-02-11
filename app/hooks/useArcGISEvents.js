@@ -47,6 +47,7 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
         setError("");
 
         const OBJECTID_FIELD = "objectid";
+        const DEPENDENCIA = "dependencia";
         const DATE_START_FIELD = "fecha_inicio";
         const DATE_END_FIELD = "fecha_fin";
         const TITLE_FIELD = "descripcion";
@@ -56,6 +57,7 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
 
         const outFields = [
           OBJECTID_FIELD,
+          DEPENDENCIA,
           DATE_START_FIELD,
           DATE_END_FIELD,
           TITLE_FIELD,
@@ -115,6 +117,7 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
                   id: `${a[OBJECTID_FIELD]}-${cur.toISOString().slice(0, 10)}`,
                   baseId: a[OBJECTID_FIELD],     
                   date: new Date(cur),
+                  dependencia: a[DEPENDENCIA] ?? "",
                   rangeStart: startDate,
                   rangeEnd: safeEnd,
                   title: a[TITLE_FIELD] ?? "Evento",

@@ -16,6 +16,8 @@ function fmtHourES(d) {
   });
 }
 
+// Ejes Config
+
 const EJE_ICON = {
   1: basePath + "/img/calendario/10.png",
   2: basePath + "/img/calendario/11.png",
@@ -33,6 +35,13 @@ const EJE_BG = {
   2: "bg-[#E8F216] text-muni-azul",     // Inspirando sueños
   3: "bg-[#23C9A7] text-muni-azul",   // Conectando metas
 };
+
+// Dependencias Config por dominio en arcgis
+const DEPEN_ICON = {
+  11: basePath + "/img/calendario/fundacionPaiz.svg", // Fundación Paiz
+  12: basePath + "/img/calendario/hito250.png",   // Copa Ciudad Desarrollo Social
+};
+
 
 export default function DayEvents({ day, events, tab, onSelectEvent }) {
   const list = events.filter((e) => e.date?.toDateString() === day.toDateString());
@@ -101,9 +110,21 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
                 <span className="font-extrabold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
               </div>
 
-              <div className="flex items-center justify-end mt-auto pt-3">
+              <div className="flex items-center mt-auto pt-3">
+
+                {/* Caja fija para el logo */}
+                <div className="h-10 w-24 flex items-center">
+                  {DEPEN_ICON[e.dependencia] && (
+                    <img
+                      src={DEPEN_ICON[e.dependencia]}
+                      alt="Dependencia"
+                      className="max-h-10 max-w-24 object-contain"
+                    />
+                  )}
+                </div>
+                
                 <div 
-                  className="flex items-center justify-end gap-2 px-3 py-2 bg-muni-verde/35 hover:bg-muni-verde/45 text-sm sm:text-base rounded-xl"
+                  className="ml-auto flex items-center justify-end gap-2 px-3 py-2 bg-muni-verde/35 hover:bg-muni-verde/45 text-sm sm:text-base rounded-xl"
                 >
                   <p className="text-center text-muni-azul">Ver más</p>
                   <img src={`${basePath}/img/backtotop.svg`} alt="" className="max-w-5 rotate-90"/>
