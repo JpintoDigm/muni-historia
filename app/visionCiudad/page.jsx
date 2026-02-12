@@ -45,7 +45,7 @@ export default function VisionCiudad() {
 
         <section className="w-full px-4 bg-muni-azul">
             {/* Fondo azul de la sección */}
-            <div className="w-full container mx-auto p-6 md:p-10">
+            <div className="w-full container mx-auto p-6 lg:py-10 lg:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     <div className="flex items-center justify-center mb-7 md:mb-0">
                         <img src={`${basePath}/img/visionCiudad/people.svg`} alt="Alcalde y personas" className="w-300 rounded-2xl" />
@@ -71,6 +71,194 @@ export default function VisionCiudad() {
                 <Cards />
             </div>
 
+        </section>
+
+        <section className="w-full px-4 py-0 bg-[#dfecc9]">
+
+            <div className="relative z-10 w-full container mx-auto p-6 lg:px-0 lg:py-6">
+                <div className="w-full sm:w-2/3">
+                    <h3 className={`${MontserratMediumItalic.className} text-4xl md:text-5xl font-bold text-muni-azul mb-10`}>
+                        Puntos de encuentro 
+                        <p>de los caminos del país</p>
+                    </h3>
+                </div>  
+                <div className="w-auto flex justify-center items-center gap-5">
+                    <div>
+                        <img src={`${basePath}/img/visionCiudad/mapa1.svg`} alt="" />
+                    </div>
+                    <div>
+                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-5 lg:mb-10`}>“El punto en el que</p>
+                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-5 lg:mb-10`}>se originan todas las</p>
+                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-5 lg:mb-10`}>carreteras del país.”</p>
+                    </div>
+                </div>
+                <div className="w-full sm:w-2/3">
+                    <h3 className={`${MontserratMediumItalic.className} text-4xl md:text-5xl font-bold text-muni-azul my-10`}>
+                        Estrategia de
+                        <p>Desarrollo Urbano</p>
+                        <p>Integral</p>
+                    </h3>
+                    <p className="text-sm lg:text-xl text-muni-azul text-justify mb-10">
+                        La estrategia atiende los desafíos de la ciudad y potencia las oportunidades actuales y futuras para mejorar la calidad de vida y consolidar el modelo de la ciudad compacta y de proximidad.
+                    </p>
+                </div> 
+                <div className="w-auto flex flex-col lg:flex-row justify-center items-center gap-5">
+                    <div>
+                        <img src={`${basePath}/img/visionCiudad/mapa2.png`} alt="" className="object-contain w-auto"/>
+                        <div class="bg-gradient-to-b from-[#d7e8b2] to-[#b7d084] rounded-md p-6">
+
+                            <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold mb-4">
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-green-700"></span>
+                                    <span>Proyectos Municipalidad de Guatemala</span>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-blue-900"></span>
+                                    <span>Proyectos Gobierno Central</span>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                                    <span>Otros Proyectos</span>
+                                </div>
+
+                            </div>
+
+                            <p class="text-center text-muni-azul text-sm leading-relaxed">
+                                Estrategia de Movilidad e Infraestructura Vial articulada a “Plan Maestro de Movilidad para Área
+                            </p>
+                            <p class="text-center text-muni-azul text-sm leading-relaxed">
+                               Metropolitana de Guatemala” planteado por KOICA y 
+                            </p>
+                            <p class="text-center text-muni-azul text-sm leading-relaxed">
+                              ANADIE (Anillos y Radiales) y apoyada por la Ley de Infraestructura Vial Prioritaria (Decreto 29-2024)
+                            </p>
+
+                        </div>
+
+                    </div>
+                    <div class="bg-[#dfecc8] p-8">
+                    <div class="space-y-10">
+
+                        
+                        <div class="grid grid-cols-12 items-center gap-4">
+                        
+                            <div class="col-span-12 md:col-span-4">
+                                <div class="text-[56px] leading-none font-extrabold text-[#e63b3b]">20%</div>
+                                <div class="text-xs font-semibold text-muni-azul -mt-1">Territorios de transformación</div>
+                            </div>
+
+                            
+                            <div class="col-span-12 md:col-span-4 flex items-center">
+                                <span class="px-6 py-2 rounded-md bg-[#e63b3b] text-white font-bold shadow-sm">
+                                Desconcentrar
+                                </span>
+                            </div>
+
+                        
+                            <div class="col-span-12 md:col-span-4 flex items-center justify-start md:justify-end gap-3">
+                                <img src="/img/oportunidad.svg" alt="" class="h-10 w-auto" />
+                                <div class="text-muni-azul font-bold leading-tight">
+                                Distritos de<br />Oportunidad
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-span-12 h-[2px] bg-[#e63b3b]"></div>
+                        </div>
+
+                        
+                        <div class="grid grid-cols-12 items-center gap-4">
+                            <div class="col-span-12 md:col-span-4">
+                                <div class="text-[56px] leading-none font-extrabold text-[#f2b000]">40%</div>
+                                <div class="text-xs font-semibold text-muni-azul -mt-1">Territorios de consolidación</div>
+                            </div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center">
+                                <span class="px-6 py-2 rounded-md bg-[#f2b000] text-white font-bold shadow-sm">
+                                Fortalecer
+                                </span>
+                            </div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center justify-start md:justify-end gap-3">
+                                <img src="/img/vecindario.svg" alt="" class="h-10 w-auto" />
+                                <div class="text-muni-azul font-bold leading-tight">
+                                Vecindario<br />Próspero
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 h-[2px] bg-[#f2b000]"></div>
+                        </div>
+
+                        
+                        <div class="grid grid-cols-12 items-center gap-4">
+                            <div class="col-span-12 md:col-span-4">
+                                <div class="text-[56px] leading-none font-extrabold text-[#10b26c]">40%</div>
+                                <div class="text-xs font-semibold text-muni-azul -mt-1">
+                                Territorio con valor paisajístico y ambiental
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center">
+                                <span class="px-6 py-2 rounded-md bg-[#10b26c] text-white font-bold shadow-sm">
+                                Integrar
+                                </span>
+                            </div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center justify-start md:justify-end gap-3">
+                                <img src="/img/gran-distrito-verde.svg" alt="" class="h-10 w-auto" />
+                                <div class="text-muni-azul font-bold leading-tight uppercase tracking-wide">
+                                Gran<br />Distrito<br />Verde
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 h-[2px] bg-[#10b26c]"></div>
+                        </div>
+
+                       
+                        <div class="grid grid-cols-12 items-center gap-4">
+                            <div class="col-span-12 md:col-span-4"></div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center">
+                                <span class="px-6 py-2 rounded-md bg-[#0a1b87] text-white font-bold shadow-sm">
+                                Conectar
+                                </span>
+                            </div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center justify-start md:justify-end">
+                                <div class="text-muni-azul font-bold leading-tight">
+                                Estrategia de Movilidad e<br />Infraestructura vial
+                                </div>
+                            </div>
+
+                            <div class="col-start-5 col-span-8 h-[2px] bg-[#0a1b87]"></div>
+                        </div>
+
+                        
+                        <div class="grid grid-cols-12 items-center gap-4">
+                            <div class="col-span-12 md:col-span-4"></div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center">
+                                <span class="px-6 py-2 rounded-md bg-[#6e4aa8] text-white font-bold shadow-sm">
+                                Impulsar
+                                </span>
+                            </div>
+
+                            <div class="col-span-12 md:col-span-4 flex items-center justify-start md:justify-end">
+                                <div class="text-muni-azul font-bold leading-tight">
+                                Gobernanza de Datos
+                                </div>
+                            </div>
+
+                            <div class="col-start-5 col-span-8 h-[2px] bg-[#6e4aa8]"></div>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
@@ -190,7 +378,7 @@ export default function VisionCiudad() {
 
             <div className="block relative">
                 <img
-                    src={`${basePath}/img/conmemoracion/250cremalg.svg`}
+                    src={`${basePath}/img/conmemoracion/250years.svg`}
                     alt="250 años"
                     className="
                     absolute

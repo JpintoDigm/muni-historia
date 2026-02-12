@@ -37,7 +37,7 @@ export default function Acciones() {
     }, [selectedZona, selectedTipo]);
 
     return (
-    <main className="min-h-screen bg-250">
+    <main className="min-h-screen bg-[#e0e721]">
         <section className="w-full container mx-auto px-4 py-8">
 
             <div className="flex flex-col gap-4">
@@ -73,14 +73,14 @@ export default function Acciones() {
         </section>
 
         <section className="container mx-auto p-5">
-            <Filters
+            {/* <Filters
                 zonas={zonas}
                 tipos={tipos}
                 selectedZona={selectedZona}
                 selectedTipo={selectedTipo}
                 onSelectZona={setSelectedZona}
                 onSelectTipo={setSelectedTipo}
-            />
+            /> */}
 
             {/* <Cards items={filteredParques} /> */}
 

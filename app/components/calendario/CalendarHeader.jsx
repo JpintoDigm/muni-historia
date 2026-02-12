@@ -18,6 +18,9 @@ export default function CalendarHeader({
   onToggleEje,  
   tab,
   setTab,
+  zonas,
+  selectedZona,
+  onZonaChange
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -79,12 +82,32 @@ export default function CalendarHeader({
           {/* NAVEGACIÓN */}
           <div className="flex items-center justify-center gap-2">
 
-            <button
+            <div className="flex flex-col justify-start items-center">
+
+
+              <p className="text-muni-azul font-bold text-lg">Filtro por zona:</p>
+
+              {/* FILTRO ZONA */}
+              <select
+                value={selectedZona ?? ""}
+                onChange={(e) => onZonaChange(e.target.value ? Number(e.target.value) : null)}
+                className={` ${muni.className} py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20 text-muni-azul font-bold text-base sm:text-base outline-none`}
+              >
+                <option value="">Todas las zonas</option>
+                {zonas?.map((z) => (
+                  <option key={z} value={z}>
+                    Zona {z}
+                  </option>
+                ))}
+              </select>  
+            </div>
+
+            {/* <button
               onClick={onToday}
               className="py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20  text-xl sm:text-2xl font-semibold text-muni-azul"
             >
               Hoy
-            </button>
+            </button>           */}
 
           </div>
 
@@ -145,9 +168,17 @@ export default function CalendarHeader({
                 <span className="font-bold">Metas</span>
               </button>
             </div>
+
+            
           </div>
 
         </div>
+
+
+        <div className="w-full flex justify-center items-center mt-5 lg:mt-0">
+
+        </div>
+
       </div>
 
     </div>

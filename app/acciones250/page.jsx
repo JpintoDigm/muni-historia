@@ -72,7 +72,7 @@ export default function Acciones() {
 
       <section className="w-full px-4 py-0 md:py-0">
 
-          <div className="w-full container mx-auto flex flex-col gap-4 p-6 lg:p-0">
+          <div className="w-full container mx-auto flex flex-col gap-4 p-6 lg:p-0 lg:px-6">
               <div className="flex flex-col-reverse md:flex-row justify-end items-center gap-3">
 
                   <div className="flex items-center">
@@ -88,15 +88,10 @@ export default function Acciones() {
 
 
 
-              <div className="flex flex-col-reverse lg:flex-col">
-                <div className="w-full sm:w-2/3">
-                    <p className="text-muni-azul text-sm lg:text-xl text-justify mt-10">
-                      Estrategia de Movilidad e Infraestructura Vial que se orienta a alcanzar el modelo de ciudad compacta mediante el impulso a la movilidad sostenible para lograr una red multimodal de transporte. La movilidad conecta oportunidades, empleo y servicios
-                    </p>
-                </div>
+              <div className="flex flex-col-reverse">
 
                 <div className="flex items-center mx-auto lg:mt-10">
-                    <img src={`${basePath}/img/acciones/ImagenPrincipal.svg`} alt="Icono 250" className="w-100 lg:w-200 rounded-3xl mx-auto" />
+                    <img src={`${basePath}/img/acciones/ImagenPrincipale.png`} alt="Icono 250" className="w-100 lg:w-full rounded-3xl mx-auto" />
                 </div>
               </div>
           </div>
@@ -107,100 +102,35 @@ export default function Acciones() {
           </div>
 
           {/* Fondo azul de la sección */}
-          <div className="w-full container mx-auto py-6 px-0 md:py-0 lg:mt-10">
+          <div className="w-full container mx-auto py-0 px-0 md:py-0 lg:mt-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-5 px-6">
-                  <div className="flex items-center justify-center mb-7 md:mb-0 bg-white/60 rounded-3xl relative">
+                  <div className="flex items-c  enter justify-center mb-7 md:mb-0 bg-white/60 rounded-3xl lg:rounded-b-none relative">
                       <img src={`${basePath}/img/acciones/TransmetroHero.svg`} alt="Alcalde y personas" className="w-300 object-contain abolsute left-0" />
                   </div>
-                  <div className={` ${MontserratMediumItalic.className} flex flex-col items-center justify-center text-muni-azul gap-5 text-center text-sm lg:text-2xl `}>
-                      <p>“Ciudad pensada para las personas.  </p>
-                      <p>
-                        Con movilidad eficiente, transporte público multimodal y moderno”
-                      </p>
+
+                  <div className="">
+                    <p className="text-muni-azul text-sm lg:text-xl text-justify">
+                      Estrategia de Movilidad e Infraestructura Vial que se orienta a alcanzar el modelo de ciudad compacta mediante el impulso a la movilidad sostenible para lograr una red multimodal de transporte. La movilidad conecta oportunidades, empleo y servicios
+                    </p>
+                    <div className={` ${MontserratMediumItalic.className} flex flex-col items-end justify-end text-muni-azul gap-5 text-end text-lg lg:text-3xl 
+                    lg:ml-10 mt-5 lg:mt-10`}>
+                        <p>“Ciudad pensada para las personas.  </p>
+                        <p>
+                          Con movilidad eficiente, transporte público multimodal y moderno”
+                        </p>
+                    </div>
                   </div>
               </div>
           </div>          
 
       </section>    
 
-      <section className="w-full px-4 mt-10">
+      <section className="w-full px-4 mt-10 lg:mt-0">
         <div className="w-full container mx-auto px-6">
+
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-
             {/* BLOQUE IZQUIERDO GRANDE */}
-            <div className="lg:col-span-3 flex flex-col justify-end bg-white/60 rounded-3xl px-6 pt-6 pb-0  overflow-hidden">
-
-              {/* LOGO */}
-              <img
-                src={`${basePath}/img/acciones/TubusTitle.svg`}
-                className="w-60 mb-6"
-              />
-
-      
-              <div className="flex flex-col-reverse md:flex-row">
-                {/* IMAGEN PERSONA */}
-                <img
-                  src={`${basePath}/img/acciones/TubusPerson.svg`}
-                  className="w-100 object-contain"
-                />
-
-                <div className="flex flex-col justify-end flex-1">
-                  {/* BUS */}
-                  <img
-                    src={`${basePath}/img/acciones/Tubus.svg`}
-                    className="mx-auto w-96 opacity-70"
-                  />
-
-                  {/* TARJETAS INFERIORES */}
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
-                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center text-muni-azul">
-                      <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>7</h2>
-                      <p className="lg:mt-3">Rutas en operación</p>
-                    </div>
-
-                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center text-muni-azul">
-                      <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>105</h2>
-                      <p className="lg:mt-3">Rutas proyectadas</p>
-                    </div>
-
-                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center text-muni-azul">
-                      <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>16,849</h2>
-                      <p className="lg:mt-3">Usuarios al día</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            {/* PANEL DERECHO */}
-            <div className="bg-white/60 rounded-3xl p-6 flex flex-col justify-between">
-
-              <div className="text-muni-azul">
-                <h3 className={`${MontserratMediumItalic.className} text-lg lg:text-xl font-bold mb-4`} >MiniBuses Eléctricos</h3>
-
-                <div className="bg-white/60 rounded-2xl p-6 text-center mb-4">
-                  <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>3</h2>
-                  <p className="lg:mt-3">Rutas</p>
-                </div>
-
-                <div className="bg-white/60 rounded-2xl p-6 text-center">
-                  <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>13.33km</h2>
-                  <p className="lg:mt-3">Recorridos</p>
-                </div>
-              </div>
-
-              <img
-                src={`${basePath}/img/acciones/TubusUncle.svg`}
-                className="rounded-2xl mt-6"
-              />
-            </div>
-
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-10">
-            {/* BLOQUE IZQUIERDO GRANDE */}
-            <div className="lg:col-span-3 flex flex-col justify-between bg-white/60 rounded-3xl px-6 pt-6 pb-0 overflow-hidden">
+            <div className="lg:col-span-3 flex flex-col justify-between bg-white/60 rounded-3xl lg:rounded-b-3xl lg:rounded-t-none px-6 pt-6 pb-0 overflow-hidden">
 
               {/* LOGO */}
               <img
@@ -287,6 +217,79 @@ export default function Acciones() {
             </div>            
           </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-10">
+
+            {/* BLOQUE IZQUIERDO GRANDE */}
+            <div className="lg:col-span-3 flex flex-col justify-end bg-white/60 rounded-3xl px-6 pt-6 pb-0  overflow-hidden">
+
+              {/* LOGO */}
+              <img
+                src={`${basePath}/img/acciones/TubusTitle.svg`}
+                className="w-60 mb-6"
+              />
+
+      
+              <div className="flex flex-col-reverse md:flex-row">
+                {/* IMAGEN PERSONA */}
+                <img
+                  src={`${basePath}/img/acciones/TubusPerson.svg`}
+                  className="w-100 object-contain"
+                />
+
+                <div className="flex flex-col justify-end flex-1">
+                  {/* BUS */}
+                  <img
+                    src={`${basePath}/img/acciones/Tubus.svg`}
+                    className="mx-auto w-96 opacity-70"
+                  />
+
+                  {/* TARJETAS INFERIORES */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
+                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center text-muni-azul">
+                      <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>7</h2>
+                      <p className="lg:mt-3">Rutas en operación</p>
+                    </div>
+
+                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center text-muni-azul">
+                      <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>105</h2>
+                      <p className="lg:mt-3">Rutas proyectadas</p>
+                    </div>
+
+                    <div className="bg-white/60 rounded-t-2xl px-6 py-15 text-center text-muni-azul">
+                      <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>16,849</h2>
+                      <p className="lg:mt-3">Usuarios al día</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* PANEL DERECHO */}
+            <div className="bg-white/60 rounded-3xl p-6 flex flex-col justify-between">
+
+              <div className="text-muni-azul">
+                <h3 className={`${MontserratMediumItalic.className} text-lg lg:text-xl font-bold mb-4`} >MiniBuses Eléctricos</h3>
+
+                <div className="bg-white/60 rounded-2xl p-6 text-center mb-4">
+                  <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>3</h2>
+                  <p className="lg:mt-3">Rutas</p>
+                </div>
+
+                <div className="bg-white/60 rounded-2xl p-6 text-center">
+                  <h2 className={`${MontserratMediumItalic.className} text-5xl lg:text-4xl font-bold`}>13.33km</h2>
+                  <p className="lg:mt-3">Recorridos</p>
+                </div>
+              </div>
+
+              <img
+                src={`${basePath}/img/acciones/TubusUncle.svg`}
+                className="rounded-2xl mt-6"
+              />
+            </div>
+
+          </div>
+
         </div>
       </section>  
 
@@ -315,33 +318,25 @@ export default function Acciones() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center px-6">
-            <div className="relative bg-white/60 rounded-2xl px-3 lg:px-6 py-0">
+          <div className="w-full flex flex-col items-center justify-center px-6">
+            <div className="w-full relative bg-white/60 rounded-2xl px-3 lg:px-6 py-6">
 
                 {/* Imagen base */}
                 <img
-                    src={`${basePath}/img/acciones/aerometro.svg`}
+                    src={`${basePath}/img/acciones/aerometroo.png`}
                     alt="Icono 250"
-                    className="w-100 sm:w-225"
+                    className="w-full object-contain"
                 />
 
                 {/* Imagen encima */}
                 <img
                     src={`${basePath}/img/acciones/aerometroRecorte.svg`}
                     alt="Icono 250"
-                    className="absolute hidden lg:block top-[-13] left-150 w-100 sm:w-125 z-10 pointer-events-none animate-rotate-alternate"
+                    className="absolute hidden lg:block top-[-24] left-200 w-100 lg:w-150 z-10 pointer-events-none"
                 />
 
             </div>
 
-
-            {/* texto alineado al borde izquierdo de la imagen */}
-            <div className="flex flex-col items-end w-100 sm:w-225">
-              <p className={`${muni.className} text-center text-muni-azul text-sm sm:text-xl lg:text-xl px-10 md:px-0`}>
-                Imagen de referencia AeroMetro 2025, Fuente Municipalidad de
-                Guatemala
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -352,13 +347,32 @@ export default function Acciones() {
          </div>
       </section>
 
-      <section className="w-full px-4 py-8">
+      <section className="w-full px-4 py-8 lg:pt-8 lg:pb-0">
         <div className="w-full container mx-auto p-6 sm:p-6">
           <AerometroCards />
         </div>
 
-        <div className="mb-15 md:mt-10 md:mb-20">
-          <p className={`text-center font-bold  text-xl md:text-4xl text-muni-azul px-0  italic ${MarcellusRegular.className}`}>“El punto de encuentro de los caminos”</p>
+        <div className="relative overflow-hidden rounded-3xl lg:min-h-[520px]">
+          <div className="my-10 relative z-10">
+            <p
+              className={`text-center font-bold mt-15 md:mb-100 text-xl md:text-4xl text-muni-azul px-0 md:px-80 italic ${MarcellusRegular.className}`}
+            >
+              “El punto de encuentro de los caminos”
+            </p>
+          </div>
+
+          <img
+            src={`${basePath}/img/conmemoracion/250years.svg`}
+            alt="250 años"
+            className="
+              absolute
+              left-1/2 -translate-x-1/2
+              bottom-[-250px]
+              xl:w-[800px] 2xl:w-[1000px]
+              opacity-60
+              pointer-events-none select-none
+            "
+          />
         </div>
       </section>
 

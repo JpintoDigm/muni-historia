@@ -29,12 +29,19 @@ export default function CalendarioEventos({ featureLayerUrl }) {
 
   const [selectedEjes, setSelectedEjes] = useState([]);
 
+  const [selectedZona, setSelectedZona] = useState(null);
 
   const { events, loading } = useArcGISEvents({
     featureLayerUrl,
     monthDate: month,
   });
 
+  const zonasDisponibles = [...new Set(events.map(e => e.zona).filter(Boolean))].sort((a,b)=>a-b);
+
+
+  const filteredEvents = events
+    .filter(e => (selectedEjes.length ? selectedEjes.includes(e.eje) : true))
+    .filter(e => (selectedZona ? e.zona === selectedZona : true));
 
   const handleSelectDay = (date) => {
     setSelectedDay(date);
@@ -69,12 +76,14 @@ const handleToggleEje = (eje) => {
 };
 
 
-  const filteredEvents =
-    selectedEjes.length > 0
-      ? events.filter((e) => selectedEjes.includes(e.eje))
-      : events;
+  // const filteredEvents =
+  //   selectedEjes.length > 0
+  //     ? events.filter((e) => selectedEjes.includes(e.eje))
+  //     : events;
 
-  console.log("month", month, "events", events.length);
+  // console.log("month", month, "events", events.length);
+
+
 
 
   return (
@@ -92,6 +101,10 @@ const handleToggleEje = (eje) => {
         onToggleEje={handleToggleEje}
         tab={tab}
         setTab={setTab}
+
+        zonas={zonasDisponibles}
+        selectedZona={selectedZona}
+        onZonaChange={setSelectedZona}        
       />
 
       <CalendarGrid

@@ -31,6 +31,16 @@ function inMonth(d, monthDate) {
   );
 }
 
+
+function extractZona(address) {
+  if (!address) return null;
+
+  const match = address.match(/zona\s*(\d+)/i); // detecta Zona 1, zona 21, etc.
+  return match ? Number(match[1]) : null;
+}
+
+
+
 export function useArcGISEvents({ featureLayerUrl, monthDate }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -118,6 +128,7 @@ export function useArcGISEvents({ featureLayerUrl, monthDate }) {
                   baseId: a[OBJECTID_FIELD],     
                   date: new Date(cur),
                   dependencia: a[DEPENDENCIA] ?? "",
+                  zona: extractZona(a[ADDRESS]),
                   rangeStart: startDate,
                   rangeEnd: safeEnd,
                   title: a[TITLE_FIELD] ?? "Evento",

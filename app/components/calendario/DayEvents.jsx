@@ -1,4 +1,5 @@
 import { basePath } from "@/next.config.mjs";
+import Image from "next/image";
 
 function fmtDayES(d) {
   const weekday = d.toLocaleDateString("es-GT", { weekday: "long" });
@@ -38,8 +39,8 @@ const EJE_BG = {
 
 // Dependencias Config por dominio en arcgis
 const DEPEN_ICON = {
-  11: basePath + "/img/calendario/fundacionPaiz.svg", // Fundación Paiz
-  12: basePath + "/img/calendario/hito250.png",   // Copa Ciudad Desarrollo Social
+  11: basePath + "/img/calendario/FundacionPaiz.png", // Fundación Paiz
+  12: basePath + "/img/calendario/Diseño sin título (1).svg",   // Copa Ciudad Desarrollo Social
 };
 
 
@@ -110,15 +111,17 @@ export default function DayEvents({ day, events, tab, onSelectEvent }) {
                 <span className="font-extrabold">Hora:</span> {e.time ? e.time : fmtHourES(e.date)}
               </div>
 
-              <div className="flex items-center mt-auto pt-3">
+              <div className="flex items-center mt-auto pt-5">
 
                 {/* Caja fija para el logo */}
                 <div className="h-10 w-24 flex items-center">
                   {DEPEN_ICON[e.dependencia] && (
-                    <img
+                    <Image
                       src={DEPEN_ICON[e.dependencia]}
+                      width={200}
+                      height={200}
                       alt="Dependencia"
-                      className="max-h-10 max-w-24 object-contain"
+                      className=" object-contain"
                     />
                   )}
                 </div>
