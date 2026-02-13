@@ -88,7 +88,11 @@ export default function Acciones() {
 
 
 
-              <div className="flex flex-col-reverse">
+              <div className="flex flex-col">
+
+                <p className="text-muni-azul text-sm lg:text-xl text-justify">
+                  Estrategia de Movilidad e Infraestructura Vial que se orienta a alcanzar el modelo de ciudad compacta mediante el impulso a la movilidad sostenible para lograr una red multimodal de transporte. La movilidad conecta oportunidades, empleo y servicios
+                </p>
 
                 <div className="flex items-center mx-auto lg:mt-10">
                     <img src={`${basePath}/img/acciones/ImagenPrincipale.png`} alt="Icono 250" className="w-100 lg:w-full rounded-3xl mx-auto" />
@@ -109,9 +113,6 @@ export default function Acciones() {
                   </div>
 
                   <div className="">
-                    <p className="text-muni-azul text-sm lg:text-xl text-justify">
-                      Estrategia de Movilidad e Infraestructura Vial que se orienta a alcanzar el modelo de ciudad compacta mediante el impulso a la movilidad sostenible para lograr una red multimodal de transporte. La movilidad conecta oportunidades, empleo y servicios
-                    </p>
                     <div className={` ${MontserratMediumItalic.className} flex flex-col items-end justify-end text-muni-azul gap-5 text-end text-lg lg:text-3xl 
                     lg:ml-10 mt-5 lg:mt-10`}>
                         <p>“Ciudad pensada para las personas.  </p>

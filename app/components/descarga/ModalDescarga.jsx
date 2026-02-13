@@ -12,6 +12,7 @@ import TrustedCompanies from "../TrustedCompanies";
 import { useRouter } from "next/navigation";
 import { basePath } from "@/next.config.mjs";
 import { MontserratBlack3, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
+import Link from "next/link";
 
  
 export default function ModalDescarga({openFromQuery=false}) {
@@ -58,30 +59,22 @@ export default function ModalDescarga({openFromQuery=false}) {
         </DialogHeader>
         <DialogBody className="max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-start gap-3">
-                    <button className="flex items-center justify-start gap-6 bg-white rounded-2xl px-4 py-4 border-muni-azul border-1">
-                        <img src={`${basePath}/img/2.png`} alt="" className="max-w-25" />
+                    <a
+                      href={`${basePath}/docs/agendaFebrero.pdf`}
+                      // download
+                      target="_blank"
+                      className="inline-block"
+                    >
+                      <div className="flex items-center justify-start gap-6 bg-white rounded-2xl px-4 py-4 border-muni-azul border-1">
+                        <img src={`${basePath}/img/documentos/portadaAgenda.svg`} alt="" className="max-w-25" />
 
                         <div className="flex items-center gap-3">
-                            {/* <img src={`${basePath}/img/4.png`} alt="icono descarga" width={30} className=""/> */}
-                            <p className="text-xl md:text-2xl text-black text-center">Libro 250</p>
+                          <p className={`${MontserratMediumItalic.className} text-xl md:text-2xl text-muni-azul text-center`}>
+                            Agenda de la ciudad - Febrero 2026
+                          </p>
                         </div>
-                    </button>           
-                    <button className="flex items-center justify-start gap-6 bg-white rounded-2xl px-4 py-4 border-muni-azul border-1">
-                        <img src={`${basePath}/img/2.png`} alt="" className="max-w-25" />
-
-                        <div className="flex items-center gap-3">
-                            {/* <img src={`${basePath}/img/4.png`} alt="icono descarga" width={30} className=""/> */}
-                            <p className="text-xl md:text-2xl text-black text-center">Libro 250</p>
-                        </div>
-                    </button>           
-                    <button className="flex items-center justify-start gap-6 bg-white rounded-2xl px-4 py-4 border-muni-azul border-1">
-                        <img src={`${basePath}/img/2.png`} alt="" className="max-w-25" />
-
-                        <div className="flex items-center gap-3">
-                            {/* <img src={`${basePath}/img/4.png`} alt="icono descarga" width={30} className=""/> */}
-                            <p className="text-xl md:text-2xl text-black text-center">Libro 250</p>
-                        </div>
-                    </button>           
+                      </div>
+                    </a>          
             </div>
         </DialogBody>
       </Dialog>

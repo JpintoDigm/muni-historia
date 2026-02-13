@@ -85,7 +85,7 @@ export default function CalendarHeader({
             <div className="flex flex-col justify-start items-center">
 
 
-              <p className="text-muni-azul font-bold text-lg">Filtro por zona:</p>
+              {/* <p className="text-muni-azul font-bold text-lg">Filtro por zona:</p> */}
 
               {/* FILTRO ZONA */}
               <select
@@ -102,12 +102,12 @@ export default function CalendarHeader({
               </select>  
             </div>
 
-            {/* <button
+            <button
               onClick={onToday}
-              className="py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20  text-xl sm:text-2xl font-semibold text-muni-azul"
+              className="py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20  text-xl sm:text-2xl font-semibold text-muni-azul lg:mr-25"
             >
               Hoy
-            </button>           */}
+            </button>          
 
           </div>
 

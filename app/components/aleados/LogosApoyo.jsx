@@ -7,27 +7,28 @@ export default function LogosApoyo({titulo}) {
 
 const logos = [
   "ALEMANIA-EMBAJADA.png",
-  "ALIANZA-FRANCESA.png",
   "ARGENTINA-EMBAJADA.png",
   "BELICE-EMBAJADA.png",
   "CHINA_TAIWAN-EMBAJADA.png",
-  "CIUDADES-SOLIDARIAS.png",
-  "COOPERATIVA-ESPANOLA.png",
   "COREA-EMBAJADA.png",
   "EGIPTO-EMBAJADA.png",
+  // Embajada estados unidos
   "FRANCIA-EMBAJADA.png",
   "INDIA-EMBAJADA.png",
   "ISRAEL-EMBAJADA.png",
   "ITALIA-EMBAJADA.png",
-  "KOICA.png",
-  "MARRUECOS-EMBAJADA.png",
   "ORDEN_MALTA-EMBAJADA.png",
+  "MARRUECOS-EMBAJADA.png",
   "PAISES_BAJOS-EMBAJADA.png",
   "PERU-EMBAJADA.png",
-  "PNUD.png",
   "TURKIA-EMBAJADA.png",
+  "COOPERATIVA-ESPANOLA.png",
+  "ALIANZA-FRANCESA.png",
+  "KOICA.png",
+  "PNUD.png",
   "UNESCO.png",
-  "UNHCRACNUR.png"
+  "UNHCRACNUR.png",
+  "CIUDADES-SOLIDARIAS.png",
 ];
 
 
