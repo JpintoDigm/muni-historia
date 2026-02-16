@@ -8,7 +8,7 @@ import BottomMenu from "../components/BottomMenu";
 import { basePath } from "@/next.config.mjs";
 import { PARQUES } from "../components/accionesVerdes/data";
 import { MarcellusRegular, MontserratBlack3, MontserratLightItalic, MontserratMediumItalic, muni } from "@/app/fonts/fonts";
-import DistritoVerdeMap from "../components/arcgis/basemap/DistritoVerdeMap";
+// import DistritoVerdeMap from "../components/arcgis/basemap/DistritoVerdeMap";
 
 
 export default function Acciones() {
