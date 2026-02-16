@@ -94,19 +94,15 @@ export default function Acciones() {
                   Estrategia de Movilidad e Infraestructura Vial que se orienta a alcanzar el modelo de ciudad compacta mediante el impulso a la movilidad sostenible para lograr una red multimodal de transporte. La movilidad conecta oportunidades, empleo y servicios
                 </p>
 
-                <div className="flex items-center mx-auto lg:mt-10">
+                <div className="flex items-center mx-auto mt-10">
                     <img src={`${basePath}/img/acciones/ImagenPrincipale.png`} alt="Icono 250" className="w-100 lg:w-full rounded-3xl mx-auto" />
                 </div>
               </div>
           </div>
 
-          
-          <div className="w-full container mx-auto px-6">
-
-          </div>
-
+        
           {/* Fondo azul de la sección */}
-          <div className="w-full container mx-auto py-0 px-0 md:py-0 lg:mt-10">
+          {/* <div className="w-full container mx-auto py-0 px-0 md:py-0 lg:mt-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-5 px-6">
                   <div className="flex items-c  enter justify-center mb-7 md:mb-0 bg-white/60 rounded-3xl lg:rounded-b-none relative">
                       <img src={`${basePath}/img/acciones/TransmetroHero.svg`} alt="Alcalde y personas" className="w-300 object-contain abolsute left-0" />
@@ -122,23 +118,23 @@ export default function Acciones() {
                     </div>
                   </div>
               </div>
-          </div>          
+          </div>           */}
 
       </section>    
 
-      <section className="w-full px-4 mt-10 lg:mt-0">
+      <section className="w-full px-4 mt-0 lg:mt-10">
         <div className="w-full container mx-auto px-6">
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* BLOQUE IZQUIERDO GRANDE */}
-            <div className="lg:col-span-3 flex flex-col justify-between bg-white/60 rounded-3xl lg:rounded-b-3xl lg:rounded-t-none px-6 pt-6 pb-0 overflow-hidden">
+            <div className="lg:col-span-3 flex flex-col justify-between bg-white/60 rounded-3xl  px-6 pt-6 pb-0 overflow-hidden">
 
               {/* LOGO */}
               <img
                 src={`${basePath}/img/acciones/TransmetroTitle.svg`}
                 className="w-100 mb-6"
               />
-
+  
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end text-muni-azul">
 
                 {/* CARD GRANDE IZQUIERDA */}
@@ -176,47 +172,61 @@ export default function Acciones() {
               </div>
             </div>
 
-            {/* PANEL DERECHO */}
-            <div className="bg-white/60 rounded-3xl p-6 flex flex-col justify-between text-muni-azul">
 
-              <div className="relative flex flex-col justify-center ">
+            <div className="flex items-center justify-center bg-white/60 rounded-3xl lg:rounded-b-none relative mb-7 lg:mb-0">
+                {/* <img src={`${basePath}/img/acciones/TransmetroHero.svg`} alt="Alcalde y personas" className="w-300 object-contain abolsute left-0" /> */}
+                <div className={` ${MontserratMediumItalic.className} flex flex-col items-end justify-end text-muni-azul gap-5 text-center lg:text-end text-lg lg:text-3xl 
+                lg:ml-10 p-5 lg:p-0`}>
+                    <p>“Ciudad pensada para las personas.  </p>
+                    <p>
+                      Con movilidad eficiente, transporte público multimodal y moderno”
+                    </p>
+                </div>
+            </div>
+
+        
+          </div>
+
+          {/* PANEL DERECHO */}
+          <div className="bg-white/60 rounded-3xl p-6 flex flex-col justify-between text-muni-azul lg:mt-10">
+
+            <div className="relative flex flex-col lg:flex-row justify-center items-center gap-10">
+
+              <div>
                 <h3 className={`${MontserratMediumItalic.className} text-lg lg:text-xl font-bold mb-4`}>Calles pensadas para peatones y ciclistas</h3>
-
-                <div>
-                  <p className={`${MontserratMediumItalic.className} text-4xl lg:text-5xl font-bold text-muni-azul`}>31.25 km</p>
-                  <p className="lg:mt-3">de ciclovias existentes</p>
-                </div>
-
-                <div className="bg-white/60 rounded-2xl p-6 text-center mb-4 w-2/3">
-                  <img
-                    src={`${basePath}/img/acciones/TransmetroCicla.svg`}
-                    className="rounded-2xl w-15 object-contain"
-                  />
-                  <h2 className={`${MontserratMediumItalic.className} text-4xl lg:text-5xl font-bold text-muni-azul`}>40Km</h2>
-                  <p className="lg:mt-3">Adicionales de ciclovías</p>
-                </div>
-
-                <div className="bg-white/60 rounded-2xl p-6 text-center w-2/3">
-                  <img
-                    src={`${basePath}/img/acciones/TransmetroDog.svg`}
-                    className="rounded-2xl w-15 object-contain"
-                  />
-                  <h2 className={`${MontserratMediumItalic.className} text-4xl lg:text-5xl font-bold text-muni-azul`}>127km</h2>
-                  <p className="lg:mt-3">Corredores peatonales</p>
-                </div>
-
-                <img
-                  src={`${basePath}/img/acciones/TransmetroBike.svg`}
-                  className="rounded-2xl w-40 mt-6 absolute bottom-0 right-[-60px] object-contain z-10"
-                />                
+                <p className={`${MontserratMediumItalic.className} text-4xl lg:text-5xl font-bold text-muni-azul`}>31.25 km</p>
+                <p className="lg:mt-3">de ciclovias existentes</p>
               </div>
 
-              {/* <img
+              <div className="bg-white/60 rounded-2xl p-6 text-center mb-4 lg:mb-0 w-2/3">
+                <img
+                  src={`${basePath}/img/acciones/TransmetroCicla.svg`}
+                  className="rounded-2xl w-15 lg:w-20 object-contain mx-auto"
+                />
+                <h2 className={`${MontserratMediumItalic.className} text-4xl lg:text-5xl font-bold text-muni-azul`}>40Km</h2>
+                <p className="lg:mt-3">Adicionales de ciclovías</p>
+              </div>
+
+              <div className="bg-white/60 rounded-2xl p-6 text-center w-2/3">
+                <img
+                  src={`${basePath}/img/acciones/TransmetroDog.svg`}
+                  className="rounded-2xl w-15 lg:w-20 object-contain mx-auto"
+                />
+                <h2 className={`${MontserratMediumItalic.className} text-4xl lg:text-5xl font-bold text-muni-azul`}>127km</h2>
+                <p className="lg:mt-3">Corredores peatonales</p>
+              </div>
+
+              <img
                 src={`${basePath}/img/acciones/TransmetroBike.svg`}
-                className="rounded-2xl mt-6"
-              /> */}
-            </div>            
-          </div>
+                className="rounded-2xl w-40 mt-6 absolute bottom-0 right-[-60px] object-contain z-10"
+              />                
+            </div>
+
+            {/* <img
+              src={`${basePath}/img/acciones/TransmetroBike.svg`}
+              className="rounded-2xl mt-6"
+            /> */}
+          </div>           
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-10">
 
