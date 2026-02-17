@@ -8,6 +8,7 @@ import BottomMenu from "../components/BottomMenu";
 import SliderEvolucion from "../components/evolucion/SliderEvolucion";
 import BloqueHistoria from "../components/evolucion/BloqueHistoria";
 import { Historia } from "../data/Historia";
+import FundacionTraslado from "../components/evolucion/FundacionTraslado";
 
 
 export default function Evolucion() {
@@ -24,10 +25,10 @@ export default function Evolucion() {
 
                 <div className="w-full flex items-center mt-6 md:mt-20">
 
-                    <SliderEvolucion
+                    {/* <SliderEvolucion
                         MontserratMediumItalic={MontserratMediumItalic}
                         MontserratLightItalic={MontserratLightItalic}
-                    />
+                    /> */}
 
                     
                 </div>
@@ -51,7 +52,7 @@ export default function Evolucion() {
 
                     <div>
                         {/* titulo */}
-                        <p className={`${MontserratLightItalic.className} text-muni-azul text-end text-6xl`}>
+                        <p className={`${MontserratLightItalic.className} text-muni-azul text-end text-4xl lg:text-5xl`}>
                             El <br />
                             punto de <br />
                             <span className={`${MontserratMediumItalic.className} font-bold`}>encuentro</span> <br />
@@ -76,7 +77,7 @@ export default function Evolucion() {
                         <div>
                             <p className={`${muni.className} text-muni-azul italic text-start w-1/3`}>“Kaminaljuyu, punto estratégico central del comercio y encuentro regional”</p>
                         </div>
-                        <img src={`${basePath}/img/evolucion/draws/Kaminaljuyu.svg`} alt="" className="w-150" />
+                        <img src={`${basePath}/img/evolucion/draws/Kaminaljuyu.png`} alt="" className="w-150" />
                         <div>
                             <p className={`${MontserratMediumItalic.className} font-bold text-muni-azul`}>Vista aérea de Kaminaljuyu en el siglo III D.C</p>
                             <p className={`${muni.className} text-justify text-muni-azul`}>
@@ -88,37 +89,64 @@ export default function Evolucion() {
                 </div>
             </div>
 
-            
-                {Historia.map((item) => (
-                <BloqueHistoria
-                    key={item.id}
-                    bgColor={item.bgColor}
-                    titulo={item.titulo}
-                    descripcion={item.descripcion}
-                    texto={item.texto}
-                    revision={item.revision}
-                    cita={item.cita}
-                    imagen={item.imagen}
-                    imagenes={item.imagenes}
-                    lugar={item.lugar}
-                    fuente={item.fuente}
-                    ilustracion={item.ilustracion}
+            <div className="bg-gradient-to-r from-muni-pantone via-[#7EDBB0] via-90% md:via-65% to-white">
+                <FundacionTraslado
                     basePath={basePath}
-                    MontserratLightItalic={MontserratLightItalic}
                     MontserratMediumItalic={MontserratMediumItalic}
+                    MontserratLightItalic={MontserratLightItalic}
                     muni={muni}
                 />
-                ))}
+            </div>
+
+            
+            {Historia.map((item) => (
+            <BloqueHistoria
+                key={item.id}
+                bgColor={item.bgColor}
+                titulo={item.titulo}
+                descripcion={item.descripcion}
+                texto={item.texto}
+                revision={item.revision}
+                cita={item.cita}
+                ageStart={item.ageStart}
+                ageEnd={item.ageEnd}
+                imagen={item.imagen}
+                imagenes={item.imagenes}
+                lugar={item.lugar}
+                fuente={item.fuente}
+                ilustracion={item.ilustracion}
+                basePathHistoria={basePath}
+                MontserratLightItalic={MontserratLightItalic}
+                MontserratMediumItalic={MontserratMediumItalic}
+                muni={muni}
+            />
+            ))}
+
+            <div className="relative overflow-hidden lg:min-h-[520px] bg-gradient-to-r from-muni-verde via-[#DFF7B0] via-90% md:via-65% to-white pb-15 lg:pb-0">
+                <div className="my-10 relative z-10">
+                    <p
+                    className={`text-center font-bold mt-15 md:mb-100 text-xl md:text-4xl text-muni-azul px-0 md:px-80 italic ${MarcellusRegular.className}`}
+                    >
+                    “El punto de encuentro de los caminos”
+                    </p>
+                </div>
+
+                <img
+                    src={`${basePath}/img/conmemoracion/250years.svg`}
+                    alt="250 años"
+                    className="
+                    absolute
+                    left-1/2 -translate-x-1/2
+                    bottom-[-250px]
+                    xl:w-[800px] 2xl:w-[1000px]
+                    opacity-60
+                    pointer-events-none select-none
+                    "
+                />
+            </div>
                       
         </section>
 
-        <div className="bg-250 mt-10 py-10">
-          <p className={`${MarcellusRegular.className} italic text-muni-azul text-xl md:text-4xl font-bold rounded-3xl px-4 py-8 md:mb-  text-center items-center`}>
-            “El punto de encuentro de los caminos”
-          </p>
-        </div>
-
-        {/* <BottomMenu />                */}
 
     </>
 

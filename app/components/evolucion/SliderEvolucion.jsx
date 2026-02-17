@@ -9,17 +9,17 @@ export default function EvolucionSlider({
 }) {
   const items = useMemo(
     () => [
-      { href: "#1524-1773", bg: "bg-muni-verde", title: "Fundación y traslado de la ciudad", subtitle: "1524 – 1773" },
-      { href: "#1776-1821", bg: "bg-muni-rosado", title: "Traslado al Valle de la Ermita", subtitle: "1776 – 1821" },
-      { href: "#1821-1871", bg: "bg-muni-pantone", title: "Independencia y nuevas divisiones territoriales", subtitle: "1821 – 1871" },
-      { href: "#1871-1917", bg: "bg-[#8BCFD9]", title: "Período Liberal: ensanches urbanos y modernización", subtitle: "1871 – 1917" },
-      { href: "#1917-1931", bg: "bg-muni-verde", title: "Terremotos de 1917-1918 y la reconstrucción", subtitle: "1917 – 1931" },
-      { href: "#1931-1944", bg: "bg-muni-rosado", title: "Consolidación de la imagen urbana", subtitle: "1931 – 1944" },
-      { href: "#1944-1954", bg: "bg-muni-pantone", title: "La llegada de la modernidad", subtitle: "1944 - 1954" },
+      { href: "#1524-1773", bg: "bg-gradient-to-r from-muni-verde via-[#DFF7B0] via-90% md:via-65% to-white", title: "Fundación y traslado de la ciudad", subtitle: "1524 – 1773" },
+      { href: "#1776-1821", bg: "bg-gradient-to-r from-muni-rosado via-[#f3c5da] via-90% md:via-65% to-white", title: "Traslado al Valle de la Ermita", subtitle: "1776 – 1821" },
+      { href: "#1821-1871", bg: "bg-gradient-to-r from-muni-pantone via-[#7EDBB0] via-90% md:via-65% to-white", title: "Independencia y nuevas divisiones territoriales", subtitle: "1821 – 1871" },
+      { href: "#1871-1917", bg: "bg-gradient-to-r from-[#8BCFD9] via-[#99EAF7] via-90% md:via-65% to-white", title: "Período Liberal: ensanches urbanos y modernización", subtitle: "1871 – 1917" },
+      { href: "#1917-1931", bg: "bg-gradient-to-r from-muni-verde via-[#DFF7B0] via-90% md:via-65% to-white", title: "Terremotos de 1917-1918 y la reconstrucción", subtitle: "1917 – 1931" },
+      { href: "#1931-1944", bg: "bg-gradient-to-r from-muni-rosado via-[#f3c5da] via-90% md:via-65% to-white", title: "Consolidación de la imagen urbana", subtitle: "1931 – 1944" },
+      { href: "#1944-1954", bg: "bg-gradient-to-r from-muni-pantone via-[#7EDBB0] via-90% md:via-65% to-white", title: "La llegada de la modernidad", subtitle: "1944 - 1954" },
       { href: "#1954-1976", bg: "bg-[#8BCFD9]", title: "Conexiones y expansión hacia el norte y occidente", subtitle: "1954 - 1976" },
       { href: "#1976-2000", bg: "bg-muni-verde", title: "Terremotos de 1976 y nuevo desarrollo", subtitle: "1976 - 2000" },
       { href: "#2000-2017", bg: "bg-muni-rosado", title: "Siglo XXI: Expansión Metropolitana", subtitle: "2000 - 2017" },
-      { href: "#2018-2026", bg: "bg-muni-pantone", title: "La ciudad más importante de la región", subtitle: "2018 - 2026" },
+      { href: "#2018-2026", bg: "bg-gradient-to-r from-muni-pantone via-[#7EDBB0] via-90% md:via-65% to-white", title: "La ciudad más importante de la región", subtitle: "2018 - 2026" },
     ],
     []
   );

@@ -103,7 +103,7 @@ function HomePageContent() {
             {/* Grid de 6 tarjetas */}
             <div className={`${MarcellusRegular.className} order-1 md:order-2 grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}>
 
-              <Link href="/historia" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
+              <Link href="/evolucion" className="relative flex flex-col justify-center rounded-3xl px-4 py-8 shadow-sm bg-white/50 backdrop-blur-none text-center items-center ">
                   {/* Botón + */}
                   <button className="absolute top-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-muni-azul text-white text-2xl leading-none shadow-md
                   cursor-pointer">

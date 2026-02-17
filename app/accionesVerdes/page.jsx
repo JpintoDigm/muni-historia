@@ -44,22 +44,22 @@ export default function Acciones() {
             <div className="flex flex-col gap-4">
                 <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-3">
                     <div className="flex items-center mt-0 mb-4 gap-3">
-                    <div className="">
-                        <img src={`${basePath}/img/accionesVerdes/iconoHead.png`} alt="Icono parque" className="w-20 sm:w-30" />
-                    </div>
+                        <div className="">
+                            <img src={`${basePath}/img/accionesVerdes/iconoHead.png`} alt="Icono parque" className="w-20 sm:w-30" />
+                        </div>
 
-                    <div>
-                        <h1 className={` ${MontserratLightItalic.className}text-2xl md:text-3xl text-muni-azul italic`}>
-                        Acciones
-                        </h1>
-                        <p className={` ${MontserratMediumItalic.className} text-2xl md:text-3xl tracking-[0.12em] text-muni-azul font-extrabold italic`}>
-                        Verdes
-                        </p>
-                    </div>
+                        <div>
+                            <h1 className={` ${MontserratLightItalic.className}text-2xl md:text-3xl text-muni-azul italic`}>
+                            Acciones
+                            </h1>
+                            <p className={` ${MontserratMediumItalic.className} text-2xl md:text-3xl tracking-[0.12em] text-muni-azul font-extrabold italic`}>
+                            Verdes
+                            </p>
+                        </div>
                     </div>
 
                     <div className="flex items-center">
-                    <img src={`${basePath}/img/logo250.svg`} alt="Icono 250" className="w-50 sm:w-100" />
+                        <img src={`${basePath}/img/logo250.svg`} alt="Icono 250" className="w-50 sm:w-100" />
                     </div>
 
                 </div>
@@ -68,6 +68,17 @@ export default function Acciones() {
                     <p className={` ${muni.className} text-muni-azul text-justify text-sm sm:text-xl lg:mb-4`}>
                         Las acciones verdes reflejan una ciudad que inspira bienestar, cuida su entorno y apuesta por una mejor calidad de vida para las generaciones de hoy y del futuro.
                     </p>
+                </div>
+
+                <div className="flex flex-col lg:flex-row gap-5">
+                    <div className="w-full lg:w-2/3">
+                        <img src={`${basePath}/img/accionesVerdes/MainImage.png`} alt="Icono 250" className="w-50 w-auto rounded-3xl leading-6" />
+                    </div>
+                    <div className="w-full lg:w-1/3 flex justify-center items-center">
+                        <p className={` ${muni.className} text-muni-azul italic text-justify text-sm sm:text-xl`}>
+                            El Gran Distrito Verde abarca el <span className={` ${MontserratMediumItalic.className} font-bold italic`}>40%</span> del territorio de la ciudad y se articula a través del <span className={` ${MontserratMediumItalic.className} font-bold italic`}>Cinturón Ecológico Municipal, la Red Urbana Verde y el arbolado urbano</span> como red de conexión. Su propósito es <span className={` ${MontserratMediumItalic.className} font-bold italic`}>fortalecer el valor ambiental y la resiliencia frente al cambio climático,</span> mediante la participación social y Soluciones Basadas en la Naturaleza, construyendo una infraestructura verde para una ciudad más saludable y sostenible.
+                        </p>
+                    </div>
                 </div>
             </div>
 

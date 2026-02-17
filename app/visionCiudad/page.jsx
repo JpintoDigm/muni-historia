@@ -87,9 +87,9 @@ export default function VisionCiudad() {
                         <img src={`${basePath}/img/visionCiudad/mapa1.svg`} alt="" />
                     </div>
                     <div>
-                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-5 lg:mb-10`}>“El punto en el que</p>
-                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-5 lg:mb-10`}>se originan todas las</p>
-                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-5 lg:mb-10`}>carreteras del país.”</p>
+                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-0 lg:mb-10`}>“El punto en el que</p>
+                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-0 lg:mb-10`}>se originan todas las</p>
+                        <p className={`${MontserratMediumItalic.className} text-xl lg:text-3xl font-bold text-muni-azul mb-0 lg:mb-10`}>carreteras del país.”</p>
                     </div>
                 </div>
                 <div className="w-full sm:w-2/3">

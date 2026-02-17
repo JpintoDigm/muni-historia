@@ -1,4 +1,5 @@
 import React from "react";
+import { basePath } from "@/next.config.mjs";
 
 export default function BloqueHistoria({
   titulo,
@@ -6,12 +7,14 @@ export default function BloqueHistoria({
   texto,
   revision,
   cita,
+  ageStart,
+  ageEnd,
   imagen,
   imagenes = [],
   lugar,
   fuente,
   ilustracion,
-  basePath = "",
+  basePathHistoria = "",
   MontserratLightItalic,
   MontserratMediumItalic,
   muni,
@@ -23,7 +26,7 @@ export default function BloqueHistoria({
 
         {/* IZQUIERDA */}
         <div>
-          <p className={`${MontserratLightItalic.className} text-muni-azul text-end text-6xl`}>
+          <p className={`${MontserratLightItalic.className} text-muni-azul text-end text-4xl lg:text-5xl`}>
             {titulo}
           </p>
 
@@ -42,11 +45,41 @@ export default function BloqueHistoria({
 
         {/* DERECHA */}
         <div className="flex flex-col items-end justify-end mt-10 lg:mt-0">
-          <p className={`${muni.className} text-muni-azul italic text-start w-1/3`}>
-            {cita}
-          </p>
 
-          <img src={`${basePath}${imagen}`} alt="" className="w-150" />
+          <div className="flex justify-center">
+            <p className={`${muni.className} text-muni-azul italic text-start w-1/3`}>
+              {cita}
+            </p>
+            <div className="relative lg:ml-30">
+              {/* 1776 */}
+              <p className={`${MontserratMediumItalic.className} relative z-10 text-5xl lg:text-7xl font-bold leading-none text-muni-azul text-left`}>
+                {ageStart}
+              </p>
+
+              <div className="flex flex-row ml-10">
+                {/* Flecha (atrás) */}
+                <img
+                  src={`${basePath}/img/evolucion/icons/rightArrow.svg`}
+                  alt="Arrow"
+                  className="
+                    pointer-events-none select-none
+                    left-7 top-20
+                    w-10 lg:w-15
+                    rotate-6  
+                    opacity-90
+                  "
+                />
+
+                {/* 1821 */}
+                <p className={`${MontserratMediumItalic.className} relative z-10 mt-3 text-5xl lg:text-7xl font-bold leading-none text-muni-azul text-start w-50`}>
+                  {ageEnd}
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <img src={`${basePathHistoria}${imagen}`} alt="" className="w-150" />
 
           <div>
             <p className={`${MontserratMediumItalic.className} font-bold text-muni-azul`}>
@@ -66,7 +99,7 @@ export default function BloqueHistoria({
 
       {/* GRID IMAGENES */}
       {imagenes.length > 0 && (
-        <div className="container mx-auto px-6 pb-10">
+        <div className="container mx-auto px-6 py-10 ">
           <div
             className={`
               grid gap-4
@@ -77,12 +110,30 @@ export default function BloqueHistoria({
             `}
           >
             {imagenes.map((img, i) => (
-              <img
-                key={i}
-                src={`${basePath}${img}`}
-                className="w-full h-full object-cover rounded-2xl"
-              />
+              <div key={i} className="flex flex-col">
+                
+                {/* CONTENEDOR ZOOM */}
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src={`${basePath}${img.src}`}
+                    className="
+                      w-full h-full object-contain
+                      transition-transform duration-1000 ease-in-out
+                      hover:scale-105
+                    "
+                  />
+                </div>
+
+                <p className={`${MontserratMediumItalic.className} font-bold text-muni-azul mt-2 text-center`}>
+                  {img.nombre}
+                </p>
+
+                <p className={`${muni.className} text-muni-azul text-center`}>
+                  {img.fuente}
+                </p>
+              </div>
             ))}
+
           </div>
         </div>
       )}
