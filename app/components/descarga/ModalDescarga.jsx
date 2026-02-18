@@ -44,7 +44,7 @@ export default function ModalDescarga({openFromQuery=false}) {
 
             <div className="flex flex-row items-center gap-5">
                 <img src={`${basePath}/img/4.png`} alt="" className="max-w-10" />                
-                <p className={`${MontserratMediumItalic.className} text-xs md:text-2xl font-semibold text-center`}>
+                <p className={`${MontserratMediumItalic.className} text-base md:text-2xl font-semibold text-center`}>
                   Descarga Documentos
                 </p>
             </div>
@@ -60,17 +60,19 @@ export default function ModalDescarga({openFromQuery=false}) {
         <DialogBody className="max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-start gap-3">
                     <a
-                      href="#"
+                      href={`${basePath}/docs/2. AGENDA FEBRERO 250 AÑOS CIUDAD GUATEMALA.pdf`}
                       // download
-                      // target="_blank"
-                      className="inline-block"
+                      target="_blank"
+                      className="inline-block w-full h-full object-contain
+                      transition-transform duration-1000 ease-in-out
+                      hover:scale-102"
                     >
                       <div className="flex items-center justify-start gap-6 bg-white rounded-2xl px-4 py-4 border-muni-azul border-1">
-                        <img src={`${basePath}/img/3.png`} alt="" className="max-w-25" />
+                        <img src={`${basePath}/img/documentos/portadaAgenda.svg`} alt="" className="max-w-25" />
 
                         <div className="flex items-center gap-3">
-                          <p className={`${MontserratMediumItalic.className} text-xl md:text-2xl text-muni-azul text-center`}>
-                            Documento
+                          <p className={`${MontserratMediumItalic.className} text-lg md:text-xl text-muni-azul text-start`}>
+                            AGENDA FEBRERO 250 AÑOS CIUDAD GUATEMALA
                           </p>
                         </div>
                       </div>

@@ -26,6 +26,7 @@ export default function VisionCiudad() {
                 </div>
 
                 <div className="w-full sm:w-2/3">
+                    {/* titulo */}
                     <h1 className={` ${MontserratMediumItalic.className} text-muni-verde text-justify text-4xl sm:text-7xl mb-4 font-bold`}>
                         La Visión
                         <p>de la <span className="text-white">Ciudad</span></p>
@@ -159,10 +160,7 @@ export default function VisionCiudad() {
 
                         
                             <div className="col-span-12 md:col-span-4 flex items-center justify-start md:justify-end gap-3">
-                                <img src="/img/oportunidad.svg" alt="" className="h-10 w-auto" />
-                                <div className="text-muni-azul font-bold leading-tight">
-                                Distritos de<br />Oportunidad
-                                </div>
+                                <img src={`${basePath}/img/visionCiudad/DistritoOportunidad.png`} alt="" className="object-contain w-30 lg:w-100" />
                             </div>
 
                             

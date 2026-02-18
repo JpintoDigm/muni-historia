@@ -170,7 +170,7 @@ export const Historia = [
     titulo: (
       <>
         La llegada de<br />
-        <span className="font-bold">de la modernidad</span>
+        <span className="font-bold">la modernidad</span>
       </>
     ),
     descripcion: `A partir de 1944 se introdujeron los conceptos de planificación urbana propuestos por el Movimiento Moderno. Se diseñaron y edificaron grandes proyectos públicos como el Centro Cívico y la Ciudad de los Deportes. Las migraciones hacia la ciudad aumentaron notablemente debido a cambios importantes en la legislación. A nivel administrativo, las municipalidades fueron declaradas autónomas, abandonando el régimen de intendencias. El territorio se organizó en zonas que ordenaron la ciudad en forma de un espiral que gira en contra del sentido de las agujas del reloj, partiendo del actual Centro Histórico. Nuevas regulaciones urbanas fueron aplicadas al uso del suelo y la imagen urbana incorporó edificaciones de estilo racionalista y funcional. La ciudad continuó con su expansión, esta vez hacia el oriente, con nuevas urbanizaciones y equipamientos estatales.`,
@@ -331,8 +331,8 @@ export const Historia = [
     Durante los años 2020 y 2021, la Municipalidad de Guatemala implementó diversos mecanismos para atender la pandemia, garantizando la continuidad de los servicios y ajustando la operación urbana frente a la crisis. Superada esta etapa, la ciudad retomó una agenda de transformación estructural mediante la implementación de los Distritos de Oportunidad, los Vecindarios Prósperos y el Gran Distrito Verde, acompañados de una fuerte apuesta por el impulso al emprendimiento y proyectos sociales, culturales, recreativos y deportivos. En este marco, se desarrollan proyectos relevantes de recuperación de espacios públicos, parques ecológicos y equipamientos municipales como los MuniTecs, además de la ampliación y modernización de los sistemas de transporte. En la actualidad destaca la planificación e implementación de las fases iniciales del AeroMetro como un sistema innovador de movilidad urbana, junto con la mejora y optimización de la infraestructura vial y el fortalecimiento del abastecimiento de agua. Paralelamente, se impulsa la construcción urbana como motor de la economía, ampliando la oferta de vivienda, empleo y servicios, reforzando la consolidación de una ciudad más compacta, diversa y dinámica. Estas acciones impulsan la visión de una ciudad moderna, conectada y con planificación urbana.`,
     texto: ``,
     revision: ``,
-    ageStart: "2000",
-    ageEnd: "2017",
+    ageStart: "2018",
+    ageEnd: "2026",
     cita: "“Aquí vive la mayor concentración de personas del país”",
     imagen: "/img/evolucion/draws/2000-2017/AveReforma.png",
     // imagenes: [

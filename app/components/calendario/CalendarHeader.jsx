@@ -91,7 +91,7 @@ export default function CalendarHeader({
               <select
                 value={selectedZona ?? ""}
                 onChange={(e) => onZonaChange(e.target.value ? Number(e.target.value) : null)}
-                className={` ${muni.className} py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20 text-muni-azul font-bold text-base sm:text-base outline-none`}
+                className={` ${muni.className} py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20 text-muni-azul font-bold text-xl outline-none`}
               >
                 <option value="">Todas las zonas</option>
                 {zonas?.map((z) => (
@@ -104,7 +104,7 @@ export default function CalendarHeader({
 
             <button
               onClick={onToday}
-              className="py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20  text-xl sm:text-2xl font-semibold text-muni-azul lg:mr-25"
+              className="py-3 px-8 rounded-xl bg-white/10 hover:bg-white/20 text-xl font-semibold text-muni-azul lg:mr-25"
             >
               Hoy
             </button>          

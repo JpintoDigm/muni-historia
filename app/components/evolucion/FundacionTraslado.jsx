@@ -44,58 +44,28 @@ export default function FundacionTraslado({
     if (type === "piramide") {
       return (
         <img src={`${basePath}/img/evolucion/icons/imche.png`}  alt="" />
-        // <svg width="120" height="70" viewBox="0 0 120 70">
-        //   <path {...common} d="M15 55h90" />
-        //   <path {...common} d="M30 55l30-35 30 35" />
-        //   <path {...common} d="M42 55l18-21 18 21" />
-        //   <path {...common} d="M54 55l6-7 6 7" />
-        // </svg>
       );
     }
     if (type === "ciudad") {
       return (
         <img src={`${basePath}/img/evolucion/icons/PrimerTraslado.png`}  alt="" />
-        // <svg width="120" height="70" viewBox="0 0 120 70">
-        //   <path {...common} d="M10 55h100" />
-        //   <path {...common} d="M25 55V30l10-8 10 8v25" />
-        //   <path {...common} d="M55 55V25h20v30" />
-        //   <path {...common} d="M80 55V35l8-6 8 6v20" />
-        //   <path {...common} d="M35 40h0" />
-        //   <path {...common} d="M60 35h10" />
-        // </svg>
       );
     }
     if (type === "iglesia") {
       return (
         <img src={`${basePath}/img/evolucion/icons/Iglesia.png`}  alt="" />
-        // <svg width="120" height="70" viewBox="0 0 120 70">
-        //   <path {...common} d="M10 55h100" />
-        //   <path {...common} d="M25 55V30l10-8 10 8v25" />
-        //   <path {...common} d="M55 55V25h20v30" />
-        //   <path {...common} d="M80 55V35l8-6 8 6v20" />
-        //   <path {...common} d="M35 40h0" />
-        //   <path {...common} d="M60 35h10" />
-        // </svg>
       );
     }
     // catedral
     return (
         <img src={`${basePath}/img/evolucion/icons/SegundoTraslado.png`}  alt="" />
-    //   <svg width="140" height="70" viewBox="0 0 140 70">
-    //     <path {...common} d="M10 55h120" />
-    //     <path {...common} d="M25 55V30l10-8 10 8v25" />
-    //     <path {...common} d="M55 55V25l15-10 15 10v30" />
-    //     <path {...common} d="M95 55V30l10-8 10 8v25" />
-    //     <path {...common} d="M70 55V35" />
-    //     <path {...common} d="M65 35h10" />
-    //   </svg>
     );
   };
 
 return (
-  <div className="w-full overflow-hidden rounded-2xl relative">
+  <div id="1524-1773" className="w-full overflow-hidden relative">
     {/* Fondo */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#2CB877] via-[#53CFA0] to-[#EAF3F2]" />
+    <div className="absolute inset-0 bg-gradient-to-r from-muni-pantone via-[#7EDBB0] via-90% md:via-65% to-white" />
 
     {/* MOBILE*/}
     <div className="relative block lg:hidden px-6 py-10">
@@ -107,11 +77,21 @@ return (
           </p>
         </div>
 
-        <div className="text-muni-azul text-right">
-          <p className={`${MontserratMediumItalic?.className ?? ""} font-bold text-5xl leading-none`}>1524</p>
+        <div className="text-muni-azul text-right relative lg:ml-30">
+          <p className={`${MontserratMediumItalic?.className ?? ""} relative z-10 text-5xl lg:text-7xl font-bold leading-none text-muni-azul text-left`}>1524</p>
           <div className="flex items-center justify-end gap-2">
-            <span className="inline-block text-3xl leading-none">↷</span>
-            <p className={`${MontserratMediumItalic?.className ?? ""} font-bold text-5xl leading-none`}>1773</p>
+            <img
+              src={`${basePath}/img/evolucion/icons/rightArrow.svg`}
+              alt="Arrow"
+              className="
+                pointer-events-none select-none
+                left-7 top-20
+                w-10 lg:w-15
+                rotate-6  
+                opacity-90
+              "
+            />
+            <p className={`${MontserratMediumItalic?.className ?? ""} relative z-10 mt-3 text-5xl lg:text-7xl font-bold leading-none text-muni-azul text-start w-50`}>1773</p>
           </div>
         </div>
       </div>
@@ -146,11 +126,21 @@ return (
             </p>
           </div>
 
-          <div className="text-muni-azul text-right">
-            <p className={`${MontserratMediumItalic?.className ?? ""} font-bold text-7xl leading-none`}>1524</p>
+          <div className="text-muni-azul text-right relative lg:ml-30">
+            <p className={`${MontserratMediumItalic?.className ?? ""}  relative z-10 text-5xl lg:text-7xl font-bold leading-none text-muni-azul text-left`}>1524</p>
             <div className="flex items-center justify-end gap-2">
-              <span className="inline-block text-5xl leading-none">↷</span>
-              <p className={`${MontserratMediumItalic?.className ?? ""} font-bold text-7xl leading-none`}>1773</p>
+              <img
+                src={`${basePath}/img/evolucion/icons/rightArrow.svg`}
+                alt="Arrow"
+                className="
+                  pointer-events-none select-none
+                  left-7 top-20
+                  w-10 lg:w-15
+                  rotate-6  
+                  opacity-90
+                "
+              />
+              <p className={`${MontserratMediumItalic?.className ?? ""} relative z-10 mt-3 text-5xl lg:text-7xl font-bold leading-none text-muni-azul text-start w-50`}>1773</p>
             </div>
           </div>
         </div>

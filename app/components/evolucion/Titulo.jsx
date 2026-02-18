@@ -15,14 +15,14 @@ export default function Titulo() {
                       </div>
 
                       <div>
-                          <p className={` ${MontserratLightItalic.className} text-2xl md:text-3xl text-muni-azul`}>
+                          <p className={` ${MontserratLightItalic.className} text-xl md:text-2xl text-muni-azul`}>
                             Mapa interactivo y <span className={` ${MontserratMediumItalic.className}`}>visualización 3D</span>
                           </p>
                       </div>
                     </div>
 
                     <div className="flex items-center">
-                    <img src={`${basePath}/img/logo250.svg`} alt="Icono 250" className="w-50 sm:w-100" />
+                    <img src={`${basePath}/img/logo250.svg`} alt="Icono 250" className="w-50 sm:w-70 lg:w-100" />
                     </div>
 
                 </div>

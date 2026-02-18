@@ -113,6 +113,158 @@ export default function AerometroMap() {
       popupEnabled: true
     });
 
+    // Líneas Transmetro
+    const transmetroLineas = new FeatureLayer({
+      url: "https://gis.muniguate.com/server/rest/services/Mobilidad_Urbana/DMU_Transmetro/FeatureServer/1",
+      outFields: ["*"],
+      title: "Transmetro - Líneas",
+      renderer: {
+        type: "simple",
+        symbol: { type: "simple-line", color: [0, 156, 50, 0.8], width: 3 } // ajusta color/width si quieres
+      },
+      popupEnabled: true
+    });
+
+    // Estaciones Transmetro
+    const transmetroEstaciones = new FeatureLayer({
+      url: "https://gis.muniguate.com/server/rest/services/Mobilidad_Urbana/DMU_Transmetro/FeatureServer/0",
+      outFields: ["*"],
+      title: "Transmetro - Estaciones",
+      renderer: {
+        type: "simple",
+        symbol: {
+          type: "simple-marker",
+          style: "circle",
+          color: [0, 156, 50, 0.8],
+          size: 12,
+          outline: { color: [255, 255, 255, 1], width: 1 }
+        }
+      },
+      popupTemplate: {
+        title: "Estación Transmetro {OBJECTID}",
+        content: [
+          {
+            type: "fields",
+            fieldInfos: [
+              { fieldName: "nombre", label: "Nombre" },
+              { fieldName: "linea", label: "Línea" }
+            ]
+          }
+        ]
+      },
+      labelsVisible: true,
+      labelingInfo: [
+        // OBJECTID dentro del punto
+        {
+          labelExpressionInfo: { expression: "$feature.OBJECTID" },
+          labelPlacement: "center-center",
+          symbol: {
+            type: "text",
+            color: "white",
+            haloColor: [0, 156, 50, 0.8],
+            haloSize: 1,
+            font: { family: "Arial", size: 10, weight: "bold" }
+          }
+        },
+        // nombre arriba (si existe)
+        // {
+        //   where: "1=1",
+        //   labelExpressionInfo: {
+        //     expression: `
+        //       var n = Trim($feature.nombre);
+        //       IIf(IsEmpty(n), Text($feature.OBJECTID), Replace(n, ' ', TextFormatting.NewLine))
+        //     `
+        //   },
+        //   labelPlacement: "above-center",
+        //   deconflictionStrategy: "none",
+        //   priority: 9999,
+        //   symbol: {
+        //     type: "text",
+        //     color: "#B00000",
+        //     haloColor: "white",
+        //     haloSize: 1.5,
+        //     font: { family: "Arial", size: 10, weight: "bold" }
+        //   }
+        // }
+      ]
+    });
+
+    // Líneas TuBus
+    const tuBusLineas = new FeatureLayer({
+      url: "https://gis.muniguate.com/server/rest/services/Mobilidad_Urbana/DMU_Transmetro/FeatureServer/6",
+      outFields: ["*"],
+      title: "TuBus - Líneas",
+      renderer: {
+        type: "simple",
+        symbol: { type: "simple-line", color: [0, 11, 121, 0.79], width: 3 } // ajusta color/width si quieres
+      },
+      popupEnabled: true
+    });
+
+    // Estaciones Transmetro
+    const tuBusEstaciones = new FeatureLayer({
+      url: "https://gis.muniguate.com/server/rest/services/Mobilidad_Urbana/DMU_Transmetro/FeatureServer/5",
+      outFields: ["*"],
+      title: "Transmetro - Estaciones",
+      renderer: {
+        type: "simple",
+        symbol: {
+          type: "simple-marker",
+          style: "circle",
+          color: [0, 11, 121, 0.79],
+          size: 12,
+          outline: { color: [255, 255, 255, 1], width: 1 }
+        }
+      },
+      popupTemplate: {
+        title: "Estación Transmetro {OBJECTID}",
+        content: [
+          {
+            type: "fields",
+            fieldInfos: [
+              { fieldName: "nombre", label: "Nombre" },
+              { fieldName: "linea", label: "Línea" }
+            ]
+          }
+        ]
+      },
+      labelsVisible: true,
+      labelingInfo: [
+        // OBJECTID dentro del punto
+        {
+          labelExpressionInfo: { expression: "$feature.OBJECTID" },
+          labelPlacement: "center-center",
+          symbol: {
+            type: "text",
+            color: "white",
+            haloColor: [0, 11, 121, 0.79],
+            haloSize: 1,
+            font: { family: "Arial", size: 10, weight: "bold" }
+          }
+        },
+        // nombre arriba (si existe)
+        // {
+        //   where: "1=1",
+        //   labelExpressionInfo: {
+        //     expression: `
+        //       var n = Trim($feature.nombre);
+        //       IIf(IsEmpty(n), Text($feature.OBJECTID), Replace(n, ' ', TextFormatting.NewLine))
+        //     `
+        //   },
+        //   labelPlacement: "above-center",
+        //   deconflictionStrategy: "none",
+        //   priority: 9999,
+        //   symbol: {
+        //     type: "text",
+        //     color: "#B00000",
+        //     haloColor: "white",
+        //     haloSize: 1.5,
+        //     font: { family: "Arial", size: 10, weight: "bold" }
+        //   }
+        // }
+      ]
+    });
+
     const pointsLayerGreen = new FeatureLayer({
       url: "https://gis.muniguate.com/server/rest/services/gerencia_planificacion/gp_aereometro/FeatureServer/0",
       definitionExpression: "OBJECTID IN (5,6,7,8,9,10,11,12)",
@@ -242,8 +394,15 @@ export default function AerometroMap() {
         lineLayerGreen,
         pointsLayerGreen,
         pointsLayerCentral,
+
+        transmetroLineas,
+        tuBusLineas,
+        transmetroEstaciones,
+        tuBusEstaciones,
+
         drawLayer
       ]
+
     });
 
     const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches;
@@ -276,7 +435,11 @@ export default function AerometroMap() {
       pointsLayerBlue.when(),
       lineLayerGreen.when(),
       pointsLayerGreen.when(),
-      pointsLayerCentral.when()
+      pointsLayerCentral.when(),
+      transmetroLineas.when(),
+      tuBusLineas.when(),
+      transmetroEstaciones.when(),
+      tuBusEstaciones.when()
     ])
       .then(() =>
         view.goTo(
@@ -285,7 +448,11 @@ export default function AerometroMap() {
             pointsLayerBlue.fullExtent,
             lineLayerGreen.fullExtent,
             pointsLayerGreen.fullExtent,
-            pointsLayerCentral.fullExtent
+            pointsLayerCentral.fullExtent,
+            transmetroLineas.fullExtent,
+            tuBusLineas.fullExtent,
+            transmetroEstaciones.fullExtent,
+            tuBusEstaciones.fullExtent
           ].filter(Boolean)
         )
       )
@@ -331,8 +498,8 @@ export default function AerometroMap() {
             rounded-2xl md:rounded-3xl bg-white/95 backdrop-blur
             px-4 py-4 md:px-6 md:py-5
             shadow-lg
-            max-h-[40vh] md:max-h-none
-            overflow-y-auto
+            max-h-[30vh] md:max-h-[50vh]
+            overflow-y-scroll
             "
         >
             <div className="flex items-center gap-3">
@@ -340,6 +507,118 @@ export default function AerometroMap() {
                 src={`${basePath}/img/acciones/aerometrotitulo.svg`}
                 alt="AeroMetro"
                 className="h-8 md:h-10 w-auto"
+            />
+            </div>
+
+            <div className="my-3 h-[2px] w-full bg-muni-verde/40" />
+
+            {/* ITEM */}
+            <div className="flex items-start gap-3 md:gap-4 py-2">
+            <img
+                src={`${basePath}/img/acciones/21.svg`}
+                alt="Línea 1"
+                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+            />
+            <div className="leading-tight">
+                <p className="text-[#005ce6] font-bold text-base md:text-lg">Línea 1</p>
+                <p className="text-[#005ce6] font-semibold text-sm md:text-base">
+                Plaza España - Trébol
+                </p>
+            </div>
+            </div>
+
+            <div className="flex items-start gap-3 md:gap-4 py-2">
+            <img
+                src={`${basePath}/img/acciones/20.svg`}
+                alt="Línea 2"
+                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+            />
+            <div className="leading-tight">
+                <p className="text-[#45756E] font-bold text-base md:text-lg">Línea 2</p>
+                <p className="text-[#45756E] font-semibold text-sm md:text-base">
+                Trébol – Molino de las Flores (Mixco)
+                </p>
+            </div>
+            </div>
+
+            <div className="flex items-start gap-3 md:gap-4 py-2">
+            <img
+                src={`${basePath}/img/acciones/estacionCentral.svg`}
+                alt="Central Intermedia"
+                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+            />
+            <div className="leading-tight">
+                <p className="text-black font-bold text-base md:text-lg">
+                Central Intermedia
+                </p>
+                <p className="text-black font-semibold text-sm md:text-base">
+                de Transferencia Roosevelt
+                </p>
+            </div>
+            </div>
+
+            {/* Transmetro */}
+            <div className="flex items-center gap-3">
+            <img
+                src={`${basePath}/img/acciones/TransmetroTitle.svg`}
+                alt="AeroMetro"
+                className="h-8 md:h-13 w-auto"
+            />
+            </div>
+
+            <div className="my-3 h-[2px] w-full bg-muni-verde/40" />
+
+            {/* ITEM */}
+            <div className="flex items-start gap-3 md:gap-4 py-2">
+            <img
+                src={`${basePath}/img/acciones/21.svg`}
+                alt="Línea 1"
+                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+            />
+            <div className="leading-tight">
+                <p className="text-[#005ce6] font-bold text-base md:text-lg">Línea 1</p>
+                <p className="text-[#005ce6] font-semibold text-sm md:text-base">
+                Plaza España - Trébol
+                </p>
+            </div>
+            </div>
+
+            <div className="flex items-start gap-3 md:gap-4 py-2">
+            <img
+                src={`${basePath}/img/acciones/20.svg`}
+                alt="Línea 2"
+                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+            />
+            <div className="leading-tight">
+                <p className="text-[#45756E] font-bold text-base md:text-lg">Línea 2</p>
+                <p className="text-[#45756E] font-semibold text-sm md:text-base">
+                Trébol – Molino de las Flores (Mixco)
+                </p>
+            </div>
+            </div>
+
+            <div className="flex items-start gap-3 md:gap-4 py-2">
+            <img
+                src={`${basePath}/img/acciones/estacionCentral.svg`}
+                alt="Central Intermedia"
+                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+            />
+            <div className="leading-tight">
+                <p className="text-black font-bold text-base md:text-lg">
+                Central Intermedia
+                </p>
+                <p className="text-black font-semibold text-sm md:text-base">
+                de Transferencia Roosevelt
+                </p>
+            </div>
+            </div>
+
+            {/* TuBus */}
+            <div className="flex items-center gap-3">
+            <img
+                src={`${basePath}/img/acciones/TubusTitle.svg`}
+                alt="AeroMetro"
+                className="h-8 md:h-8 w-auto"
             />
             </div>
 
