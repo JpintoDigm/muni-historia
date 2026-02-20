@@ -15,57 +15,16 @@ import {
 import { useEffect, useRef, useState } from "react";
 import AerometroCards from "../components/acciones250/AerometroCards";
 
+// import Reveal from "@/app/components/motion/Reveal";
+// import Stagger from "@/app/components/motion/Stagger";
+
+
 // Import dinámico del mapa de eventos
 const AerometroMap = dynamic(() => import("@/app/components/arcgis/basemap/AerometroMap"), {
   ssr: false,
 });
 
-function useReveal({ threshold = 0.2, once = true } = {}) {
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true);
-          if (once) obs.disconnect();
-        } else if (!once) {
-          setShow(false);
-        }
-      },
-      { threshold }
-    );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold, once]);
-
-  return [ref, show];
-}
-
 export default function Acciones() {
-  const [r12, s12] = useReveal();
-  const [r11, s11] = useReveal();
-  const [r12a, s12a] = useReveal();
-  const [r13, s13] = useReveal();
-
-  const [r21, s21] = useReveal();
-  const [r22, s22] = useReveal();
-  const [r23, s23] = useReveal();
-
-  const [rBig, sBig] = useReveal({ threshold: 0.15 });
-
-  // Helper para clases (sin tocar tu estructura)
-  const revealClass = (show, delayMs = 0) =>
-    `${show ? "animate-fade-up" : "opacity-0 translate-y-4"} will-change-transform`
-    + (delayMs ? "" : "");
-
-  const revealStyle = (delayMs = 0) =>
-    delayMs ? { animationDelay: `${delayMs}ms` } : undefined;
 
   return (
     <main className="w-full min-h-screen bg-gradient-to-r from-muni-verde via-[#DFF7B0] via-90% md:via-65% to-white">

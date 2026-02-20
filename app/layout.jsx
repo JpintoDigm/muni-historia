@@ -20,8 +20,9 @@ export default function RootLayout({ children }) {
       <body className={`${muni.variable} font-muni`}>
 
 
-        <Providers>
-          {children} 
+        <Providers>  
+             
+            {children} 
         </Providers>
         
         

@@ -14,8 +14,30 @@ import { basePath } from "@/next.config.mjs";
 import Home from "@arcgis/core/widgets/Home.js";
 
 
-
 export default function AerometroMap() {
+
+  const layerRefs = useRef({});
+  const [layerVis, setLayerVis] = useState({
+    aerometroL1: true,
+    aerometroEstL1: true,
+    aerometroL2: true,
+    aerometroEstL2: true,
+    central: true,
+    transmetroLineas: false,
+    tubusLineas: false,
+    // transmetroEst: false,
+    // tubusEst: false,
+  });
+
+  // EffectToggle
+  const toggleLayer = (key) => {
+    setLayerVis((prev) => {
+      const next = { ...prev, [key]: !prev[key] };
+      const lyr = layerRefs.current[key];
+      if (lyr) lyr.visible = next[key];
+      return next;
+    });
+  };  
   const mapDiv = useRef(null);
   const [showLegend, setShowLegend] = useState(false);
 
@@ -378,9 +400,33 @@ export default function AerometroMap() {
     }
     });
 
+
+    lineLayerBlue.visible = layerVis.aerometroL1;
+    pointsLayerBlue.visible = layerVis.aerometroEstL1;
+    lineLayerGreen.visible = layerVis.aerometroL2;
+    pointsLayerGreen.visible = layerVis.aerometroEstL2;
+    pointsLayerCentral.visible = layerVis.central;
+
+    transmetroLineas.visible = layerVis.transmetroLineas;
+    tuBusLineas.visible = layerVis.tubusLineas;
+
+
     const mapaBase2021 = new VectorTileLayer({
       url: "https://vectortileservices9.arcgis.com/KpHXbQVRsuq80m4J/arcgis/rest/services/Mapabase2021General/VectorTileServer"
     });
+
+    layerRefs.current = {
+      aerometroL1: lineLayerBlue,
+      aerometroEstL1: pointsLayerBlue,
+      aerometroL2: lineLayerGreen,
+      aerometroEstL2: pointsLayerGreen,
+      central: pointsLayerCentral,
+      transmetroLineas,
+      tubusLineas: tuBusLineas,
+      // transmetroEst: transmetroEstaciones,
+      // tubusEst: tuBusEstaciones,
+    };
+
 
     const map = new Map({
       basemap: new Basemap({
@@ -397,8 +443,8 @@ export default function AerometroMap() {
 
         transmetroLineas,
         tuBusLineas,
-        transmetroEstaciones,
-        tuBusEstaciones,
+        // transmetroEstaciones,
+        // tuBusEstaciones,
 
         drawLayer
       ]
@@ -463,6 +509,8 @@ export default function AerometroMap() {
     };
   }, []);
 
+
+
   return (
     <div className="relative w-full h-[52vh] sm:h-[55vh] md:h-[70vh] rounded-2xl overflow-hidden">
     {/* MAPA */}
@@ -503,170 +551,148 @@ export default function AerometroMap() {
             "
         >
             <div className="flex items-center gap-3">
-            <img
-                src={`${basePath}/img/acciones/aerometrotitulo.svg`}
-                alt="AeroMetro"
-                className="h-8 md:h-10 w-auto"
-            />
+              <img
+                  src={`${basePath}/img/acciones/aerometrotitulo.svg`}
+                  alt="AeroMetro"
+                  className="h-8 md:h-10 w-auto"
+              />
             </div>
 
             <div className="my-3 h-[2px] w-full bg-muni-verde/40" />
 
-            {/* ITEM */}
             <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
+              {/* CHECK */}
+              <input
+                type="checkbox"
+                checked={layerVis.aerometroL1}
+                onChange={() => toggleLayer("aerometroL1")}
+                className="mt-2 h-5 w-5 accent-[#005ce6] cursor-pointer"
+              />
+
+              {/* ICONO */}
+              <img
                 src={`${basePath}/img/acciones/21.svg`}
                 alt="Línea 1"
                 className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
+              />
+
+              {/* TEXTOS */}
+              <div className="leading-tight">
                 <p className="text-[#005ce6] font-bold text-base md:text-lg">Línea 1</p>
                 <p className="text-[#005ce6] font-semibold text-sm md:text-base">
-                Plaza España - Trébol
+                  Plaza España - Trébol
                 </p>
-            </div>
+              </div>
             </div>
 
             <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
+              {/* CHECK */}
+              <input
+                type="checkbox"
+                checked={layerVis.aerometroL2}
+                onChange={() => toggleLayer("aerometroL2")}
+                className="mt-2 h-5 w-5 accent-[#45756E] cursor-pointer"
+              />
+
+              {/* ICONO */}
+              <img
                 src={`${basePath}/img/acciones/20.svg`}
                 alt="Línea 2"
                 className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
+              />
+
+              {/* TEXTOS */}
+              <div className="leading-tight">
                 <p className="text-[#45756E] font-bold text-base md:text-lg">Línea 2</p>
                 <p className="text-[#45756E] font-semibold text-sm md:text-base">
-                Trébol – Molino de las Flores (Mixco)
+                  Trébol – Molino de las Flores <br />(Mixco)
                 </p>
-            </div>
+              </div>
             </div>
 
             <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/estacionCentral.svg`}
-                alt="Central Intermedia"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-black font-bold text-base md:text-lg">
-                Central Intermedia
-                </p>
-                <p className="text-black font-semibold text-sm md:text-base">
-                de Transferencia Roosevelt
-                </p>
-            </div>
+
+              <input
+                type="checkbox"
+                checked={layerVis.central}
+                onChange={() => toggleLayer("central")}
+                className="mt-2 h-5 w-5 accent-black cursor-pointer"
+              />
+
+              <img
+                  src={`${basePath}/img/acciones/estacionCentral.svg`}
+                  alt="Central Intermedia"
+                  className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+              />
+              <div className="leading-tight">
+                  <p className="text-black font-bold text-base md:text-lg">
+                  Central Intermedia
+                  </p>
+                  <p className="text-black font-semibold text-sm md:text-base">
+                  de Transferencia Roosevelt
+                  </p>
+              </div>
             </div>
 
             {/* Transmetro */}
             <div className="flex items-center gap-3">
-            <img
-                src={`${basePath}/img/acciones/TransmetroTitle.svg`}
-                alt="AeroMetro"
-                className="h-8 md:h-13 w-auto"
-            />
+              <img
+                  src={`${basePath}/img/acciones/TransmetroTitle.svg`}
+                  alt="Transmetro"
+                  className="h-8 md:h-13 w-auto"
+              />
             </div>
 
             <div className="my-3 h-[2px] w-full bg-muni-verde/40" />
 
             {/* ITEM */}
             <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/21.svg`}
-                alt="Línea 1"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-[#005ce6] font-bold text-base md:text-lg">Línea 1</p>
-                <p className="text-[#005ce6] font-semibold text-sm md:text-base">
-                Plaza España - Trébol
-                </p>
-            </div>
+              <input
+                type="checkbox"
+                checked={layerVis.transmetroLineas}
+                onChange={() => toggleLayer("transmetroLineas")}
+                className="mt-2 h-5 w-5 accent-[#009c32] cursor-pointer"
+              />
+
+              <img
+                  src={`${basePath}/img/acciones/LineaTransmetro.svg`}
+                  alt="Línea 1"
+                  className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+              />
+              <div className="leading-tight">
+                  <p className="text-[#005ce6] font-bold text-base md:text-lg">Líneas Transmetro</p>
+              </div>
             </div>
 
-            <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/20.svg`}
-                alt="Línea 2"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-[#45756E] font-bold text-base md:text-lg">Línea 2</p>
-                <p className="text-[#45756E] font-semibold text-sm md:text-base">
-                Trébol – Molino de las Flores (Mixco)
-                </p>
-            </div>
-            </div>
-
-            <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/estacionCentral.svg`}
-                alt="Central Intermedia"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-black font-bold text-base md:text-lg">
-                Central Intermedia
-                </p>
-                <p className="text-black font-semibold text-sm md:text-base">
-                de Transferencia Roosevelt
-                </p>
-            </div>
-            </div>
 
             {/* TuBus */}
             <div className="flex items-center gap-3">
-            <img
-                src={`${basePath}/img/acciones/TubusTitle.svg`}
-                alt="AeroMetro"
-                className="h-8 md:h-8 w-auto"
-            />
+              <img
+                  src={`${basePath}/img/acciones/TubusTitle.svg`}
+                  alt="AeroMetro"
+                  className="h-8 md:h-8 w-auto"
+              />
             </div>
 
             <div className="my-3 h-[2px] w-full bg-muni-verde/40" />
 
             {/* ITEM */}
             <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/21.svg`}
-                alt="Línea 1"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-[#005ce6] font-bold text-base md:text-lg">Línea 1</p>
-                <p className="text-[#005ce6] font-semibold text-sm md:text-base">
-                Plaza España - Trébol
-                </p>
-            </div>
-            </div>
+              <input
+                type="checkbox"
+                checked={layerVis.tubusLineas}
+                onChange={() => toggleLayer("tubusLineas")}
+                className="mt-2 h-5 w-5 accent-[#000b79] cursor-pointer"
+              />
 
-            <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/20.svg`}
-                alt="Línea 2"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-[#45756E] font-bold text-base md:text-lg">Línea 2</p>
-                <p className="text-[#45756E] font-semibold text-sm md:text-base">
-                Trébol – Molino de las Flores (Mixco)
-                </p>
-            </div>
-            </div>
-
-            <div className="flex items-start gap-3 md:gap-4 py-2">
-            <img
-                src={`${basePath}/img/acciones/estacionCentral.svg`}
-                alt="Central Intermedia"
-                className="h-9 w-12 md:h-10 md:w-16 shrink-0"
-            />
-            <div className="leading-tight">
-                <p className="text-black font-bold text-base md:text-lg">
-                Central Intermedia
-                </p>
-                <p className="text-black font-semibold text-sm md:text-base">
-                de Transferencia Roosevelt
-                </p>
-            </div>
+              <img
+                  src={`${basePath}/img/acciones/LineaTuBus.svg`}
+                  alt="Línea 1"
+                  className="h-9 w-12 md:h-10 md:w-16 shrink-0"
+              />
+              <div className="leading-tight">
+                  <p className="text-[#005ce6] font-bold text-base md:text-lg">Líneas TuBus</p>
+              </div>
             </div>
         </div>
         </div>

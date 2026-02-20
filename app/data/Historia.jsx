@@ -112,7 +112,7 @@ export const Historia = [
     descripcion: `Los terremotos destruyeron gran parte de la infraestructura urbana, generando campamentos provisionales. La reconstrucción impulsó la creación de nuevos reglamentos municipales, ampliación de rutas y consolidación de barrios; se trazaron nuevas calles y se fomentó una arquitectura más resistente a los sismos. Este período marcó la transición hacia un modelo urbano más técnico y regulado, estableciendo principios de planificación que influyeron en el crecimiento urbano del siglo XX. A nivel estilístico, constituye la entrada triunfal del Art Déco a Guatemala.`,
     texto: `Texto: Municipalidad de Guatemala.`,
     revision: `Revisión: Miguel Álvarez, Cronista de la Ciudad (2026)`,
-    ageStart: "1971",
+    ageStart: "1917",
     ageEnd: "1931",
     cita: "“Se escogió un lugar estratégico, con una gran virtud: aquí se encontraban los caminos que conectan los océanos, las fronteras y el territorio”",
     imagen: "/img/evolucion/draws/1917-1931/ReconstruccionCiudad1922.png",
